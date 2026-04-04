@@ -25,3 +25,46 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: 腿足世界模型
+      description: 检索世界模型在腿足机器人（如四足、双足机器人）运动控制与感知中的应用论文
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: World Models
+          keyword_cn: 世界模型
+          query: World models for robot control and planning
+        - keyword: Legged Robots
+          keyword_cn: 腿足机器人
+          query: Legged robot locomotion and navigation
+        - keyword: Latent Dynamics
+          keyword_cn: 潜空间动力学
+          query: Learning latent dynamics for legged robot control
+      intent_queries:
+        - query: Application of world models in legged robot locomotion and control
+          query_cn: 世界模型在腿足机器人运动控制中的应用
+          enabled: true
+          source: manual
+          note: ''
+        - query: State of the art in world models for legged robotics research
+          query_cn: 腿足机器人领域世界模型的研究现状
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-04-04T05:17:32.382Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
