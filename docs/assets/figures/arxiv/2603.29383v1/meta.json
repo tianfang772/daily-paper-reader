@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.29383v1/fig-001.webp",
+      "caption": "TABLE I AVERAGE ATE AND 1 METER RPE IN SIMULATION SCENES",
+      "page": 6,
+      "index": 1,
+      "width": 512,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2603.29383v1/fig-002.webp",
+      "caption": "Fig. 10. Evolution of the closed-loop stability indicator along the trajectory. The deterioration of the stability metric over time suggests increasingly unstable recursive behavior.",
+      "page": 10,
+      "index": 2,
+      "width": 500,
+      "height": 252
+    },
+    {
+      "url": "assets/figures/arxiv/2603.29383v1/fig-003.webp",
+      "caption": "Fig. 2. Overview of the proposed IMM-based proprioceptive state estimation framework. The framework fuses IMU and joint encoders measurements and instantiates two parallel error-state Kalman filters corresponding to rolling and slippery contact models, whose mode probabilities and fused state provide accurate and robust pose. The reference frames are defined as follows: the inertial frame W is fixed to Earth, and the body frame B aligns with the IMU frame I. The four feet are labeled as Left Front (LF), Right Front (RF), Left Hind (LH), and Right Hind (RH).",
+      "page": 3,
+      "index": 3,
+      "width": 520,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2603.29383v1/fig-004.webp",
+      "caption": "Fig. 9. Representative XY trajectory comparison on a long real-world sequence. Although KalmanNet preserves local trajectory consistency over short segments, accumulated drift leads to significant global error over long horizons.",
+      "page": 9,
+      "index": 4,
+      "width": 474,
+      "height": 317
+    },
+    {
+      "url": "assets/figures/arxiv/2603.29383v1/fig-005.webp",
+      "caption": "Fig. 3. Some snapshots of the four simulation scenarios are presented, including flat surface, slippery, uneven terrain, and slope environments.",
+      "page": 5,
+      "index": 5,
+      "width": 504,
+      "height": 269
+    }
+  ]
+}

@@ -6,91 +6,85 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-03-06 ~ 2026-04-04
-- 运行时间：2026-04-04 05:50:41 UTC
+- 最新运行日期：2026-04-04
+- 运行时间：2026-04-04 20:10:31 UTC
 - 运行状态：成功
-- 本次总论文数：23
-- 精读区：12
+- 本次总论文数：21
+- 精读区：10
 - 速读区：11
 
 ### 今日简报（AI）
-聚焦人形机器人全身协同与视觉导航，今日深度解析了 MetaWorld-X 等 23 篇机器人领域前沿论文。
-重点关注 VLM 编排的多专家分层世界模型，以及实现足式机器人无限时界规划的视觉引导新框架。
-建议优先研读两篇满分论文，掌握大模型如何赋能复杂地形下的机器人运动与操作。
-- 详情：[/20260306-20260404/README](/20260306-20260404/README)
+今日精选 21 篇前沿成果，深度聚焦人形机器人高性能奔跑与足式操纵的自主进化。
+重点推荐通过动态重定向强化学习提升人形控制，以及利用局部动作模仿实现足式机器人推车等复杂任务。
+建议深入研读强化学习与物理约束结合的控制框架，把握足式机器人从移动向作业转型的技术趋势。
+- 详情：[/202604/04/README](/202604/04/README)
 
 ### 精读区论文标签
-1. [MetaWorld-X: Hierarchical World Modeling via VLM-Orchestrated Experts for Humanoid Loco-Manipulation](/20260306-20260404/2603.08572v1-metaworld-x-hierarchical-world-modeling-via-vlm-orchestrated-experts-for-humanoid-loco-manipulation)  
-   标签：评分：10.0/10、query:profile-1
-   evidence：用于类人机器人运动操作的层级世界模型框架
-2. [VIP-Loco: A Visually Guided Infinite Horizon Planning Framework for Legged Locomotion](/20260306-20260404/2603.14345v1-vip-loco-a-visually-guided-infinite-horizon-planning-framework-for-legged-locomotion)  
-   标签：评分：10.0/10、query:profile-1
-   evidence：将状态映射为运动动力学特征的内部模型，用于足式机器人运动规划
-3. [Interactive World Simulator for Robot Policy Training and Evaluation](/20260306-20260404/2603.08546v1-interactive-world-simulator-for-robot-policy-training-and-evaluation)  
-   标签：评分：9.0/10、query:q1
-   evidence：用于机器人策略训练和潜空间动力学预测的交互式世界模型
-4. [SCDP: Learning Humanoid Locomotion from Partial Observations via Mixed-Observation Distillation](/20260306-20260404/2603.09574v1-scdp-learning-humanoid-locomotion-from-partial-observations-via-mixed-observation-distillation)  
-   标签：评分：9.0/10、query:profile-1
-   evidence：扩散模型通过传感器历史推断类人机器人运动动力学
-5. [RL-Augmented MPC for Non-Gaited Legged and Hybrid Locomotion](/20260306-20260404/2603.10878v1-rl-augmented-mpc-for-non-gaited-legged-and-hybrid-locomotion)  
-   标签：评分：9.0/10、query:profile-1
-   evidence：用于足式机器人运动与导航的强化学习增强型 MPC
-6. [ResWM: Residual-Action World Model for Visual RL](/20260306-20260404/2603.11110v1-reswm-residual-action-world-model-for-visual-rl)  
-   标签：评分：9.0/10、query:q1
-   evidence：用于视觉强化学习和机器人连续控制的预测性世界模型
-7. [Load-Aware Locomotion Control for Humanoid Robots in Industrial Transportation Tasks](/20260306-20260404/2603.14308v1-load-aware-locomotion-control-for-humanoid-robots-in-industrial-transportation-tasks)  
+1. [Chasing Autonomy: Dynamic Retargeting and Control Guided RL for Performant and Controllable Humanoid Running](/202604/04/2603.25902v1-chasing-autonomy-dynamic-retargeting-and-control-guided-rl-for-performant-and-controllable-humanoid-running)  
    标签：评分：9.0/10、query:q2
-   evidence：人形机器人在运输任务中的运动控制
-8. [WestWorld: A Knowledge-Encoded Scalable Trajectory World Model for Diverse Robotic Systems](/20260306-20260404/2603.14392v1-westworld-a-knowledge-encoded-scalable-trajectory-world-model-for-diverse-robotic-systems)  
-   标签：评分：9.0/10、query:q1
-   evidence：适用于多样化机器人系统的轨迹世界模型
-9. [ContractionPPO: Certified Reinforcement Learning via Differentiable Contraction Layers](/20260306-20260404/2603.19632v1-contractionppo-certified-reinforcement-learning-via-differentiable-contraction-layers)  
+   evidence：基于强化学习的类人机器人跑步与运动控制
+2. [Partial Motion Imitation for Learning Cart Pushing with Legged Manipulators](/202604/04/2603.26659v1-partial-motion-imitation-for-learning-cart-pushing-with-legged-manipulators)  
+   标签：评分：9.0/10、query:q2
+   evidence：腿足机器人的移动操作与鲁棒运动控制
+3. [Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control](/202604/04/2603.27756v1-heracles-bridging-precise-tracking-and-generative-synthesis-for-general-humanoid-control)  
    标签：评分：9.0/10、query:profile-1
-   evidence：基于强化学习的足式机器人认证鲁棒规划与控制
-10. [Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection](/20260306-20260404/2603.21853v1-sim-to-real-of-humanoid-locomotion-policies-via-joint-torque-space-perturbation-injection)  
+   evidence：人形机器人控制的生成式合成与环境扰动适应性
+4. [Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control](/202604/04/2603.27756v2-heracles-bridging-precise-tracking-and-generative-synthesis-for-general-humanoid-control)  
    标签：评分：9.0/10、query:profile-1
-   evidence：通过状态相关扰动实现类人机器人运动的虚实迁移
-11. [CReF: Cross-modal and Recurrent Fusion for Depth-conditioned Humanoid Locomotion](/20260306-20260404/2603.29452v1-cref-cross-modal-and-recurrent-fusion-for-depth-conditioned-humanoid-locomotion)  
+   evidence：类人机器人控制的生成式合成
+5. [Cost-Matching Model Predictive Control for Efficient Reinforcement Learning in Humanoid Locomotion](/202604/04/2603.28243v1-cost-matching-model-predictive-control-for-efficient-reinforcement-learning-in-humanoid-locomotion)  
    标签：评分：9.0/10、query:profile-1
-   evidence：利用循环融合进行深度感知的类人机器人复杂地形运动控制
-12. [CReF: Cross-modal and Recurrent Fusion for Depth-conditioned Humanoid Locomotion](/20260306-20260404/2603.29452v2-cref-cross-modal-and-recurrent-fusion-for-depth-conditioned-humanoid-locomotion)  
+   evidence：基于MPC的类人机器人运动强化学习
+6. [CReF: Cross-modal and Recurrent Fusion for Depth-conditioned Humanoid Locomotion](/202604/04/2603.29452v1-cref-cross-modal-and-recurrent-fusion-for-depth-conditioned-humanoid-locomotion)  
+   标签：评分：9.0/10、query:q2
+   evidence：复杂地形下基于深度信息的类人机器人运动
+7. [CReF: Cross-modal and Recurrent Fusion for Depth-conditioned Humanoid Locomotion](/202604/04/2603.29452v2-cref-cross-modal-and-recurrent-fusion-for-depth-conditioned-humanoid-locomotion)  
+   标签：评分：9.0/10、query:q2
+   evidence：复杂地形下基于深度信息的类人机器人运动
+8. [DreamControl-v2: Simpler and Scalable Autonomous Humanoid Skills via Trainable Guided Diffusion Priors](/202604/04/2604.00202v1-dreamcontrol-v2-simpler-and-scalable-autonomous-humanoid-skills-via-trainable-guided-diffusion-priors)  
    标签：评分：9.0/10、query:profile-1
-   evidence：利用循环融合进行深度感知的类人机器人复杂地形运动控制
+   evidence：通过扩散先验和强化学习实现类人机器人技能
+9. [Learning Humanoid Navigation from Human Data](/202604/04/2604.00416v1-learning-humanoid-navigation-from-human-data)  
+   标签：评分：9.0/10、query:profile-1
+   evidence：从人类步行数据中学习类人机器人导航及轨迹预测
+10. [BAT: Balancing Agility and Stability via Online Policy Switching for Long-Horizon Whole-Body Humanoid Control](/202604/04/2604.01064v1-bat-balancing-agility-and-stability-via-online-policy-switching-for-long-horizon-whole-body-humanoid-control)  
+   标签：评分：9.0/10、query:profile-1
+   evidence：平衡敏捷性与稳定性的全身人形机器人控制
 
 ### 速读区论文标签
-1. [Failure Mechanisms and Risk Estimation for Legged Robot Locomotion on Granular Slopes](/20260306-20260404/2603.06928v1-failure-mechanisms-and-risk-estimation-for-legged-robot-locomotion-on-granular-slopes)  
+1. [Enhancing Policy Learning with World-Action Model](/202604/04/2603.28955v1-enhancing-policy-learning-with-world-action-model)  
+   标签：评分：8.0/10、query:q1
+   evidence：用于控制的动作正则化世界模型
+2. [Stable Walking for Bipedal Locomotion under Foot-Slip via Virtual Nonholonomic Constraints](/202604/04/2603.29050v1-stable-walking-for-bipedal-locomotion-under-foot-slip-via-virtual-nonholonomic-constraints)  
    标签：评分：8.0/10、query:q2
-   evidence：足式机器人在颗粒斜坡上运动的机器人-地形交互模型
-2. [Perceptive Variable-Timing Footstep Planning for Humanoid Locomotion on Disconnected Footholds](/20260306-20260404/2603.07400v1-perceptive-variable-timing-footstep-planning-for-humanoid-locomotion-on-disconnected-footholds)  
+   evidence：足端打滑情况下的双足机器人运动
+3. [Interacting Multiple Model Proprioceptive Odometry for Legged Robots](/202604/04/2603.29383v1-interacting-multiple-model-proprioceptive-odometry-for-legged-robots)  
    标签：评分：8.0/10、query:q2
-   evidence：类人机器人在离散落脚点上的感知足迹规划
-3. [STRIDE: Structured Lagrangian and Stochastic Residual Dynamics via Flow Matching](/20260306-20260404/2603.08478v1-stride-structured-lagrangian-and-stochastic-residual-dynamics-via-flow-matching)  
-   标签：评分：8.0/10、query:q3
-   evidence：针对具有间歇接触和不确定性的机器人系统的动力学学习框架
-4. [Proprioceptive Safe Active Navigation and Exploration for Planetary Environments](/20260306-20260404/2603.08905v1-proprioceptive-safe-active-navigation-and-exploration-for-planetary-environments)  
+   evidence：足式机器人的本体感受里程计
+4. [A Physical Imitation Learning Pipeline for Energy-Efficient Quadruped Locomotion Assisted by Parallel Elastic Joint](/202604/04/2604.00611v1-a-physical-imitation-learning-pipeline-for-energy-efficient-quadruped-locomotion-assisted-by-parallel-elastic-joint)  
    标签：评分：8.0/10、query:q2
-   evidence：足式机器人感知地形属性用于导航规划
-5. [Model-Based and Neural-Aided Approaches for Dog Dead Reckoning](/20260306-20260404/2603.07582v1-model-based-and-neural-aided-approaches-for-dog-dead-reckoning)  
-   标签：评分：7.0/10、query:q2
-   evidence：四足机器狗的定位与航位推算
-6. [A Robust Antenna Provides Tactile Feedback in a Multi-legged Robot](/20260306-20260404/2603.07795v1-a-robust-antenna-provides-tactile-feedback-in-a-multi-legged-robot)  
-   标签：评分：7.0/10、query:q2
-   evidence：多足机器人导航的触觉反馈
-7. [STRIDE: Structured Lagrangian and Stochastic Residual Dynamics via Flow Matching](/20260306-20260404/2603.08478v2-stride-structured-lagrangian-and-stochastic-residual-dynamics-via-flow-matching)  
+   evidence：高能效四足机器人运动
+5. [World Action Verifier: Self-Improving World Models via Forward-Inverse Asymmetry](/202604/04/2604.01985v1-world-action-verifier-self-improving-world-models-via-forward-inverse-asymmetry)  
+   标签：评分：8.0/10、query:q1
+   evidence：用于可扩展策略评估与规划的自改进世界模型
+6. [Policy-Guided World Model Planning for Language-Conditioned Visual Navigation](/202604/04/2603.25981v1-policy-guided-world-model-planning-for-language-conditioned-visual-navigation)  
    标签：评分：7.0/10、query:q1
-   evidence：用于规划和在线自适应的动力学学习框架
-8. [Energy Prediction on Sloping Ground for Quadruped Robots](/20260306-20260404/2603.11963v1-energy-prediction-on-sloping-ground-for-quadruped-robots)  
-   标签：评分：7.0/10、query:q2
-   evidence：基于机载传感器的四足机器人斜坡运动能量预测模型
-9. [Zero-Shot Generalization from Motion Demonstrations to New Tasks](/20260306-20260404/2603.15445v1-zero-shot-generalization-from-motion-demonstrations-to-new-tasks)  
+   evidence：用于视觉导航的潜世界模型规划
+7. [Where-to-Learn: Analytical Policy Gradient Directed Exploration for On-Policy Robotic Reinforcement Learning](/202604/04/2603.27317v1-where-to-learn-analytical-policy-gradient-directed-exploration-for-on-policy-robotic-reinforcement-learning)  
+   标签：评分：7.0/10、query:q1
+   evidence：用于机器人控制的可微动力学模型
+8. [Where-to-Learn: Analytical Policy Gradient Directed Exploration for On-Policy Robotic Reinforcement Learning](/202604/04/2603.27317v2-where-to-learn-analytical-policy-gradient-directed-exploration-for-on-policy-robotic-reinforcement-learning)  
+   标签：评分：7.0/10、query:q1
+   evidence：用于机器人控制的可微动力学模型
+9. [CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics](/202604/04/2603.29409v1-clad-planning-with-grounded-foresight-via-cross-modal-latent-dynamics)  
+   标签：评分：7.0/10、query:q1
+   evidence：用于带落地预见的规划的跨模态潜动力学
+10. [ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](/202604/04/2603.28545v1-maniparena-comprehensive-real-world-evaluation-of-reasoning-oriented-generalist-robot-manipulation)  
    标签：评分：6.0/10、query:q1
-   evidence：学习动力系统以实现反应式且稳定的机器人控制
-10. [Regularized Latent Dynamics Prediction is a Strong Baseline For Behavioral Foundation Models](/20260306-20260404/2603.15857v1-regularized-latent-dynamics-prediction-is-a-strong-baseline-for-behavioral-foundation-models)  
-   标签：评分：6.0/10、query:q3
-   evidence：行为基础模型的潜动力学预测
-11. [Accurate Open-Loop Control of a Soft Continuum Robot Through Visually Learned Latent Representations](/20260306-20260404/2603.19655v1-accurate-open-loop-control-of-a-soft-continuum-robot-through-visually-learned-latent-representations)  
+   evidence：通用机器人智能世界模型的评估
+11. [Sampling-based Task and Kinodynamic Motion Planning under Semantic Uncertainty](/202604/04/2604.00401v1-sampling-based-task-and-kinodynamic-motion-planning-under-semantic-uncertainty)  
    标签：评分：6.0/10、query:q1
-   evidence：通过视觉学习的潜空间动力学控制软体机器人
+   evidence：语义不确定性下的动力学运动规划
 
 
 <div class="dpr-home-promo-card">
