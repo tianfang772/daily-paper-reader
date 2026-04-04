@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.29452v2/fig-001.webp",
+      "caption": "Fig. 1. Our CReF framework enables robust real-world humanoid locomotion, including more than 20 consecutive stair traversals, a 40 cm high platform, an 80 cm gap, and real-world stairs with a 20 cm rise and 26 cm tread, while generalizing robustly beyond the training terrains.",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 545
+    },
+    {
+      "url": "assets/figures/arxiv/2603.29452v2/fig-002.webp",
+      "caption": "Fig. 4. Stair foothold distribution comparison between the proposed foothold placement reward and the FCQR baseline. The proposed reward produces more concentrated and repeatable touchdown distributions in both ascent and descent, reduces touchdown deviation within the stair tread, and eliminates the logged ankle-riser collisions in ascending rollouts.",
+      "page": 6,
+      "index": 2,
+      "width": 503,
+      "height": 555
+    },
+    {
+      "url": "assets/figures/arxiv/2603.29452v2/fig-003.webp",
+      "caption": "Fig. 5. Representative real-world rollouts of CReF across multiple terrains and deployment scenes. The figure includes stair traversal with side railings, entrance-step and platform-like transitions, outdoor pathways, and other real-world terrain configurations. Red boxes highlight examples where environmental factors introduce out-of-distribution depth observations, such as large invalid regions in the sensed depth image.",
+      "page": 7,
+      "index": 3,
+      "width": 1052,
+      "height": 404
+    },
+    {
+      "url": "assets/figures/arxiv/2603.29452v2/fig-004.webp",
+      "caption": "Fig. 6. Highway gate behavior under different traversal conditions. Higher gate values indicate stronger reliance on recurrent features.",
+      "page": 7,
+      "index": 4,
+      "width": 504,
+      "height": 479
+    },
+    {
+      "url": "assets/figures/arxiv/2603.29452v2/fig-005.webp",
+      "caption": "TABLE I REWARD TERMS USED IN TRAINING.",
+      "page": 3,
+      "index": 5,
+      "width": 466,
+      "height": 538
+    },
+    {
+      "url": "assets/figures/arxiv/2603.29452v2/fig-006.webp",
+      "caption": "Fig. 2. Overview of CReF. The proposed single-stage depth-conditioned policy combines cross-modal attention, gated residual fusion, recurrent fusion, and a terrain-aware foothold placement reward for robust terrain locomotion.",
+      "page": 3,
+      "index": 6,
+      "width": 1054,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2603.29452v2/fig-007.webp",
+      "caption": "Fig. 3. Simulation terrains used in the experiments. The upper panel shows representative terrains used during training. The lower panel shows additional MuJoCo out-of-distribution terrains used for cross-simulator evaluation.",
+      "page": 5,
+      "index": 7,
+      "width": 412,
+      "height": 293
+    }
+  ]
+}

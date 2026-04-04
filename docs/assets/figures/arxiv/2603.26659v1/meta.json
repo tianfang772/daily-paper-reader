@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.26659v1/fig-001.webp",
+      "caption": "Fig. 1: Cart loco-manipulation along a predefined path (green dotted curve). The robot initiates contact at (1), performs straight pushing and coordinated turning maneuvers (2–4), continuously adjusting whole-body coordination to maintain stable contact and balance while tracking the target trajectory.",
+      "page": 1,
+      "index": 1,
+      "width": 458,
+      "height": 364
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26659v1/fig-002.webp",
+      "caption": "TABLE V: Baseline Comparisons with 95% Confidence Interval.",
+      "page": 6,
+      "index": 2,
+      "width": 1054,
+      "height": 221
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26659v1/fig-003.webp",
+      "caption": "Fig. 3: Sim-to-Sim Qualitative Comparison. Depicted on the left is the policy deployed in the source simulator, IsaacSim, and on the right is the target simulator, MuJoCo. Our policy, partial AMP, demonstrates robustness when transferred, showcasing steady locomotion and end effector stability. On the other hand, the baselines are shown with their most common failure points. The No AMP baseline demonstrates feet slip, causing the head to collide with the ground. The Full AMP baseline demonstrates overfitting to the reference manipulator position instead of focusing on end effector tracking, which causes the end effector to slip off the handle. In hierarchical AMP, the robot adopts a conservative stance to prevent falling, resulting in high velocity tracking errors due to the lack of cart pushing.",
+      "page": 6,
+      "index": 3,
+      "width": 888,
+      "height": 443
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26659v1/fig-004.webp",
+      "caption": "Fig. 4: Robustness evaluation across environmental variations. The shaded regions represent the parameter space where each policy satisfies the success criteria (survival rate ≥ 30% and linear velocity error ≤ 0.5).",
+      "page": 7,
+      "index": 4,
+      "width": 508,
+      "height": 435
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26659v1/fig-005.webp",
+      "caption": "Fig. 5: Individual runs of path-following performance on three representative trajectories. The mean cross-track error (averaged over five runs) is 0.1238 m for BeatPath, 0.0112 m for RiverPath, and 0.0885 m for SincPath, demonstrating accurate path tracking across different trajectory shapes. Blue arrows indicate the instantaneous velocity direction along the motion.",
+      "page": 7,
+      "index": 5,
+      "width": 358,
+      "height": 600
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26659v1/fig-006.webp",
+      "caption": "Fig. 2: Architecture of the proposed framework. Training is performed in two stages. In stage 1, a robust locomotion reference policy πref is trained on rough terrain. The resulting policy generates projected state transitions Dref = {st, st+1} that encode stable locomotion behaviors. In stage 2, we train the loco-manipulation policy using partial adversarial motion priors, where Dref is used as the reference data for the discriminator to provide a style reward. By imitating only the lower-body motions, the policy maintains stable locomotion while allowing flexible manipulation for cart pushing.",
+      "page": 3,
+      "index": 6,
+      "width": 1053,
+      "height": 310
+    }
+  ]
+}

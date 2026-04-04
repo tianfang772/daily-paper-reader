@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.25902v1/fig-001.webp",
+      "caption": "Fig. 1: Demonstration of the running controller working inside on a constrained treadmill and in outdoor real world environments. The running appears human-like while still achieving the commanded speed through a combination of optimized retargeted human data and control guided reward shaping.",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 504
+    },
+    {
+      "url": "assets/figures/arxiv/2603.25902v1/fig-002.webp",
+      "caption": "Fig. 4: Reference tracking comparison between reference and rewards types. Error bars show one std. dev. The dynamically optimized human data performs the best, and the CLF rewards outperform the Mimic rewards. Optimized retargeted references outperform kinematic human data retargeting.",
+      "page": 6,
+      "index": 2,
+      "width": 504,
+      "height": 240
+    },
+    {
+      "url": "assets/figures/arxiv/2603.25902v1/fig-003.webp",
+      "caption": "Fig. 5: Outdoor long range experiments. The robot runs outdoors over distances of more than 150 m. The robot was given yaw targets in the global frame, a target position to track with body lateral motion and a feedforward velocity in the body forward direction. Lidar odometry and a P controller were used for global pose tracking.",
+      "page": 7,
+      "index": 3,
+      "width": 1052,
+      "height": 631
+    },
+    {
+      "url": "assets/figures/arxiv/2603.25902v1/fig-004.webp",
+      "caption": "Fig. 2: Architecture of the proposed pipeline. Human data is retargeted using state constrained dynamic optimization with a hybrid system model. This allows us to build a library of references from a single human reference and then track this in the RL controller. The RL controller uses a control-guided cost function. Then the policy is transferred zero-shot to hardware and can be used in an autonomy stack.",
+      "page": 3,
+      "index": 4,
+      "width": 1052,
+      "height": 323
+    },
+    {
+      "url": "assets/figures/arxiv/2603.25902v1/fig-005.webp",
+      "caption": "Fig. 6: Autonomous collision avoidance while running with CBFconstrained MPC. The robot perceives it environment with a lidar, continuously re-computes a plan to avoid collisions, and passes the corresponding velocity commands to the running controller. With this architecture, the robot can avoid real-world obstacles while running.",
+      "page": 8,
+      "index": 5,
+      "width": 512,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2603.25902v1/fig-006.webp",
+      "caption": "Fig. 3: Visual depiction of the multiple shooting trajectory optimization problem. Two hybrid domains are shown and the node where they meet utilizes the associated reset map. Within each domain, a number of optimization nodes are used. The cost is tracking the human reference motion.",
+      "page": 4,
+      "index": 6,
+      "width": 512,
+      "height": 315
+    },
+    {
+      "url": "assets/figures/arxiv/2603.25902v1/fig-007.webp",
+      "caption": "TABLE I: Reward terms used for each of the different training types.",
+      "page": 5,
+      "index": 7,
+      "width": 512,
+      "height": 417
+    }
+  ]
+}

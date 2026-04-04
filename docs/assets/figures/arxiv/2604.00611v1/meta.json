@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.00611v1/fig-001.webp",
+      "caption": "Figure 6: Cross-terrain power offload ratio. Each curve represents a co-design policy trained on a specific terrain level and evaluated across all terrain levels. Policies trained on easier terrain achieve higher offload ratios but generalise to fewer levels.",
+      "page": 11,
+      "index": 1,
+      "width": 708,
+      "height": 579
+    },
+    {
+      "url": "assets/figures/arxiv/2604.00611v1/fig-002.webp",
+      "caption": "Table 1: Key reward weights for the three training configurations. Level-specific CoT weights are listed separately in Table 2.",
+      "page": 11,
+      "index": 2,
+      "width": 667,
+      "height": 201
+    },
+    {
+      "url": "assets/figures/arxiv/2604.00611v1/fig-003.webp",
+      "caption": "Figure 2: Power decomposition of the co-design policy across terrain levels. The solid line shows total power consumption of the co-design policy. The blue and red shaded areas decompose this into the PEJ contribution and the active motor power, respectively. The dashed line shows the baseline policy’s power consumption for comparison.",
+      "page": 7,
+      "index": 3,
+      "width": 708,
+      "height": 529
+    },
+    {
+      "url": "assets/figures/arxiv/2604.00611v1/fig-004.webp",
+      "caption": "Figure 5: Distilled PEJ curves (dashed lines) for the four symmetric joint groups (columns), overlaid on motor torque–angle samples (dots) recorded from the parent policy during locomotion. (a)(b): co-design and baseline policies on Level 0 with 50,000 samples each. (c)(d): same comparison on Level 6. Tighter sample clustering around the curve indicates a more periodic gait and greater passive offloading. (e): co-design PEJ curves overlaid for Levels 0, 2, 3, 4, and 6 (darker shading indicates higher difficulty).",
+      "page": 10,
+      "index": 4,
+      "width": 943,
+      "height": 744
+    },
+    {
+      "url": "assets/figures/arxiv/2604.00611v1/fig-005.webp",
+      "caption": "Figure 1: The Physical Imitation Learning pipeline. Left: the parent control policy is trained via RL with a Cost-of-Transport-augmented reward. Right: actuator torque-angle trajectories recorded from each joint are distilled into nonlinear Parallel Elastic Joint (PEJ) characteristic curves. The residual torque after PEJ subtraction defines the active policy for motor commands. The PEJs can be physically realised using the Elastic Rolling Cam principle, and are implemented similar to passive exoskeleton.",
+      "page": 3,
+      "index": 5,
+      "width": 943,
+      "height": 573
+    },
+    {
+      "url": "assets/figures/arxiv/2604.00611v1/fig-006.webp",
+      "caption": "Figure 3: Power offload ratio and power saving versus terrain level. The offload ratio compares the co-design policy with and without PEJ; the power saving compares the co-design policy (with PEJ) against the baseline (CoT only, no PEJ).",
+      "page": 8,
+      "index": 6,
+      "width": 708,
+      "height": 531
+    },
+    {
+      "url": "assets/figures/arxiv/2604.00611v1/fig-007.webp",
+      "caption": "Figure 4: RMS velocity tracking error heatmap. Each cell shows the tracking error when deploying a given policy (row) on a given terrain level (column). Baseline denotes the baseline branch (CoT only, no PEJ); Policy Lx denotes the co-design policy trained at Level x. N/A indicates the policy cannot sustain locomotion on that terrain.",
+      "page": 9,
+      "index": 7,
+      "width": 708,
+      "height": 506
+    }
+  ]
+}
