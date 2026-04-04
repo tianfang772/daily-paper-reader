@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.07795v1/fig-001.webp",
+      "caption": "Fig. 1. Robophysical antenna model integrated on a multi-legged robot (top-down view). (A) Antenna design; The antenna enables compliant contact sensing through measured bending. (B) Top-down view of the centipede S. subspinipes showing wall-sensing of antenna. (C) Top-down view of the multi-legged robot SCUTTLE (Ground Control Robotics, Inc.). The dashed box highlights the modular antenna mounted on the anterior segment.",
+      "page": 1,
+      "index": 1,
+      "width": 504,
+      "height": 810
+    },
+    {
+      "url": "assets/figures/arxiv/2603.07795v1/fig-002.webp",
+      "caption": "Fig. 8. Experiment on robotic platform SCUTTLE. (A) Modular multilegged robot with enclosed cabin, eccentric O-legs, body joint servos, and a bilateral antenna module (top-down view inset showing traveling-wave gait). (B) Overhead view of cluttered traversal showing representative trajectory with close-loop control.",
+      "page": 6,
+      "index": 2,
+      "width": 512,
+      "height": 377
+    },
+    {
+      "url": "assets/figures/arxiv/2603.07795v1/fig-003.webp",
+      "caption": "Fig. 7. Flowchart of the discrete antenna-based controller for confined traversal. Bilateral antenna signals are mapped through a sigmoid to contact variables, which drive the decision process with a time window holding. The controller selects among forward, turn, and reverse maneuvers based on contact presence, symmetry, and dominance to provide close-loop navigation in confined space.",
+      "page": 6,
+      "index": 3,
+      "width": 442,
+      "height": 875
+    },
+    {
+      "url": "assets/figures/arxiv/2603.07795v1/fig-004.webp",
+      "caption": "Fig. 2. Antenna morphology of a centipede. (A) Lateral view showing the cephalic plate, antennae, ocelli, and forcipules, with anterior direction and sagittal plane indicated (scale bar: 1 cm). (B) Anterior view highlighting the bilaterally extended antennae and their descending segment diameter from base to tip (proximal diameter 0.15 cm; distal diameter 0.02 cm). (C) Diameter based stiffness proxy along the antenna, computed from the proximal to distal diameter profile using a fourth power scaling (K̂i ∝ d4), showing a descending stiffness distribution from base to tip.",
+      "page": 2,
+      "index": 4,
+      "width": 488,
+      "height": 681
+    },
+    {
+      "url": "assets/figures/arxiv/2603.07795v1/fig-005.webp",
+      "caption": "Fig. 3. Antenna contact and in-contact antenna morphologies during wall-following in S. subspinipes (top-down view). (A) Representative time sequence showing sustained antenna contact with a wall during forward travel (scale bar: 2 cm). (B) Three stereotyped in-contact antenna morphologies, defined by the direction the antenna points relative to the body: forward pointing, backward pointing, and straight. (C) Distribution of in-contact antenna morphologies across trials (n = 4), including a transition category for brief switching between morphologies during continuous contact.",
+      "page": 3,
+      "index": 5,
+      "width": 488,
+      "height": 804
+    },
+    {
+      "url": "assets/figures/arxiv/2603.07795v1/fig-006.webp",
+      "caption": "Fig. 5. Antenna calibration and mapping from ADC to normalized bending level. Raw 12-bit ADC readings are recorded while the antenna is swept through controlled deflections at three traverse speeds (v = 5, 10, 15 cm/s). Markers show the mean and error bars indicate variability across trials. A global decreasing sigmoid fit (inset) defines the mapping from averaged ADC to a normalized bending level b ∈ [0, 1] used by the controller. Fit parameters for this dataset: ks = 18.3, x0 = 0.305.",
+      "page": 4,
+      "index": 6,
+      "width": 475,
+      "height": 449
+    },
+    {
+      "url": "assets/figures/arxiv/2603.07795v1/fig-007.webp",
+      "caption": "Fig. 6. Effect of antenna compliance on contact interaction. (A) Interchangeable torsion springs set three stiffness conditions (stiff: Nc=3, ktorsion=0.274 N·mm/deg; medium: Nc=6, ktorsion=0.137 N·mm/deg; compliant: Nc=9, ktorsion=0.091 N·mm/deg). Too rigid (B) increases contact forces and causes jamming and too compliant (D) leads to collapse and missed contact; the smooth descending stiffness profile (C) is optimal with high temporal resolution reading without getting stuck. (E) Bar chart summarizes traversal success rate for the three stiffness profile.",
+      "page": 5,
+      "index": 7,
+      "width": 1052,
+      "height": 362
+    }
+  ]
+}

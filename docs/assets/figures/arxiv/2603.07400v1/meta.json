@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.07400v1/fig-001.webp",
+      "caption": "Fig. 1. (Left) Snapshots of the simulation terrain for all ablation tests. The blue rectangles show the planned step position for the previewed steps, and the red bar shows the goal position in the sagittal direction. (Top Right) 2.5D local heightmap colored by heights; (Bottom Right) Local heightmap mask with gray masks showing all the steppable regions and green polygons marking the selected regions.",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2603.07400v1/fig-002.webp",
+      "caption": "Fig. 2. Overall control architecture for locomotion on restricted footholds. The perception module processes raw depth images into linear region constraints representing feasible stepping areas. These constraints, together with a goal position, are passed to the MIQP planner that optimizes step position and duration using step-to-step DCM dynamics. The task-space controller tracks the planned step parameters and generates joint torques, which are executed on the Digit robot.",
+      "page": 2,
+      "index": 2,
+      "width": 1052,
+      "height": 485
+    },
+    {
+      "url": "assets/figures/arxiv/2603.07400v1/fig-003.webp",
+      "caption": "Fig. 4. Initial DCM comparison of: (A) The proposed framework; (B) Planning with fixed step duration; (C) Planning with reduced number of previewed steps as N = 2; (D) Planning without viability constraints on DCM evolution. (V) CoM velocity of the proposed framework. The x-velocity was roughly maintained around 1.0m/s primarily due to the goal position tracking under the nominal stride length and step duration. The y-velocity was also roughly regulated to periodic oscillations. (T) Step duration of the proposed framework. It was being actively adjusted to produce viable DCM evolution through random footholds.",
+      "page": 7,
+      "index": 3,
+      "width": 1052,
+      "height": 415
+    },
+    {
+      "url": "assets/figures/arxiv/2603.07400v1/fig-004.webp",
+      "caption": "Fig. 5. Top-down view of stance footprints and CoM and DCM trajectories of the proposed framework. With the goal position in the forward direction, the robot was able to find a viable path through all random footholds.",
+      "page": 7,
+      "index": 4,
+      "width": 512,
+      "height": 262
+    },
+    {
+      "url": "assets/figures/arxiv/2603.07400v1/fig-005.webp",
+      "caption": "Fig. 3. Convex regions extraction from the local heightmap as in Alg. 3.",
+      "page": 4,
+      "index": 5,
+      "width": 512,
+      "height": 467
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.08905v1/fig-001.webp",
+      "caption": "Fig. 1: Overview of safe reactive navigation. (Red) Unsafe zones for the robot to avoid. (Brown) Measured terrain penetration resistance. (Blue Solid) Executed and planned paths. (Blue Dotted) Naive path to goal. (Yellow) Navigation Goal.",
+      "page": 1,
+      "index": 1,
+      "width": 450,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2603.08905v1/fig-002.webp",
+      "caption": "Fig. 6: Comparison of navigation-to-goal behavior and performance across different algorithms. (A) and (B) show representative path visualizations in Environments 1 and 2, respectively. The green dot indicates the robot’s starting position, the red dot its final position, and the yellow star the navigation goal. A blue (low)–yellow–red (high) colormap represents the ground-truth slip-ratio distribution across the terrain. (C), (D), and (E) report the success rate (goal reached), completion time, and path length, respectively, averaged over three trials in each environment.",
+      "page": 7,
+      "index": 2,
+      "width": 521,
+      "height": 436
+    },
+    {
+      "url": "assets/figures/arxiv/2603.08905v1/fig-003.webp",
+      "caption": "Fig. 2: Overview of the proposed PSANE navigation framework.",
+      "page": 3,
+      "index": 3,
+      "width": 1047,
+      "height": 445
+    },
+    {
+      "url": "assets/figures/arxiv/2603.08905v1/fig-004.webp",
+      "caption": "Fig. 3: Overview of terrain-aware traversal risk estimation and safety-aware planning. (A) The slip-ratio field and (B) its predictive uncertainty are inferred using a Gaussian Process. (C) The resulting confidence bounds are used to construct a conservative safety map, from which frontier boundaries are extracted via a border-following algorithm and filtered to obtain the Pareto-optimal frontier set. (D–F) For each Pareto frontier candidate, the expansion probability (D) and goal-directed heuristic (E) are evaluated and combined to produce an overall score (F) that balances safe-region expansion and goal progress.",
+      "page": 4,
+      "index": 4,
+      "width": 940,
+      "height": 563
+    },
+    {
+      "url": "assets/figures/arxiv/2603.08905v1/fig-005.webp",
+      "caption": "Fig. 4: Integration with the reactive controller. The certified safe region (green) is converted into obstacle polygons by subtracting it from the local workspace. The resulting boundaries are conservatively buffered by a safety margin (red) and geometrically simplified to obtain the final obstacle set (purple). The reactive controller then generates a velocity command consisting of forward speed and angular velocity.",
+      "page": 5,
+      "index": 5,
+      "width": 517,
+      "height": 254
+    }
+  ]
+}

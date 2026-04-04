@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.19632v1/fig-001.webp",
+      "caption": "Fig. 1: Comparison of trajectories for quadruped handstand using ContractionPPO (ours), TumblerNet [10], RMA [5] and PPO [1] where robots (for all baseline algorithms) were trained with identical reward functions that encourage remaining close to their initial position. While PPO, TumblerNet and RMA leaves the region and ultimately fails to remain on platform, ContractionPPO guarantees that the robot lie inside the circle (black).",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19632v1/fig-002.webp",
+      "caption": "Fig. 5: Comparison of handstand control using RMA [5] (top) and PPO [1] (bottom). The robot using PPO and RMA struggles to maintain balance and falls off the platform.",
+      "page": 6,
+      "index": 2,
+      "width": 1054,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19632v1/fig-003.webp",
+      "caption": "Fig. 8: Quadruped trajectories during handstand under wind disturbances of varying magnitudes. As the disturbance intensity increases, transient deviations from the initial position become more evident. Note that ContractionPPO was never trained on external disturbances. Despite this, ContractionPPO policy ensures bounded trajectories and lies inside the circle marked by the black curve.",
+      "page": 7,
+      "index": 3,
+      "width": 475,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19632v1/fig-004.webp",
+      "caption": "Fig. 6: Trajectories of the quadruped performing a handstand under wind disturbances of increasing magnitude. Even though ContractionPPO was never trained on these severe wind disturbances, it preserves boundedness and maintains steady posture after each perturbation (wind speeds).",
+      "page": 7,
+      "index": 4,
+      "width": 1025,
+      "height": 205
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19632v1/fig-005.webp",
+      "caption": "Fig. 9: Stabilization of Booster T1 on moving platform using ContractionPPO .",
+      "page": 7,
+      "index": 5,
+      "width": 462,
+      "height": 262
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19632v1/fig-006.webp",
+      "caption": "Fig. 2: Architecture of ContractionPPO (left) and its pseudocode (right). The PPO policy ΠPPO θ processes raw observations y and outputs desired joint poses qppo",
+      "page": 3,
+      "index": 6,
+      "width": 1002,
+      "height": 335
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19632v1/fig-007.webp",
+      "caption": "Fig. 4: Comparison of handstand using ours ContractionPPO (top) and TumblerNet [10] (bottom). TumblerNet struggles to maintain static balance, while ContractionPPO enforces contraction based stability, resulting in more consistent and robust gait control.",
+      "page": 5,
+      "index": 7,
+      "width": 1054,
+      "height": 266
+    }
+  ]
+}

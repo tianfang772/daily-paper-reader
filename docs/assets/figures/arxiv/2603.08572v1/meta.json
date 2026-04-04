@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.08572v1/fig-001.webp",
+      "caption": "Fig. 9: This figure illustrates a performance comparison between Ours and several baselines across various manipulation tasks. The plot includes a ”Reward Switcher” curve, which indicates the specific reference expert policy being utilized for reinforcement learning at each stage of the training process.",
+      "page": 7,
+      "index": 1,
+      "width": 962,
+      "height": 323
+    },
+    {
+      "url": "assets/figures/arxiv/2603.08572v1/fig-002.webp",
+      "caption": "Fig. 2: MetaWorld-X achieves natural humanoid control through the dynamic orchestration of expert policies guided by a Vision-Language Model (VLM). The framework consists of two core modules: the Skill Expert Pool (SEP) trains specialized policy networks for fundamental motor skills using human motion data, while the Intelligent Router Module (IRM) employs a VLM as a supervisory teacher. The VLM guides the router’s training via few-shot inference, enabling a seamless transition from supervised learning to autonomous operation.",
+      "page": 3,
+      "index": 2,
+      "width": 1020,
+      "height": 368
+    },
+    {
+      "url": "assets/figures/arxiv/2603.08572v1/fig-003.webp",
+      "caption": "Fig. 4: Example of VLM prompt for Semantic Router.",
+      "page": 4,
+      "index": 3,
+      "width": 488,
+      "height": 293
+    },
+    {
+      "url": "assets/figures/arxiv/2603.08572v1/fig-004.webp",
+      "caption": "Fig. 3: Architecture of the SEP module. We project human motion priors to the robot’s configuration space via operator M, then utilize alignment operator A to compute tracking signals for expert policies πθi . By optimizing JSEP with a dynamic weighting mechanism that prioritizes poorly-tracked joints, the module yields the converged expert policies.",
+      "page": 4,
+      "index": 4,
+      "width": 968,
+      "height": 189
+    }
+  ]
+}

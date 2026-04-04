@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.10878v1/fig-001.webp",
+      "caption": "Fig. 1. Our hierarchical RL-MPC architecture has been trained and evaluated on several robotic platforms with different morphologies and weight distributions (50 kg to 120 kg), successfully transferred zero-shot across different domains without any domain randomization, and applied to both hybrid and standard locomotion tasks. Supplementary videos are available at https://youtu.be/I08UywVVhN4.",
+      "page": 1,
+      "index": 1,
+      "width": 529,
+      "height": 247
+    },
+    {
+      "url": "assets/figures/arxiv/2603.10878v1/fig-002.webp",
+      "caption": "Fig. 6. Influence of the action repeat parameter nrep (see Sec. V-B) on the episode total reward (averaged across 800 environments) during training, shown across both legged and hybrid locomotion tasks. Shaded areas indicate the first and third quartiles of the distribution across environments.",
+      "page": 7,
+      "index": 2,
+      "width": 516,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2603.10878v1/fig-003.webp",
+      "caption": "TABLE I PROBLEM COSTS/CONSTRAINTS FORMULATION: Grey-shaded costs are specific to the Centauro platform, whereas red and blue-shaded terms are used to define contact and flight phases, respectively.",
+      "page": 3,
+      "index": 3,
+      "width": 518,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2603.10878v1/fig-004.webp",
+      "caption": "Fig. 2. The proposed hierarchical architecture uses an RL policy to generate both contact schedules and navigation commands for the underlying MPC.",
+      "page": 3,
+      "index": 4,
+      "width": 1020,
+      "height": 336
+    }
+  ]
+}

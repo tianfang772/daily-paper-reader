@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.06928v1/fig-001.webp",
+      "caption": "Fig. 1. Importance and challenges of legged locomotion on sand slopes. (a) Sand slopes widely present in natural environments (White Sands National Park, NM). (b) Hexapedal robot ascending a dune slope. (c) Quadruped robot traversing a relatively mild sand slope at White Sands. (d) Example ascent paths on a sand slope, illustrating the tradeoff between shorter routes (yellow) and longer but potentially less risky path (red, cyan).",
+      "page": 1,
+      "index": 1,
+      "width": 518,
+      "height": 481
+    },
+    {
+      "url": "assets/figures/arxiv/2603.06928v1/fig-002.webp",
+      "caption": "Fig. 5. Predictive model to link anchoring timing to robot step length. (a) Comparison of robot speed vs. time on 0◦ and 24◦ sand slope in one representative step. Red and blue vertical dashed lines denote the anchoring timing t1 for 0◦ and 24◦, respectively. The yellow shaded region indicates the backward slippage s1 on the 24◦ slope. The purple and blue shaded regions (net positive area under the velocity curve) denote the propulsion displacement s2 for 0◦ and 24◦, respectively. (b) Experimentally-measured (black asterisks) and model-predicted (red dashed line) t1 as a function of slope angle. (c) Experimentally-measured (black asterisks) and model-predicted (red dashed line) robot net step length s as a function of sand slope angle.",
+      "page": 6,
+      "index": 2,
+      "width": 365,
+      "height": 823
+    },
+    {
+      "url": "assets/figures/arxiv/2603.06928v1/fig-003.webp",
+      "caption": "Fig. 2. Robot and experimental setup for studying locomotion on granular slopes. (a) Hexapedal robot used in this study. (b) Diagram illustrating the key parameters of robot leg. Here R denotes robot leg radius, d denotes the leg penetration depth, ω denotes the leg angular velocity, and h denotes the hip height, measured as the distance from the leg axle to the bottom of the robot body. (c)Schematic of the tiltable granular trackway for testing robot locomotion on sand. In b and c, θ denotes the slope angle of the granular incline.",
+      "page": 2,
+      "index": 3,
+      "width": 492,
+      "height": 425
+    },
+    {
+      "url": "assets/figures/arxiv/2603.06928v1/fig-004.webp",
+      "caption": "Fig. 6. Model-predicted robot performance on (a) level sand when the total mass m = 0.35kg, (b) a 24◦ sand slope when m = 0.35kg, (c) level sand when equipped with a heavier load that m = 1kg, and (d) a 24◦ sand slope when m = 1kg. Blue regions denote sinkage-induced failure, red regions indicate total slippage failure, and yellow regions represent the metastable cases that experience potential locomotion risks. The light green regions correspond to successful locomotion. The black lines are the step length contours where s = R which show the boundary of the success region. The dark green stars mark the experimentally measured sand resistances reported in Fig. 4.",
+      "page": 7,
+      "index": 4,
+      "width": 505,
+      "height": 407
+    },
+    {
+      "url": "assets/figures/arxiv/2603.06928v1/fig-005.webp",
+      "caption": "Fig. 3. Robot locomotion on sand slopes of varying inclinations. (a) Average robot up-slope speed as a function of slope angle. (b) Experimentally-measured robot speed vs. time over one stride period T . Purple, red, orange, green, and blue curves represent 0, 10, 15, 20, 24 degree inclinations, respectively. (c) Experimental image sequences showing the side view of the robot traveling on a 15-degree slope. Corresponding critical moments, t0,t1, t2, t3 are also labeled on the orange (15-deg) curve in (b). (d) Schematic of the leg-ground interaction during each phases. In c and d, images from up to bottom correspond to the critical timings, t0, t1, t2, and t3, labeled in b.",
+      "page": 4,
+      "index": 5,
+      "width": 1026,
+      "height": 586
+    },
+    {
+      "url": "assets/figures/arxiv/2603.06928v1/fig-006.webp",
+      "caption": "Fig. 4. Sand resistive force measurements on inclined granular surfaces. (a, e) Experimental setups for penetration and shear force measurements. (b, f) Schematics illustrating the penetration and shear plate motion. (c, g) Measured penetration and shear resistive forces, as functions of penetration and shear displacements. Red to blue colors represent inclination angle from 0◦ to 24◦. (d, h) Measured sand penetration and shear resistance per unit area as functions of slope angles.",
+      "page": 5,
+      "index": 6,
+      "width": 1060,
+      "height": 436
+    }
+  ]
+}

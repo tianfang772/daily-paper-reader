@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.09574v1/fig-001.webp",
+      "caption": "TABLE V: Ablation study on key design components for diffusion policies without velocity feedback.",
+      "page": 6,
+      "index": 1,
+      "width": 508,
+      "height": 293
+    },
+    {
+      "url": "assets/figures/arxiv/2603.09574v1/fig-002.webp",
+      "caption": "Fig. 2: Sensor-Conditioned Diffusion Policies (SCDP) architecture and training framework. The state-action diffusion policy conditions on sensor observation history {ot}, past actions {at}, and commands ct, while predicting future trajectories containing privileged states {st} and actions. This mixed-observation formulation enables learning global dynamics from partial sensing.",
+      "page": 3,
+      "index": 2,
+      "width": 1052,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2603.09574v1/fig-003.webp",
+      "caption": "TABLE I: Success/completion rates (%) across observation modes. Subscript – priv: privileged states; co: context observations only; mo: mixed observations. Bold: best per task.",
+      "page": 4,
+      "index": 3,
+      "width": 508,
+      "height": 267
+    },
+    {
+      "url": "assets/figures/arxiv/2603.09574v1/fig-004.webp",
+      "caption": "Fig. 5: Comparison of walking right and walking left sequences.",
+      "page": 5,
+      "index": 4,
+      "width": 1036,
+      "height": 225
+    },
+    {
+      "url": "assets/figures/arxiv/2603.09574v1/fig-005.webp",
+      "caption": "Fig. 6: Velocity tracking performance. Comparison of realized velocities against commanded targets (black) for (a) linear velocity vx and (b) yaw rate ψ̇. SCDP (orange) exhibits smoother tracking with reduced oscillations compared to the BeyondMimic baseline (teal), with slight lag during direction changes.",
+      "page": 5,
+      "index": 5,
+      "width": 1046,
+      "height": 180
+    },
+    {
+      "url": "assets/figures/arxiv/2603.09574v1/fig-006.webp",
+      "caption": "Fig. 3: Waypoint navigation task. Sequential frames showing the SCDP controlling the robot to navigate succesfully to all five waypoints (green: current target, red: remaining targets).",
+      "page": 5,
+      "index": 6,
+      "width": 1044,
+      "height": 208
+    }
+  ]
+}

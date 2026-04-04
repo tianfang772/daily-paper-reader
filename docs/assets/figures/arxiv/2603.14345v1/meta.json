@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.14345v1/fig-001.webp",
+      "caption": "Fig. 4: Comparison of locomotion performance for Go1 (quadruped) across terrains of increasing difficulty and 5 seeds – The plots show the success rate (top row) and average return (bottom row) for five locomotion methods: HIM-Loco, PIP-Loco, WMP, VIP-Loco (with Consistency Loss), and VIP-Loco (with Variational Loss). Each column corresponds to a different terrain type and the x-axis indicates terrain difficulty level (0 = easiest, 8 = hardest).",
+      "page": 6,
+      "index": 1,
+      "width": 740,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2603.14345v1/fig-002.webp",
+      "caption": "Fig. 2: Overview of VIP-Loco Framework – The proposed framework consists of two major components: (1) Learning Stage (left) – The internal model includes a GRU cell gφ (operating at 10 Hz, updating recurrent memory h at each step) coupled with a CNN-MLP encoder for depth processing, an encoder/dynamics pair for latent state estimation, and reward/value heads. The Expert Actor (50 Hz) receives the imagined rollout X and hidden state h via stop-gradient. (2) Deployment Stage (right) – a data-driven MPC that uses the learned internal model to iteratively sample and refine trajectories, leveraging vision-based scene understanding to select actions that maximize long-term reward while satisfying kinodynamic constraints.",
+      "page": 2,
+      "index": 2,
+      "width": 844,
+      "height": 377
+    },
+    {
+      "url": "assets/figures/arxiv/2603.14345v1/fig-003.webp",
+      "caption": "Fig. 5: Qualitative evaluation for VIP-Loco with planning across three robot morphologies: (a) Go1 (quadruped), (b) Cassie (biped), and (c) TronA1W (wheeled biped). Each subfigure includes (left) predicted vs. actual CoM height trajectories for Climb and Crawl tasks, and (right) corresponding execution frames. The MPC predictions and actual measurements demonstrate interpretable dynamics modeling, while the snapshots show task-specific stable behaviors across diverse morphologies.",
+      "page": 7,
+      "index": 3,
+      "width": 946,
+      "height": 816
+    },
+    {
+      "url": "assets/figures/arxiv/2603.14345v1/fig-004.webp",
+      "caption": "TABLE I: Reward scales used for training, grouped into core locomotion and environment-constraint rewards.",
+      "page": 3,
+      "index": 4,
+      "width": 479,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2603.14345v1/fig-005.webp",
+      "caption": "Fig. 3: Training comparison for Go1 (quadruped) over 5 seeds – Top: episodic return progression over training iterations. Bottom: average terrain level successfully mastered. VIP-Loco (Variational) achieves the highest and most stable returns, steadily mastering harder terrains (levels ≥ 6). WMP performs competitively but asymptotically regresses to easier terrains. VIPLoco (Consistency) converges earlier and stagnates at lower levels.",
+      "page": 5,
+      "index": 5,
+      "width": 387,
+      "height": 329
+    }
+  ]
+}

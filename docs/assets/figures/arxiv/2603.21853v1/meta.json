@@ -1,0 +1,150 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-001.webp",
+      "caption": "TABLE I: Domain randomization parameters across training methods. Bullets indicate which method uses each parameter. Subscripts: def=default, arm=armature, damp=damping, mot=motor, Prop.=Proposed Method.",
+      "page": 6,
+      "index": 1,
+      "width": 520,
+      "height": 236
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-002.webp",
+      "caption": "Fig. 3: Command tracking performance in nominal MuJoCo environment at maximum training velocities (forward: 0.8m/s, backward: −0.5m/s, lateral: 0.4m/s, yaw: 0.5 rad/s).",
+      "page": 6,
+      "index": 2,
+      "width": 524,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-003.webp",
+      "caption": "Fig. 15: Modality Robustness. Evaluation of position-based control policies under unseen dynamics.",
+      "page": 11,
+      "index": 3,
+      "width": 524,
+      "height": 292
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-004.webp",
+      "caption": "TABLE III: Reward Function Components for Robust Locomotion",
+      "page": 11,
+      "index": 4,
+      "width": 523,
+      "height": 814
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-005.webp",
+      "caption": "Fig. 16: Randomization Range Analysis. Comparison of tracking performance across Narrow, Wide, and Reference randomization ranges.",
+      "page": 11,
+      "index": 5,
+      "width": 524,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-006.webp",
+      "caption": "Fig. 1: Snapshots of training, sim-to-sim transfer, and sim-to-real transfer. This work proposes a novel sim-to-real method that injects state-dependent joint torque perturbations for enhanced robustness against complex reality gaps. Experimental results demonstrate that the proposed approach outperforms existing methods in both simulation and real-world environments.",
+      "page": 2,
+      "index": 6,
+      "width": 1074,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-007.webp",
+      "caption": "Fig. 4: Command tracking performance (0.8m/s forward) under nominal actuator, maximum DR, and unseen joint stiffness (250Nm/rad). Under stiffness, DR achieves 0.00m/s (catastrophic failure), ERFI 0.06m/s (91.9% error), and proposed method 0.36m/s (54.9% error), demonstrating superior robustness to unmodeled actuator dynamics.",
+      "page": 7,
+      "index": 7,
+      "width": 524,
+      "height": 352
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-008.webp",
+      "caption": "Fig. 5: Test environment modifications. (Top left) Joint stiffness 250Nm/rad for actuator dynamics test. (Top right) Soft ground via solref time constant 0.1. (Bottom left) Rough terrain from Gaussian-filtered noise. (Bottom right) Modified foot link geometry and mass. Contact dynamics tests combine top right, bottom left, and bottom right modifications.",
+      "page": 7,
+      "index": 8,
+      "width": 526,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-009.webp",
+      "caption": "Fig. 6: Command tracking performance (0.8m/s forward) under unseen contact dynamics (soft ground, rough terrain, foot link changes). DR collapses before 6s (−1.08m/s). ERFI: two seeds collapse at 12s and 52s (0.31m/s average). Proposed method: all seeds survive (0.47m/s, 40.9% error).",
+      "page": 7,
+      "index": 9,
+      "width": 524,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-010.webp",
+      "caption": "Fig. 14: Reference Trajectory Ablation. Comparison of command tracking performance between noREF (no reference), DWLREF, and Prop.REF.",
+      "page": 10,
+      "index": 10,
+      "width": 524,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-011.webp",
+      "caption": "Fig. 13: Swing foot trajectories under velocity commands. To ensure stable velocity tracking, the step period T decreases for high-speed commands that would exceed kinematic limits, but is bounded by a minimum threshold of Tmin = 0.4 s (e.g., T = 0.67 s at vx = 0.6m/s, T = 0.5 s at vx = 0.8m/s). This dual constraint maintains both kinematic feasibility and gait stability.",
+      "page": 10,
+      "index": 11,
+      "width": 524,
+      "height": 548
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-012.webp",
+      "caption": "Fig. 2: Overview of the training framework: The dynamics of the training environment is perturbed by the output of the randomly sampled state-dependent joint torque space perturbation function. The perturbation function is implemented as a neural network whose weights are randomly sampled at the beginning of each episode. Details on deployment, DWL, and Raibert-based reference trajectories are provided in the Appendix A.",
+      "page": 3,
+      "index": 12,
+      "width": 526,
+      "height": 335
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-013.webp",
+      "caption": "Fig. 8: Hardware modifications for OOD testing. (a) Modified feet with different contact dynamics (+3 kg per foot). (b) Additional batteries on base (+3 kg each). (c) Compliant gym mat terrain (150×200 cm, 6 cm thick).",
+      "page": 8,
+      "index": 13,
+      "width": 529,
+      "height": 235
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-014.webp",
+      "caption": "Fig. 9: OOD real-world results. (a) DR: all seeds fail on rough terrain. (b) ERFI: partial success with some seeds failing or exhibiting severe yaw drift. (c) Proposed method: all seeds succeed, maintaining balance and minimizing drift.",
+      "page": 8,
+      "index": 14,
+      "width": 527,
+      "height": 392
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-015.webp",
+      "caption": "TABLE IV: Domain Randomization Range Strategies and Testing Scenarios",
+      "page": 12,
+      "index": 15,
+      "width": 519,
+      "height": 367
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-016.webp",
+      "caption": "Fig. 17: Multi-Seed OOD Real-World Tracking. Forward velocity tracking on compliant terrain with added robot mass. Shaded regions represent min-max spread across 3 seeds; red lines indicate the mean.",
+      "page": 12,
+      "index": 16,
+      "width": 524,
+      "height": 363
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-017.webp",
+      "caption": "Fig. 11: Velocity tracking performance on the real robot: forward, lateral, and yaw components. Linear velocities of the real robot are estimated by combining force-torque sensor measurements with forward kinematics.",
+      "page": 9,
+      "index": 17,
+      "width": 524,
+      "height": 386
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21853v1/fig-018.webp",
+      "caption": "Fig. 10: Deployment Framework. The controller receives velocity commands (vx, vy , ωz) from either joystick input or preset values.",
+      "page": 9,
+      "index": 18,
+      "width": 529,
+      "height": 269
+    }
+  ]
+}

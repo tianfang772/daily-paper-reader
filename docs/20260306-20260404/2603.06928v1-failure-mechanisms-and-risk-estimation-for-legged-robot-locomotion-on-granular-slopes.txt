@@ -1,0 +1,263 @@
+Title: Failure Mechanisms and Risk Estimation for Legged Robot Locomotion on Granular Slopes
+
+URL Source: https://arxiv.org/pdf/2603.06928v1
+
+Published Time: Tue, 10 Mar 2026 00:18:44 GMT
+
+Number of Pages: 9
+
+Markdown Content:
+# Failure Mechanisms and Risk Estimation for Legged Robot Locomotion on Granular Slopes 
+
+Xingjue Liao and Feifei Qian 
+
+Abstract—Locomotion on granular slopes such as sand dunes remains a fundamental challenge for legged robots due to reduced shear strength and gravity-induced anisotropic yield-ing of granular media. Using a hexapedal robot on a tiltable granular bed, we systematically measure locomotion speed together with slope-dependent normal and shear granular resistive forces. While normal penetration resistance remains nearly unchanged with inclination, shear resistance decreases substantially as slope angle increases. Guided by these mea-surements, we develop a simple robot-terrain interaction model that predicts anchoring timing, step length, and resulting robot speed, as functions of terrain strength and slope angle. The model reveals that slope-induced performance loss is primarily governed by delayed anchoring and increased backward slip rather than excessive sinkage. By extending the model to generalized terrain conditions, we construct failure phase diagrams that identify sinkage- and slippage-induced failure regimes, enabling quantitative risk estimation for locomotion on granular slopes. This physics-informed framework provides predictive insight into terrain-dependent failure mechanisms and offers guidance for safer and more robust robot operation on deformable inclines. Index Terms—Biologically-Inspired Robots; Locomotion on Deformable Terrains; Robotics in Hazardous Fields 
+
+I. Introduction Sand slopes are widespread in natural environments, including deserts, coastal regions, riverbanks, and plane-tary surfaces (Fig. 1a). These terrains are of increasing interest for mobile robots, for applications such as search-and-rescue, environmental monitoring, rural delivery, and extraterrestrial exploration. However, the combination of deformable substrates and steep inclines in these environments pose significant challenges to terrestrial lo-comotion, where robots often encounter excessive sinkage, slippage, or loss of stability [1]–[3] (Fig. 1b, c). Misapplied locomotion strategies can lead to catastrophic failures and complete immobilization. A mechanistic understanding of how robots interact with sand slopes is therefore essential for assessing traversal risks and extending operational envelopes [4] (Fig. 1d). A fundamental challenge of locomotion on sand is that granular substrates can exhibit both solid-like and fluid-like behaviors [5], [6], leading to complex interactions between limb intrusion, force generation, and terrain yielding [7]–[10]. Prior studies of locomotion on level granular media have characterized resistive forces during intrusion and propulsion, leading to models that success-fully predict performance on level sand [11], [12]. These works established how penetration depth and normal resistive forces regulated step length and speed on level sand. 
+
+Fig. 1. Importance and challenges of legged locomotion on sand slopes. (a) Sand slopes widely present in natural environments (White Sands National Park, NM). (b) Hexapedal robot ascending a dune slope. (c) Quadruped robot traversing a relatively mild sand slope at White Sands. (d) Example ascent paths on a sand slope, illustrating the tradeoff between shorter routes (yellow) and longer but potentially less risky path (red, cyan). 
+
+On inclined sand, however, gravity alters the internal stress state of the granular medium, reducing available shear resistance and promoting downslope yielding [13], [14]. Previous robotic and biological studies have shown that increasing slope angle degrades speed, increases energetic cost, and alters gait stability [1], [15], [16]. Bio-inspired strategies, such as lateral undulation in snakes or specialized limb kinematics in insects, have demonstrated improved performance by mitigating slip and redistributing forces [15], [17]. Together, these studies highlight the importance of force generation and terrain yielding in determining locomotor success on granular inclines. Despite this progress, most existing research on robot locomotion on slopes [1], [18], [19] do not directly resolve the underlying force interactions between the robot and the granular medium on slopes. Without linking performance degradation to measurable changes in normal and shear resistance, it remains difficult to 
+
+> arXiv:2603.06928v1 [cs.RO] 6 Mar 2026
+
+determine whether failures arise primarily from excessive sinkage, insufficient shear anchoring, or their interaction. Consequently, predictive understanding of slope-induced failure mechanisms remains limited. To address this gap, in this paper we experimentally measured the locomotion performance of a hexapedal robot on a tiltable sand fluidization bed (Sec. II). By systematically quantifying slope-dependent normal and shear resistances, we identified how granular anisotropy alters limb anchoring dynamics. We then developed a simplified force-balance model linking shear strength to anchoring time, step length, and speed (Sec. III). Fi-nally, we generalized this framework to construct terrain– robot phase diagrams that distinguish sinkage- and slip-dominated failure regimes, enabling model-informed risk prediction for locomotion on granular slopes (Sec. IV). II. Materials and Methods A. Robot To investigate locomotion performance on sand slopes, we developed a simple hexapedal robot (22 cm length 
+
+× 10 cm width, 350 grams, Fig. 2a) to perform con-trolled locomotion experiments. The sand-climbing hexa-pod robot were equipped with six 3-D printed C-shaped legs (Fig. 2a,b). The angular positions of the robot legs was controlled using a microcontroller (Arduino Uno), and actuated by servo motors (Dynamixel XL330). The radius of the C-shaped leg was 4 cm and the width of the leg was 1 cm. During all trials, the robot was programmed to use an alternating tripod gait [20] in which the legs were divided into 2 groups (front and rear leg from one side, plus the middle leg from the other side), and the two groups alternated with a 180-degree phase difference with each other. This alternating tripod gait is a bio-inspired gait often used by insects [21], and was found to exhibit good locomotion performance on leveled sand [11], [17]. For all trials, the leg angular speed was kept constant at 
+
+ω = 2 π rad/s. B. Robot Locomotion Experiments Robot locomotion experiments were performed in a 127 cm × 65 cm trackway (Fig. 2c). The trackway was filled with 300 μm diameter glass beads (Grainger) as a model granular substrate, to a depth of 10 cm to minimize boundary effects [2]. The glass beads have been proven to be a promising model substrate for studying the interaction between robots and granular materials [22], while the simpler geometry facilitates the control of the substrate to achieve uniform packing state [23]. To ensure a consistent initial condition across locomotion tests, the granular bed was fluidized prior to each trial by sending air upward through the base of the trackway. After the air flow slowly ramped down, the sand would settle into a uniform, loosely-packed compaction, eliminating spatial variations in surface height and penetration re-sistance [24]. The granular slope angle, θ, was controlled c
+
+> _Granular media _
+
+
+
+> Flow distributor
+> Air flow direction
+
+ 
+
+
+
+> 160 cm
+> 60 cm
+> Motion capture cameras
+
+a b             
+
+> 
+> Fig. 2. Robot and experimental setup for studying locomotion on granular slopes. (a) Hexapedal robot used in this study. (b) Diagram illustrating the key parameters of robot leg. Here Rdenotes robot leg radius, ddenotes the leg penetration depth, ωdenotes the leg angular velocity, and hdenotes the hip height, measured as the distance from the leg axle to the bottom of the robot body. (c)Schematic of the tiltable granular trackway for testing robot locomotion on sand. In b and c, θdenotes the slope angle of the granular incline.
+
+using two linear actuators, and measured using a digital angle measurer. The maximum tilting angle used in the experiment was 24 degrees, near the angle of repose [25], [26] of the granular media used. To characterize the robot speed while traveling on sand, three motion capture cameras (Optitrack, Prime 13W) were installed around the trackway to record the position of the center of mass (CoM) of the robot in the world frame ( x; y; z) at 120 frames per second (FPS). In addition, two video camera (Optitrack Prime Color, and GoPro HERO 12) were used to record experiment footage from top and side view at 120 FPS and 30 FPS, respectively. C. Penetration and Shear Sand Resistive Force Measure-ments To investigate how sand inclination alters internal force transmission, we quantified granular resistive forces in both the normal direction (perpendicular to the sand surface) and the shear direction (parallel to the surface) as a function of slope angle. A belt-driven linear actuator (30 cm travel) powered by a NEMA 23 stepper motor was mounted above the tiltable fluidized bed. A miniature load cell (HX711 am-plifier, Arduino Uno for data acquisition) was installed in-line between the actuator end-effector and the intruding plate to directly measure penetration and shear forces. The setup was modular, allowing rapid reconfiguration between normal penetration and tangential shear experi-ments (Fig. 4a, e). Measurements were conducted at six inclination an-gles 1: 0◦, 5◦, 10 ◦, 15 ◦, 20 ◦, and 24 ◦. Before each trial, the granular bed was fully fluidized by passing air upward through the base of the trackway to reset the packing state. After fluidization, airflow was stopped and the bed was slowly tilted to the commanded angle prior to intrusion. In penetration trials, a circular disk (radius = 1 cm) was driven into the sand at a constant speed of 5 cm/s along the direction normal to the inclined surface (Fig. 4b). The load cell recorded the resistive force as a function of penetration depth, enabling characterization of slope-dependent normal resistance. In shear trials, a rectangular plate (height = 2 cm, width = 3 cm) was inserted fully into the sand and translated down-slope at 5 cm/s parallel to the surface (Fig. 4f). Prior to each experiment, calibration trials were conducted in air at each slope angle to determine force offsets. The maximum penetration depth of the shear plate was maintained at 2 cm for all trials. During translation, the load cell recorded the tangential resistive force exerted by the sand, allowing quantification of slope-dependent shear resistance. III. Results and discussion A. Effect of inclination angle on sand climbing perfor-mance Tracked robot speed on sand slopes (Fig. 3a) showed that among the 5 tested inclinations, θ =(0 ◦, 10 ◦, 15 ◦, 20 ◦, 24 ◦), the robot on level sand at 0 degrees exhibited the fastest forward speed ( ¯v = 15.7 ± 0.97 cm/s). At moderate slopes of 10 ◦ and 15 ◦, the robot speed decreased by approximately 30% ( ¯v = 11.0 ± 0.14 cm/s at 10 degrees, and ¯v = 10.5 ± 0.23 cm/s at 15 degrees). On steep granular slopes with inclination angle exceeding 20 ◦, robot speed decreased to nearly one third of level-sand value ( ¯v = 4.98 ± 0.32 cm/s at 20 degrees, and 
+
+¯v = 5.6 ± 1.6 cm/s at 24 degrees). Here ¯v is the step-averaged robot velocity along the direction parallel to the sand surface. Inspection of the instantaneous speed v within a stride (Fig. 3b) revealed a consistent temporal structure in every trial. Touchdown of the stance legs occurred at t0 = 0 s(and again at t0 = 0 .5 s for the alternating leg group), when the legs began penetrating the sand surface. On level sand, robot speed increased immediately after touchdown (Fig. 3b, purple curve). In contrast, as inclination angle increased (Fig. 3b, red, orange, green, blue curves), the robot consistently exhibited a backward slip following touchdown. During this interval, the instantaneous speed became negative (Fig. 3b, phase 1, t0 to t1), indicating down-slope motion of the body relative to the ground. We noticed that the anchoring timing t1, the instant when backward slippage stopped accelerating (i.e. when      
+
+> 1Inclinations above 24 ◦were not tested because 25 ◦approaches the angle of repose of the prepared sand, beyond which the surface becomes unstable and prone to spontaneous yielding.
+> dv(t)dt
+
+increased from negative to positive values), was highly repeatable across trials at the same inclination, and increased monotonously with the increasing slope angle. After anchoring, the robot enters a propulsion phase, during which the upslope speed increases at a rate that is largely insensitive to inclination (Fig. 3b, phase 2, 3, t1 to t3). This observation suggested that degradation in climbing performance was not primarily caused by reduced propulsive capability, but rather by delayed effective anchoring timing. Finally, as the stance legs extracted from the sand at lift off timing t3 , the robot speed decreased toward zero, as the legs transitioned into the aerial phase (Fig. 3c, d, phase 4) until the alternating leg group makes contact and the next stride began. According to previous literature, the anchoring timing on level sand was governed by the penetration depth [11], [12]. In granular media, the force resisting leg penetration increases linearly with depth: Fn = kndA , where kn
+
+is the normal direction penetration resistance per unit contact area, d is the leg penetration depth, and A is the contact area. During early contact, the applied normal force exceeds the resistive force the substrate can provide, and the sand yields locally. In this regime, the robot leg “swims” through the fluidized sand and fails to anchor. As penetration increases, the resistive force grows until reaching a normal equilibrium depth dn, where the sand can support the applied load and locally solidifies. At this point, the leg can generate effective thrust and initiate forward propulsion (Fig. 3c, d, phase 3). In the rotary walking model [11], the step length during this propulsion phase is given as s = 2 √R2 − (dn + h − R)2, where R is the C-leg radius, h is the hip height, and dn is the sand solidification depth (Fig. 2b). Motivated by this framework, we investigated whether the observed performance degradation on slopes would arise from increased sinkage. We therefore formulated Hypothesis 1: As slope angle increased, the normal-direction sand penetration resistance decreased, resulting in greater sand solidification depth, dn, and consequently reduced step length during the propulsion phase, s2. To test this hypothesis, in the next section we systematically quantified the normal penetration resistance of sand as a function of slope angle, and evaluated the predicted displacement against experimental observations. B. Sinkage-induce locomotion performance loss on gran-ular slope To test Hypothesis 1 we performed controlled pene-tration trials on slopes of varying inclinations (Fig. 4a, b). The measured normal force vs penetration depth was approximately linear for all inclinations tested (Fig. 4c). A linear regression of the Fn vs. d curves yielded the effective normal penetration resistance per unit contact area, kn. Surprisingly, kn showed negligible change across the range of slope angles we examined (Fig. 4d). As a result, using the measured kn to compute the equilibrium normal depth dn and the resulting step length, 0 0.5 1
+
+Time (s) 
+
+> -0.2
+> 0
+> 0.2
+> 0.4
+> 0.6
+
+(a) 
+
+(b) 
+
+(c) 
+
+𝑡 ଴
+
+𝑡 ଷ
+
+𝑡 ଵ
+
+𝑡 ଶ
+
+# 𝑡 (d) 
+
+## 𝑑 ௦
+
+## 𝑠 ଵ
+
+## 𝜃 
+
+## 𝑑 
+
+## 𝑠 ଶ
+
+## 𝜃 
+
+## 𝑑 ௡
+
+## 𝑠 ଶ
+
+## 𝜃 
+
+Phase 1 
+
+𝑡 ଴ < 𝑡 < 𝑡 ଵ
+
+## 𝜃 
+
+> 𝑡 ଴=0.5s
+> 𝑡 ଵ=0.55s
+> 𝑡 ଶ=0.65s
+> 𝑡 ଷ=0.9s
+
+Phase 2 
+
+𝑡 ଵ < 𝑡 < 𝑡 ଶ
+
+Phase 3 
+
+𝑡 ଶ < 𝑡 < 𝑡 ଷ
+
+Phase 4 
+
+𝑡 ଷ < 𝑡 < 𝑡 ଴ + 𝑇 
+
+2  
+
+> 010 20
+
+Slope Angle ( °)           
+
+> 0
+> 0.05
+> 0.1
+> 0.15
+> 0.2 Fig. 3. Robot locomotion on sand slopes of varying inclinations. (a) Average robot up-slope speed as a function of slope angle. (b) Experimentally-measured robot speed vs. time over one stride period T. Purple, red, orange, green, and blue curves represent 0, 10, 15, 20, 24 degree inclinations, respectively. (c) Experimental image sequences showing the side view of the robot traveling on a 15-degree slope. Corresponding critical moments, t0,t1,t2,t3are also labeled on the orange (15-deg) curve in (b). (d) Schematic of the leg-ground interaction during each phases. In c and d, images from up to bottom correspond to the critical timings, t0,t1,t2, and t3, labeled in b.
+
+s2 = 2√R2 − (dn + h − R)2, produced only minimal variation with slope. Thus, although the previously es-tablished rotary-walking mechanism correctly linked dn
+
+to step length on level sand, our measurements indicated that changes in normal penetration resistance are too small across the tested inclinations to explain the large, observed reduction in climbing speed. In short, Hypothesis 1 was not supported by the data: sinkage-induced effects appeared unlikely to be the primary driver of the delayed anchoring and speed loss on slopes. Consistent with this conclusion, leg–terrain interaction videos showed comparable maximum penetration depth across inclinations but substantially increased backward slip on steeper slopes. Based on this observation, we suspected that on sloped sand, the slippage, rather than excess sinkage, was the dominant effect on robot loco-motion performance. Granular-physics studies provided a mechanism for this behavior. In the shear direction, local yielding occurred when the applied shear stress exceeded the sand’s local shear yield strength. Yielding was accompanied by force-chain breakage and grain re-arrangement, resulting in loss of rigid support beneath the intruder [22], [27]–[29]. For a robot climbing a slope, this local weakening allowed the downslope gravitational component to exceed the resisting strength, producing slippage (and in extreme cases, avalanching) [30]. Because shear resistance force increases with penetra-tion depth [31], we hypothesized that at initial shallow contact the applied shear load exceeded the local shear yield strength, causing inevitable downslope slip (Fig. 3c, d, phase 1). Only after the leg penetrated sufficiently to reach a shear-equilibrium depth, ds, where applied shear equaled resisting shear, would the substrate locally solidify behind the leg and allowed effective anchoring and propulsion, as if the leg was rotating against a vertical support normal to the sand surface (Fig. 3c, d, phase 2). We therefore formulated Hypothesis 2: As slope angle increased, the shear-direction sand resistance decreased, which increased the shear equilibrium depth, ds, thereby increasing backward slip s1 during the intrusion phase and reducing net step displacement, s = s2 − s1. To test this hypothesis, in next sections we systematically quantified the shear resistance of sand as a function of slope angle, and evaluated the model-predicted displacement, s2 − s1,against experimental observation. C. Slippage-induce locomotion performance loss on gran-ular slope To test Hypothesis 2, we performed controlled shear ex-periments on sand slopes of varying inclination to quantify the shear resistance and estimate the shear-equilibrium depth, ds. Analogous to the normal penetration depth, 
+
+dn, we assume that the shear-equilibrium depth depends Linear 
+
+> actuator
+
+(b) (a) (c) (d) 
+
+(f) (e) (g) (h) 
+
+(a)       
+
+> 010 20
+> Slope Angle ( °)
+> 0
+> 0.1
+> 0.2
+> 0.3
+> 0.4
+> 0.5
+> 010 20
+> Slope Angle ( °)
+> 0
+> 0.1
+> 0.2
+> 0.3 Fig. 4. Sand resistive force measurements on inclined granular surfaces. (a, e) Experimental setups for penetration and shear force measurements. (b, f) Schematics illustrating the penetration and shear plate motion. (c, g) Measured penetration and shear resistive forces, as functions of penetration and shear displacements. Red to blue colors represent inclination angle from 0 ◦to 24 ◦. (d, h) Measured sand penetration and shear resistance per unit area as functions of slope angles.
+
+on the sand’s effective shear strength, ks, which may vary with slope angle, θ. Thus, ds can be expressed implicitly as a function of ks(θ) through shear-force equilibrium. The measured shear force–displacement curves are shown in Fig. 4g. In all trials, the shear force rises rapidly at small shear distances and then transitions into a steady state regime. Although the qualitative behavior is consistent across inclinations, the overall magnitude of the shear force decreases systematically as slope angle increases. This two-phase response agrees with prior granular-physics studies, which suggested that the initial rapid rise in shear force corresponds to dynamic grain rear-rangement and compression, while the subsequent slower-growth regime corresponds to the formation of a stable force-chain network or frictional shear band within the granular bed [2], [32]–[34]. We therefore define the effec-tive shear resistance using the average value of the quasi-static plateau region. For a plate-like intruder spanning from the surface to depth, d, the steady-state shear resistance scales with the square of depth, Fs ∝ d2 [32], [35]. Accordingly, the shear resistive force can be modeled as Fs = ksW d 2
+
+> s
+
+, where W is the width of the leg, and ks
+
+characterizes the shear strength of the granular substrate. Fig. 4h shows the average shear resistance force as a function of slope angle. In contrast to the normal-direction resistance, kn, which remains nearly constant, the shear resistance decreases markedly with increasing inclination. For example, the average shear force measured at 20 ◦
+
+is only approximately 40% of that measured on level sand. This reduction in shear strength has two important implications. First, because the applied downslope shear load increases with sin( θ) while the resisting strength decreases, the shear-equilibrium depth, ds, must increase with slope angle. Second, since penetration depth grows monotonically during leg rotation in phase 1, a larger ds
+
+requires a longer time to reach shear equilibrium. Since the robot leg cannot secure the anchoring in sand and propel the body forward before it reaches the shear equilibrium depth, we believe that the observed anchoring timing t1
+
+closely resembles the timing that the leg reaches the shear equilibrium such that d(t1) ≈ ds. This directly explains the delayed anchoring timing, t1, observed in Sec. III-A, as a result of decreased ks.In the following section, we formalize this relationship by constructing an interaction model that uses the exper-imentally measured shear strength ks(θ) to predict the anchoring timing, t1, and, consequently, the robot’s step length and speed on granular slopes. D. Hypothesized mechanism governing robot critical tim-ings on granular slope In this section, we formalize the leg–sand interaction into a predictive model that links anchoring timing t1 to slope angle θ through the measured sand shear strength 
+
+ks.During phase 1, the robot applies a downslope force to the sand: m(g + a) · sin( θ). Here mg · sin( θ) represents the horizontal component of the gravitational force due to robot weight, and the acceleration a can be expressed as Rω/ ∆t, where ∆t = 0 .2s represents the characteristic elastic response time [11]. In the alternating tripod gait, the load is distributed across n = 3 stance legs, and thus the average applied shear load per leg is 
+
+Fa = m(g · sin( θ) + Rω  
+
+> ∆t
+
+)
+
+n
+
+Meanwhile, the resistive shear force provided by the sand increases quadratically with penetration depth (Sec. III-C): 
+
+Fs = ks(θ)W d 2
+
+> s
+
+Once applied and resisting shear forces balance, i.e., 
+
+Fa = Fs, sand solidifies in the shear direction, and the anchoring phase begins. The shear-equilibrium depth, ds,can therefore be determined: 
+
+ds =
+
+√
+
+m(g · sin( θ) + Rω  
+
+> ∆t
+
+)
+
+nk s(θ)W (1) Because ks(θ) decreases with slope angle while the applied shear load increases with sin θ, this expression predicts a monotonic increase of ds with θ, consistent with the experimentally-observed delay in anchoring. We subsequently compute the anchoring time, t1, from the shear-direction sand solidification depth, ds. Given the C-leg geometry (Fig. 2b), the leg penetration depth during stance can be expressed as a function of time: 
+
+d(t) = R sin( ϕ(t) + ϕ0) + R − h. (2) Here R is the leg radius, ϕ(t) = ωt is the leg angular position at time t, ϕ0 = arcsin h−RR is the touchdown angle at t0, and h is the hip height (Fig. 2b). Using Eqn. 2, the anchoring timing t1, at which the leg reaches the shear equilibrium depth, can be determined from ds:
+
+t1 = arcsin ( ds+hR − 1) − ϕ0
+
+ω (3) This expression makes explicit that the anchoring timing is governed by the shear-equilibrium depth ds. As slope angle increases, the increased ds will result in the delayed 
+
+t1.Model-predicted t1 values (Fig. 5b, red dashed line) successfully captured both the monotonic increasing trend and the magnitude of the experimental measured anchor-ing time (Fig. 5b, black asterisks). Since the rate of up-slope velocity increase is nearly identical in Phases 2 and 3, the effective propulsion dynamics appear to be only governed by t1, supporting Hypothesis 2. In the next section, we translate the predicted anchoring timing into a closed-form estimate of robot step length and speed. E. Model-predicted robot step-length on sand slope In Sec. III-D, we showed that slope angle modifies shear strength ks(θ), which determines the shear-equilibrium depth ds, and therefore the anchoring timing t1. We now quantify how this delayed anchoring reduces the robot’s step length. To calculate the total slippage, we assumed that upon touchdown, the robot slipped downhill under the gravi-tational component mg · sin( θ), until the leg was able to 𝑡 1 (𝜃 = 0 ° )   
+
+> 𝑡 1(𝜃 = 24 °)
+
+(a) (b) (c)                
+
+> Fig. 5. Predictive model to link anchoring timing to robot step length. (a) Comparison of robot speed vs. time on 0 ◦and 24 ◦sand slope in one representative step. Red and blue vertical dashed lines denote the anchoring timing t1for 0 ◦and 24 ◦, respectively. The yellow shaded region indicates the backward slippage s1on the 24 ◦
+> slope. The purple and blue shaded regions (net positive area under the velocity curve) denote the propulsion displacement s2for 0 ◦and 24 ◦, respectively. (b) Experimentally-measured (black asterisks) and model-predicted (red dashed line) t1as a function of slope angle. (c) Experimentally-measured (black asterisks) and model-predicted (red dashed line) robot net step length sas a function of sand slope angle.
+
+solidify the sand in the shear direction at the anchoring timing t1. The total slippage before sand solidification (Fig. 5a, yellow shaded region), can therefore be approx-imated as: 
+
+s1 =
+
+∫ ∫ t1
+
+> t0
+
+g · sin θ dt dt = 12 g sin θ · t12. (4) Thus, slippage increases quadratically with anchoring delay. After t1, the leg began to push against solidified sand and generate effective propulsion. Accordingly to our experimentally-measurements (Fig. 3b), once anchoring occurs, the upslope acceleration during propulsion was primarily geometric based (i.e., leg pushing against a solid side wall, Fig. 3d, phase 2) and independent of slope angle. As a result, the displacement during propulsion phase, s2
+
+(Fig. 5a, net positive area of the blue shaded region), can be approximated based on the anchoring timing, t1:
+
+s2 = s∗( T / 2 − t1
+
+T / 2 )2 − g sin θ · t1(T / 2 − t1), (5) where s∗ denotes the step length on level sand (Fig. 5a, red shaded region), T / 2 represents propulsion duration on level sand, and T / 2 − t1 represents the shortened propul-sion duration on sloped sand. The first term captures reduced propulsion time; the second accounts for inherited initial speed at t1 because of slippage. The total net displacement per step, therefore, can be expressed as 
+
+s = s2 − s1 = − 12 g sin θ · t1( T − t1) + s∗( T / 2 − t1
+
+T / 2 )2.
+
+(6) Theoretical predictions of robot step length s (Fig. 5c, red dashed line) agreed well with the experimentally measured values (black asterisks), confirming that slope-dependent reductions in shear strength and the resulting anchoring delay governed the observed performance loss. IV. Model generalization and broader applicability In this section, we extend the experimentally validated shear–anchoring model into a predictive framework for locomotion risk across a broad range of terrain and robot parameters. Rather than restricting analysis to the specific sand conditions tested experimentally, the model enables the generation of performance phase diagrams (Fig. 6) that predict whether locomotion succeeds, fails by sinkage, or fails by slippage, given the terrain’s normal and shear resistances and the robot’s weight. Each map partitions terrain space into distinct lo-comotion regimes. Sinkage-induced failure (Fig. 6, blue regions) occurs when normal resistance kn is insufficient to support the applied load. Excessive penetration pre-vents formation of a stable pivot, causing the leg to “swim” through fluidized sand and produce negligible propulsion. Slippage-induced failure (Fig. 6, red regions) arises when shear resistance ks is too low relative to the applied downslope shear load. In this regime, the predicted net step length ˜s = ˜ s2 − ˜s1 becomes negative, indicating downslope slippage. Metastable regimes (Fig. 6, yellow regions) correspond to small predicted step length (0 < s < R ), where the robot advances less than one leg radius per step and therefore places its next foothold within previously disturbed sand, and each successive step would experience diminished support [11], [36], leading to progressively smaller step length and eventual transition to either sinkage or slippage dominated failure during sustained operation. The green region denotes robust locomotion ( s > R ), where sustained propulsion can be achieved. 0.1 0.2 0.3 0.4 0.5                                         
+
+> kn(N/cm 3)0.05 0.1 0.15 0.2 0.25 0.3
+> k s (N/cm  3 )
+> 0.1 0.2 0.3 0.4 0.5
+> kn(N/cm 3)0.05 0.1 0.15 0.2 0.25 0.3
+> k s (N/cm  3 )
+> 0.1 0.2 0.3 0.4 0.5
+> kn(N/cm 3)0.05 0.1 0.15 0.2 0.25 0.3
+> k s (N/cm  3 )
+> (a) (b) (c) (d)
+> Fig. 6. Model-predicted robot performance on (a) level sand when the total mass m= 0 .35 kg, (b) a 24 ◦sand slope when m= 0 .35 kg, (c) level sand when equipped with a heavier load that m= 1 kg, and (d) a 24 ◦sand slope when m=1kg. Blue regions denote sinkage-induced failure, red regions indicate total slippage failure, and yellow regions represent the metastable cases that experience potential locomotion risks. The light green regions correspond to successful locomotion. The black lines are the step length contours where s=Rwhich show the boundary of the success region. The dark green stars mark the experimentally measured sand resistances reported in Fig. 4.
+
+The phase diagrams revealed several important insights. First, slope inclination primarily expands the slippage-dominated regime through modulation of ks, dramatically shrinking the feasible locomotion region (compare Fig. 6a v.s. b). In addition, increasing robot mass shifts both failure boundaries (Fig. 6c, d). Under the terrain strength used in our experimental study (green star), the model predicts that a 1-kg robot would encounter metastable regime on a 24 ◦ slope, and eventually fail due to slippage-dominated failure (Fig. 6d). These maps demonstrate that locomotion performance on granular slopes is not governed by a single failure mode, but by the interaction between normal support and shear anchoring. By explicitly separating these mechanisms, the model provides a quantitative tool for predicting how terrain mechanics and robot design jointly determine suc-cess or failure. Beyond explanation, this risk-estimation framework supports terrain-aware path planning and robot design optimization. By estimating slippage risk and anchoring delay along different routes, the robot can select safer paths rather than simply the shortest ones. In addition, it can inform the selection of robot weight, leg size, and gait parameters, to ensure safe traversal of sand slopes with a wide range of strength. V. CONCLUSION In this work, we investigated the mechanisms gov-erning legged robot locomotion on granular slopes by combining controlled experiments with a simplified force-balance model. Through systematic measurements of slope-dependent normal and shear resistances, we showed that performance degradation on inclined sand is driven primarily by reduced shear strength rather than increased normal sinkage. The decrease in shear resistance delays anchoring, increases backward slip, and shortens the effective propulsion phase within each step, leading to reduced step length and speed. Building on this mecha-nism, we developed an analytical robot-sand interaction model that quantitatively links the sand shear strength to robot leg anchoring time and step length, across a wide range of slope angles. We further showed that the model enables construction of failure phase diagrams that distinguish sinkage-, slippage-, and metastable regimes, allowing locomotion risks to be assessed beyond the spe-cific terrain conditions tested experimentally. Overall, our results identify the physical origin of slope-induced failure on granular media and provide a predictive framework for estimating locomotion risks across terrain conditions. This physics-grounded approach offers quantitative guid-ance for terrain-aware planning and safe operation on deformable slopes. References 
+
+[1] H. Hu, F. Qian, and D. Seita, “Learning granular media avalanche behavior for indirectly manipulating obstacles on a granular slope,” in Conference on Robot Learning. PMLR, 2025, pp. 3225–3241. [2] C. Li, T. Zhang, and D. I. Goldman, “A terradynamics of legged locomotion on granular media,” science, vol. 339, no. 6126, pp. 1408–1412, 2013. [3] F. Qian and D. I. Goldman, “The dynamics of legged lo-comotion in heterogeneous terrain: universality in scattering and sensitivity to initial conditions.” in Robotics: Science and Systems, vol. 11, 2015. [4] C. Sorice, K. S. Ali, A. Trebi-Ollennu, P. Mishra, G. Lim, P. Bailey, T. L. Hudson, E. Marteau, and J. Kim, “Insight robotic arm testing activities for hp3 mole anomaly recovery on mars,” in 2021 IEEE Aerospace Conference (50100). IEEE, 2021, pp. 1–19. [5] H. M. Jaeger and S. R. Nagel, “Physics of the granular state,” Science, vol. 255, no. 5051, pp. 1523–1531, 1992. [6] R. M. Nedderman et al., Statics and kinematics of granular materials. Cambridge University Press Cambridge, 1992, vol. 352. [7] M. G. Bekker, “Theory of land locomotion,” 1956. [8] J. Y. Wong et al., Terramechanics and off-road vehicles. El-sevier, 1989. [9] X. Chen, X. Huang, J. Yi, J. W. Shan, and T. Liu, “A dynamic foot–terrain interaction model for biped walking on granular media,” IEEE/ASME Transactions on Mechatronics, 2025. [10] X. Chen, J. Yi, and H. Wang, “Energy efficient foot-shape design for bipedal walkers on granular terrain,” IFAC-PapersOnLine, vol. 56, no. 3, pp. 601–606, 2023. [11] C. Li, P. B. Umbanhowar, H. Komsuoglu, D. E. Koditschek, and D. I. Goldman, “Sensitive dependence of the motion of a legged robot on granular media,” Proceedings of the National Academy of Sciences, vol. 106, no. 9, pp. 3029–3034, 2009. [12] F. Qian, T. Zhang, W. Korff, P. B. Umbanhowar, R. J. Full, and D. I. Goldman, “Principles of appendage design in robots and animals determining terradynamic performance on flowable ground,” Bioinspiration & biomimetics, vol. 10, no. 5, p. 056014, 2015. [13] O. Pouliquen and Y. Forterre, “Friction law for dense granular flows: application to the motion of a mass down a rough inclined plane,” Journal of fluid mechanics, vol. 453, pp. 133–151, 2002. [14] P. Jop, Y. Forterre, and O. Pouliquen, “A constitutive law for dense granular flows,” Nature, vol. 441, no. 7094, pp. 727–730, 2006. [15] H. Marvi, C. Gong, N. Gravish, H. Astley, M. Travers, R. L. Hatton, J. R. Mendelson, H. Choset, D. L. Hu, and D. I. Goldman, “Sidewinding with minimal slip: Snake and robot ascent of sandy slopes,” Science, vol. 346, no. 6206, pp. 224– 229, 2014. [16] J. R. Gosyne, C. M. Hubicki, X. Xiong, A. D. Ames, and D. I. Goldman, “Bipedial locomotion up sandy slopes: Systematic experiments using zero moment point methods,” in 2018 IEEE-RAS 18th International Conference on Humanoid Robots (Hu-manoids). IEEE, 2018, pp. 994–1001. [17] A. Humeau, M. Piñeirua, J. Crassous, and J. Casas, “Locomo-tion of ants walking up slippery slopes of granular materials,” Integrative Organismal Biology, vol. 1, no. 1, p. obz020, 2019. [18] H. Kolvenbach, P. Arm, E. Hampp, A. Dietsche, V. Bickel, B. Sun, C. Meyer, and M. Hutter, “Traversing steep and granular martian analog slopes with a dynamic quadrupedal robot,” Field robotics, vol. 2, pp. 910–939, 2022. [19] S. F. Roberts and D. E. Koditschek, “Rhex slips on granular media,” in IEEE International Conference on Robotics and Automation, no. 23, 2016. [20] U. Saranli, M. Buehler, and D. E. Koditschek, “Rhex: A simple and highly mobile hexapod robot,” The International Journal of Robotics Research, vol. 20, no. 7, pp. 616–631, 2001. [21] J. G. Cham, J. K. Karpick, and M. R. Cutkosky, “Stride period adaptation of a biomimetic running hexapod,” The International Journal of Robotics Research, vol. 23, no. 2, pp. 141–153, 2004. [22] D. M. Mueth, H. M. Jaeger, and S. R. Nagel, “Force distribution in a granular medium,” Physical Review E, vol. 57, no. 3, p. 3164, 1998. [23] A. Nayak, H. Seo, N. Gravish, and M. T. Tolley, “Burrowing and unburrowing in submerged granular media through fluidization and shape-change,” Frontiers in Robotics and AI, vol. 12, p. 1546407, 2025. [24] Z. Jin, J. Tang, P. B. Umbanhowar, and J. Hambleton, “Preparation of sand beds using fluidization,” 2019. [25] F. Elekes and E. J. Parteli, “An expression for the angle of repose of dry cohesive granular materials on earth and in planetary environments,” Proceedings of the National Academy of Sciences, vol. 118, no. 38, p. e2107965118, 2021. [26] B. B. Dai, J. Yang, and C. Y. Zhou, “Observed effects of interparticle friction and particle size on shear behavior of granular materials,” International Journal of Geomechanics, vol. 16, no. 1, p. 04015011, 2016. [27] J. Peters, M. Muthuswamy, J. Wibowo, and A. Tordesillas, “Characterization of force chains in granular material,” Physi-cal Review E—Statistical, Nonlinear, and Soft Matter Physics, vol. 72, no. 4, p. 041307, 2005. [28] B. Świtała, D. Leśniewska, and M. A. Kalwar, “Micro-mechanisms of force network rearrangement in granular ma-terials,” Computers and Geotechnics, vol. 174, p. 106602, 2024. [29] X. Liao, W. Liu, H. Wu, and F. Qian, “A bio-inspired sand-rolling robot: effect of body shape on sand rolling performance,” in 2025 IEEE International Conference on Robotics and Au-tomation (ICRA). IEEE, 2025, pp. 15 943–15 949. [30] G. Barker and A. Mehta, “Two types of avalanche behaviour in model granular media,” Physica A: Statistical Mechanics and its Applications, vol. 283, no. 3-4, pp. 328–336, 2000. [31] H. Marvi, C. Gong, N. Gravish, H. Astley, M. Travers, R. L. Hatton, J. R. Mendelson, H. Choset, D. L. Hu, and D. I. Goldman, “Sidewinding with minimal slip: Snake and robot ascent of sandy slopes,” Science, vol. 346, no. 6206, pp. 224– 229, 2014. [32] T. Zhang and D. I. Goldman, “The effectiveness of resistive force theory in granular locomotion,” Physics of Fluids, vol. 26, no. 10, p. 101308, 2014. [33] R. Albert, M. Pfeifer, A.-L. Barabási, and P. Schiffer, “Slow drag in a granular medium,” Physical review letters, vol. 82, no. 1, p. 205, 1999. [34] F. Da Cruz, S. Emam, M. Prochnow, J.-N. Roux, and F. Chevoir, “Rheophysics of dense granular materials: Dis-crete simulation of plane shear flows,” Physical Review E— Statistical, Nonlinear, and Soft Matter Physics, vol. 72, no. 2, p. 021309, 2005. [35] L. K. Roth, “Constant speed penetration into granular ma-terials: drag forces from the quasistatic to inertial regime,” Granular Matter, vol. 23, no. 3, p. 54, 2021. [36] S. Liu, B. Huang, and F. Qian, “Adaptation of flipper-mud interactions enables effective terrestrial locomotion on muddy substrates,” IEEE Robotics and Automation Letters, 2023.

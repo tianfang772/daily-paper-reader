@@ -1,0 +1,509 @@
+Title: Model-Based and Neural-Aided Approaches for Dog Dead Reckoning
+
+URL Source: https://arxiv.org/pdf/2603.07582v1
+
+Published Time: Tue, 10 Mar 2026 01:14:14 GMT
+
+Number of Pages: 11
+
+Markdown Content:
+> 1
+
+# Model-Based and Neural-Aided Approaches for Dog Dead Reckoning 
+
+Gal Versano , Itai Savin , Itzik Klein 
+
+Abstract —Modern canine applications span medical and ser-vice roles, while robotic legged dogs serve as autonomous plat-forms for high-risk industrial inspection, disaster response, and search and rescue operations. For both, accurate positioning remains a significant challenge due to the cumulative drift inherent in inertial sensing. To bridge this gap, we propose three algorithms for accurate positioning using only inertial sensors, collectively referred to as dog dead reckoning (DDR). To evaluate our approaches, we designed DogMotion, a wearable unit for canine data recording. Using DogMotion, we recorded a dataset of 13 minutes. Additionally, we utilized a robotic legged dog dataset with a duration of 116 minutes. Across the two distinct datasets we demonstrate that our neural-aided methods consistently outperform model-based approaches, achieving an absolute distance error of less than 10%. Consequently, we provide a lightweight and low-cost positioning solution for both biological and legged robotic dogs. To support reproducibility, our codebase and associated datasets have been made publicly available. 
+
+Index Terms —Dead Reckoning, Dogs, Robotic Legged Dogs, Inertial Sensors, Deep Learning 
+
+I. I NTRODUCTION 
+
+Recent advancements in deep learning (DL) have opened new frontiers for analyzing animal behavior and movement [1], [2], [3], [4]. Focusing on canine applications, DL methods were applied to identify orthopedic and neurological disorders by analyzing the canine gait [5] and for activity recognition (like sitting, walking, or standing) [6], [7]. Autonomous navigation for legged (quadrupedal) robots has recently evolved from simple path planning to more dynamic approaches. Modern research, led by groups such as [8] and [9], focuses on combining sensors like LiDAR and depth cameras. By using vision-based reinforcement learning and multi-sensor state estimation, these robots can navigate un-structured environments such as collapsed buildings or dense forests, where traditional 2D mapping methods do not work well [10]. Recently, a work employing visual language model to reduce the localization drift in challenges environments was proposed [11]. Wisth et al. [12] presented ArtPlanner, a sampling-based navigation planner that uses learned foothold evaluation and motion costs to enable reliable real-time nav-igation of quadrupedal robots in complex environments. In a recent work, Elnoor er al. [13] proposes ProNav, a navigation method that uses sensor data to estimate terrain traversability of robot dog. Multiple inertial measurement units and encoders were fused in an extended Kalman filter to achieve accurate positioning with a cost of additional hardware [14]. While robots can be programmed with specific, predictable motion 
+
+> I. Klein, G. Versano and I. Savin are with the Hatter Department of Marine Technologies, University of Haifa, Israel.
+
+patterns, such constraints cannot be applied to biological subjects. Unlike engineered robotic platforms with rigid links and known kinematic constraints, animal motion is highly non-rigid, intermittent, and context-dependent. This unpre-dictability motions makes classical model-based estimation challenging, traditional algorithms often fail to account for the complex biomechanical variations across different breeds, sizes, and environmental terrains, making them sensitive to sensor placement and gait variability. In the related field of human movement, namely pedestrian dead reckoning (PDR) [15], [16], has leveraged inertial sensors for the positioning task. First model-based approaches used accelerometers and biomechanical models to estimate step length with high precision [17], [18]. To maintain accurate orientation, these systems typically integrate gyroscopes and magnetometers through attitude and heading reference systems such as the Madgwick filters [19]. Foot-mounted systems further utilize Zero-Velocity Update (ZUPT) techniques to periodically reset accumulated integration errors whenever the sensor is stationary during the stance phase [20], [21]. Deep learning has recently emerged as a powerful tool for overcoming the limitations of model-based PDR. Neural net-works were employed to estimate the step length and velocity directly from high-dimensional sensor data [22]. Furthermore, end-to-end architectures, such as have demonstrated the ability to reconstruct entire trajectories by learning the underlying physics of motion directly from raw inertial measurements [23], [24], [25], [26], [27]. In robotic applications, periodic trajectories emulating pedes-trian motion are applied to mimic PDR approaches. Those in-clude quadrotors [28], [29] and wheeled mobile platforms [30], [31]. Despite the success of PDR-like methods in human and robotic applications, a significant gap remains in robust inertial frameworks suitable for both biological dogs and legged dog robots. To bridge this gap, we propose three inertial-based algorithms for accurate positioning, collectively referred to as dog dead reckoning (DDR). Leveraging the potential of DL methods to handle complex movement patterns and nonlinear dependencies, two of the three proposed algorithms are based on neural networks. Despite the main differences between biological dogs and robotic legged dogs (the former exhibit a wider variety of gait parameters), our DDR methods are designed to cope both types. Our main contributions are summarized as follows: 1) Dog Dead Reckoning (DDR) : A set of algorithms for accurate positioning of both biological dogs and robotic legged dogs based only on low-cost inertial sensors. 
+
+> arXiv:2603.07582v1 [cs.RO] 8 Mar 2026 2
+
+2) Model-Based DDR : Development of a model-based DDR pipeline that adapts the Weinberg step-length estimation approach and the Madgwick algorithm for walking direction estimation. Combining the two en-ables trajectory estimation. 3) Deep Learning-Aided DDR : Derivation of two dif-ferent deep learning-aided DDR approaches. The first estimates the velocity magnitude and direction using residual networks. The second employs an encoder transformer architecture to estimate the heading angle. In both cases, the predicted velocity is integrated over time to reconstruct the trajectory. 4) DDR Repository : To ensure reproducibility, provide a standardized benchmark for the community, and stimu-late further research, we have made our codebase and a novel dataset publicly available via a GitHub repository. To evaluate our proposed approaches we designed DogMotion, a wearable unit for canine data recording. Using DogMotion we recorded a dataset of 13 minutes. In addition, we employed a robotic legged dataset with a duration of 116 minutes. Across the two distinct datasets we demonstrate that our deep learning methods consistently outperform the model-based approach with an absolute distance error of less than 10%. The rest of the paper is organized as follows: Section II presents the inertial navigation and PDR equations of motion. Section III describes our proposed approach and Section IV presents the results. Finally, Section V concludes the paper. II. P ROBLEM FORMULATION 
+
+A. Inertial Navigation Systems 
+
+The INS equations of motion derive the navigation state (position, velocity, and orientation) by processing inertial sen-sor measurements relative to a known set of initial conditions. Let the accelerometer measurements (specific force vector), 
+
+f bib , expressing in the body frame be denoted by 
+
+f bib = fx fy fz
+
+T , (1) and the gyroscopes measurements (angular velocity vector), 
+
+ωbib , expressed in the body frame be denoted by 
+
+ωbib = [ ωx ωy ωz ]T (2) When using low-cost gyroscopes that cannot detect the Earth’s rotation, or during short operational durations, the Earth’s turn rate can be neglected. In these scenarios, the INS equations of motion are simplified to [32]: 
+
+˙pn = vn (3) 
+
+˙vn = Tnb fbib + gn (4) 
+
+˙Tnb = Tnb Ωbib (5) where pn is the position vector expressed in the local naviga-tion frame, vn is the velocity vector expressed in the navigation frame, gn is the local gravity vector expressed in the navigation frame, Ωbib is a skew-symmetric form of the angular velocity vector and ˙Tnb is the transformation matrix from body to navigation frame given by: 
+
+Tnb =
+
+
+
+cθ cψ sϕsθ cψ − cϕsψ cϕsθ cψ + sϕsψ
+
+cθ sψ sϕsθ sψ + cθ cψ cϕsθ sψ − sϕcψ
+
+−sθ sϕcθ cϕcθ
+
+ (6) where sx is the sine of x and cx is the cosine of x.
+
+B. Pedestrian Dead Reckoning 
+
+The model-based PDR algorithm cycle is comprised of four primary modules: step detection, step-length estimation, head-ing determination, and position updating. After each cycle, the 2D pedestrian position is updated by [16]: 
+
+xk = xk−1 + sk cos ψk (7) 
+
+yk = yk−1 + sk sin ψk (8) where ψk is the user’s walking direction angle, textits k is the estimated step size, k is the current epoch, and xk and yk are the two-dimensional position components. One of the common approaches to estimate the step-length is the Weinberg’s approach [33]. Based on the specific force magnetite, from (1), the Weinberg’s formula is [22]: 
+
+sw = kw (fmag,max − fmag,min )1/4 (9) where kw is the Weinberg gain, sw is the Weinberg-based step-length, fmag,max is the maximum value of the specific force during the step interval, and fmag,min is the minimum value of the specific force during the step interval. III. P ROPOSED APPROACH 
+
+We offer two families of algorithms for the positioning of dogs and robotic legged dogs using only inertial sensors. Motivated by the extensive literature on PDR, we propose model-based and deep learning-aided approaches to estimate the dog’s position robustly and accurately. In the latter, we introduce two methods for estimating the dog walking direction: one based on residual networks and the other on a transformer encoder. 
+
+A. Model-Based DDR 
+
+We follow the PDR guidelines and employ a four stage model-based DDR approach, as illustrated in Figure 1 and described below. 
+
+1. Step Detection . The dogs steps are identified from accelerometer measurements by applying a peak detection algorithm to the specific force magnitude instances [34]. Prior to applying the algorithm, the data was smoothed using a moving average filter. The magnitude of the specific force vector (1) at time k is 
+
+fmag,k =
+
+q
+
+f 2 
+
+> x,k
+
++ f 2 
+
+> y,k
+
++ f 2 
+
+> z,k
+
+(10) The mean of the specific force magnitude throughout the trajectory is defined by 
+
+¯fmag = 1
+
+n
+
+> n
+
+X
+
+> k=1
+
+fmag,k (11) 3
+
+Fig. 1: Flow diagram of our proposed model-based DDR approach. where n is the number of samples. Next, The mean of the specific force magnitude (11) is subtracted from the magnitude of the specific force vector (10) 
+
+fm,k = fmag,k − ¯fmag (12) Finally, the standard deviation (STD) of the specific force magnitude, after reducing its mean, is calculated by 
+
+σf =
+
+"
+
+1
+
+n
+
+> n
+
+X
+
+> k=1
+
+(fm,k − ¯fmag )2
+
+# 12
+
+(13) Finally, two parameters are required to implement this peak detection approach: 1) the minimum time interval between steps, defined empirically; and 2) the minimum peak height, which represents the threshold for a valid peak. We employ 
+
+1.5σf as this minimum threshold. 
+
+2. Step-Length Estimation . The step-length between two suc-cessive peaks is calculated by applying the Weinberg approach (9) on the dog’s detected peaks: 
+
+sd = kd (fmag,max − fmag,min )1/4 (14) where kd is the Weinberg gain, sd is the Weinberg-based step-length. We note that the Weinberg algorithm is a biomechan-ical approach, based on the inverted pendulum model, devel-oped for humans we apply it here for dogs. While the physical principles of locomotion are similar, there are fundamental differences due to humans being bipeds (two-legged) and dogs being quadrupeds (four-legged). Nevertheless, we assume that these differences are compensated when determining the Weinberg gain value. 
+
+3.Walking Direction Estimation . We adopt the Madgwick algorithm for attitude and heading estimation [19]. The Madg-wick filter is quaternion-based orientation estimator. The algo-rithm propagates the orientation using the gyroscope measure-ments and applies a correction term driven by accelerometer and magnetometers updates. As magnetometers are highly sensitive to the environment, we employ only accelerometer corrections. Specifically, the quaternion kinematics are propa-gated by: 
+
+˙qw,t = 12 qw,t−1 ⊗ ωbib,t (15) where qw = [ q0, q 1, q 2, q 3]T is the unit quaternion representing the rotation from the body frame to the navigation frame, ωbib 
+
+is the angular velocity vector measured by the gyroscope in the body frame, and ⊗ denotes the quaternion multiplication. To reduce gyroscope bias, the Madgwick filter adds a nonlinear correction term. This term is computed using gradient descent and estimated attitude to align the predicted angular velocity vector with the measured one from the accelerometer. The corrected quaternion dynamics are: 
+
+˙qest,t = ˙qw,t − β ∇f
+
+∥∇ f∥ (16) where β is a gain that controls the strength of the correction and ∇f is the gradient of the objective function f (qt) with re-spect to the quaternion components, indicating how f changes for a small change in qt.The orientation at the current time step is obtained by nu-merically integrating the corrected quaternion rate ˙qest,t (16). Using first-order discrete-time integration with a sampling period ∆t, the orientation update is expressed as: 
+
+qt = ˆ qt−1 + ˙ qest,t ∆t (17) where ˆqt−1 is the estimated orientation from the previous time step. By using the estimated unit quaternion ˆqt = [ q1, q 2, q 3, q 4]T,the heading angle, indicating the walking direction, is: 
+
+ψt = atan2 2( q3q4 − q1q2), 2( q21 + q24 ) − 1 (18) 
+
+4.Position Update . Given an initial 2D position of the dog 
+
+(xk−1, y k−1), the dog’s position is updated recursively: 
+
+xk = xk−1 + sd cos( ψk) (19a) 
+
+yk = yk−1 + sd sin( ψk) (19b) where sd is calculated in (14) and the walking direction ψk is estimated in (18). To summarize, our proposed model-based DDR is presented in Algorithm 1. 
+
+B. Deep Learning-Aided DDR with ResNets 
+
+Model-based DDR approaches face several significant limi-tations. A major drawback of model-based DDR is the require-ment for pre-calibrated empirical gains to estimate step-length, which must often be determined for each specific dog prior to operation. Furthermore, these gains are extremely sensitive to user dynamics (such as walking speed). The position solution can be updated only between successive peaks, which limits the update rate. To overcome these limitations, we offer a model-free deep learning approach to estimate the dog’s position through the estimation of its velocity and walking direction as shown in Figure 2. To this end, we split the positioning task into two specialized deep learning models: 4
+
+Fig. 2: Our proposed deep learning-aided DDR using a ResNet backbone. 
+
+Algorithm 1: Model-Based DDR Algorithm. 
+
+Input : Inertial measurements {abt , ωbt }Tt=1 at rate fs
+
+Sampling period ∆t = 1 /f s
+
+Weinberg gain G
+
+Peak detection parameters: threshold γ,minimum step period Tmin 
+
+Madgwick gain β
+
+Initial position p0 = [ x0, y 0]T
+
+Initial quaternion ˆq0 = [ q1,0, q 2,0, q 3,0, q 4,0]T
+
+Output: Estimated 2D trajectory {pk}Kk=0 
+
+Initialize: p0 = [ x0, y 0]T, ˆq0, k ← 0
+
+for t = 1 to T do 
+
+qω,t ← [0 , ω bx,t , ω by,t , ω bz,t ]T
+
+˙qω,t ← 12 ˆqt−1 ⊗ qω,t 
+
+Compute ∇f (ˆ qt−1, abt ) from gravity alignment error 
+
+˙qest ,t ← ˙qω,t − β ∇f 
+
+> ∥∇ f∥
+
+ˆqt ← ˆqt−1 + ˙ qest ,t ∆t
+
+ˆqt ← ˆqt/∥ˆqt∥
+
+ψt ← atan2 
+
+
+
+2( q3,t q4,t −q1,t q2,t ), 2( q21,t +q24,t )−1) 
+
+
+
+ft ← ∥ abt ∥
+
+fmax ← max( fmax , f t)
+
+fmin ← min( fmin , f t)
+
+if isPeak( ft, γ ) and (t∆t − tlast ) ≥ Tmin then 
+
+tlast ← t∆tk ← k + 1 ∆f ← max( fmax − fmin , 0) 
+
+sk ← G · 4
+
+√∆fψk ← ψt
+
+xk ← xk−1 + sk cos( ψk)
+
+yk ← yk−1 + sk sin( ψk)
+
+Store pk = [ xk, y k]T
+
+return {pnk }Kk=0 
+
+1) Velocity Estimation : This network focuses on how fast the dog is moving. It looks at the patterns in the accelerometer data to identify the dog’s pace and translates those vibrations into a forward velocity. 2) Walking Direction Estimation : This network focuses on where the dog is heading. It analyzes the rotation data to track the dog’s heading, even during sharp turns and outputs the walking direction. Once the magnitude velocity and the direction are regressed, the 2D position of dog is updated by: 
+
+pnk+1 = pnk + ˆvnest ,k · | vnest,k | · ∆t (20) where |vnest,k |, ˆvnest are the estimation of the magnitude velocity and direction in time k, respectively, pnk is the position vector in time k, and ∆t is the update rate. 
+
+1) Backbone Architecture: The network architecture is based on a 1D adaptation of the ResNet-18 [35] architecture. Since our input is a stacked sequence of 1D inertial measure-ments, we replace the original 2D convolutional with a 1D convolution that operates along the temporal axis and accepts a 6-channel window, corresponding to tri-axial accelerometer and gyroscope readings. To capture the complex temporal dynamics of movement, the input is processed through a series of residual blocks containing 1D convolutional layers, where skip connections are employed to facilitate gradient flow. These features are subsequently passed through fully connected layers with ReLU activations to introduce nonlin-earities, ultimately outputting a regressed value. The resulting backbone preserves the ResNet-18 stage config-uration (2 , 2, 2, 2) , while operating entirely in 1D. Following the residual stages, we flatten the result and used a fully con-nected regression head to predict the velocity/direction. This design follows common practice in neural inertial navigation for mapping raw IMU windows to motion estimates [36], [24]. This backbone architecture, with all parameters, is used for both regression tasks. The only difference is in the output layer. For the velocity estimation, the output is a 2 × 1 vector representing the directional components of the velocity while for the walking direction the output is a scalar of the direction. 
+
+2) Loss Functions and Training: To optimize the network for velocity estimation, the mean squared error (MSE) loss function is employed during the training process: 
+
+L(yi, ˆyi) = 1
+
+n
+
+> n
+
+X
+
+> i=1
+
+(yi − ˆyi)2 (21) where yi represents the ground truth (GT) velocity magnitude, 
+
+ˆyi is the predicted value, and n denotes the number of items in the batch. For walking direction regression network, we employ a cosine distance loss defined as: 
+
+L(θ) = 1 − cos (θ) (22) where 
+
+cos (θ) = ˆvnest · ˆvnGT (23) 5
+
+The network parameters, including weights and biases denoted by the vector α, are optimized using the Adaptive Moment Estimation (Adam) algorithm to ensure robust convergence. The update rule is defined as: 
+
+α = α − η∇αJ(α), α = [ ω b]T (24) where J(α) is the loss function, which emphasizes that the parameters are optimized as a collective vector α, η denotes the learning rate, and ∇α is the gradient operator. The initial learning rate is set to 0.009, with a learning rate scheduler configured to apply a reduction factor of 0.5 upon detecting a plateau in validation performance.The training process is executed over 200 epochs with a batch size of 2048. Each input instance consists of a 6 × w matrix, rep-resenting one second of synchronized data from the three-axis accelerometer and three-axis gyroscope sampled at w Hz. This windowing approach allows the backbone architecture to learn the spatial-temporal correlations necessary for estimating the velocity magnitude and velocity direction and also to mitigate overfitting. The train parameters is sum up in Table I. TABLE I: Hyperparameters for the ResNet backbone archi-tecture.       
+
+> Learning rate Batch Size Epoch Window Size
+> 0.009 2048 200 125
+
+3) Summary: The entire deep-learning-aided DDR algo-rithm process shown in Algorithm 2. 
+
+Algorithm 2: Deep learning-aided DDR using aResNet backbone. 
+
+Input : IMU windows {Xk}K−1
+
+> k=0
+
+Trained networks: magnitude velocity model 
+
+Fvel and direction velocity model Fdir 
+
+Initial position pn 
+
+> 0
+
+∈ R2 (e.g., pn 
+
+> 0
+
+= [0 , 0] T)Time step ∆t
+
+Output: Estimated trajectory {pnk }Kk=0 
+
+Initialize pn 
+
+> 0
+
+;
+
+for k ← 0 to K − 1 do 
+
+Predict velocity magnitude: 
+
+|vn
+
+> est ,k
+
+| ← F vel (Xk)
+
+Predict velocity direction: 
+
+ˆvnest ,k ← F dir (Xk)
+
+Construct velocity vector: 
+
+vn 
+
+> est ,k
+
+← ˆvnest ,k|vn
+
+> est ,k
+
+|
+
+Position update: 
+
+pnk+1 ← pnk + vn 
+
+> est ,k
+
+∆t
+
+return {pnk }Kk=0 
+
+C. Deep Learning-Aided DDR with Transformer Encoders 
+
+We offer a different approach for the walking direction esti-mation. It includes three main building blocks as follows: 1) Embedding Layer : The embedding layer employs a 1D convolutional layer with a kernel size of three to project the raw inertial sensor input from six channels to a latent dimension of dmodel = 64 . This convolutional approach allows the model to capture local temporal features within the time series—such as specific gait im-pacts or high-frequency vibrations—thereby enhancing the model’s expressive capacity compared to standard linear projections in points. The resulting features are scaled by √dmodel to ensure numerical stability during the subsequent attention operations. 2) Encoder Layer : The core of the model consists of three stacked transformer encoder layers designed to extract long-range dependencies within the inertial data. Each layer contains a multi-head self-attention (MHSA) mechanism with four heads, which allows the model to simultaneously attend to different patterns in the motion sequence. The attention operation is formally defined as: Attention (Q, K, V ) = softmax 
+
+ QK T
+
+√dk
+
+
+
+V (25) where Q, K , and V represent the query, key, and value matrices, respectively, and dk denotes the dimension of the key vectors. Following the attention block, a position-wise feed-forward network (FFN) with a hidden dimension of 128 is applied. Each sub-layer is wrapped in a residual connection followed by layer normalization to facilitate stable gradient flow. 3) Regression Head: The final representation is extracted from the latent state of the last time step in the sequence, providing a temporally aware summary of the entire motion window. This vector is passed through a fully connected regression head consisting of a hidden layer with 64 units and ReLU activation. Thus, the proposed network architecture utilizes a transformer-based framework to estimate the heading from inertial sensor data. The model receives a time window of one second, consisting of w samples of synchronized data from a three-axis accelerometer and a three-axis gyroscope. To capture the complex temporal dynamics of movement, the input is processed through an encoder based transformer. The output is passed through two fully connected layers with ReLU and Dropout function between them. A flowchart of the entire process is shown in Figure 3. 
+
+1) Loss Function and Training: To optimize the network for heading estimation, the MSE loss function is employed during the training process: 
+
+L(ψi, ˆψi) = 1
+
+n
+
+> n
+
+X
+
+> i=1
+
+(ψi − ˆψi)2 (26) where ψi is the GT heading displacement and ˆψi is the predicted heading displacement. The network parameters are optimized using the Adam algo-rithm to ensure robust convergence. The update rule is defined as shown in (24). The learning rate is set to 0.0025. The training process is executed over 200 epochs with a batch size of 1024. Each input instance consists of a 6 × w matrix, representing one second of synchronized data from the three-axis accelerometer and three-axis gyroscope sampled at w Hz. The train parameters are summarized in Table II. 6
+
+Fig. 3: Our proposed deep learning-aided DDR using a hybrid ResNet and transformer encoder backbone. TABLE II: Hyperparameters for the ResNet and transformer encoder backbone architectures.       
+
+> Learning rate Batch Size Epoch Window Size
+> 0.0025 1024 200 100
+
+2) Position update: Once we calculate the magnitude ve-locity and the heading estimation we can calculate the position of dog by: 
+
+pnk+1 = pnk +|vnest,k |· [cos (ψk−1+∆ ψk), sin (ψk−1+∆ ψk)] ·∆t
+
+(27) where |vnest,k |, ∆ψk+1 are the estimation of the magnitude velocity and heading displacement in time k, respectively. The deep-learning aiding DDR approach is summarized in Algorithm 3. 
+
+Algorithm 3: Deep learning-aided DDR using a hybrid ResNet and transformer encoder backbone. 
+
+Input : IMU windows {Xk}K−1
+
+> k=0
+
+Trained models: Fmag and Fdir 
+
+Initial state: Position pn 
+
+> 0
+
+∈ R2 and Heading ψ0
+
+Time step ∆t
+
+Output: Estimated trajectory {pnk }Kk=0 
+
+Initialize pn 
+
+> 0
+
+and ψ0
+
+for k ← 0 to K − 1 do 
+
+|vn
+
+> est ,k
+
+| ← F mag (Xk)∆ψk ← F dir (Xk)
+
+ψk ← ψk−1 + ∆ ψk
+
+dk ← | vn
+
+> est ,k
+
+| · [cos( ψk), sin( ψk)] T
+
+pnk+1 ← pnk + dk · ∆t
+
+return {pnk }Kk=0 
+
+IV. A NALYSIS AND RESULTS 
+
+A. Datasets 
+
+To evaluate our proposed approach, we employ two datasets. Our dataset was recorded using two dog subjects, while the publicly available second dataset was collected using a legged robot [37]. 
+
+B. Our Dog Dataset 
+
+The data collection was performed using our own designed DogMotion device. It is a custom-integrated sensing unit based on the Raspberry Pi Zero microcomputer [38]. The core of the system is the OzzMaker SARA-R5 LTE-M GPS [39] shield, which provides inertial readings alongside GNSS psoition measurements. To ensure temporal consistency a critical re-quirement for sensor fusion a real time clock (RTC) module was integrated into the architecture. This module maintains strict synchronization between the high-frequency inertial sam-ples and the GNSS reference signals, preventing time-drift during extended recording sessions. The system is powered by a 7.4 [V] battery, providing a stable voltage for long-duration field trials. User interaction is managed via a button equipped with an LED indicator, which serves as the control interface to initiate and terminate data logging sessions and provides real-time status feedback. The DogMotion device is presented in Figure 4. The experimental dataset was recorded using two dog subjects equipped with the DogMotion sensor suite as presented in Figure 5. The dataset comprises a total of 13 minutes of synchronized motion recordings across 12 different trajectories, as described in Table III, The inertial TABLE III: Recorded trajectories length and time in our dog dataset.                             
+
+> Trajectory Length [m] Time [sec]
+> 176.1 46 241.1 33 371.9 53 495.6 65 561.8 66 679.8 50 797.0 71 8118.3 87 9119.5 98 10 100.8 76 11 98.2 57 12 103.9 62
+> Average 88.7 63.7
+
+readings was configured to sample at 125 [Hz], providing dense temporal data. In contrast, the GNSS GT was recorded at a frequency of 1 [Hz]. To facilitate supervised learning, the GNSS coordinates were interpolated and synchronized with the inertial time-steps, allowing for precise labeling of the 7
+
+Fig. 4: Our DogMotion device (a) Hardware connection and (b) Design and components. 
+
+Fig. 5: The dogs equipped with our DogMotion device during field experiments. velocity and direction vectors, the full specification of the inertial sensors is provided in Table IV. Trajectories 1-3,5,6,9-TABLE IV: Inertial Sensor Bias and Noise Density Specifica-tions.            
+
+> Gyroscope Accelerometer Bias [◦/h]Noise [◦/s/√Hz ]Bias [mg] Noise [μ g/√Hz ]7200 0.004 40 80
+
+12 were used for training while Trajectories 4,7,8 for testing. 
+
+1) Legged Robot Dataset: This publicly available dataset [37] was collected using a legged robot equipped ANYmal IMU and CPT7 dual-antenna RTK-GNSS sensors, The dataset comprises a total of 116 minutes of synchronized motion recordings across 49 different trajectories each of trajectories span between 3 minutes to 7 minutes. In this paper, we employed 17 different trajectories as described in Table V. Trajectories 1-6,8-15 were used for training while Trajectories 7,16,17 for testing. TABLE V: Length and time of Legged Robot dataset trajec-tories                                       
+
+> Trajectory Length [m] Time [sec]
+> 1198.0 348 2204.0 478 3204.0 478 4137.1 388 5173.5 397 694.1 228 7168.6 275 8139.4 236 9200.5 444 10 179.3 362 11 258.5 470 12 139.4 236 13 200.6 444 14 313.6 444 15 427.9 960 16 244.8 412 17 169.5 354
+> Average 203.1 409
+
+C. Performance Metrics 
+
+To evaluate our proposed DDR apporaches relative to the iner-tial navigation equations of motion, we used two performance 8
+
+matrices: 1) Position root mean square error (PRMSE) : The PRMSE of the position compares the estimated position of the dog in the navigation frame with the GNSS GT: PRMSE (m) =
+
+vuut 1
+
+N
+
+> N
+
+X
+
+> k=1
+
+|| pk − ˆpk|| 2 (28) where ˆpk is the estimated position vector at time k and 
+
+pk is the GT position vector at time k. 2) Absolute Distance Error (ADE) : The ADE of the trajectory compares the estimated and GT trajectory length of the dog: ADE (m) = |lGT − lest | (29) where lest is the estimated length trajectory and lGT is the GT length trajectory. 
+
+D. Comparative Methods 
+
+To evaluate the performance of our proposed approaches, we compare them against a standard INS baseline. All methods rely exclusively on inertial sensors for the positioning task. The evaluated approaches are: 1) INS : A strapdown inertial navigation solution using the body-mounted IMU on the dogs. This baseline solution is obtained using (3)-(5). 2) MB-DDR : Our proposed model-based DDR, with the Weinberg step-length estimation, as described in Algo-rithm 1. 3) DL1-DDR : Our deep learning-aided DDR based on two ResNet backbone network for estimating the dog’s velocity and direction, as presented in Algorithm 2. 4) DL2-DDR : Our deep learning-aided DDR based on a ResNet backbone network for estimating the dog’s velocity and on a transformer encoder network to regress the dog’s walking direction, as shown in Algorithm 3. 
+
+E. Results: Dog Dataset 
+
+At the beginning of each trajectory, we perform a stationary calibration (zero-order) using the first 250 inertial samples ( ∼2s) to estimate constant sensor biases and the initial orientation. This assumes that the dog remains stationary during this inter-val. As expected, the model-based INS approach yielded sig-nificant errors across all trajectories, with an average PRMSE of 2400 meters. For the MB-DDR , we used Trajectory 2 to calibrate the Weinberg gain and evaluated it on the remaining trajectories. Table VI presents the performance of our proposed approaches for each test trajectory. We note that the MB-DDR 
+
+achieved consistent performance across the trajectories not included in the table. The experimental results demonstrate that the DL1-DDR method consistently outperforms both the model-based approach and the alternative deep learning configuration across all evaluated metrics. Specifically, DL1-DDR achieved the lowest mean PRMSE of 2.91m (2.9%), rep-resenting a significant improvement over the 25.02 m (25.87%) recorded for MB-DDR and 19.40m (17.9%) for DL2-DDR. While MB-PDR shows high sensitivity to trajectory variations peaking at a PRMSE of 30.52m. Interestingly, the ADE metrics reveal a shared performance characteristic between DL1-DDR and DL2-DDR in Trajec-tories 7 and 8, both yielding identical errors (e.g., 1.25 m in Trajectory 8). However, DL1-DDR’s superior PRMSE suggests it is far more robust against significant positional drifts than DL2-DDR. Overall, the transition from traditional model-based DDR to the DL1-DDR architecture results in a nearly ten-fold reduction in mean positional error, validating the efficacy of deep learning in mitigating the cumulative drift inherent in inertial navigation. Figure 6 presents GT trajectory and estimated DDR trajecto-ries for the dog test dataset (Trajectories 4,7, and 8). 
+
+F. Results: Robotic Legged Dog Dataset 
+
+In this dataset no prior prepossessing was required. As in the dog dataset, the model-based INS approach yielded significant errors across all trajectories, with an average PRMSE over 10km. For the MB-DDR , we used Trajectory 12 to calibrate the Weinberg gain and evaluated it on the remaining trajec-tories. Table VII presents the performance of our proposed approaches for each test trajectory. We note that the MB-DDR achieved consistent performance across the trajectories not included in the table. Based on the results presented in Table VII, the performance evaluation across Trajectories 7, 16, and 17 highlights a significant shift in accuracy compared to previous tests, with DL2-DDR emerging as the most precise model. While MB-DDR continues to struggle with high error rates, reaching a peak PRMSE of 57.4m in Trajectory 16, the deep learning models demonstrate superior adaptation to the diverse movement patterns. The DL2-DDR architecture achieved the lowest mean PRMSE of 5.25m (2.7%), effec-tively halving the error of the DL1-DDR 12.92m. Notably, while DL1-DDR and DL2-DDR share identical ADE values across all individual trajectories, the PRMSE metric reveals that DL2-DDR is significantly more capable of minimizing peak positional deviations. This suggests that while both deep learning configurations may follow a similar performance, DL2-DDR provides a more stable and geometrically accurate reconstruction of the legged dog’s path, particularly in com-plex scenarios where the model-based approach’s mean error exceeds 25m. Figure 7 presents GT trajectory and estimated DDR trajectories for the legged dog test dataset (Trajectories 7,16, and 17). 
+
+G. Summary 
+
+Regardless of whether the subject is a biological dog or a robotic legged dog, DL-DDR models significantly outperform the MB-DDR approach and of course the INS solution. MB-DDR consistently exhibits the highest PRMSE errors, indicat-ing that kinematic models struggle with the cumulative drift inherent in long-term dog tracking. Across both tables, DL1-DDR and DL2-DDR often share the exact same ADE for specific trajectories (e.g., Trajectory 7 and 8 in Table 1; Trajectories 7, 16, and 17 in Table 2). This suggests that while their internal error distributions differ, their 9
+
+TABLE VI: Performance comparison across different DDR trajectories for the dog dataset showing the PRMSE and ADE metrics.                                 
+
+> MB-DDR [m] (%) DL1-DDR [m] (%) DL2-DDR [m] (%) Trajectory PRMSE ADE PRMSE ADE PRMSE ADE 428.38 (25.3%) 5.08 (4.3%) 4.28 (3.9%) 9.08 (7.6%) 30.54 (27.8%) 9.1 (7.6%)
+> 716.18 (13.7%) 10.46 (13.1%) 2.77 (2.3%) 2.05 (2.6%) 21.14 (17.7%) 2.05 (2.6%)
+> 830.52 (38.6%) 2.13 (3.0%) 1.67 (2.4%) 1.25 (1.8%) 6.52 (8.1%) 1.25 (1.8%)
+> Mean 25.02 (25.9%) 5.9 (6.8%) 2.91 (2.9%) 4.12 (4.0%) 19.40 (17.9%) 4.12 (4.0%)
+
+Fig. 6: GT trajectory and estimated DDR trajectories for the dog test dataset (Trajectories 4,7, and 8). TABLE VII: Performance comparison across different DDR trajectories for the legged dog dataset showing the PRMSE and ADE metrics.                                 
+
+> Trajectory MB-DDR [m] (%) DL1-DDR [m] (%) DL2-DDR [m] (%) PRMSE ADE PRMSE ADE PRMSE ADE 76.47 (4.6%) 20.08 (14.9%) 8.71 (4.3%) 4.06 (2.0%) 2.11 (1.5%) 4.06 (2.0%)
+> 16 57.4 (23.5%) 20.29 (8.3%) 10.81 (4.4%) 17.98 (7.4%) 8.70 (3.6%) 17.98 (7.4)
+> 17 13.92 (8.2%) 9.51 (5.6%) 19.24 (11.3%) 7.33 (4.3 %) 4.94 (2.9%) 7.33 (4.3%) Mean 25.93 (12.1%) 16.62 (9.6%) 12.92 (6.7%) 9.79 (13.7%) 5.25 (2.7%) 9.79 (13.7%)
+
+Fig. 7: GT trajectory and estimated DDR trajectories for the dog test dataset (Trajectories 7,16, and 17). average estimated trajectory remains similar. To further validate the robustness of the proposed DL-DDR architectures, an ablation study was conducted by randomly reassigning the trajectories between the training and test-ing datasets. Despite these stochastic variations in the data distribution, the performance metrics remained remarkably consistent across multiple iterations. Both DL1-DDR and DL2-DDR maintained their accuracy with mean PRMSE and ADE values fluctuating by negligible margins. This stability indicates that the models have successfully learned generalized motion features—such as gait patterns and inertial signal variation rather than merely overfitting to specific trajectories. The results confirm that the performance gains observed in Tables 1 and 2 are a result of the architectural design of the DL models and are not biased by the specific partitioning of the data. V. C ONCLUSIONS 
+
+In this paper we present a framework for dog dead reckoning suitable for both biological dogs and robotic legged dogs. To this end, we proposed three methods including a model-based DDR and two neural-aided DDR. We validated our methods using two distinct datasets: 1) Our dataset recorded with two dog subjects and 2) a publicly available dataset that 10 
+
+was collected using a legged robot. The experimental results highlight the limitations of classical inertial integration for this application. While the model-based DDR method substantially improves performance by introducing step-based updates, the heading angle was not estimated accurately, leading to a degraded reconstructed tra-jectory. In contrast, our neural-aided approaches, DL1-DDR and DL2-DDR produce more robust short-term velocity and direction estimates, which significantly reduce trajectory drift across both datasets. This improvement over the MB-DDR is attributed to their inherent ability to denoise sensor signals, model complex relationships, and cope with uncertainty in the inertial data. Future work will focus on expanding the dataset to include additional dogs, environments, and motion patterns in order to improve robustness and generalization. Furthermore, we plan to incorporate magnetometer measurements for further reducing drift and improving overall localization performance. In conclusion, our DDR approaches offer a lightweight and low-cost solution for both biological dogs and legged robotic dogs. These methods overcome the high drift characterizing of pure inertial navigation, enabling the achievement of mission-specific objectives. Furthermore, by providing accurate posi-tioning for legged robots, our methods facilitate autonomy on low-cost hardware and contribute to effective collision avoidance. To ensure reproducibility, provide a standardized benchmark for the community, and stimulate further research, the codebase implementing the described frameworks and our new dataset have been made publicly available at a GitHub repository. REFERENCES [1] W. Boteju, H. Herath, M. Peiris, A. Wathsala, P. Samarasinghe, and L. Weerasinghe, “Deep learning based dog behavioural monitoring system,” in 2020 3rd International Conference on Intelligent Sustainable Systems (ICISS) , pp. 82–87, IEEE, 2020. [2] A. Mao, E. Huang, X. Wang, and K. Liu, “Deep learning-based animal activity recognition with wearable sensors: Overview, challenges, and future directions,” Computers and Electronics in Agriculture , vol. 211, p. 108043, 2023. [3] A. Hussain, S. Ali, M.-I. Joo, and H.-C. Kim, “A deep learning approach for detecting and classifying cat activity to monitor and improve cat’s well-being using accelerometer, gyroscope, and magnetometer,” IEEE Sensors Journal , vol. 24, no. 2, pp. 1996–2008, 2023. [4] P. Kasnesis, V. Doulgerakis, D. Uzunidis, D. G. Kogias, S. I. Funcia, M. B. González, C. Giannousis, and C. Z. Patrikakis, “Deep learning empowered wearable-based behavior recognition for search and rescue dogs,” Sensors , vol. 22, no. 3, p. 993, 2022. [5] N. Palez, L. Straß, S. Meller, H. Volk, A. Zamansky, and I. Klein, “Canine clinical gait analysis for orthopedic and neurological disorders: An inertial deep-learning approach,” scientific Reports , 2026. [6] E. Nolasco Jr, A. C. Aldea, and J. Villaverde, “Dog activity recognition using convolutional neural network,” Engineering Proceedings , vol. 92, no. 1, p. 41, 2025. [7] B. Cetintav and A. Yalcin, “Decoding canine behaviors through explain-able ai and wearable sensor data,” Journal of Veterinary Behavior , 2025. [8] M. Hutter et al. , “Wild Visual Navigation: Fast Traversability Learning via Pre-Trained Models and Online Self-Supervision,” Science Robotics ,2024. [9] D. Wisth, M. Camurri, and M. Fallon, “Vilens: Visual, inertial, lidar, and leg odometry for all-terrain legged robots,” IEEE Transactions on Robotics , vol. 39, no. 1, pp. 309–326, 2022. [10] Y. Nisticò, J. C. V. Soares, L. Amatucci, G. Fink, and C. Semini, “MUSE: A real-time multi-sensor state estimator for quadruped robots,” 
+
+IEEE Robotics and Automation Letters , 2025. [11] A.-C. Cheng, Y. Ji, Z. Yang, Z. Gongye, X. Zou, J. Kautz, E. Bıyık, H. Yin, S. Liu, and X. Wang, “Navila: Legged robot vision-language-action model for navigation,” arXiv preprint arXiv:2412.04453 , 2024. [12] L. Wellhausen and M. Hutter, “Artplanner: Robust legged robot naviga-tion in the field,” Field Robotics , vol. 3, pp. 413–434, 2023. [13] M. Elnoor, A. J. Sathyamoorthy, K. Weerakoon, and D. Manocha, “Pronav: Proprioceptive traversability estimation for legged robot navi-gation in outdoor environments,” IEEE Robotics and Automation Letters ,vol. 9, no. 8, pp. 7190–7197, 2024. [14] S. Yang, Z. Zhang, B. Bokser, and Z. Manchester, “Multi-imu proprio-ceptive odometry for legged robots,” in 2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) , pp. 774–779, IEEE, 2023. [15] Q. Wang, M. Fu, J. Wang, H. Luo, L. Sun, Z. Ma, W. Li, C. Zhang, R. Huang, X. Li, et al. , “Recent advances in pedestrian inertial naviga-tion based on smartphone: A review,” IEEE Sensors Journal , vol. 22, no. 23, pp. 22319–22343, 2022. [16] I. Klein, “Pedestrian inertial navigation: An overview of model and data-driven approaches,” Results in Engineering , vol. 25, p. 104077, 2025. [17] N.-H. Ho, P. H. Truong, and G.-M. Jeong, “Step-detection and adaptive step-length estimation for pedestrian dead-reckoning at various walking speeds using a smartphone,” Sensors , vol. 16, no. 9, p. 1423, 2016. [18] S. Shin, C. Park, J. Kim, H. Hong, and J. Lee, “Adaptive step length estimation algorithm using low-cost mems inertial sensors,” in 2007 IEEE sensors applications symposium , pp. 1–5, IEEE, 2007. [19] S. O. Madgwick et al. , “An efficient orientation filter for inertial and inertial/magnetic sensor arrays,” 2010. [20] J. F. Wagner, M. Kohl, and B. Györfi, “Reevaluation of algorithmic basics for zupt-based pedestrian navigation,” IEEE access , vol. 10, pp. 118419–118437, 2022. [21] H. Li, H. Liu, Z. Li, C. Li, Z. Meng, N. Gao, and Z. Zhang, “Adaptive threshold-based zupt for single imu-enabled wearable pedestrian local-ization,” IEEE Internet of Things Journal , vol. 10, no. 13, pp. 11749– 11760, 2023. [22] I. Klein and O. Asraf, “StepNet—deep learning approaches for step length estimation,” IEEE Access , vol. 8, pp. 85706–85713, 2020. [23] J. Li, X. Zhou, S. Qiu, Y. Mao, Z. Wang, C. K. Loo, and X. Liu, “Learning-based stance phase detection and multisensor data fusion for zupt-aided pedestrian dead reckoning system,” IEEE Internet of Things Journal , vol. 11, no. 4, pp. 5899–5911, 2023. [24] O. Asraf, F. Shama, and I. Klein, “Pdrnet: A deep-learning pedestrian dead reckoning framework,” IEEE Sensors Journal , vol. 22, no. 6, pp. 4932–4939, 2021. [25] C. Zhang and C. Berger, “Pedestrian behavior prediction using deep learning methods for urban scenarios: A review,” IEEE Transactions on Intelligent Transportation Systems , vol. 24, no. 10, pp. 10279–10301, 2023. [26] W. Liu, D. Caruso, E. Ilg, J. Dong, A. I. Mourikis, K. Daniilidis, V. Kumar, and J. Engel, “Tlio: Tight learned inertial odometry,” IEEE Robotics and Automation Letters , vol. 5, no. 4, pp. 5653–5660, 2020. [27] C. Chen, X. Lu, A. Markham, and N. Trigoni, “Ionet: Learning to cure the curse of drift in inertial odometry,” in Proceedings of the AAAI conference on artificial intelligence , vol. 32, 2018. [28] D. Hurwitz, N. Cohen, and I. Klein, “Deep-learning-assisted inertial dead reckoning and fusion,” IEEE Transactions on Instrumentation and Measurement , vol. 74, pp. 1–9, 2024. [29] A. Shurin and I. Klein, “Qdr: A quadrotor dead reckoning framework,” 
+
+IEEE Access , vol. 8, pp. 204433–204440, 2020. [30] A. Etzion and I. Klein, “Morpi: Mobile robot pure inertial navigation,” 
+
+IEEE Journal of Indoor and Seamless Positioning and Navigation , vol. 1, pp. 141–150, 2023. [31] A. K. Sahoo and I. Klein, “Morpi-pinn: A physics-informed frame-work for mobile robot pure inertial navigation,” arXiv preprint arXiv:2507.18206 , 2025. [32] D. Titterton and J. L. Weston, Strapdown Inertial Navigation Tech-nology . American Institute of Aeronautics and Astronautics and the Institution of Electrical Engineers, 2nd ed., 2004. [33] H. Weinberg, “Using the ADXL202 in pedometer and personal naviga-tion applications,” Application Note AN-602, Analog Devices, 2002. [34] R. Harle, “A survey of indoor inertial positioning systems for pedes-trians,” IEEE Communications Surveys & Tutorials , vol. 15, no. 3, pp. 1281–1293, 2013. [35] K. He, X. Zhang, S. Ren, and J. Sun, “Deep residual learning for image recognition,” in Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , 2016. 11 
+
+[36] S. Herath, H. Yan, and Y. Furukawa, “Ronin: Robust neural inertial navigation in the wild: Benchmark, evaluations, and new methods,” in 2020 IEEE International Conference on Robotics and Automation (ICRA) , IEEE, 2020. [37] J. Frey, T. Tuna, F. Fu, K. Patterson, T. Xu, M. Fallon, C. Ca-dena, and M. Hutter, “Grandtour: A legged robotics dataset in the wild for multi-modal perception and state estimation,” arXiv preprint arXiv:2602.18164 , 2026. [38] Raspberry Pi Foundation, “Raspberry Pi Zero,” 2015. Accessed: Febru-ary 11, 2026. [39] OzzMaker, “Ozzmaker SARA-R5 LTE-M GPS + 10DOF,” 2023. Ac-cessed: February 11, 2026.
