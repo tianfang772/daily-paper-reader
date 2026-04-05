@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-001.webp",
+      "caption": "Figure 7: Stability heat maps showing the feasible turning regions in the parameter space of velocity and strategy intensity for selected nonzero axial-shift conditions: 1 cm for body bending (A), 1 cm for lateral force (B), and 0.4 cm for lateral shift (C). These values were chosen as representative nonzero axial-shift conditions to illustrate the substantial stabilizing e ect of axial shift seen in Fig. 6. Compare with the zero-shift conditions in Fig. 5A C.",
+      "page": 11,
+      "index": 1,
+      "width": 979,
+      "height": 338
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-002.webp",
+      "caption": "Figure 4: E ect of axial shift on support geometry during turning. Schematic for a representative three-limb support phase with the left forelimb (LF) in swing. (A) Without axial shift, the COM trajectory tends to approach the outer support edge RFRH rst, promoting outer-side loss of support. (B) With posterior axial shift of the right forelimb (RF), the support triangle is reshaped so that the COM trajectory approaches the edge LH-RF earlier. Because LH-RF is the edge opposite RH, this representative con guration promotes earlier unloading and lifto of RH, shortening its stance displacement and increasing e ective stepping frequency. Thick black lines represent the body axis and simpli ed body frame. The large black circle denotes the center of mass (COM). Filled black circles indicate actual paw positions in the illustrated phase, while open circles indicate unshifted target paw positions in body coordinates. The dotted arrow indicates the COM trajectory, and the arrow indicates the imposed posterior axial shift of RF.",
+      "page": 7,
+      "index": 2,
+      "width": 473,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-003.webp",
+      "caption": "Figure 3: Axial shift implementation in turning strategies. (A) Body bending strategy. (B) Lateral shift strategy. The Lateral Force case is omitted because this strategy does not alter touchdown geometry or paw-target positions; unlike body bending and lateral shift, its e ect is purely dynamic (added perpendicular force) rather than kinematic and is therefore not illustrated by changes in target paw position alone. Black lled circles represent the positions of limbs that are currently in stance phase (ground contact). Open circles indicate default target positions for the limb during the swing phase. Blue circles indicate the adjusted target position in the presence of a non-zero axial shift. The arrows indicate the displacement from the default target (open circle) to the shifted target (blue circle). This posterior shift adjusts the foot placement relative to the body's center, modifying the support polygon during the turn.",
+      "page": 7,
+      "index": 3,
+      "width": 453,
+      "height": 421
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-004.webp",
+      "caption": "Figure 6: Speed-dependent e ects of axial shift on turning performance. Maximum achievable curvature is plotted against velocity for body bending (A), lateral force (B), and lateral shift (C). Color corresponds to the magnitude of the axial shift in centimeters. Note that body bending only allows for sharp turns at low speeds and lateral force achieves the highest overall curvatures at medium speeds; both saturate at ≈1 cm shift, corresponding to 0.1 body lengths (L) or 0.5 body widths (2h) for the simulated mouse geometry. In contrast, in the lateral shift strategy, the axial shift pushes the performance curve toward higher velocities, peaking at a smaller axial shift of ≈0.4 cm. Compare with the unshifted results in Fig. 5.",
+      "page": 10,
+      "index": 4,
+      "width": 979,
+      "height": 346
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-005.webp",
+      "caption": "Figure 11: Footfall diagrams for each limb during a left turn: hind right (HR), hind left (HL), fore right (FR), and fore left (FL) limbs during straight walking (A) and during turns using body bending (B), lateral force (C), and lateral shift (D), showing temporal sequences of ground contact (black) and swing phases shown by color. In panel D, the highcurvature lateral-shift condition produces a substantial overlap between the swing phases of the inner HL and inner FL, creating a transient interval in which support is borne primarily by the outer limbs. This indicates a marked reduction in diagonality within the same basic walking gait, rather than a transition to a distinct gait class.",
+      "page": 14,
+      "index": 5,
+      "width": 466,
+      "height": 983
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-006.webp",
+      "caption": "Table 1: Model parameters. Parameters in this table were determined based on three criteria. Body dimensions (L, H, h), mass (m), and maximal limb displacement (D) were selected to approximate the geometric scale of a mouse. The gravitational acceleration (g) is a standard physical constant. The friction coe cient (λ) and nominal propulsion force limits were tuned within the present study to achieve stable baseline walking and enable a broad range of simulated turning maneuvers based on the planar framework established in (Molkov et al., 2024).",
+      "page": 18,
+      "index": 6,
+      "width": 918,
+      "height": 208
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-007.webp",
+      "caption": "Figure 9: Maximum achievable curvature using combined turning strategies. Each curve represents, for one relative weighting shown in the legend, the maximum stable curvature obtained at each velocity for that pair of simultaneously activated strategies (see text for details). For each relative weighting, the overall combination magnitude, propulsion force, and axial shift were swept to identify the stability boundary. The upper envelope across the curves therefore represents the maximum curvature achieved within the explored space of pairwise combinations.",
+      "page": 13,
+      "index": 7,
+      "width": 974,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-008.webp",
+      "caption": "Figure 1: The mouse's body as represented in the model.",
+      "page": 4,
+      "index": 8,
+      "width": 952,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-009.webp",
+      "caption": "Figure 12: A. Inverted pendulum dynamics during two-leg support. During two-leg support phases, the body weight cannot be fully supported by the limbs on the ground. In this case, we describe the e ect of the gravitational force on the horizontal center of mass (COM) movement by the linearized inverted pendulum model. In the example shown, the right fore- (RF (2)) and left hind- (LH (3)) limbs are on the ground providing support, while the left fore- and right hindlimbs (not shown) are in swing. Since the COM is displaced from the supporting line (z is the COM displacement vector in the horizontal plane, ϕ is the corresponding angle between the projection of the COM onto the line of support and the vertical), the gravitational force creates a rolling torque about this line. We approximate this torque as an equivalent horizontal force pushing the COM in the direction perpendicular to the supporting line (along z). See text for details. B. A force diagram in the horizontal plane for the same body con guration as shown in panel A. LF and RH limbs are in swing and do not create propulsive forces. LH and RF push forward with forces F 2 and F 3 equal in magnitude and directed along the body axis. The kinetic friction force F f is applied at the COM and directed against the COM velocity vc. The inverted pendulum force F p is orthogonal to the line of support connecting LH and RF and pulling the COM away from the line of support. F p = 0 in case there are more than two limbs on the ground. This sketch is for illustrative purposes only. While it depicts the general concept, it does not re ect the exact proportions or relative force magnitudes of a real mouse. Reproduced from Molkov et al. (2024).",
+      "page": 17,
+      "index": 9,
+      "width": 492,
+      "height": 417
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-010.webp",
+      "caption": "Figure 8: Comparison of maximal turning performance across strategies. Each curve represents the maximum achievable curvature as a function of locomotor velocity for the three primary turning strategies: body bending (purple), lateral force (green), and lateral limb shift (blue). The corresponding shaded regions describe the stable performance envelope under axial shift conditions optimized for each speed. The results reveal a clear speed-dependency: body bending excels at low speeds (<5 cm/s), lateral force generates the highest absolute curvatures at intermediate speeds (5 15 cm/s), and lateral shift maintains superior stability and maneuverability at higher velocities (>15 cm/s).",
+      "page": 12,
+      "index": 10,
+      "width": 470,
+      "height": 386
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-011.webp",
+      "caption": "Figure 5: Heatmaps illustrating the turning curvature for three distinct strategies: body bending (A), lateral force (B), and lateral shift (C). These heatmaps show the relationship between turning curvature, velocity (regulated by the propulsion force), and the intensity of each strategy. Shaded areas denote stable walking, while white regions indicate instability, signifying that the model was unable to sustain stable locomotion. For the present mouse-like geometry (L = 10 cm, body width 2h = 2 cm), 10 cm/s corresponds to 1 body length per second, a lateral shift of 1 cm corresponds to 0.1 body length or 0.5 body widths, and curvature κ can be interpreted in normalized form as κL; equivalently, turning radius is R = 1/κ, or R/L = 1/(κL) in body-length units.",
+      "page": 9,
+      "index": 11,
+      "width": 979,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-64898-2026-01-12-699101-v2/fig-012.webp",
+      "caption": "Figure 2: Straightforward movement (A) and three turning strategies based on body bending (B), lateral force (C), and lateral shift (D). In the baseline con guration, the model produces a stable, symmetrical gait resulting in straight-line locomotion (A). Body bending introduces asymmetry through the non-parallel alignment of the hip and shoulder axes (simulating axial exion), which shifts the center of mass inward and redistributes propulsive forces to facilitate turning (B). The lateral force strategy involves applying a force perpendicular to the body axis, speci cally at the forelimbs, to directly generate centripetal acceleration and active steering (C). Lateral shift is achieved by displacing the limb landing positions side-to-side relative to the body axis during the swing phase (D). This alters the base of support and e ective lever arms for ground reaction forces, inducing lateral acceleration and rotation. Black lled circles represent the positions of limbs that are currently in stance phase (ground contact). Open circles indicate default target positions for the limbs during the swing phase. Arrows indicate the directions of propulsive forces.",
+      "page": 5,
+      "index": 12,
+      "width": 965,
+      "height": 508
+    }
+  ]
+}
