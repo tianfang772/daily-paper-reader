@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.02744v1/fig-001.webp",
+      "caption": "Fig. 6: Qualitative locomotion results of our proposed method on different terrains. (a) stones + stairs up, (b) stairs up, (c) stones, (d) gaps, (e) pits, (f) pallets.",
+      "page": 6,
+      "index": 1,
+      "width": 1000,
+      "height": 422
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02744v1/fig-002.webp",
+      "caption": "Fig. 7: Qualitative locomotion results of our method on stones. (FR: Front Right, FL: Front Left, RR: Rear Right, RL: Rear Left)",
+      "page": 6,
+      "index": 2,
+      "width": 502,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02744v1/fig-003.webp",
+      "caption": "Fig. 2: We propose a foot position map which is concatenated with the heightmap providing information of the foot positions relative to the terrain. During training, we add a stability reward based on the CoP to guide the policy to prefer safer actions.",
+      "page": 2,
+      "index": 3,
+      "width": 1052,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02744v1/fig-004.webp",
+      "caption": "Fig. 4: The training environment consists of smooth, rough, stairs up, stairs down, discrete and stones terrain. The OOD evaluation terrains include novel combinations of stones (S), rough (R), stairsup (SU) and stairsdown (SD) terrains as well as beams, pallets, circles, small stones, pits and gaps.",
+      "page": 4,
+      "index": 4,
+      "width": 512,
+      "height": 729
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02744v1/fig-005.webp",
+      "caption": "TABLE II: Definition of rewards ϕ(x) := exp(− ||x||2 0.5 ).",
+      "page": 4,
+      "index": 5,
+      "width": 444,
+      "height": 280
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02744v1/fig-006.webp",
+      "caption": "Fig. 5: The success rate results. (a) Our proposed method produces higher success rates across the board for all terrains. (b) We observe an improvement at higher difficulty levels. (c) We observe a higher success rate especially at lower velocities.",
+      "page": 5,
+      "index": 6,
+      "width": 1031,
+      "height": 373
+    }
+  ]
+}
