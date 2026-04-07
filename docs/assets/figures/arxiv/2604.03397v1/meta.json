@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.03397v1/fig-001.webp",
+      "caption": "Fig. 4: Training and Validation Loss Vs. Number of Epochs: (a) LF Limb Missing; (b) RF Limb Missing",
+      "page": 4,
+      "index": 1,
+      "width": 498,
+      "height": 574
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03397v1/fig-002.webp",
+      "caption": "Fig. 5: Actual input values (blue) vs Reconstructed input values (red) for LF Limb Missing: (a) Plot of scaled sensor measurements over the number of samples; (b) A small time window of data from the original plot.",
+      "page": 4,
+      "index": 2,
+      "width": 498,
+      "height": 585
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03397v1/fig-003.webp",
+      "caption": "Fig. 6: Actual input values (blue) vs Reconstructed input values (red) for RF Limb Missing: (a) Plot of scaled sensor measurements over the number of samples; (b) A small time window of data from the original plot.",
+      "page": 4,
+      "index": 3,
+      "width": 498,
+      "height": 590
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03397v1/fig-004.webp",
+      "caption": "Fig. 3: Distribution of reconstruction errors for the intact quadrupedal robot when executing fore-aft pronking.",
+      "page": 4,
+      "index": 4,
+      "width": 475,
+      "height": 268
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03397v1/fig-005.webp",
+      "caption": "Fig. 2: Actual input values (blue) Vs. Reconstructed input values (red) for the intact quadrupedal robot pronking",
+      "page": 3,
+      "index": 5,
+      "width": 475,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03397v1/fig-006.webp",
+      "caption": "Fig. 8: Distribution of reconstruction loss for normal and anomalous data along with the threshold: (a) LF Limb Missing; (b) RF Limb Missing",
+      "page": 5,
+      "index": 6,
+      "width": 498,
+      "height": 703
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03397v1/fig-007.webp",
+      "caption": "Fig. 7: Distribution of reconstruction errors for damaged quadrupedal robot when executing fore-aft tripedal pronking: (a) LF Limb Missing; (b) RF Limb Missing",
+      "page": 5,
+      "index": 7,
+      "width": 498,
+      "height": 527
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03397v1/fig-008.webp",
+      "caption": "Fig. 1: Flowchart of Proposed Fault Recovery Framework",
+      "page": 2,
+      "index": 8,
+      "width": 475,
+      "height": 360
+    }
+  ]
+}

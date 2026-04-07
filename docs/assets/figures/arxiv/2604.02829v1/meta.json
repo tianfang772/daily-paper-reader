@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.02829v1/fig-001.webp",
+      "caption": "Figure 4. Qualitative navigation trajectories (blue) produced by STRNet in 2D-3D-S and Citysim Environments.",
+      "page": 6,
+      "index": 1,
+      "width": 1036,
+      "height": 194
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02829v1/fig-002.webp",
+      "caption": "Table 1. Quantitative comparison between the proposed method with baselines in simulation environments",
+      "page": 6,
+      "index": 2,
+      "width": 1002,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02829v1/fig-003.webp",
+      "caption": "Figure 2. Pipeline of the Proposed Model for Action Prediction: The model processes input observations and goal images through feature extraction, spatial feature aggregation, temporal feature fusion, and hybrid temporal shift, followed by task-specific processing, including temporal distance computation and diffusion denoising to obtain final action prediction.",
+      "page": 3,
+      "index": 3,
+      "width": 1036,
+      "height": 292
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02829v1/fig-004.webp",
+      "caption": "Figure 3. (a) A Grid structure representing a partitioned image, and (b) A Graph structure illustrating the relationships between different regions of the image. The graph structure organizes the context in a more flexible way that aligns with semantic topological relationships, avoiding the local receptive field or predefined order between patches.",
+      "page": 3,
+      "index": 4,
+      "width": 496,
+      "height": 276
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02829v1/fig-005.webp",
+      "caption": "Figure 5. Failure cases of the NoMaD in visual navigation. (a) Suboptimal behavior caused by poor representation. (b) Hesitation due to incorrect understanding. (c) Incorrect motion direction and erratic trajectory. (d) Increased collisions.",
+      "page": 8,
+      "index": 5,
+      "width": 469,
+      "height": 353
+    }
+  ]
+}

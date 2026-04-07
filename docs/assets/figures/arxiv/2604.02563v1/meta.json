@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.02563v1/fig-001.webp",
+      "caption": "Fig. 5. Kinematic state estimation and MO-based force inference. (ad) Body and foot height (a,b) and velocity (c,d) estimated via the onboardsensing-based Kalman filter, compared with MoCap measurements. (e) Toe force estimated by the momentum observer using Kalman-filter-estimated kinematics. (f) MO force vs. KF-estimated depth, compared with load-cell force vs. MoCap depth.",
+      "page": 6,
+      "index": 1,
+      "width": 522,
+      "height": 614
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02563v1/fig-002.webp",
+      "caption": "Fig. 2. (a) Robotic hopper. (b) Load cell instrumented linear actuator for ground truth measurements. (c) Hopper free body diagram. (d) SLIP controller state machine. (e) State estimation pipeline.",
+      "page": 2,
+      "index": 2,
+      "width": 529,
+      "height": 596
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02563v1/fig-003.webp",
+      "caption": "Fig. 6. Terrain stiffness estimation across three treatments. (a) Representative depth–force curve comparing w/o MO, w/o GD (QS; OLS fit) versus w/ MO, w/o GD (MO-corrected; OLS fit). (b) Representative MO-based fit comparing w/ MO, w/o GD (OLS) versus w/ MO, w/ GD (acceleration-aware WLS; points weighted in the regression). (c,d) Estimated stiffness for w/o MO, w/o GD (gray), w/ MO, w/o GD (light blue), and w/ MO, w/ GD (dark blue), shown versus (c) touchdown speed and (d) compression stiffness. In (c), kc = 3.75N/cm; in (d), vTD ≈ 1.0m/s. Points are means over n = 5 trials; error bars indicate ±SEM. Dashed lines in (c,d) denote kGT, the linearactuator ground-truth granular terrain stiffness.",
+      "page": 7,
+      "index": 3,
+      "width": 523,
+      "height": 595
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02563v1/fig-004.webp",
+      "caption": "Fig. 3. Representative dynamic hopping stride on granular medium. (a) Snapshots of the hopper during a representative stride: initial compression after touchdown, maximum compression, deeper penetration induced by the stiffer extension phase, and post-liftoff. (b) Virtual leg length, defined as the body–foot height difference, measured by motor encoder. TD: touchdown; CE: compression–extension transition; LO: liftoff. (c, d) Body and foot height and velocity, respectively, measured via motion capture (MoCap). (e) Body and foot acceleration measured by onboard IMUs. (f) Quasi-static proprioceptive estimate (1) compared with load-cell ground-truth measurements.",
+      "page": 4,
+      "index": 4,
+      "width": 521,
+      "height": 918
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02563v1/fig-005.webp",
+      "caption": "Fig. 4. Terrain force decomposition under high-speed intrusion. (a) Force–depth with linear fit. (b) Intrusion speed–depth. (c) Depth–speed force map from constant-speed linear-actuator intrusions; gray: representative trials, cyan: hopper trajectory projected for prediction. (d) Measured force vs map prediction. (e) Foot acceleration. Positive represents downward direction. (f) Fres and added-mass term maa.",
+      "page": 5,
+      "index": 5,
+      "width": 519,
+      "height": 757
+    }
+  ]
+}
