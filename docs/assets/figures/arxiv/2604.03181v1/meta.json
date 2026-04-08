@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-001.webp",
+      "caption": "Figure 8: Visualization of the predicted RGB sequences and heatmap sequences for the Scoop Tortilla task. For each view, the first and third rows show predictions from MV-VDP, while the second and fourth rows show the corresponding ground truth. The peak locations of both predicted and ground-truth heatmaps are overlaid on the predicted and ground-truth RGB images, respectively. The results show that (1) the predicted RGB sequences are visually realistic, and (2) the heatmap peaks closely follow the end effector in the RGB images, indicating strong consistency between the predicted heatmaps and RGB sequences.",
+      "page": 25,
+      "index": 1,
+      "width": 436,
+      "height": 987
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-002.webp",
+      "caption": "Figure 9: Visualization of the predicted RGB sequences and heatmap sequences for the Put Lion task. For each view, the first and third rows show predictions from MV-VDP, while the second and fourth rows show the corresponding ground truth. The peak locations of both predicted and ground-truth heatmaps are overlaid on the predicted and ground-truth RGB images, respectively. The results show that (1) the predicted RGB sequences are visually realistic, and (2) the heatmap peaks closely follow the end effector in the RGB images, indicating strong consistency between the predicted heatmaps and RGB sequences.",
+      "page": 26,
+      "index": 2,
+      "width": 436,
+      "height": 989
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-003.webp",
+      "caption": "Figure 1: Overview. We introduce MV-VDP, a multi-view video diffusion policy that jointly models the spatio-temporal state of the environment. Compared to prior manipulation policies, our approach: (1) processes 3D-aware multi-view images rather than independent multiple 2D views; (2) represents robot states and actions as multi-view heatmaps, aligning the action space with the representation used in video pretraining; (3) leverages a video foundation model, instead of a traditional vision– language backbone, to jointly model future RGB sequences and heatmap sequences. As a result, MV-VDP achieves state-of-the-art performance on both the Meta-World and real-world benchmarks, outperforming video-prediction–based, 3D-based, and vision–language–action models.",
+      "page": 2,
+      "index": 3,
+      "width": 818,
+      "height": 293
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-004.webp",
+      "caption": "Table 1: Success rates on seven Meta-World tasks under a low-data regime (5 demonstrations per task). Each entry reports the number of successful rollouts out of 25 trials. Our method (MVVDP) achieves the highest average success rate and consistently outperforms prior video-prediction and behavior-cloning baselines.",
+      "page": 7,
+      "index": 4,
+      "width": 842,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-005.webp",
+      "caption": "Figure 5: Visualization of the predicted RGB sequences and heatmap sequences for the ButtonPress-Top task in Meta-World. For each view, the first and third rows show predictions from MV-VDP, while the second and fourth rows show the corresponding ground truth. The peak locations of both predicted and ground-truth heatmaps are overlaid on the predicted and ground-truth RGB images, respectively. The results show that (1) the predicted RGB sequences are visually realistic, and (2) the heatmap peaks closely follow the end effector in the RGB images, indicating strong consistency between the predicted heatmaps and RGB sequences.",
+      "page": 22,
+      "index": 5,
+      "width": 434,
+      "height": 985
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-006.webp",
+      "caption": "Figure 4: Average success rates for different inference denoising steps. The experiments are conducted on the Meta-World benchmark. MV-VDP demonstrates high robustness to varying diffusion steps, achieving strong performance even when the denoising step is set to 1.",
+      "page": 10,
+      "index": 6,
+      "width": 727,
+      "height": 432
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-007.webp",
+      "caption": "Table 5: Hyperparameters used for training and inference in MV-VDP.",
+      "page": 18,
+      "index": 7,
+      "width": 846,
+      "height": 406
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-008.webp",
+      "caption": "Figure 6: Visualization of the predicted RGB sequences and heatmap sequences for the DoorOpen task in Meta-World. For each view, the first and third rows show predictions from MV-VDP, while the second and fourth rows show the corresponding ground truth. The peak locations of both predicted and ground-truth heatmaps are overlaid on the predicted and ground-truth RGB images, respectively. The results show that (1) the predicted RGB sequences are visually realistic, and (2) the heatmap peaks closely follow the end effector in the RGB images, indicating strong consistency between the predicted heatmaps and RGB sequences.",
+      "page": 23,
+      "index": 8,
+      "width": 434,
+      "height": 985
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-009.webp",
+      "caption": "Figure 11: Visualization of video predictions under different denoising steps (Part II). Predicted RGB videos and heatmap videos under different denoising step settings. Lower denoising steps lead to visibly lower RGB video quality, while the predicted heatmaps remain relatively stable.",
+      "page": 28,
+      "index": 9,
+      "width": 826,
+      "height": 956
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-010.webp",
+      "caption": "Table 2: Real-world manipulation results under limited demonstrations. We report success rates over 10 trials per task on three basic tasks and four unseen tasks. All methods are trained with 10 expert trajectories.",
+      "page": 8,
+      "index": 10,
+      "width": 827,
+      "height": 213
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-011.webp",
+      "caption": "Figure 3: Real-world experimental setup and tasks. We evaluate MV-VDP on three manipulation tasks using a Franka Research 3 robot with three ZED2i cameras. We further assess generalization under variations in background, object height, lighting, and object category.",
+      "page": 8,
+      "index": 11,
+      "width": 810,
+      "height": 272
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-012.webp",
+      "caption": "Figure 2: Overview of MV-VDP’s pipeline. (a) Point clouds and the current end-effector pose are projected into spatial-aware multi-view RGB images and heatmaps, which are encoded and used to jointly predict future multi-view RGB videos and heatmap videos via a video diffusion model. Predicted heatmaps are back-projected to recover 3D end-effector positions. (b) The multi-view video diffusion transformer augments a pretrained video diffusion backbone with view-attention to enable cross-view interaction. (c) A lightweight action decoder predicts end-effector rotation and gripper states from the denoised video latents. Final action chunks are formed by combining the predicted positions, rotations, and gripper states.",
+      "page": 4,
+      "index": 12,
+      "width": 792,
+      "height": 534
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-013.webp",
+      "caption": "Figure 10: Visualization of video predictions under different denoising steps (Part I). Predicted RGB videos and heatmap videos under different denoising step settings. Lower denoising steps lead to visibly lower RGB video quality, while the predicted heatmaps remain relatively stable.",
+      "page": 27,
+      "index": 13,
+      "width": 826,
+      "height": 956
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03181v1/fig-014.webp",
+      "caption": "Figure 7: Visualization of the predicted RGB sequences and heatmap sequences for the Push-T task. For each view, the first and third rows show predictions from MV-VDP, while the second and fourth rows show the corresponding ground truth. The peak locations of both predicted and ground-truth heatmaps are overlaid on the predicted and ground-truth RGB images, respectively. The results show that (1) the predicted RGB sequences are visually realistic, and (2) the heatmap peaks closely follow the end effector in the RGB images, indicating strong consistency between the predicted heatmaps and RGB sequences.",
+      "page": 24,
+      "index": 14,
+      "width": 436,
+      "height": 989
+    }
+  ]
+}

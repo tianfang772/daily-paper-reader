@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.04039v1/fig-001.webp",
+      "caption": "Fig. 3: Range of values and their densities in the collected dataset of quadrotor positions, orientations, linear velocities, and angular velocities. The top row corresponds to the training set, and the bottom row to the validation set.",
+      "page": 5,
+      "index": 1,
+      "width": 1044,
+      "height": 311
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04039v1/fig-002.webp",
+      "caption": "Fig. 4: Quadrotor tracking lemniscate and circular reference trajectories with an added 350 g payload (35% increase). (a–b) lemniscate without/with adaptation, (c–d) circle without/with adaptation. In (e-f), the transparent quadrotors denote the starting states while the bold ones denote the end states.",
+      "page": 6,
+      "index": 2,
+      "width": 1054,
+      "height": 574
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04039v1/fig-003.webp",
+      "caption": "Fig. 2: Overview of our approach for on-the-fly neural dynamics learning and predictive control.",
+      "page": 3,
+      "index": 3,
+      "width": 512,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04039v1/fig-004.webp",
+      "caption": "Fig. 1: Quadrotor robot adapting to a payload equal to 35% of its weight on the fly while tracking a reference trajectory.",
+      "page": 1,
+      "index": 4,
+      "width": 512,
+      "height": 293
+    }
+  ]
+}
