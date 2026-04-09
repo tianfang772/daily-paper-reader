@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.05108v1/fig-001.webp",
+      "caption": "Fig. 2: The slicing and bounding procedure used in Lemma 1 and Theorem 2 is pictured. Left: the ℓ2-normotope at time t is sliced with the subspace {h = 0} = {Bz + x̊(T )} to obtain a (n− 1)-dimensional ℓ2-normotope expressed in the basis B (Lemma 1). Right: The gain γ is bounded using (i) the distance from x∗ to the reset center of the sliced normotope ∆B (̊z(t)) measured in the initial α0 norm, and (ii) the maximum induced matrix norm of a linear inclusion bounding ∆B(z) − ∆B (̊z(t)) to obtain a radius in the α0 norm.",
+      "page": 5,
+      "index": 1,
+      "width": 512,
+      "height": 247
+    },
+    {
+      "url": "assets/figures/arxiv/2604.05108v1/fig-002.webp",
+      "caption": "Fig. 5: Slices of the computed Hybrid Invariant Tube with no tracking control (above) and tracking control (below). The blue dotted line represents the guard surface S. The green portions of the tube are the ones for which the tube intersects the guard surface.",
+      "page": 7,
+      "index": 2,
+      "width": 475,
+      "height": 341
+    }
+  ]
+}
