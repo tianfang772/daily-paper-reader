@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.07457v1/fig-001.webp",
+      "caption": "Fig. 4. Trade-off between Accuracy and Safety. We sweep the safety radius Rsafe to examine the relationship between ID position error in logarithmic axis and OOD-Geometry survival rate.",
+      "page": 6,
+      "index": 1,
+      "width": 518,
+      "height": 314
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07457v1/fig-002.webp",
+      "caption": "TABLE I PERFORMANCE COMPARISON ACROSS ID AND OOD SCENARIOS (3 RANDOM SEEDS).",
+      "page": 6,
+      "index": 2,
+      "width": 1068,
+      "height": 319
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07457v1/fig-003.webp",
+      "caption": "TABLE III PERFORMANCE COMPARISON ON 15 REAL-WORLD TASKS ACROSS ID AND OOD SCENARIOS (3 RANDOM SEEDS).",
+      "page": 7,
+      "index": 3,
+      "width": 1074,
+      "height": 247
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07457v1/fig-004.webp",
+      "caption": "TABLE VI TRAINING HYPERPARAMETERS",
+      "page": 14,
+      "index": 4,
+      "width": 520,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07457v1/fig-005.webp",
+      "caption": "Fig. 6. Visual comparison of robot behaviors under varying command difficulties. Note that the gripper is removed to prevent damage during failure modes. The color bars denote the outcome: green for task success, blue for safe survival (despite lower accuracy), and red for catastrophic failure. The top row (UMI-on-Legs [18]) and bottom row (CMP) show snapshots from representative trials. While UMI-on-Legs succeeds in ID tasks, it suffers catastrophic failures in OOD scenarios. CMP generalizes to some moderate OOD tasks and survives arbitrary commands, demonstrating seamless “best effort” behaviors.",
+      "page": 8,
+      "index": 5,
+      "width": 1060,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07457v1/fig-006.webp",
+      "caption": "Fig. 7. Defense against sensor-induced divergence. (Top) UMI-on-Legs [18] enters a positive feedback loop: VIO error → Unexpected input → Aggressive motion → Larger VIO error → Crash. (Bottom) CMP prevents the unexpected inputs from triggering unsafe motion, effectively blocking the hazardous feedback loop and preserving stability.",
+      "page": 8,
+      "index": 6,
+      "width": 519,
+      "height": 316
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07457v1/fig-007.webp",
+      "caption": "Fig. 3. Overview of the pipeline. Target trajectories relative to the current Tool Center Point (TCP) frame are encoded into a raw latent intention zrawt by an Intent Encoder ϕ for execution by the Low-level Policy π. A Safety Estimator ω is concurrently trained via TD targets to assess safety. To streamline inference, Isomorphic Latent Space (ILS) aligns safety contours to be spherical with safety decreasing radially. This permits O(1) safety enforcement without the estimator by simply truncating latent vectors that exceed the safety radius.",
+      "page": 4,
+      "index": 7,
+      "width": 966,
+      "height": 438
+    }
+  ]
+}

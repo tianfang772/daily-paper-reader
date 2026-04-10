@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.05102v1/fig-001.webp",
+      "caption": "Fig. 4: Evaluation of extension of one-step probabilistic guarantees to kstep invariance. ϵ is evaluated over trajectories propagated for k steps: stable probabilities suggest the one-step guarantee of Alg. 1 is robust.",
+      "page": 5,
+      "index": 1,
+      "width": 509,
+      "height": 237
+    },
+    {
+      "url": "assets/figures/arxiv/2604.05102v1/fig-002.webp",
+      "caption": "Fig. 3: Mean and standard deviation of accuracy 1− ϵ and ellipsoid volume Vol(θ) over 10 algorithm runs. The dashed gray line indicates the user-defined target accuracy for each system. (Left): The Convex Expander-Contractor system (accuracy: dark orange, volume: light orange) with desired accuracy 97%, converges within 5 iterations on average. (Middle): The Nonconvex Expander-Contractor system (accuracy: dark purple, volume: light purple) with desired accuracy 93%, converges within 150 iterations on average. (Right): The Compass-Gait walker system (accuracy: dark pink, volume: light pink) with desired accuracy 97%, converges within 75 iterations on average.",
+      "page": 5,
+      "index": 2,
+      "width": 1026,
+      "height": 230
+    },
+    {
+      "url": "assets/figures/arxiv/2604.05102v1/fig-003.webp",
+      "caption": "Fig. 2: Sampling-based, finite-step invariant set algorithm and verification. (a,b) Sequence of ellipsoid iterates E0, E1, . . . , E∗ produced by the algorithm for the Convex Expander-Contractor and Compass-Gait Walker (three coordinate projections), respectively. (c,d) Verification of the final set E∗: samples U (preimages whose Poincaré returns remain in E∗) and Z (preimages that escape), together with their return images W ⊂ E∗ and V ̸⊂ E∗. Since the user-specified accuracy for both algorithms was ϵ = 0.03, it is not required that all points return to E∗.",
+      "page": 4,
+      "index": 3,
+      "width": 1033,
+      "height": 604
+    },
+    {
+      "url": "assets/figures/arxiv/2604.05102v1/fig-004.webp",
+      "caption": "Fig. 5: Invariant sets of Nonconvex Expander-Contractor (NEC) system. The true invariant set (light purple), consisting of two circles, is closely approximated by the RBF representation (orange). The ellipsoid (dark purple) from Alg. 1 results in an under-approximation with lower accuracy.",
+      "page": 6,
+      "index": 4,
+      "width": 462,
+      "height": 463
+    },
+    {
+      "url": "assets/figures/arxiv/2604.05102v1/fig-005.webp",
+      "caption": "Fig. 1: One iteration of the proposed algorithm. (a) N points are sampled from Ei. (b) The Poincaré map P partitions return points into those that leave the set (V ̸⊂ Ei) and those that return (W ⊂ Ei). (c) The preimages are respectively partitioned into U and Z . (d) Ei+1 is fit to U . The algorithm repeats until the PAC bound satisfies a user-defined ϵ.",
+      "page": 1,
+      "index": 5,
+      "width": 462,
+      "height": 433
+    }
+  ]
+}
