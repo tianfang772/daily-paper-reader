@@ -6,73 +6,73 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-04-10
-- 运行时间：2026-04-10 20:04:47 UTC
+- 最新运行日期：2026-04-11
+- 运行时间：2026-04-11 19:28:22 UTC
 - 运行状态：成功
 - 本次总论文数：17
 - 精读区：6
 - 速读区：11
 
 ### 今日简报（AI）
-今日深度解析 17 篇机器人前沿论文，聚焦四足机器人复杂地形适应性与世界模型驱动的策略迁移。
-核心结论指出，结合足端位置图与任务无关特性学习，能显著提升足式机器人在动态环境下的稳定性和跨任务迁移效率。
-建议关注如何利用几何感知与实时动态自适应技术，构建更具鲁棒性的具身智能控制系统。
-- 详情：[/202604/10/README](/202604/10/README)
+今日聚焦四足机器人性能突破，深度解析从高效策略迁移到复杂地形适应的17篇前沿成果。
+重点关注通过Dreamer学习任务不变属性以实现高效迁移，以及利用足端位置图强化机器人在复杂环境下的运动稳定性。
+建议普通读者从视频生成驱动的端到端策略学习入手，感受具身智能与多模态大模型的深度融合。
+- 详情：[/202604/11/README](/202604/11/README)
 
 ### 精读区论文标签
-1. [Learning Locomotion on Complex Terrain for Quadrupedal Robots with Foot Position Maps and Stability Rewards](/202604/10/2604.02744v1-learning-locomotion-on-complex-terrain-for-quadrupedal-robots-with-foot-position-maps-and-stability-rewards)  
-   标签：评分：10.0/10、query:q2
-   evidence：四足机器人在复杂地形上的运动
-2. [Learning Task-Invariant Properties via Dreamer: Enabling Efficient Policy Transfer for Quadruped Robots](/202604/10/2604.02911v1-learning-task-invariant-properties-via-dreamer-enabling-efficient-policy-transfer-for-quadruped-robots)  
+1. [Learning Task-Invariant Properties via Dreamer: Enabling Efficient Policy Transfer for Quadruped Robots](/202604/11/2604.02911v1-learning-task-invariant-properties-via-dreamer-enabling-efficient-policy-transfer-for-quadruped-robots)  
    标签：评分：10.0/10、query:profile-1
-   evidence：用于四足机器人运动和虚实迁移的Dreamer世界模型
-3. [Hierarchical Planning with Latent World Models](/202604/10/2604.03208v1-hierarchical-planning-with-latent-world-models)  
+   evidence：用于四足机器人运动的Dreamer世界模型架构
+2. [Learning Locomotion on Complex Terrain for Quadrupedal Robots with Foot Position Maps and Stability Rewards](/202604/11/2604.02744v1-learning-locomotion-on-complex-terrain-for-quadrupedal-robots-with-foot-position-maps-and-stability-rewards)  
+   标签：评分：9.0/10、query:q2
+   evidence：复杂地形下四足机器人运动的强化学习
+3. [Hierarchical Planning with Latent World Models](/202604/11/2604.03208v1-hierarchical-planning-with-latent-world-models)  
    标签：评分：9.0/10、query:q1
-   evidence：基于潜空间世界模型的具身控制分层规划
-4. [Dynamic Whole-Body Dancing with Humanoid Robots -- A Model-Based Control Approach](/202604/10/2604.03999v1-dynamic-whole-body-dancing-with-humanoid-robots----a-model-based-control-approach)  
-   标签：评分：9.0/10、query:q2
-   evidence：人形机器人的动态全身运动
-5. [CMP: Robust Whole-Body Tracking for Loco-Manipulation via Competence Manifold Projection](/202604/10/2604.07457v1-cmp-robust-whole-body-tracking-for-loco-manipulation-via-competence-manifold-projection)  
-   标签：评分：9.0/10、query:q2
-   evidence：腿足移动操作机器人的全身追踪
-6. [HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation](/202604/10/2604.07993v1-hex-humanoid-aligned-experts-for-cross-embodiment-whole-body-manipulation)  
+   evidence：用于具身控制的潜空间世界模型分层规划
+4. [HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation](/202604/11/2604.07993v1-hex-humanoid-aligned-experts-for-cross-embodiment-whole-body-manipulation)  
    标签：评分：9.0/10、query:profile-1
-   evidence：双足人形机器人的全身协调与时序运动动力学
+   evidence：全尺寸双足人型机器人的协调操作
+5. [Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation](/202604/11/2604.08508v1-sumo-dynamic-and-generalizable-whole-body-loco-manipulation)  
+   标签：评分：9.0/10、query:q2
+   evidence：Spot四足机器人的全身运动操作
+6. [A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens](/202604/11/2604.04913v1-a-frame-is-worth-one-token-efficient-generative-world-modeling-with-delta-tokens)  
+   标签：评分：8.0/10、query:q1
+   evidence：基于增量标记的高效生成式世界模型
 
 ### 速读区论文标签
-1. [DriveDreamer-Policy: A Geometry-Grounded World-Action Model for Unified Generation and Planning](/202604/10/2604.01765v1-drivedreamer-policy-a-geometry-grounded-world-action-model-for-unified-generation-and-planning)  
-   标签：评分：8.0/10、query:q1
-   evidence：用于生成与规划的统一世界动作模型
-2. [Learning-Based Fault Detection for Legged Robots in Remote Dynamic Environments](/202604/10/2604.03397v1-learning-based-fault-detection-for-legged-robots-in-remote-dynamic-environments)  
+1. [Dynamic Whole-Body Dancing with Humanoid Robots -- A Model-Based Control Approach](/202604/11/2604.03999v1-dynamic-whole-body-dancing-with-humanoid-robots----a-model-based-control-approach)  
    标签：评分：8.0/10、query:q2
-   evidence：四足机器人运动的基于学习的故障检测
-3. [Adapting Neural Robot Dynamics on the Fly for Predictive Control](/202604/10/2604.04039v1-adapting-neural-robot-dynamics-on-the-fly-for-predictive-control)  
+   evidence：基于模型的双足机器人动态运动控制
+2. [Action Images: End-to-End Policy Learning via Multiview Video Generation](/202604/11/2604.06168v1-action-images-end-to-end-policy-learning-via-multiview-video-generation)  
    标签：评分：8.0/10、query:q1
-   evidence：用于预测控制的神经机器人动力学快速在线自适应
-4. [Differentiable Invariant Sets for Hybrid Limit Cycles with Application to Legged Robots](/202604/10/2604.05108v1-differentiable-invariant-sets-for-hybrid-limit-cycles-with-application-to-legged-robots)  
+   evidence：用于机器人策略学习的世界动作模型
+3. [Event-Centric World Modeling with Memory-Augmented Retrieval for Embodied Decision-Making](/202604/11/2604.07392v1-event-centric-world-modeling-with-memory-augmented-retrieval-for-embodied-decision-making)  
+   标签：评分：8.0/10、query:q1
+   evidence：用于具身决策的以事件为中心的世界建模
+4. [CMP: Robust Whole-Body Tracking for Loco-Manipulation via Competence Manifold Projection](/202604/11/2604.07457v1-cmp-robust-whole-body-tracking-for-loco-manipulation-via-competence-manifold-projection)  
    标签：评分：8.0/10、query:q2
-   evidence：双足机器人模型的正向不变集
-5. [From Impact to Insight: Dynamics-Aware Proprioceptive Terrain Sensing on Granular Media](/202604/10/2604.02563v1-from-impact-to-insight-dynamics-aware-proprioceptive-terrain-sensing-on-granular-media)  
+   evidence：腿足式移动操作手的全身跟踪
+5. [WorldMAP: Bootstrapping Vision-Language Navigation Trajectory Prediction with Generative World Models](/202604/11/2604.07957v1-worldmap-bootstrapping-vision-language-navigation-trajectory-prediction-with-generative-world-models)  
+   标签：评分：8.0/10、query:q1
+   evidence：用于轨迹预测和导航的生成式世界模型
+6. [From Impact to Insight: Dynamics-Aware Proprioceptive Terrain Sensing on Granular Media](/202604/11/2604.02563v1-from-impact-to-insight-dynamics-aware-proprioceptive-terrain-sensing-on-granular-media)  
    标签：评分：7.0/10、query:q2
-   evidence：足式机器人跳跃中的本体感知地形传感
-6. [STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation](/202604/10/2604.02829v1-strnet-visual-navigation-with-spatio-temporal-representation-through-dynamic-graph-aggregation)  
-   标签：评分：7.0/10、query:q2
-   evidence：基于时空表示的视觉导航
-7. [Multi-View Video Diffusion Policy: A 3D Spatio-Temporal-Aware Video Action Model](/202604/10/2604.03181v1-multi-view-video-diffusion-policy-a-3d-spatio-temporal-aware-video-action-model)  
+   evidence：跳跃机器人的本体感受地形感知
+7. [Multi-View Video Diffusion Policy: A 3D Spatio-Temporal-Aware Video Action Model](/202604/11/2604.03181v1-multi-view-video-diffusion-policy-a-3d-spatio-temporal-aware-video-action-model)  
    标签：评分：7.0/10、query:q1
-   evidence：通过视频扩散模型对环境动力学建模以实现机器人动作预测
-8. [OpenWorldLib: A Unified Codebase and Definition of Advanced World Models](/202604/10/2604.04707v1-openworldlib-a-unified-codebase-and-definition-of-advanced-world-models)  
+   evidence：视频扩散策略建模环境动力学
+8. [Learning-Based Fault Detection for Legged Robots in Remote Dynamic Environments](/202604/11/2604.03397v1-learning-based-fault-detection-for-legged-robots-in-remote-dynamic-environments)  
+   标签：评分：7.0/10、query:q2
+   evidence：基于学习的四足机器人运动故障检测
+9. [Adapting Neural Robot Dynamics on the Fly for Predictive Control](/202604/11/2604.04039v1-adapting-neural-robot-dynamics-on-the-fly-for-predictive-control)  
+   标签：评分：7.0/10、query:q1
+   evidence：为预测控制自适应神经机器人动力学
+10. [OpenWorldLib: A Unified Codebase and Definition of Advanced World Models](/202604/11/2604.04707v1-openworldlib-a-unified-codebase-and-definition-of-advanced-world-models)  
    标签：评分：7.0/10、query:q5
-   evidence：高级世界模型的统一代码库与定义
-9. [Drift-Based Policy Optimization: Native One-Step Policy Learning for Online Robot Control](/202604/10/2604.03540v1-drift-based-policy-optimization-native-one-step-policy-learning-for-online-robot-control)  
+   evidence：先进世界模型的统一代码库与定义
+11. [HiPolicy: Hierarchical Multi-Frequency Action Chunking for Policy Learning](/202604/11/2604.06067v1-hipolicy-hierarchical-multi-frequency-action-chunking-for-policy-learning)  
    标签：评分：6.0/10、query:q1
-   evidence：用于在线机器人控制的一步生成式策略
-10. [Drift-Based Policy Optimization: Native One-Step Policy Learning for Online Robot Control](/202604/10/2604.03540v2-drift-based-policy-optimization-native-one-step-policy-learning-for-online-robot-control)  
-   标签：评分：6.0/10、query:q1
-   evidence：用于在线机器人控制的一步生成式策略
-11. [Finite-Step Invariant Sets for Hybrid Systems with Probabilistic Guarantees](/202604/10/2604.05102v1-finite-step-invariant-sets-for-hybrid-systems-with-probabilistic-guarantees)  
-   标签：评分：6.0/10、query:q2
-   evidence：足式运动混合系统的稳定性分析
+   evidence：用于长时程规划与控制的分层策略学习
 
 
 <div class="dpr-home-promo-card">
