@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.09474v1/fig-001.webp",
+      "caption": "FIGURE 1. Overall architecture of SafeMind, a risk-aware differentiable control framework for adaptive and safe quadruped locomotion. Semantic cues and onboard sensory observations are encoded into task-dependent safety parameters (hs, α, κ), which modulate the risk-aware differentiable safety layer. A stochastic Control Barrier Function (CBF) with variance-aware correction enforces the probabilistic safety constraint Lf h + Lgh u + αh − κσh ≥ 0 through a differentiable quadratic program, yielding the safe control command u∗. A meta-adaptive learning module continuously updates risk sensitivity according to violation statistics and environmental shifts. The resulting controller operates in real time on quadruped platforms such as Unitree A1 and ANYmal C, enabling robust locomotion across uneven terrain, dynamic obstacles, and semantically defined hazards.",
+      "page": 6,
+      "index": 1,
+      "width": 1051,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2604.09474v1/fig-002.webp",
+      "caption": "TABLE 2. Safety degradation and recovery across terrain transitions.Trec is reported as mean ± 95% CI across repeated transition trials. Proportion-based metrics are reported as point estimates.´SVR is violation rate increase immediately after transition. Trec is time to recover safe-set invariance.",
+      "page": 15,
+      "index": 2,
+      "width": 419,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2604.09474v1/fig-003.webp",
+      "caption": "FIGURE 2. Safety violation rate (SVR) and tracking RMSE over time for SafeMind and baseline controllers. Curves show mean performance across repeated trials; shaded regions denote 95% confidence intervals. SafeMind maintains near-zero violation rates while achieving the lowest tracking error, significantly outperforming Safety–MPC, Robust–MPC, BarrierNet, and RL–CBF under mixed-terrain conditions.",
+      "page": 14,
+      "index": 3,
+      "width": 1051,
+      "height": 577
+    },
+    {
+      "url": "assets/figures/arxiv/2604.09474v1/fig-004.webp",
+      "caption": "TABLE 18. Summary of baseline families and structural characteristics.",
+      "page": 19,
+      "index": 4,
+      "width": 497,
+      "height": 438
+    },
+    {
+      "url": "assets/figures/arxiv/2604.09474v1/fig-005.webp",
+      "caption": "TABLE 19. Unified evaluation protocol used for all controllers.",
+      "page": 19,
+      "index": 5,
+      "width": 495,
+      "height": 306
+    }
+  ]
+}
