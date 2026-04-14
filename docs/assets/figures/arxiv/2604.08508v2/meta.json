@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.08508v2/fig-001.webp",
+      "caption": "Fig. 5: Top: comparison of Sumo (yellow, ours), E2E RL (purple), and hierarchical RL (navy, HRL) on pushing five different objects to a goal. Sumo generalizes to new objects by replacing the object model at test time, whereas E2E RL and HRL policies trained only on box pushing fail on the other objects. Bottom: Sumo generalizes to uprighting objectives by changing the planner cost at test time, whereas the same E2E RL and HRL policies fail without additional training.",
+      "page": 6,
+      "index": 1,
+      "width": 511,
+      "height": 427
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08508v2/fig-002.webp",
+      "caption": "Fig. 2: System overview: Our method takes a hierarchical approach that combines a pre-trained whole-body control (WBC) policy (purple) with high-level sample-based MPC (green). The low-level whole-body control policy takes in the current state and desired torso, arm, and leg commands and outputs the joint-level commands for the quadruped or humanoid robot at 50Hz. The high-level sample-based MPC aims to minimize a task-specific cost function by taking in the current state estimate and solving for the desired torso, arm, and leg commands for the low-level policy at 20Hz.",
+      "page": 2,
+      "index": 2,
+      "width": 524,
+      "height": 282
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08508v2/fig-003.webp",
+      "caption": "Fig. 3: Illustrations comparing (a) standard dynamics rollouts where the actions u are the joint-level controls for the multibody dynamics model and (b) our network-policy-augmented dynamics rollouts where the actions a are inputs to the lowlevel locomotion policy.",
+      "page": 3,
+      "index": 3,
+      "width": 446,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08508v2/fig-004.webp",
+      "caption": "Fig. 7: Freeze-frame sequences showing Spot robot task progressions: (a) uprighting a tire, (b) uprighting a crowd control barrier, (c) uprighting a traffic cone, (d) uprighting a chair, (e) stacking a two tires, (f) dragging a crowd control barrier, (g) dragging a tire rack, and (h) pushing a heavy box.",
+      "page": 8,
+      "index": 4,
+      "width": 1076,
+      "height": 608
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08508v2/fig-005.webp",
+      "caption": "Fig. 8: Freeze-frame sequences showing G1 humanoid task progression: (a) pushing a box, (b) pushing a chair, (c) opening a door, and (d) pushing a table to a goal position (blue sphere).",
+      "page": 9,
+      "index": 5,
+      "width": 520,
+      "height": 396
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.10351v1/fig-001.webp",
+      "caption": "FIGURE 2. Measured vs simulated motor response under identical control inputs. Motor velocity measured on hardware (black dashed) versus simulated trajectories for each model (colored lines).",
+      "page": 6,
+      "index": 1,
+      "width": 508,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10351v1/fig-002.webp",
+      "caption": "FIGURE 3. Position MAE comparison across actuator models. Mean absolute position error (Eq. 3) evaluated on the held-out trajectory. Error bars show mean± std. Lower is better.",
+      "page": 6,
+      "index": 2,
+      "width": 508,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10351v1/fig-003.webp",
+      "caption": "TABLE 4. Reward terms used in the RL experiments.",
+      "page": 11,
+      "index": 3,
+      "width": 529,
+      "height": 596
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10351v1/fig-004.webp",
+      "caption": "FIGURE 4. Parameter, loss, and gradient norm convergence of TrajID-Param over 25 independent runs. Each run lasts 3000 epochs. Shaded regions indicate mean ± std.",
+      "page": 7,
+      "index": 4,
+      "width": 508,
+      "height": 925
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10351v1/fig-005.webp",
+      "caption": "FIGURE 5. Validation MAE versus objective weight α (wq = α, w_q = 1 − α) for TrajID-Param, TrajID-NN, and Torque-Oracle.",
+      "page": 7,
+      "index": 5,
+      "width": 508,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10351v1/fig-006.webp",
+      "caption": "FIGURE 8. Motor test-stand setup: Experimental apparatus used to characterize the actuator under controlled loading. The rig couples a test motor and a load (brake) motor through an inline torque transducer, enabling synchronized torque/velocity measurements.",
+      "page": 10,
+      "index": 6,
+      "width": 506,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10351v1/fig-007.webp",
+      "caption": "FIGURE 9. Measured vs. model-predicted torque. Steady-state motor torque τ versus motor velocity for two PWM duty-cycle commands (u = 0.2 and u = 0.8). Gray markers show downsampled test-stand measurements; the orange curve shows the learned (Bench-Sup) model evaluated on a dense velocity grid.",
+      "page": 10,
+      "index": 7,
+      "width": 508,
+      "height": 525
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10351v1/fig-008.webp",
+      "caption": "TABLE 1. Comparison of actuator modeling and compensation approaches. Model complexity is a qualitative proxy for the number of trainable parameters and runtime evaluation cost.",
+      "page": 3,
+      "index": 8,
+      "width": 1039,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10351v1/fig-009.webp",
+      "caption": "FIGURE 6. Validation MAE versus prediction horizon for TrajID-Param, TrajID-NN, and Torque-Oracle.",
+      "page": 8,
+      "index": 9,
+      "width": 506,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10351v1/fig-010.webp",
+      "caption": "FIGURE 7. Robot Performance Comparison: Refined vs. Baseline RL Policies. The traveled distance is denoted as d , and the rotation deviation from the original direction is represented as ϕ. The top image shows robot performance using the baseline model, exhibiting excessive rotation and reduced travel distance. The bottom image shows the robot’s performance using the refined model, demonstrating improvements in both travel distance and rotational alignment.",
+      "page": 9,
+      "index": 10,
+      "width": 452,
+      "height": 515
+    }
+  ]
+}
