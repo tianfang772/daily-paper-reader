@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.12006v1/fig-001.webp",
+      "caption": "Fig. 1. A bipedal robot stepping on muddy terrain and a schematic of robot foot–mud contact. The horizontal and vertical projections of the foot are denoted by uh and uz , respectively.",
+      "page": 2,
+      "index": 1,
+      "width": 440,
+      "height": 318
+    },
+    {
+      "url": "assets/figures/arxiv/2604.12006v1/fig-002.webp",
+      "caption": "Fig. 13. (a) Comparisons of the maximum suction force and energy consumption with various feet. (b) Comprehensive comparison of impulse, maximum suction force and gait energy consumption for different feet.",
+      "page": 7,
+      "index": 2,
+      "width": 530,
+      "height": 295
+    }
+  ]
+}

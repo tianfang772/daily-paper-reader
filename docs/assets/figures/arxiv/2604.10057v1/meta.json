@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.10057v1/fig-001.webp",
+      "caption": "Fig. 1. A legged robot equipped with an IMU, joint encoders, and contact sensors is walking in an indoor environment equipped with a motion capture system. The estimated trajectory of the proposed NANO-L is closer to the ground truth than that of InEKF.",
+      "page": 1,
+      "index": 1,
+      "width": 515,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10057v1/fig-002.webp",
+      "caption": "Fig. 8. Estimated trajectories from InEKF and NANO-L on the flat terrain with different distances and durations. From left to right: (9.25 m, 40 s), (10.25 m, 50 s), and (14.6 m, 60 s).",
+      "page": 10,
+      "index": 2,
+      "width": 1082,
+      "height": 234
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10057v1/fig-003.webp",
+      "caption": "TABLE II COMPARISON OF ATE, RE, AND COMPUTATION TIME ACROSS REAL-WORLD ENVIRONMENTS",
+      "page": 10,
+      "index": 3,
+      "width": 1044,
+      "height": 214
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10057v1/fig-004.webp",
+      "caption": "Fig. 7. Estimated position, velocity, and orientation for InEKF and NANO-L on the unstable terrain.",
+      "page": 10,
+      "index": 4,
+      "width": 1080,
+      "height": 530
+    },
+    {
+      "url": "assets/figures/arxiv/2604.10057v1/fig-005.webp",
+      "caption": "Fig. 6. Different environments of real-world experiments.",
+      "page": 9,
+      "index": 5,
+      "width": 434,
+      "height": 525
+    }
+  ]
+}
