@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.08636v1/fig-001.webp",
+      "caption": "Fig. 3: Latent map of 30 robots (2D IsoAE). Colors show k-means clusters (k=5) with representative thumbnails, which demonstrate that the robots are semantically grouped based on their morphological similarity (e.g., full-body humanoids, dual-arm manipulators). The bottom strip interpolates eight points from rby1 to a starred design (sufficient for Swimming); joint birth/death is visible as markers appear/disappear under the activation rule.",
+      "page": 6,
+      "index": 1,
+      "width": 1038,
+      "height": 529
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08636v1/fig-002.webp",
+      "caption": "TABLE VII: VOO hyperparameters used in experiments.",
+      "page": 11,
+      "index": 2,
+      "width": 437,
+      "height": 291
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08636v1/fig-003.webp",
+      "caption": "Fig. 5: Demonstration of the three motion-optimized robots from Fig. 4 successfully executing Waving Hello, Chicken Dance, and Swimming via motion retargeting. For each robot snapshot, the human figure (upper right) shows the key pose from the source human motion (BVH file) used as input, while the photo shows the retargeted execution on the robot’s unique kinematics. The red and blue lines visualize the 3D end-effector trajectories of robot and source human motion.",
+      "page": 7,
+      "index": 3,
+      "width": 944,
+      "height": 565
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08636v1/fig-004.webp",
+      "caption": "Fig. 1: Total pipeline for humanoid kinematic structure optimization. First, a dataset of robots is converted to a unified Screw Representation ((ω, q)). An autoencoder with an isometric regularization loss learns a compact 2D latent space from these representations. Next, Voronoi Optimistic Optimization (VOO) iteratively samples and decodes candidates from the latent space. Each candidate is evaluated by its motion retargeting performance using Procrustes analysis. The process converges to an optimal kinematic structure that best performs the given task.",
+      "page": 3,
+      "index": 4,
+      "width": 1029,
+      "height": 391
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08636v1/fig-005.webp",
+      "caption": "TABLE IV: Maximum joint count per anatomical group. For the DH representation, one TCP group per arm is appended (1 slot each), giving 16 groups and 32 slots in total.",
+      "page": 9,
+      "index": 5,
+      "width": 462,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08636v1/fig-006.webp",
+      "caption": "TABLE II: Robots included in the dataset.",
+      "page": 9,
+      "index": 6,
+      "width": 512,
+      "height": 333
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08636v1/fig-007.webp",
+      "caption": "Fig. 2: Mean best-so-far objective across ten shared seeds(lower is better). The error bars represent the interquartile range (thick) and min–max (thin). Left inset: oracle distribution with dashed mean µ on motion chicken dance.",
+      "page": 5,
+      "index": 7,
+      "width": 512,
+      "height": 261
+    }
+  ]
+}

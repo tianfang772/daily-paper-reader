@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-001.webp",
+      "caption": "Figure 1: Metric inversion in a WebShop interaction. The world model receives the same interaction prefix and produces two candidate next-page states. In Drop Target (left), the predicted page omits the decisioncritical target product, so the agent’s correct action is no longer available; despite this catastrophic functional error, BERTScore and other state similarity metrics remain high because most page tokens are unchanged. In Drop Irrelevant (right), several non-critical products disappear, which lowers state similarity much more strongly but leaves the correct action intact. Our proposed metric, Behavior Consistency Reward (BehR) distinguishes these two cases because it scores whether the predicted state preserves the agent’s next action, not just whether the text looks similar.",
+      "page": 1,
+      "index": 1,
+      "width": 458,
+      "height": 432
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-002.webp",
+      "caption": "Table 2: Single-step prediction quality (EM). Exactmatch accuracy on held-out test trajectories. BehR posttraining preserves EM on WebShop and improves it on TextWorld relative to the W2W baseline.",
+      "page": 6,
+      "index": 2,
+      "width": 461,
+      "height": 282
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-003.webp",
+      "caption": "Figure 3: GRPO training data construction pipeline. The key contribution is the difficulty-aware filtering and step-level restructuring applied on top of Word2World’s supervised corpora.",
+      "page": 11,
+      "index": 3,
+      "width": 438,
+      "height": 454
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-004.webp",
+      "caption": "Table 3: Multi-agent CR evaluation across two domains. Real: success rate in the real environment; WM: success rate in the WM environment; W2R: WM actions replayed in the real environment; CR = W2R/Real; CRpw = pairwise preservation: the fraction of individually Real-successful tasks that remain successful under W2R replay. CR = 1.0 is ideal; CR > 1.0 indicates a “too-easy” simulator; CR < 1.0 indicates behavioral drift. We adopt CRpw as the primary per-task metric (higher is strictly better) and treat aggregate CR as a complementary calibration measure (closer to 1.0 is better). F1-WM: GRPO-trained with token-level F1 reward (Wu et al., 2025), serving as an RL baseline to isolate the effect of the optimization target from RL fine-tuning itself. The Qwen2.5-7B W2W model (Li et al., 2025) is our primary SFT baseline; the LLaMA3.1-8B W2W model is a cross-architecture stress test.",
+      "page": 7,
+      "index": 4,
+      "width": 946,
+      "height": 730
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-005.webp",
+      "caption": "Table 18: Calibrated surrogate evaluation across agents. Success rates (%) in the real environment vs. W2W-WM and BehR-WM. Both WMs broadly preserve leaderboard order, while BehR remains better calibrated for weak TextWorld agents.",
+      "page": 18,
+      "index": 5,
+      "width": 461,
+      "height": 333
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-006.webp",
+      "caption": "Table 19: Episode length and timeout rates. Mean steps per episode and percentage hitting 50-step limit. WebShop WM episodes show >80% timeout rates vs. 0% in Real. TextWorld strong agents (14B) maintain consistent episode structure.",
+      "page": 18,
+      "index": 6,
+      "width": 461,
+      "height": 367
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-007.webp",
+      "caption": "Table 6: Lookahead planning on WebShop (K = 5). Lookahead improves over the no-planning baseline for all three agents, and BehR-WM attains the highest point estimate in every pair, although some margins over W2W-WM are small. Additional analysis appears in Appendix J.",
+      "page": 8,
+      "index": 7,
+      "width": 458,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-008.webp",
+      "caption": "Table 20: CRpw with 95% Wilson score confidence intervals. Results are grouped by base WM. WS = WebShop; TW = TextWorld. Bold BehR values exceed the upper bound of the corresponding W2W interval. Across the 13 non-tied rows in the full comparison, BehR is always directionally better; a binomial sign test gives p=0.000244.",
+      "page": 19,
+      "index": 8,
+      "width": 454,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-009.webp",
+      "caption": "Table 17: 8B vs. 32B Lookahead on WebShop (K=5, SFT-Qwen WM). 32B achieves higher partial reward but lower SR due to premature buy now without selecting all required options—an “overconfident buyer” pattern specific to WebShop’s evaluation protocol.",
+      "page": 17,
+      "index": 9,
+      "width": 458,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-010.webp",
+      "caption": "Table 9: Core training hyperparameters. Configuration covers both WebShop and TextWorld runs; domainspecific differences are noted in the text.",
+      "page": 12,
+      "index": 10,
+      "width": 454,
+      "height": 593
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-011.webp",
+      "caption": "Figure 2: Behavior Consistency Training for world models. The figure contrasts traditional state consistency training (light purple shaded area) with our proposed functional consistency paradigm (light blue shaded area). Baseline methods optimize directly for textual similarity (e.g., MLE or RLVR-F1) between the predicted state ŝt+1 and the real state st+1. In contrast, our approach relies on behavioral anchoring. Given a historical trajectory prefix ht and a logged offline action a∗t+1, a frozen Reference Agent evaluates the action log-likelihoods under both the predicted state (ℓ̄pred) and the real state (ℓ̄real). The resulting likelihood gap, ∆ = −|ℓ̄pred − ℓ̄real|, defines the Behavior Consistency Reward (BehR), which is fed back to update the world model, explicitly aligning state generation with agent decision-making.",
+      "page": 5,
+      "index": 11,
+      "width": 943,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13824v1/fig-012.webp",
+      "caption": "Figure 4: Complete trajectory comparison on TextWorld (textworld_169, Qwen3-8B agent, LLaMA-8B WM). Steps 1–7 are functionally identical across conditions. At the critical decision point (step 8), the BehR-WM preserves correct game-state semantics—including error handling for invalid verbs—enabling task completion. The SFT-WM exhibits broken room connectivity that traps the agent in a navigation loop.",
+      "page": 16,
+      "index": 12,
+      "width": 917,
+      "height": 651
+    }
+  ]
+}

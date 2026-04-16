@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.11981v1/fig-001.webp",
+      "caption": "Figure 4. Comparisons of robot locomotion results on granular media within one stance phase. Shadowed areas represent one standard deviation. (a) The gait comparison of the model prediction and experiment results. Swing leg: q1,2,3, stance leg: q4,5,6. (b) GRFs on the granular media. (c) Stance foot intrusion variables xs, ys and zs.",
+      "page": 6,
+      "index": 1,
+      "width": 694,
+      "height": 1005
+    },
+    {
+      "url": "assets/figures/arxiv/2604.11981v1/fig-002.webp",
+      "caption": "Figure 1. Schematic of the bipedal walking model with foot sinkage and slip on granular media. (a) Sagittal dynamics. (b) Stance foot rolling and sinkage with a convex foot shape in the sagittal plane. (c) Frontal dynamics.",
+      "page": 3,
+      "index": 2,
+      "width": 940,
+      "height": 355
+    },
+    {
+      "url": "assets/figures/arxiv/2604.11981v1/fig-003.webp",
+      "caption": "Figure 6. (a)-(c) Foot orientation angle ∆θr (negative sign presents decreasing values), the effective rolling radius of the stance foot, and the CoT of walking on sand and rigid ground during one stance phase, respectively. Shadowed areas represent the standard deviations. v̄x CoM/ √ ghCoM = 0.1. (d) Velocity dependency of locomotion CoT of the bipedal robot and human on sand and rigid ground, respectively. Each CoT value is mean±standard-variation. The solid lines are second-order polynomial fitting. CoT of humanoid locomotion are based on the data by [24].",
+      "page": 8,
+      "index": 3,
+      "width": 530,
+      "height": 257
+    },
+    {
+      "url": "assets/figures/arxiv/2604.11981v1/fig-004.webp",
+      "caption": "Figure 5. Comparisons of RMSE under different forward-velocity commands. (a) Joint angle q. (b) GRFs. (c) Intrusion variables xs, ys, and zs. Circle dots: the proposed model. Square dots: model with rigid-ground assumptions.",
+      "page": 9,
+      "index": 4,
+      "width": 499,
+      "height": 534
+    },
+    {
+      "url": "assets/figures/arxiv/2604.11981v1/fig-005.webp",
+      "caption": "Figure 2. Bipedal-walking-dynamics modeling on granular media with the inclusion of foot–terrain interactions, the rolling-slip effect, and the energy efficiency in terms of CoT.",
+      "page": 5,
+      "index": 5,
+      "width": 1008,
+      "height": 247
+    },
+    {
+      "url": "assets/figures/arxiv/2604.11981v1/fig-006.webp",
+      "caption": "Figure 3. Experimental setup of the bipedal robot walking locomotion on granular media. (a) Schematic of the actuated joint configuration of the bipedal robot on granular media. (b) A bipedal robot on the sand track with a modularized foot.",
+      "page": 5,
+      "index": 6,
+      "width": 558,
+      "height": 553
+    }
+  ]
+}
