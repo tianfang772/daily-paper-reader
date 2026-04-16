@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.18246v1/fig-001.webp",
+      "caption": "Fig. 6: Visualization of RAPID’s dynamics embedding in 1D Inserting (Top-Left) and 2D Covering (Top-Right) tasks. The number below each object photo is the value of a single dimension of the dynamics embedding. Bottom: the rollout of the policy given a special object whose rigidity changes with rotation. The line charts below the rollout visualize the value of a single dimension of the dynamics embedding during robot execution. We see that certain dimensions of the dynamics embedding are strongly correlated with the softness of the objects, demonstrating the adaptation module’s ability to infer the softness of the objects.",
+      "page": 6,
+      "index": 1,
+      "width": 1052,
+      "height": 414
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18246v1/fig-002.webp",
+      "caption": "Fig. 2: The RAPID Method. Below we explain training (top and middle) in simulation and deploying in the real world (bottom) a deformable object mobile manipulation solution with RAPID. Training with RAPID (top and middle) is a two-step procedure. In the first step (top), the agent is asked to solve a simulated version of the task by learning a visuomotor policy and two encoders: a Shape Encoder, µs, and a Dynamics Encoder, µd, using privileged state information of the object from the simulator, such as mass and particle positions. In the second step (middle), RAPID frees itself from privileged simulator information by learning a new Shape Adaptation module, ϕs, and Dynamics Adaptation module ϕd, using L1-losses to replace the Shape Encoder and the Dynamics Encoder, respectively. At test time (bottom), both the Shape and Dynamics adaptation modules and the visuomotor policy are directly deployed to the real world, with the adaptation modules updating the Shape Embedding ẑst and Dynamics Embeddings ẑdt to the visuomotor policy once every 5 timesteps.",
+      "page": 2,
+      "index": 2,
+      "width": 1052,
+      "height": 622
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18246v1/fig-003.webp",
+      "caption": "Fig. 3: Simulated and Real-World Version of the Two Tasks: 1D Inserting (Left Half ) and 2D Covering (Right Half ). Each task is trained in simulation (left image of each half ) and then deployed directly to the real world (right image of each half ) under unseen objects, environments, and lighting conditions. By interacting with deformable objects across a broad range of instances, geometries, and categories in simulation, RAPID successfully learns a visuomotor policy that adapts to and excels at manipulating real-world deformable objects of unseen dynamics, instances, and categories on a real bimanual mobile manipulator.",
+      "page": 3,
+      "index": 3,
+      "width": 1052,
+      "height": 283
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18246v1/fig-004.webp",
+      "caption": "Fig. 4: All unseen real-world deformable objects used for the 1D Inserting (left) and 2D Covering (right) mobile manipulation tasks, respectively. 1D categories (left): belt, hammer, marker, banana, HDMI adapter, GPU connector, jumping rope, ethernet cable, zip tie, rake, mouse, screwdriver, stick, rubber, velvet rope, VGA adapter, anchor rope, garden rope, ribbon, fan. 2D categories (right): polyester bag, pants, towel, plastic bag, face mask, paper bag, glove, shorts, cap, lid, sock, soft cuff, cardboard, envelope, pouch, wallet, eye-mask, t-shirt, sponge, wool hat. Learning from deformable objects across a wide range of instances in simulation enables RAPID to zero-shot transfer to real-world objects under unseen dynamics, instances, and categories.",
+      "page": 4,
+      "index": 4,
+      "width": 1052,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18246v1/fig-005.webp",
+      "caption": "Fig. 5: RAPID’s Dynamics Adaptive Behavior in 1D Inserting (Top) and 2D Covering (Bottom) tasks. Top Left: RAPID hangs the rope over the top of the container before lowering it. Top Right: RAPID flips the gripper upside down before performing a direct adapter insertion. Bottom Left: RAPID moves the robot arm sideways and sweeps a towel horizontally from right to center to cover the bowl. Bottom Right: RAPID moves the arm vertically and places a hat directly on top of the bowl. This shows RAPID’s ability to infer different object dynamics and adapt actions accordingly to achieve the deformable object mobile manipulation tasks.",
+      "page": 5,
+      "index": 5,
+      "width": 1052,
+      "height": 385
+    }
+  ]
+}

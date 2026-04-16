@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.18408v1/fig-001.webp",
+      "caption": "Fig. 8: Directional CoT comparison. The left figure compares the CoT of walking and skating using human-engineered and 1D co-designed roller wheels. The right figure compares skating with 1D and 2D co-designed roller wheels.",
+      "page": 6,
+      "index": 1,
+      "width": 510,
+      "height": 305
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18408v1/fig-002.webp",
+      "caption": "Fig. 7: An energy-efficient self-aligning behavior emerged when combining World Frame Command with the 2D design parameterization. For the optimal design in Fig. 9, the backward direction is the most energy-efficient. As a result, the robot learns to consistently align its backward direction with the commanded velocity direction.",
+      "page": 6,
+      "index": 2,
+      "width": 1052,
+      "height": 299
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18408v1/fig-003.webp",
+      "caption": "Fig. 2: Bilevel co-design framework for quadrupedal skating. The outer loop uses BO to propose the next candidate design dnext. For each candidate design, the inner loop uses RL to optimize the policy πθ. The resulting performance J(π∗ θ ,d, T ) is fed back to BO, enabling efficient search over design-policy pairs that maximize skating performance.",
+      "page": 3,
+      "index": 3,
+      "width": 412,
+      "height": 325
+    }
+  ]
+}

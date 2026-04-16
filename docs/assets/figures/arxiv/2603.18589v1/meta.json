@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.18589v1/fig-001.webp",
+      "caption": "TABLE 4. Comparison of absolute pose error in translation [m] across datasets for different visual feature extractor–matcher pairs, evaluated after full SE(3) alignment.",
+      "page": 6,
+      "index": 1,
+      "width": 1022,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18589v1/fig-002.webp",
+      "caption": "TABLE 3. Main parameters used in the experiments. For sparse-direct [29], ORB [27], SuperPoint [14], SuperGlue [15] and LightGlue [16], the parameter settings primarily follow the recommended presets provided by the original authors, with minimal adjustments to fit the LIVO experimental environment. All parameters were applied consistently to ensure a fair comparison.",
+      "page": 6,
+      "index": 2,
+      "width": 939,
+      "height": 424
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18589v1/fig-003.webp",
+      "caption": "FIGURE 4. Trajectories on the Cave2 sequence. The sparse-direct (SD)-only method exhibits pronounced deviations at specific segments, which are caused by high parallax in (A) and illumination changes in (B)–(D). The color bar indicates the absolute trajectory error (m), and trajectories are aligned by translating the initial poses (origin alignment) to emphasize where and how drift accumulates without global alignment.",
+      "page": 7,
+      "index": 3,
+      "width": 506,
+      "height": 259
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18589v1/fig-004.webp",
+      "caption": "FIGURE 3. Mapping results on the AMValley03 sequence using sliding-window local mapping: (a) sparse-direct only, (b) ORB [27] + Hamming distance, (c) SuperPoint [14] + SuperGlue [15], (d) SuperPoint [14] + LightGlue [16], and (e) XFeat [28] + mutual nearest neighbor search. Square red insets reveal zoomed-in point-cloud details, and the blue line traces the UAV’s flight path.",
+      "page": 7,
+      "index": 4,
+      "width": 1025,
+      "height": 469
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18589v1/fig-005.webp",
+      "caption": "FIGURE 8. Comparison of mapping efficiency and matching stability for each feature extractor–matcher combination. (a) Number of accumulated 3D visual map points (SparseMapSize), (b) number of features detected per frame, and (c) temporal changes in the number of initial and inlier matches. The SD-only configuration does not extract features; hence, plots for (b) and (c) are unavailable. Dashed lines indicate the number of initial matches; solid lines with markers represent inlier matches. Inliers are obtained via RANSAC-based geometric verification using a 2D–3D reprojection error under the predicted camera pose. Here, SD, HD, SP, SG, LG, and MNN refer to Sparse-Direct [29], hamming distance, SuperPoint [14], SuperGlue [15], LightGlue [16], and mutual nearest neighbor search, respectively.",
+      "page": 10,
+      "index": 5,
+      "width": 1050,
+      "height": 951
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18589v1/fig-006.webp",
+      "caption": "FIGURE 5. Resulting trajectories on the Cave1 sequence. The estimated trajectories were aligned with the ground truth using full SE(3) alignment (rotation and translation). Gray segments indicate regions where the position error falls within the range of −0.1mto0.1m, and in the yaw plot, gray bands correspond to yaw errors from −1◦to1◦. Here, SD, HD, SP, SG, LG, and MNN refer to Sparse-Direct [29], hamming distance, SuperPoint [14], SuperGlue [15], LightGlue [16], and mutual nearest neighbor search, respectively.",
+      "page": 8,
+      "index": 6,
+      "width": 1051,
+      "height": 538
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18589v1/fig-007.webp",
+      "caption": "FIGURE 6. Comparison of (a) CPU usage, (b) memory usage, (c) GPU usage, and (d) GPU memory usage on the Cave1 sequence. The SD-only and hybrid SD+ORB+HD are purely CPU-based methods and do not use a GPU (no GPU using or GPU memory consumption). The CPU usage is reported as a percentage of total CPU utilization, where 100% corresponds to the full usage of a single core. Memory usage indicates the resident set size (RSS) divided by the total physical memory (64 GB RAM in this experiment). Here, SD, HD, SP, SG, LG, and MNN refer to Sparse-Direct [29], hamming distance, SuperPoint [14], SuperGlue [15], LightGlue [16], and mutual nearest neighbor search, respectively.",
+      "page": 8,
+      "index": 7,
+      "width": 508,
+      "height": 433
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18589v1/fig-008.webp",
+      "caption": "FIGURE 1. Framework for the LiDAR-inertial-visual odometry (LIVO) system built on FAST-LIVO2 to integrate four pairs of visual feature extractors and matchers",
+      "page": 4,
+      "index": 8,
+      "width": 1051,
+      "height": 463
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18589v1/fig-009.webp",
+      "caption": "FIGURE 2. Step-by-step hybrid visual measurement update process",
+      "page": 4,
+      "index": 9,
+      "width": 506,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18589v1/fig-010.webp",
+      "caption": "TABLE 6. Stage-wise functions of the visual module execution process. Each function corresponds to a major processing stage, with its role summarized in the right column. The same modular structure is applied in Fig. 7 to analyze the frame processing time of different feature extractor–matcher pairs.",
+      "page": 9,
+      "index": 10,
+      "width": 533,
+      "height": 258
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18589v1/fig-011.webp",
+      "caption": "FIGURE 7. Frame-wise processing time for each visual feature extractor-matcher configuration on the Cave1 sequence, decomposed into five key stages (summarized in Table. 6). The y-axis represents the average processing time per frame for each stage on a logarithmic scale. The total time shown corresponds to the overall computation time for all VIO processing stages, excluding visualization overhead. Here, SD, HD, SP, SG, LG, and MNN refer to Sparse-Direct [29], hamming distance, SuperPoint [14], SuperGlue [15], LightGlue [16], and mutual nearest neighbor search, respectively.",
+      "page": 9,
+      "index": 11,
+      "width": 1051,
+      "height": 556
+    }
+  ]
+}

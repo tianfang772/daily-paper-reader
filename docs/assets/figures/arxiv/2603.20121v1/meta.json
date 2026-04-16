@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.20121v1/fig-001.webp",
+      "caption": "Fig. 1: Corner cases where the human encounters hazards that are not obstacles for the guide dog [6].",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 374
+    },
+    {
+      "url": "assets/figures/arxiv/2603.20121v1/fig-002.webp",
+      "caption": "Fig. 9: Quantitative comparison of the three navigation conditions: without assistance, with robot guide dog, and with our Co-Ego system. From left to right, the plots show (a) number of collisions, (b) task completion time, and (c) perceived safety. Error bars denote participant variability.",
+      "page": 6,
+      "index": 2,
+      "width": 1052,
+      "height": 221
+    },
+    {
+      "url": "assets/figures/arxiv/2603.20121v1/fig-003.webp",
+      "caption": "Fig. 10: NASA-TLX cognitive load measured while completing tasks under three conditions: without assistance, with the robot guide dog, and with our Co-Ego system. Lower scores indicate lower cognitive load.",
+      "page": 6,
+      "index": 3,
+      "width": 512,
+      "height": 361
+    },
+    {
+      "url": "assets/figures/arxiv/2603.20121v1/fig-004.webp",
+      "caption": "Fig. 5: Flowchart of the dual-perception priority-based navigation algorithm.",
+      "page": 4,
+      "index": 4,
+      "width": 362,
+      "height": 410
+    },
+    {
+      "url": "assets/figures/arxiv/2603.20121v1/fig-005.webp",
+      "caption": "Fig. 3: Viewpoint asymmetry between human and robot egocentric views. (a) RGB and (b) point cloud from the user’s neck-worn camera capture the hanging lamp at head height but miss the ground-level cabinet. (c) RGB and (d) cost map from the quadruped’s point cloud detect ground-level obstacles (red regions) with a navigable path in between (blue regions) but remain blind to the overhead lamp.",
+      "page": 4,
+      "index": 5,
+      "width": 1054,
+      "height": 202
+    },
+    {
+      "url": "assets/figures/arxiv/2603.20121v1/fig-006.webp",
+      "caption": "Fig. 8: Illustration of the three navigation conditions evaluated in our study.",
+      "page": 5,
+      "index": 6,
+      "width": 512,
+      "height": 333
+    }
+  ]
+}

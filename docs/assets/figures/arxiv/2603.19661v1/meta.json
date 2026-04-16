@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.19661v1/fig-001.webp",
+      "caption": "Figure 4: The human-robot shared autonomy workflow for scientific data collection decisions.",
+      "page": 25,
+      "index": 1,
+      "width": 832,
+      "height": 1077
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19661v1/fig-002.webp",
+      "caption": "Figure 1: The LASSIE approach. Using (A) integrated legged locomotion and sensing, (B) colocated geoscience measurements across scales, and (C) human-robot collaborative algorithms to enhance planetary science exploration.",
+      "page": 21,
+      "index": 2,
+      "width": 832,
+      "height": 990
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19661v1/fig-003.webp",
+      "caption": "Figure 7: Mechanically informed, hypothesis-driven surface exploration. (A) Legged locomotion enables distributed in situ probing of regolith mechanical properties at every step. (B) Proprioceptive force measurements, integrated with complementary payload data (e.g., LiDAR and thermal imaging), detect environmental transitions such as changes in ice content and substrate strength. (C) These observations constrain evolving scientific hypotheses and guide adaptive sampling strategies, linking regolith mechanics to landscape formation and volatile-related processes.",
+      "page": 29,
+      "index": 3,
+      "width": 968,
+      "height": 360
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19661v1/fig-004.webp",
+      "caption": "Figure 2: Analogue field campaigns. Analogues for (A) sandy and (B) icy environments on the Moon and Mars, where regolith mechanics critically affect robotic operations (insets), were, respectively, (C) White Sands National Park, NM and (D) Mt. Hood, OR. Representative regolith surface textures investigated at White Sands and Mount Hood are shown in (E–F) and (G). Mars and Moon images IDs: CX00538ML0260438F445256775VA, D001R1239 706529559EDR F0404 0010M, s 084eff cyl sr19c5e r111m1 0PCT, AS158611599.",
+      "page": 22,
+      "index": 4,
+      "width": 832,
+      "height": 1016
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19661v1/fig-005.webp",
+      "caption": "Figure 3: White Sands field campaign results.",
+      "page": 23,
+      "index": 5,
+      "width": 832,
+      "height": 1279
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19661v1/fig-006.webp",
+      "caption": "Figure 5: Field measurements at Mt. Hood, OR.",
+      "page": 27,
+      "index": 6,
+      "width": 832,
+      "height": 1172
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.17240v1/fig-001.webp",
+      "caption": "Figure 1: Comparison of GigaWorld-Policy with baselines on inference frequency and task success rate in real-world settings and on an A100 GPU.",
+      "page": 1,
+      "index": 1,
+      "width": 440,
+      "height": 313
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17240v1/fig-002.webp",
+      "caption": "Table 8: Evaluation on RoboTwin 2.0 Simulation. The best results are marked in bold, and the second-best results are underlined. GigaWorld-Policy achieves performance comparable to Motus while providing a 9×",
+      "page": 15,
+      "index": 2,
+      "width": 983,
+      "height": 1371
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17240v1/fig-003.webp",
+      "caption": "Figure 2: (a) VLM-based VLA with auxiliary future supervision to densify training signals, but limited by the discriminative nature of VLMs (Cen et al., 2025; Ni et al., 2025; Zhang et al., 2025). (b) Joint action–video prediction with bidirectional attention (Bi et al., 2025; Kim et al., 2026; Shen et al., 2025), requiring future video generation at inference. (c) Two-stage design (Pai et al., 2025) that first generates future video and then gets actions via an Inverse Dynamics Model (IDM), inheriting video prediction errors and incurring additional inference cost. (d) GigaWorld-Policy: an action-centered WAM that leverages future visual dynamics as supervision during training, while making future-video prediction optional at inference for low-latency action generation.",
+      "page": 2,
+      "index": 3,
+      "width": 983,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17240v1/fig-004.webp",
+      "caption": "Figure 6: Real-world deployment of GigaWorld-Policy on PiPER arms for trash sweeping.",
+      "page": 10,
+      "index": 4,
+      "width": 983,
+      "height": 353
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17240v1/fig-005.webp",
+      "caption": "Figure 10: Real-world deployment of GigaWorld-Policy on PiPER arms for stacking bowls and cleaning a desk.",
+      "page": 14,
+      "index": 5,
+      "width": 969,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17240v1/fig-006.webp",
+      "caption": "Table 2: Evaluation on RoboTwin 2.0 Simulation. The best results are marked in bold, and the second-best results are underlined. GigaWorld-Policy achieves performance comparable to Motus while providing a 9× inference speedup.",
+      "page": 8,
+      "index": 6,
+      "width": 979,
+      "height": 792
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17240v1/fig-007.webp",
+      "caption": "Figure 3: Overview of GigaWorld-Policy, built on a pre-trained video generation backbone. During pre-training, the model learns action-relevant representations from large-scale videos. During post-training for policy learning, it jointly performs action-chunk prediction from the current observation and future video prediction as auxiliary supervision. At inference time, the future-video prediction branch is optional, enabling faster inference.",
+      "page": 4,
+      "index": 7,
+      "width": 983,
+      "height": 332
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17240v1/fig-008.webp",
+      "caption": "Figure 9: Qualitative comparison between the self-attention baseline and our method. In the red boxes, our method more accurately predicts object state changes.",
+      "page": 12,
+      "index": 8,
+      "width": 983,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17240v1/fig-009.webp",
+      "caption": "Table 4: Comparison of task success rates in real-world experiments. The best results are marked in bold, and the second-best results are underlined.",
+      "page": 9,
+      "index": 9,
+      "width": 962,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17240v1/fig-010.webp",
+      "caption": "Figure 5: Real-world deployment of GigaWorld-Policy on PiPER arms for QR code scanning.",
+      "page": 9,
+      "index": 10,
+      "width": 969,
+      "height": 290
+    }
+  ]
+}

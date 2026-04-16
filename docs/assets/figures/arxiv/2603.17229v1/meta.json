@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.17229v1/fig-001.webp",
+      "caption": "Figure 4: Trajectories from LuSNAR scene 9. Ground-truth trajectory is shown in green, estimated VO trajectory in red, and DEM-anchored SLAM in blue. DEM anchoring successfully constrains the SLAM trajectory to the surface and mitigates vertical drift.",
+      "page": 6,
+      "index": 1,
+      "width": 844,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17229v1/fig-002.webp",
+      "caption": "Table 1: RMSE comparison of different SLAM methods across nine LuSNAR scenes. Best values are in bold.",
+      "page": 6,
+      "index": 2,
+      "width": 714,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17229v1/fig-003.webp",
+      "caption": "Figure 5: S3LI crater loop with loop closure. Black: ground truth. Blue: before loop closure. Red: after loop closure. The loop closure connection (from start to end) is indicated with a straight red line. Left: loop closure without DEM anchoring leads to significant distortion. Right: DEM anchoring regularizes loop closure, mitigating drift and preventing catastrophic deformation. Residual deviation remains due to limited loop-closure constraints and the fact that DEM height and normal cues alone do not fully constrain tangential motion along visually aliased terrain.",
+      "page": 7,
+      "index": 3,
+      "width": 1054,
+      "height": 657
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17229v1/fig-004.webp",
+      "caption": "Figure 6: Long-range simulated traverse in Unreal Engine over an approximately 11 km trajectory. Ground truth is shown in black. Left: visual odometry (VO, orange) accumulates severe global drift over the traverse, deviating significantly from the true path. Right: DEM-anchored SLAM (blue) remains closely aligned with the ground truth but terminates early due to backend resource constraints, resulting in a shorter reconstructed trajectory while still exhibiting substantially reduced drift over the estimated portion.",
+      "page": 7,
+      "index": 4,
+      "width": 1059,
+      "height": 360
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17229v1/fig-005.webp",
+      "caption": "Table 2: DEM uncertainty sensitivity for DEM-anchored SLAM on a representative simulated traverse. Lower is better.",
+      "page": 8,
+      "index": 5,
+      "width": 564,
+      "height": 292
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17229v1/fig-006.webp",
+      "caption": "Figure 2: Example data from each dataset. Top: sample rover imagery. Bottom: corresponding digital elevation models (DEMs). From left to right: LuSNAR, S3LI, Unreal Engine simulation.",
+      "page": 4,
+      "index": 6,
+      "width": 998,
+      "height": 556
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17229v1/fig-007.webp",
+      "caption": "Figure 3: Opportunity rover model [23] used in our custom Unreal Engine simulation.",
+      "page": 4,
+      "index": 7,
+      "width": 408,
+      "height": 308
+    }
+  ]
+}

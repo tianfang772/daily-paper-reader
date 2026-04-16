@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.18218v1/fig-001.webp",
+      "caption": "Table 3: Summary of the 3DGS map reconstruction results.",
+      "page": 11,
+      "index": 1,
+      "width": 882,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18218v1/fig-002.webp",
+      "caption": "Figure 2: Spirals dataset samples.",
+      "page": 2,
+      "index": 2,
+      "width": 482,
+      "height": 401
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18218v1/fig-003.webp",
+      "caption": "Table 1: Comparison of depth estimation models. Monocular depth is scaled using sparse depth estimates from matched features. Metrics computed for a depth of up to 20 m.",
+      "page": 7,
+      "index": 3,
+      "width": 514,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18218v1/fig-004.webp",
+      "caption": "Figure 11: Ground truth and novel views rendered from the 3DGS map.",
+      "page": 10,
+      "index": 4,
+      "width": 1025,
+      "height": 447
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18218v1/fig-005.webp",
+      "caption": "Table 2: Semantic segmentation results on the spirals LuPNT dataset.",
+      "page": 10,
+      "index": 5,
+      "width": 1022,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18218v1/fig-006.webp",
+      "caption": "Figure 10: Training and validation losses for the considered semantic segmentation models.",
+      "page": 10,
+      "index": 6,
+      "width": 995,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18218v1/fig-007.webp",
+      "caption": "Figure 9: Test samples of semantic segmentation predictions for the spirals LuPNT dataset.",
+      "page": 8,
+      "index": 7,
+      "width": 1036,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18218v1/fig-008.webp",
+      "caption": "Table 7: Surface reconstruction results. Precision and recall using a threshold of 5 cm.",
+      "page": 12,
+      "index": 8,
+      "width": 702,
+      "height": 1043
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18218v1/fig-009.webp",
+      "caption": "Figure 13: Final map comparison with camera poses used for mapping in red.",
+      "page": 12,
+      "index": 9,
+      "width": 1054,
+      "height": 219
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18218v1/fig-010.webp",
+      "caption": "Figure 5: Diagram of the proposed real-time 3DGS mapping pipeline.",
+      "page": 5,
+      "index": 10,
+      "width": 1054,
+      "height": 258
+    },
+    {
+      "url": "assets/figures/arxiv/2603.18218v1/fig-011.webp",
+      "caption": "Figure 6: Matches between consecutive frames used for monocular depth estimation scaling. [16]",
+      "page": 5,
+      "index": 11,
+      "width": 508,
+      "height": 256
+    }
+  ]
+}

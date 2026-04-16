@@ -1,0 +1,158 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-001.webp",
+      "caption": "Figure 2: System Architecture Diagram. The system comprises five ROS2 nodes, categorized into three functional modules based on the data processing pipeline: Data Interface, Feature Detection, and Feature Fusion.",
+      "page": 6,
+      "index": 1,
+      "width": 969,
+      "height": 382
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-002.webp",
+      "caption": "Figure 5: Merge Wall Envelopes for LSD and Hough Transform. Illustration of the merge wall envelopes step, consolidating double-edge structures into a single representative line.",
+      "page": 11,
+      "index": 2,
+      "width": 931,
+      "height": 846
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-003.webp",
+      "caption": "Figure 8: Figures of four scenarios. The pipeline is tested within the four scenarios, which range from a few meters to tens of meters.",
+      "page": 15,
+      "index": 3,
+      "width": 781,
+      "height": 668
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-004.webp",
+      "caption": "Table 1: Quantitative Detection Performance (F1-Score) across Scenarios. The table presents the average and standrad deviation of F1-Score to evaluate the overall detection quality.",
+      "page": 21,
+      "index": 4,
+      "width": 750,
+      "height": 234
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-005.webp",
+      "caption": "Table 2: Geometric Accuracy Assessment of the Reconstructed Maps. The table compares the Perpendicular Distance Error (cm) and Angular Error (degrees) across four scenarios. Note that “-” indicates an algorithm failure where insufficient line segments were matched (specifically RANSAC in complex environments).",
+      "page": 21,
+      "index": 5,
+      "width": 977,
+      "height": 258
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-006.webp",
+      "caption": "Table 3: Qualitative Summary of Method Performance",
+      "page": 22,
+      "index": 6,
+      "width": 983,
+      "height": 659
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-007.webp",
+      "caption": "Figure 16: Over-segmentation of the LSD Method. (Left) It shows the original point cloud BEV map directly processed by the LSD method. (Right) It presents the corresponding extracted line segments, which are extremely numerous.",
+      "page": 22,
+      "index": 7,
+      "width": 846,
+      "height": 345
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-008.webp",
+      "caption": "Figure 4: Flowchart of the Data Post-processing and Fusion Algorithm. The process is divided into two main stages: the Local Fusion Node for feature extraction and spatial merging, and the Global Fusion Node for multi-epoch data fusion and noise filtering.",
+      "page": 10,
+      "index": 8,
+      "width": 778,
+      "height": 764
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-009.webp",
+      "caption": "Figure 12: Global Fusion Outputs for the Classroom Hallway Scenario. The comparison of outputs against the ground truth is shown as well. While geometric methods capture fine details, the deep learning approach exhibits lower recall in this specific setting.",
+      "page": 18,
+      "index": 9,
+      "width": 977,
+      "height": 285
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-010.webp",
+      "caption": "Figure 11: Raw Point Cloud and Global Fusion Outputs for the Laboratory Scenario. The left panel displays the raw 3D point cloud. The right panels display a 2×2 comparison of the four methods against the ground truth. Legend: Green lines represent the Ground Truth; Pink lines indicate successfully matched detections (True Positives); Blue lines represent unmatched detections (False Positives); Orange lines correspond to the matched segments of the Ground Truth.",
+      "page": 18,
+      "index": 10,
+      "width": 979,
+      "height": 542
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-011.webp",
+      "caption": "Figure 17: False Negative Detection due to Feature Resolution Mismatch. The figure illustrates a specific failure case in Classroom Hallway, a small-scale scenario. The blue lines represent the model’s predictions overlaid on the raw point cloud BEV. The red circle highlights a distinct, thin wall segment that the model failed to detect (False Negative). This omission is attributed to the domain gap between the thick, noisy walls in the synthetic training data and the sharp, thin features in this real-world scan.",
+      "page": 23,
+      "index": 11,
+      "width": 489,
+      "height": 489
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-012.webp",
+      "caption": "Figure 7: Pipeline of the Manhattan World Optimizer. Leveraging the inherent Manhattan structural prior of indoor scenes, this optimizer integrates scattered semantic information of wall segments into a high-precision, topologically closed indoor room floorplan.",
+      "page": 13,
+      "index": 12,
+      "width": 959,
+      "height": 1044
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-013.webp",
+      "caption": "Figure 13: Latency Breakdown Per Frame in the Garage Scenario. The stacked bars illustrate the time consumption of the Detector, Local Fusion, Global Fusion, and Data Transfer components. The corresponding methods include the Hough Transform, LSD, RANSAC, and the YOLO-OBB method with image size of 1024 and 640. The red dashed line represents the 10 Hz real-time threshold (100 ms).",
+      "page": 19,
+      "index": 13,
+      "width": 787,
+      "height": 588
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-014.webp",
+      "caption": "Figure 10: Global Fusion Outputs for the Corridor Scenario. The presence of glass surfaces causes specular reflections, resulting in geometric artifacts resembling a parallel corridor.",
+      "page": 17,
+      "index": 14,
+      "width": 769,
+      "height": 312
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-015.webp",
+      "caption": "Figure 3: Qualitative Comparison between a Real LiDAR BEV Scan and a Generated Synthetic Training Sample. The correspondence arrows illustrate the high fidelity of the proposed generation pipeline in mimicking real-world sensor characteristics: (Top) Continuous wall structures are automatically annotated with green OBBs (Class 0); (Middle) Real-world noise patterns are injected to simulate sensor artifacts; (Bottom) Discrete obstacles like columns are instantiated with red OBBs (Class 1). This visual similarity ensures a minimal domain gap for model training.",
+      "page": 9,
+      "index": 15,
+      "width": 783,
+      "height": 390
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-016.webp",
+      "caption": "Figure 15: Detection Performance Evaluation across Four Scenarios. (Left) Length-Weighted Recall scores. (Right) Length-Weighted Precision scores. Error bars indicate the standard deviation. YOLO-OBB demonstrates superior robustness, particularly in the cluttered Laboratory scenario, while maintaining high precision across all environments.",
+      "page": 20,
+      "index": 16,
+      "width": 983,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-017.webp",
+      "caption": "Figure 14: Average resource consumption comparison on the mobile computing platform. (Left) Average CPU usage percentage, where RANSAC exhibits excessive load due to iterative calculations. (Right) System memory usage percentage. Although YOLO-OBB requires higher memory allocation for the neural network, they remain below 7% of the total available RAM (8GB), proving its feasibility for onboard deployment.",
+      "page": 20,
+      "index": 17,
+      "width": 983,
+      "height": 402
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-018.webp",
+      "caption": "Figure 1: Wall and Room Recognition Module Architecture. The pipeline details the modular process of transforming raw 3D LiDAR data into semantic structural elements via 2D projection and geometric feature extraction.",
+      "page": 5,
+      "index": 18,
+      "width": 783,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19830v1/fig-019.webp",
+      "caption": "Figure 9: Performance Comparison of the Four Methods in Garage Scenario across Three Processing Stage. The figure shows the outputs of three nodes: Detector, Local Fusion, and Global Fusion. For Detector Output, the black 2D point cloud represents the 3D LiDAR BEV map, overlaid with wall recognition results. Notably, for RANSAC, green marking indicate line segments rejected as too short, while for YOLO, cyan markings identify columns. For Local Fusion Output, blue line segments represent the raw input received from the Detector Node, while red segments depict the spatially fused wall structures. For Global Fusion Output, the blue segments correspond to the input from the Local Fusion Node, and red segments illustrate the final temporally fused global map. Numerical annotations on the segments indicate the rank of the observation matrix, reflecting estimation stability.",
+      "page": 16,
+      "index": 19,
+      "width": 957,
+      "height": 644
+    }
+  ]
+}

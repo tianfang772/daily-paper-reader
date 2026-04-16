@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.27416v1/fig-001.webp",
+      "caption": "Fig. 4. HIM vs Basic PPO on DR terrain with identical reward configuration. (a) Mean reward, (b) velocity tracking error, (c) episode survival rate. Basic PPO dramatically outperforms HIM across all metrics in this specific project configuration.",
+      "page": 6,
+      "index": 1,
+      "width": 1055,
+      "height": 303
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27416v1/fig-002.webp",
+      "caption": "TABLE IV REWARD-WEIGHT PATTERN OBSERVED IN THE LATER WAVES.",
+      "page": 6,
+      "index": 2,
+      "width": 479,
+      "height": 345
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27416v1/fig-003.webp",
+      "caption": "Fig. 5. Best velocity error per wave. The optimization converges at Wave 12 (vel err=0.263). Waves 13–14 explored the remaining parameter space without improvement. Vertical gray lines indicate waves without comparable velocity error data (early diagnostic or HIM-only waves).",
+      "page": 7,
+      "index": 3,
+      "width": 507,
+      "height": 274
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27416v1/fig-004.webp",
+      "caption": "Fig. 1. Mean reward vs. iteration for key experiments across waves. Later waves with refined reward weights and terrain configuration show consistently higher and faster-rising reward curves.",
+      "page": 3,
+      "index": 4,
+      "width": 507,
+      "height": 274
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27416v1/fig-005.webp",
+      "caption": "Fig. 8. Episode survival rate (timeout %) across key experiments. Higher values indicate fewer premature terminations due to falls. The best configurations sustain >95% timeout rates, indicating stable locomotion throughout most episodes.",
+      "page": 8,
+      "index": 5,
+      "width": 507,
+      "height": 274
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27416v1/fig-006.webp",
+      "caption": "Fig. 6. Parameter sensitivity analysis. Each subplot varies one parameter while holding others at their best values. Gold stars mark optima, red crosses mark hung experiments. The clear U-shapes and failure modes demonstrate that the agent’s systematic single-variable methodology was effective at identifying the optimal configuration.",
+      "page": 8,
+      "index": 6,
+      "width": 1055,
+      "height": 575
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27416v1/fig-007.webp",
+      "caption": "Fig. 7. Peak mean reward per experiment. Green: strong (>80), yellow: moderate (>20), red: failed/collapsed. Later experiments consistently reach higher peaks, reflecting the cumulative effect of agent-driven reward and terrain tuning.",
+      "page": 8,
+      "index": 7,
+      "width": 507,
+      "height": 243
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27416v1/fig-008.webp",
+      "caption": "TABLE I AUTONOMOUS DECISION POINTS MADE BY THE AGENT DURING THE STUDY.",
+      "page": 4,
+      "index": 8,
+      "width": 1018,
+      "height": 494
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27416v1/fig-009.webp",
+      "caption": "Fig. 9. Reward decomposition for exp063 (best configuration). Top: positive components (tracking, gait). Bottom: penalty components. At convergence, tracking rewards dominate while stability penalties are near zero, indicating the policy learned stable locomotion.",
+      "page": 9,
+      "index": 9,
+      "width": 507,
+      "height": 437
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27416v1/fig-010.webp",
+      "caption": "TABLE III REPOSITORY-BACKED RUNS THAT DEFINE THE MAIN CONCLUSIONS.",
+      "page": 5,
+      "index": 10,
+      "width": 500,
+      "height": 904
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27416v1/fig-011.webp",
+      "caption": "TABLE II WAVE-BY-WAVE PROGRESSION OF THE CHECKED-IN RECORD.",
+      "page": 5,
+      "index": 11,
+      "width": 458,
+      "height": 756
+    }
+  ]
+}

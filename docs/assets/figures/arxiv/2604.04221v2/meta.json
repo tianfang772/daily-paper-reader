@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.04221v2/fig-001.webp",
+      "caption": "Fig. 3. Residual Koopman modeling framework",
+      "page": 6,
+      "index": 1,
+      "width": 844,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04221v2/fig-002.webp",
+      "caption": "Fig. 5. Prediction performance: Comparison of the proposed residual Koopman model (orange) against a nonlinear SRB (blue dashed), EDMD with monomials (green dashed) and EDMD with SE(3) basis (purple dashed against a test trajectory (black). (a) prediction of x − y trajectory over 100 time steps. (b–c) Per-channel RMSE box plots for linear velocities (vx, vy , vz) and angular velocities (ωx, ωy , ωz), (d) Mean SO(3) geodesic attitude error of EDMD-SE(3) over multi-step rollout horizon, (e) Overall residual Koopman RMSE versus the number of training samples used and (f) Overall RMSE error against monomial degree sweep for the residual Koopman model.",
+      "page": 11,
+      "index": 2,
+      "width": 1050,
+      "height": 713
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04221v2/fig-003.webp",
+      "caption": "Fig. 7. Experiment 1: Velocity tracking on flat ground. (a) Executed base x–y trajectory during randomized planar commands (start/end annotated). (b) Executed base x–y trajectory during smooth loop commands (start/end annotated). (c) Randomized segment: commanded (black dashed) and measured (solid) (vx, vy , ωz). (d) Loop segment: commanded (black dashed) and measured (solid) (vx, vy , ωz).",
+      "page": 15,
+      "index": 3,
+      "width": 1051,
+      "height": 522
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04221v2/fig-004.webp",
+      "caption": "Fig. 4. Dataset generation for Koopman residual learning. Left: body-velocity samples (vx, vy) with marginal histograms, colored by yaw rate ωz , illustrating excitation coverage. Middle: Gazebo simulation setup with randomized off-road terrain with per-episode friction µ. Right: representative episode time histories of base linear velocity v, angular velocity ω, vertical contact forces fz , and trot gait phase.",
+      "page": 10,
+      "index": 4,
+      "width": 1054,
+      "height": 416
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04221v2/fig-005.webp",
+      "caption": "Fig. 6. MPC tracking performance (sim): Comparison of the proposed RK-MPC framework (orange) against a nonlinear SRB-MPC (blue) and SE3KMPC (purple) on a circular tracking task over 10 laps. (a)–(b) Executed base x–y trajectory of the SRB-MPC and the RK-MPC respectively. (c)–(d) Phase portraits for attitude stability where SE3-KMPC exhibits a failure mode with excursions away from the near-origin region. (e)–(f) Per-axis tracking RMSE distributions for linear velocities and angular rates across 10 laps of the circle. (g) MPC solve-time distributions (ms) for each controller. (h) Closed-loop SO(3) drift of the SE3-KMPC internal rotation state. (i)–(k) Tracking performance of RK-MPC for (vx, vy , ωz), showing close agreement with the commanded signals. (l) Cross-track error for RKMPC and SRB-MPC over time.",
+      "page": 14,
+      "index": 5,
+      "width": 1050,
+      "height": 664
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04221v2/fig-006.webp",
+      "caption": "Fig. 10. Experiment 4: Off-road generalization. (a)–(d) Representative snapshots of blind locomotion on grass, gravel, ice, and snow. (e)–(f) Attitude phase portraits (roll versus ωx and pitch versus ωy) across terrains. (g) Ice: measured vertical ground-reaction forces fz approaching the stance limit during slip onset. (h) Snow: commanded (dashed) and measured (solid) planar velocities (vx, vy) during a turning trial. (i)–(j) Grass and gravel: commanded (dashed) and measured (solid) (vx, vy) time histories. (k) Ice contact schedule for the shown segment. (l) Snow: commanded (dashed) and measured (solid) yaw rate ωz .",
+      "page": 18,
+      "index": 6,
+      "width": 1046,
+      "height": 629
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04221v2/fig-007.webp",
+      "caption": "TABLE V CLOSED-LOOP TRACKING RMSE AND MPC SOLVE-TIME STATISTICS ON A 10-LAP CIRCULAR TASK IN SIMULATION.",
+      "page": 13,
+      "index": 7,
+      "width": 466,
+      "height": 270
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04221v2/fig-008.webp",
+      "caption": "Fig. 2. RK-MPC locomotion stack. A hierarchical pipeline converts high-level velocity commands into joint-level torque/position commands. A state estimator provides the feedback state to the finite-state machine and the convex residual Koopman MPC, which generates optimal ground reaction forces. The resulting commands are tracked by the joint controller and executed on hardware.",
+      "page": 4,
+      "index": 8,
+      "width": 792,
+      "height": 237
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04221v2/fig-009.webp",
+      "caption": "Fig. 9. Experiment 3: Gait generalization. RK-MPC trained on trot data is executed on hardware under both trot and crawl gait schedules. representative snapshots (a-b). and measured per-foot ground reaction forces fx, fy , and fz for trot (c) and crawl (d). Bottom: corresponding gait phase/contact schedule for each leg (FR, FL, RR, RL), showing consistency between stance phases and force generation.",
+      "page": 17,
+      "index": 9,
+      "width": 1050,
+      "height": 601
+    },
+    {
+      "url": "assets/figures/arxiv/2604.04221v2/fig-010.webp",
+      "caption": "Fig. 8. Experiment 2: Debris traversal and push recovery. (a) Representative snapshots of blind locomotion over a debris field. (b)–(c) Attitude phase portraits comparing debris (orange) and flat ground (blue): roll versus ωx and pitch versus ωy . (d) External push trial with recovery during steady walking. (e) Measured planar velocities (vx, vy) during the push sequence (push instants annotated). (f) Measured base angles (roll, pitch) during the push sequence (push instants annotated).",
+      "page": 16,
+      "index": 10,
+      "width": 1047,
+      "height": 449
+    }
+  ]
+}

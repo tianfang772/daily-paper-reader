@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-001.webp",
+      "caption": "Figure 5: LightGlue feature matching between left and right stereo images.",
+      "page": 6,
+      "index": 1,
+      "width": 948,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-002.webp",
+      "caption": "Figure 6: LightGlue feature matching on the lander between different viewpoints.",
+      "page": 6,
+      "index": 2,
+      "width": 948,
+      "height": 264
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-003.webp",
+      "caption": "Figure 16: Final competition leaderboard. Our solution (NAV Lab) placed first with highest geometric and rock map scores.",
+      "page": 15,
+      "index": 3,
+      "width": 844,
+      "height": 535
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-004.webp",
+      "caption": "Figure 1: Key aspects of the Lunar Autonomy Challenge: (a) realistic image rendering, (b) realistic rover design with actuation, and (c) competition mapping objective. Images are adapted from the Lunar Autonomy Challenge simulator and documentation (Johns Hopkins University Applied Physics Laboratory, 2025)",
+      "page": 2,
+      "index": 4,
+      "width": 1052,
+      "height": 850
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-005.webp",
+      "caption": "Figure 7: Visualization of the feature matching used to perform visual odometry. Stereo matched features are extracted from left and right frames, and the matched left image features in the previous frame are matched with that of the current frame. The PnP problem of triangulated 3D points in previous frame and matched 2D points in current frame is solved to obtain relative pose of the camera from previous to current frame.",
+      "page": 7,
+      "index": 5,
+      "width": 948,
+      "height": 657
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-006.webp",
+      "caption": "Figure 9: Progressive execution of the high-level path. The rover begins with a small loop and expands outward in overlapping square patterns to ensure complete coverage and frequent loop closures.",
+      "page": 10,
+      "index": 6,
+      "width": 1052,
+      "height": 231
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-007.webp",
+      "caption": "Figure 10: Example of detected rocks from stereo segmentation and depth estimates on the left, with planned arc and rocks shown in rover local frame on the right.",
+      "page": 10,
+      "index": 7,
+      "width": 1054,
+      "height": 284
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-008.webp",
+      "caption": "Figure 15: XYZ position errors over time (meters). Errors periodically drop due to loop closures",
+      "page": 14,
+      "index": 8,
+      "width": 1052,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-009.webp",
+      "caption": "Figure 14: 3D trajectory plot, with ground truth trajectory shown in black and final estimated SLAM trajectory shown in orange.",
+      "page": 14,
+      "index": 9,
+      "width": 948,
+      "height": 319
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-010.webp",
+      "caption": "Table 3: Comparison of semantic segmentation performance across different models.",
+      "page": 14,
+      "index": 10,
+      "width": 552,
+      "height": 333
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-011.webp",
+      "caption": "Figure 12: 2D trajectories from two different runs, with ground truth trajectory shown in black and final estimated SLAM trajectory shown in orange. In the right plot, multiple backup maneuvers were triggered as the planner disengaged from local obstacles. Despite this, our SLAM maintains low localization error through the entire trajectory.",
+      "page": 13,
+      "index": 11,
+      "width": 1052,
+      "height": 519
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-012.webp",
+      "caption": "Figure 8: Overview of the SLAM frontend. Front and back stereo images and fed through feature tracking and visual odometry to produce an odometry estimate and tracked points. Semantic segmentation is used to extract semantic masks used to label tracked points and detect rocks for collision avoidance.",
+      "page": 8,
+      "index": 12,
+      "width": 1052,
+      "height": 475
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-013.webp",
+      "caption": "Figure 2: Block diagram of our overall approach. Stereo images are processed by the front-end for semantic segmentation, rock detection, and stereo visual odometry. Detected rocks are passed to the motion planner, while tracked 3D features and odometry estimates are used in the SLAM backend for pose graph construction and loop closure. Optimized poses and semantic landmarks are projected into a global frame to generate geometric and rock maps. High-level path design generates waypoints that encourage loop closures and full map coverage, while the motion planner selects safe arcs using geometric rock avoidance.",
+      "page": 4,
+      "index": 13,
+      "width": 1052,
+      "height": 518
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-014.webp",
+      "caption": "Figure 11: Progression of a sample run visualized using Rerun. The rover’s trajectory (estimated in light blue, ground truth in black) is overlaid with the semantic point cloud. Ground points are shown in gray, rocks in red, and the lander in gold. The system maintains accurate localization and semantic consistency over the course of the mission.",
+      "page": 12,
+      "index": 14,
+      "width": 1040,
+      "height": 680
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-015.webp",
+      "caption": "Figure 4: Extracted keypoints. Points in green have a score greater than 0.5, while points in red have score less than 0.5.",
+      "page": 5,
+      "index": 15,
+      "width": 529,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17232v1/fig-016.webp",
+      "caption": "Figure 3: Semantic segmentation example. Given input image, each pixel is labeled with a semantic class of sky, ground, rock, lander, or fiducials.",
+      "page": 5,
+      "index": 16,
+      "width": 1052,
+      "height": 223
+    }
+  ]
+}

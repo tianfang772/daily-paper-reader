@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.19078v1/fig-001.webp",
+      "caption": "Fig. 1. Different approaches to computing node features for articulated robots. Conventional methods use link connectivity to define information flow via adjacency or attention mask, leaving the network to learn how to form node features from scratch. Our approach encodes the computational structure of forward dynamics by performing dynamics-inspired message passing, where learnable inertia-related quantities (denoted as Ia) are propagated and aggregated from children to parents to form node features.",
+      "page": 1,
+      "index": 1,
+      "width": 529,
+      "height": 520
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19078v1/fig-002.webp",
+      "caption": "Fig. 7. Learning curves comparing ABD-NET, ABD-NET w/o orth., and GNN across four tasks",
+      "page": 6,
+      "index": 2,
+      "width": 475,
+      "height": 335
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19078v1/fig-003.webp",
+      "caption": "Fig. 8. Sim-to-real transfer on Unitree Go2 and G1 robots. Top two rows: Go2 velocity tracking across diverse terrains (packed dirt, asphalt, grass, indoor tile), with composite motion sequences showing lateral walking on grass and yaw tracking on indoor tile. Bottom: G1 velocity tracking with composite motion sequences showing forward and lateral walking (left) and motion tracking of a dance sequence (right).",
+      "page": 7,
+      "index": 3,
+      "width": 1076,
+      "height": 364
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19078v1/fig-004.webp",
+      "caption": "Fig. 2. Overview of ABD-NET on a quadruped robot. (a) Observation Encoding: Each link i has its own projection ϕi that transforms the observation s into a link-wise observation embedding zi (e.g., FR-Thigh, FR-Calf, FR-Foot for the front-right leg). (b) Dynamics-Informed Message Passing: Each link i is associated with learnable parameters (Wi,Bi). Link j computes a contribution va j using Wj and sends it to its parent, which aggregates contributions from all children to form its link representation vi (σ denotes softplus). (c) Action Decoding: For joint j connecting PA(j) and link j, the action aj is computed from the parent’s representation vPA(j).",
+      "page": 3,
+      "index": 4,
+      "width": 1076,
+      "height": 208
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19078v1/fig-005.webp",
+      "caption": "TABLE I REWARD FUNCTIONS AND WEIGHTS FOR GENESIS ENVIRONMENTS. (↓) DENOTES PENALTY TERMS.",
+      "page": 4,
+      "index": 5,
+      "width": 504,
+      "height": 470
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19078v1/fig-006.webp",
+      "caption": "TABLE II NORMALIZED FINAL PERFORMANCE ON GENESIS AND SAPIEN.",
+      "page": 5,
+      "index": 6,
+      "width": 531,
+      "height": 369
+    },
+    {
+      "url": "assets/figures/arxiv/2603.19078v1/fig-007.webp",
+      "caption": "Fig. 3. Learning curves comparing ABD-Net (ours) and baselines: mean return versus the number of environment steps. All methods are trained with 5 seeds. Shaded regions indicate 95% standard confidence intervals.",
+      "page": 5,
+      "index": 7,
+      "width": 1076,
+      "height": 308
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.22031v1/fig-001.webp",
+      "caption": "Fig. 4. Details of sheet metal welding for the Base-Link and Hip-Link. The welded sections are highlighted in red.",
+      "page": 2,
+      "index": 1,
+      "width": 435,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22031v1/fig-002.webp",
+      "caption": "Fig. 5. The sensor configuration of MEVIUS2.",
+      "page": 2,
+      "index": 2,
+      "width": 413,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22031v1/fig-003.webp",
+      "caption": "Fig. 2. Design overview of MEVIUS2: excluding mirrored parts, the robot consists of 16 unique metal components, three of which are fabricated using sheet metal welding to achieve complex and large geometries as single integrated parts.",
+      "page": 2,
+      "index": 3,
+      "width": 998,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22031v1/fig-004.webp",
+      "caption": "Fig. 6. Circuit configuration of MEVIUS2: servo motors are connected to the PC via two CAN-USB interfaces, and the system is equipped with a wireless emergency stop, power relay, diode, LiDAR/IMU, and RGB camera.",
+      "page": 3,
+      "index": 4,
+      "width": 462,
+      "height": 416
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22031v1/fig-005.webp",
+      "caption": "Fig. 7. Control system of MEVIUS2: policies trained in IsaacGym are verified in MuJoCo and deployed to the actual hardware using common Python scripts.",
+      "page": 3,
+      "index": 5,
+      "width": 463,
+      "height": 370
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22031v1/fig-006.webp",
+      "caption": "Fig. 8. Walking experiments in various environments: (A) concrete, grass, and soil; (B) stairs; (C) steep slopes; (D) slippery stairs after rainfall; and (E) indoor settings.",
+      "page": 4,
+      "index": 6,
+      "width": 973,
+      "height": 692
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22031v1/fig-007.webp",
+      "caption": "Fig. 1. MEVIUS2 – Practical open-source quadruped robot with sheet metal welding and multimodal perception, developed in this study.",
+      "page": 1,
+      "index": 7,
+      "width": 487,
+      "height": 650
+    }
+  ]
+}

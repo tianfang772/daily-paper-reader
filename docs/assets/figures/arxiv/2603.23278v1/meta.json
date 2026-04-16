@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.23278v1/fig-001.webp",
+      "caption": "Fig. 1: System deployed for hardware experiments. Each quadrupedal robot is provided with a mount ending with a spherical joint connected to a bar of 2 m length. The task-relevant frames are highlighted.",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 237
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23278v1/fig-002.webp",
+      "caption": "TABLE I: Success rate (SR), execution frequency ( f ), and average path lengths for succesful trials of agent1, agent2, and the object (mean ± std, in m) across experiments. The optimization-based planner is evaluated with local map knowledge for different nsamples and with full map knowledge using nsamples = 1500.",
+      "page": 6,
+      "index": 2,
+      "width": 860,
+      "height": 369
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23278v1/fig-003.webp",
+      "caption": "Fig. 4: Trajectory comparison in the Boxes scenario. From left to right: MAPPO, Optimization-based (local map, nsamples = 1500), Ours, and Optimization-based (full map, nsamples = 1500). The black line denotes the object path, colored lines represent the agents. Red stars indicate intermediate waypoints.",
+      "page": 6,
+      "index": 3,
+      "width": 844,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23278v1/fig-004.webp",
+      "caption": "Fig. 5: Waypoints-following on empty terrain experiment. Top: system configuration at the start and after reaching two predefined waypoints (red stars). Bottom: real-time exteroceptive observations, overlaid with the trajectories of the agents’ bases and the position of the world frame.",
+      "page": 7,
+      "index": 4,
+      "width": 790,
+      "height": 402
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23278v1/fig-005.webp",
+      "caption": "Fig. 6: Waypoint-following on cluttered terrain experiment. Top: system configuration at the start and after reaching two predefined waypoints (red stars). Bottom: real-time exteroceptive observations highlighting obstacle locations, overlaid with the trajectories of the agents’ bases and the position of the world frame.",
+      "page": 7,
+      "index": 5,
+      "width": 790,
+      "height": 404
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23278v1/fig-006.webp",
+      "caption": "Fig. 2: Policy architecture. Single-robot feasible paths are sampled from the terrain, and the direction of the next waypoint defines the high-level command hl ob jc. Together with system-level observations, hl ob jo, these are provided to the high-level policy, which outputs highlevel actions hl ob ja. These represent the rotated low-level commands lli basei c, which are executed by the trained locomotion policies.",
+      "page": 3,
+      "index": 6,
+      "width": 844,
+      "height": 241
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23278v1/fig-007.webp",
+      "caption": "TABLE II: Summary of all parameters introduced in Sec. III.",
+      "page": 8,
+      "index": 7,
+      "width": 487,
+      "height": 344
+    }
+  ]
+}
