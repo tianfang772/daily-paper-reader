@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.14565v1/fig-001.webp",
+      "caption": "Figure 5: Snapshots of typical walking with vd = 1.5 [m/s] by (A) passive model and (B) torque model.",
+      "page": 10,
+      "index": 1,
+      "width": 570,
+      "height": 246
+    },
+    {
+      "url": "assets/figures/arxiv/2604.14565v1/fig-002.webp",
+      "caption": "Figure 6: Snapshots of typical running with vd = 2.5 [m/s] by (A) passive model and (B) torque model.",
+      "page": 10,
+      "index": 2,
+      "width": 570,
+      "height": 245
+    },
+    {
+      "url": "assets/figures/arxiv/2604.14565v1/fig-003.webp",
+      "caption": "Figure 1: Biped robot and model. (A) Lower body model based on musculoskeletal structure robot in MuJoCo. (B) Schematics of the passive model.",
+      "page": 3,
+      "index": 3,
+      "width": 526,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2604.14565v1/fig-004.webp",
+      "caption": "Figure 8: Horizontal position on slopes (solid) and level ground (dashed) with passive model (red) and torque model (blue) in (A) walking and (B) running. Lines and shaded areas represent the mean and standard deviation of 10 trials, respectively.",
+      "page": 13,
+      "index": 4,
+      "width": 564,
+      "height": 454
+    },
+    {
+      "url": "assets/figures/arxiv/2604.14565v1/fig-005.webp",
+      "caption": "Figure 7: Footprint diagrams (model only) and time profiles of joint angles in typical obtained locomotion (Figs. 5 and 6) of passive model (red) compared with human data (black). (A) Walking and (B) running. “R” and “L” indicate right and left foot, respectively. Solid lines and shaded areas represent the mean and standard deviation of 5 strides.",
+      "page": 12,
+      "index": 5,
+      "width": 519,
+      "height": 620
+    },
+    {
+      "url": "assets/figures/arxiv/2604.14565v1/fig-006.webp",
+      "caption": "Figure 4: Convergence of trajectories with learning process. Two-dimensional projection of joint angles using UMAP. (A) Passive model walking, (B) torque model walking, (C) passive model running, and (D) torque model running.",
+      "page": 9,
+      "index": 6,
+      "width": 540,
+      "height": 471
+    }
+  ]
+}

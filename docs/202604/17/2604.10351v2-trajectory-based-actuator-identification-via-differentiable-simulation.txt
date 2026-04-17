@@ -1,0 +1,643 @@
+Title: Trajectory-based actuator identification via differentiable simulation
+
+URL Source: https://arxiv.org/pdf/2604.10351v2
+
+Published Time: Fri, 17 Apr 2026 01:06:09 GMT
+
+Number of Pages: 15
+
+Markdown Content:
+> Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.
+> Digital Object Identifier 10.1109/ACCESS.2017.DOI
+
+# Trajectory-based actuator identification via differentiable simulation 
+
+VYACHESLAV KOVALEV 1, EKATERINA CHAIKOVSKAIA 1, EGOR DAVYDENKO 1, and ROMAN GORBACHEV 1 
+
+> 1Moscow Institute of Physics and Technology (MIPT), Dolgoprudny, Moscow Region, Russia
+> Corresponding author: Vyacheslav Kovalev (e-mail: kovalev.vv@phystech.edu). The study was supported by the Ministry of Economic Development of the Russian Federation (agreement with MIPT No. 139-15-2025-013, dated June 20, 2025, IGK 000000C313925P4B0002).
+
+ABSTRACT Accurate actuation models are critical for bridging the gap between simulation and real robot behavior, yet obtaining high-fidelity actuator dynamics typically requires dedicated test stands and torque sensing. We present a trajectory-based actuator identification method that uses differentiable simulation to fit system-level actuator models from encoder motion alone. Identification is posed as a trajectory-matching problem: given commanded joint positions and measured joint angles and velocities, we optimize actuator and simulator parameters by backpropagating through the simulator, without torque sensors, current/voltage measurements, or access to embedded motor-control internals. The framework supports multiple model classes, ranging from compact structured parameterizations to neural actuator mappings, within a unified optimization pipeline. On held-out real-robot trajectories for a high-gear-ratio actuator with an embedded PD controller, the proposed torque-sensor-free identification achieves much tighter trajectory alignment than a supervised stand-trained baseline dominated by steady-state data, reducing mean absolute position error from 14.20 mrad to as low as 7.54 mrad (1.88 ×). Finally, we demonstrate downstream impact for the same actuator class in a real-robot locomotion study: training policies with the refined actuator model increases travel distance by 46% and reduces rotational deviation by 75% relative to the baseline. 
+
+INDEX TERMS legged locomotion, actuator modeling, differentiable simulation, sim-to-real, system identification 
+
+I. INTRODUCTION 
+
+A. MOTIVATION: ACTUATOR MODELING IN SIMULATION FOR ACCURATE ROBOT CONTROL 
+
+Accurate modeling of a specific robot’s digital twin—i.e., the simulation model that stands in for the physical system—is foundational for reliable control, planning, and analysis [1]– [3]. By ‘‘modeling’’ we mean both (i) static elements such as link masses and inertias, joint limits, kinematic geometry, and contact/friction parameters, and (ii) dynamic processes that mediate commands into motion, most notably the actu-ation stack and embedded low-level control (delays, band-width limits, saturations, nonlinearities). Errors in either class degrade closed-loop behavior and prediction fidelity across application areas including manipulation, locomotion, and mobile navigation. In modern practice, many controllers are developed and tuned in simulation and then executed on hardware. This is true for model-based designs as well as learning-based con-trollers (including reinforcement learning (RL) formulations) [4]. The effectiveness of this workflow hinges on how closely the simulated robot reproduces the real one: mismatches in dynamics lead to performance drops at deployment. For in-stance, in robotic grasping, controllers that succeed in sim-ulation often suffer a marked decrease in success on real hardware due to unmodeled effects and distribution shift [5]. A primary source of mismatch is the actuation inter-face —the final pathway from a controller’s command to joint torque and motion [6]. Even with accurate perception and rigid-body dynamics, delays, bandwidth limits, nonlineari-ties, and command shaping by hidden low-level control loops and safety filters can dominate observed behavior (the actu-ation gap ). Unlike rigid-body parameters, actuator behavior couples electrical, control, and mechanical effects that are dif-ficult to capture with a single idealized model; consequently, actuator inaccuracies frequently limit control performance and sim-to-real transfer. Most robotics simulators and control frameworks therefore simplify actuation. A broad literature proposes complemen-  
+
+> VOLUME 11, 2023 1
+> arXiv:2604.10351v2 [cs.RO] 16 Apr 2026 Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+
+tary remedies ranging from structured actuator modeling and experimental characterization to robustness techniques (e.g., domain randomization) and trajectory-matching identifica-tion, including recent differentiable-simulation-based meth-ods. We review these approaches and their trade-offs in Sec-tion II, and next outline our trajectory-based identification method. 
+
+> B. OVERVIEW OF THE PROPOSED APPROACH
+
+In this work, we propose a trajectory-based actuator iden-tification framework that uses differentiable simulation to identify the overall behavior of robotic actuators directly from observable motion data in a model-agnostic manner. We formulate identification as a trajectory-matching problem and solve it via gradient-based optimization enabled by simulator differentiability, without relying on torque sensors, internal electrical measurements, or explicit low-level motor models. In our experiments, observable motion data consist of joint angles and velocities from encoders; the control input is the desired joint position. The identified actuator models are validated through quan-titative comparison with a supervised torque model trained on dedicated motor test-stand measurements, highlighting the limitations of steady-state characterization. Furthermore, the proposed method captures actuator behavior beyond steady-state regimes, enabling tighter alignment between simulated and real systems under dynamic and interaction-rich condi-tions. While the framework is not tied in principle to a single actuator implementation, the experimental validation in this paper is limited to high-gear-ratio actuators with embedded PD control. To connect single-actuator identification to system-level control, we then evaluate the identified actuator model in-side a locomotion training pipeline. Concretely, we train a simulation policy using the refined actuator parameters and compare it against a baseline policy trained with an unmod-ified (default) actuator model, mirroring common practice when accurate actuator parameters are unavailable. Finally, the refined actuator model provides supporting downstream validation: in a real-robot locomotion study (Section V), a policy trained with the refined motor model traveled farther and showed less rotation, with travel distance increasing by 46% and rotational deviation decreasing by 75% relative to the baseline (mean ± std over 10 runs; Fig. 7, Table 3), providing supporting downstream validation of the identified model. 
+
+> C. CONTRIBUTIONS
+
+This paper makes the following contributions:  
+
+> •
+
+Trajectory-based, torque-sensor-free identification: 
+
+a differentiable-simulation pipeline that identifies system-level actuator behavior from encoder motion alone (no torque or electrical sensing), avoiding test-stand instrumentation. The framework is model-agnostic in formulation, while the present experimental valida-tion is on high-gear-ratio actuators with embedded PD control.  
+
+> •
+
+Unified differentiable optimization framework: 
+
+a trajectory-matching pipeline spanning (i) struc-tured/parametric actuator mappings, (ii) neural actuator models, and (iii) physics-engine internal parameters (e.g., armature, joint friction, delay).  
+
+> •
+
+Torque-oracle identification mode: directly estimates per-timestep torque (a reference for the tightest trajec-tory fit the framework can produce: with no parametric constraints on the torque sequence, it represents the limit of expressiveness within the same simulator and optimizer), yielding pseudo-labels for subsequent super-vised training without a torque sensor.  
+
+> •
+
+Reproducibility (code): we provide a publicly acces-sible repository containing the main identification and evaluation code, one example dataset, and example scripts/instructions for reproducing representative re-sults. Repository link: https://wavegit.mipt.ru/Slavoch/ mjx_sysid.  
+
+> •
+
+Quantitative validation on held-out trajectories: un-der identical commands, compared to a supervised test-stand-trained baseline (mean absolute position er-ror, MAE =14.20 mrad), our torque-sensor-free trajec-tory identification achieves MAE as low as 7.54 mrad (≈1.88 × lower), demonstrating tighter trajectory align-ment without test-stand hardware.  
+
+> •
+
+Downstream impact on real-robot locomotion: in a real-robot study (Section V), a policy trained with the refined motor model shows a consistent practical ad-vantage over the default baseline, with mean travel dis-tance increasing by 46% and mean rotational deviation decreasing by 75% over 10 runs (Fig. 7, Table 3). 
+
+> D. PAPER ORGANIZATION
+
+Section II reviews actuator modeling and compensation ap-proaches. Section III presents our trajectory-based actua-tor identification via differentiable simulation and gradient-based optimization of actuator parameters. Section IV presents experimental results and baseline comparisons, fol-lowed by scope and downstream applications (Section V) and conclusions (Section VI). 
+
+> II. RELATED WORK AND COMPARATIVE BACKGROUND
+
+Actuator modeling and compensation in robotics spans three principal families (Table 1): (i) simplified actuator abstrac-tions used for control and simulation (Section II-A); (ii) hard-ware characterization on dedicated test stands (Section II-B); and (iii) robustness- and learning-driven strategies, including domain randomization, offline trajectory-matching identifi-cation, and neural residual compensators (Sections II-C, II-D, II-F). Table 1 uses qualitative low/high labels to convey two axes. 
+
+Model complexity is a proxy for the number of trainable parameters and runtime evaluation cost: compact paramet-ric models (e.g., proportional–derivative (PD)-like mappings   
+
+> 2VOLUME 11, 2023 Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+
+with few parameters) are low complexity, whereas neural ac-tuator models (neural-network-based, many parameters) are 
+
+high complexity. Interpretability follows the inverse trend: low-parameter, structured models are typically more trans-parent and thus high interpretability, while high-capacity neural models are typically less transparent and thus low 
+
+interpretability. Each family makes distinct trade-offs among physical fi-delity, instrumentation/data requirements, and ease of deploy-ment. We focus on learning transient, system-level actuator behavior without torque sensors or test-stand hardware via trajectory-based identification with differentiable simulation, and refer back to Table 1 for a side-by-side view. 
+
+> A. ACTUATOR MODELING ABSTRACTIONS IN ROBOTICS
+
+A standard abstraction treats joints as near-ideal torque sources shaped by PD/impedance laws [7]–[15]. This enables practical design and fast simulation but collapses inner-loop control, electronics, and electrical dynamics into an idealized mapping. Despite its convenience, the torque-source abstraction ne-glects several phenomena that strongly influence real ac-tuator behavior. Electrical dynamics introduce delays and bandwidth limitations, while inverter nonlinearities, dead-time effects, and current saturation distort the relationship between commanded and realized torque [16]. Mechanical effects (e.g., friction/backlash) vary with load, configuration, and motion [17], [18], further widening the abstraction gap. Low-level field-oriented control, direct torque control, and model predictive control regulate currents to approximate linear torque over limited bands [19], [20], yet system-level behavior remains the combination of electronics, inner loops, and uncertainties—hard to capture with a single simplified model. Consequently, even when advanced low-level motor con-trol is used, the torque-source abstraction remains an approx-imation. This motivates system identification approaches that aim to capture the effective actuator behavior as experienced by high-level controllers, rather than attempting to model each internal component explicitly. 
+
+> B. HARDWARE-BASED ACTUATOR CHARACTERIZATION
+
+A traditional and widely adopted approach to improving ac-tuator models relies on experimental characterization using dedicated motor or actuator test stands. By mechanically de-coupling the actuator from the robot and subjecting it to con-trolled excitation and loading conditions, test stands provide a means to directly measure actuator behavior under well-defined operating conditions. These setups often incorporate torque transducers (either inline or reaction torque types), dynamometers, and synchronized measurement of speed and electrical quantities to directly capture mechanical output across operating points [21]–[23]. Motor test stands have been developed specifically to obtain key performance met-rics such as torque, speed, efficiency, and dynamic response that are difficult to estimate accurately from electrical mea-surements or manufacturer specifications alone [21]. Such empirical data from test stands has been widely used in both industrial and academic contexts to refine actuator models and validate simulation-based predictions [22], [23]. Test stands typically allow precise control of rotational speed, load torque, or both, while directly measuring me-chanical quantities such as output torque and angular velocity. This setup enables identification of steady-state actuator char-acteristics, including torque–speed curves, efficiency maps, friction parameters, and effective torque constants. Such mea-surements are commonly used to calibrate simulation models and validate analytical assumptions. Torque measurement in actuator test stands is most com-monly realized using either inline torque sensors or reaction torque measurement. Inline torque sensors directly measure transmitted shaft torque through torsional strain, providing high bandwidth and sensitivity at the expense of added inertia, compliance, and mechanical integration complexity. Reaction torque measurement infers torque from the force exerted on a mechanically constrained motor or brake housing and offers a simpler and more robust mechanical design. Most rigs target steady-state conditions for reliable mapping and repeatability. Under steady-state operation at constant angular velocity, inertial effects vanish and the rotational dynamics become a static torque balance. In this case, measured torque corre-sponds directly to the average output torque of the actuator, enabling data-based identification of mappings between con-trol commands, speed, and torque. These mappings in prac-tice capture combined effects of electrical dynamics, control nonlinearities, and mechanical losses. Despite their practical value, hardware-based characteriza-tion methods have important limitations. Steady-state mea-surements do not capture transient dynamics, inertial effects, or high-frequency torque variations that occur during rapid accelerations, impacts, or contact events. Moreover, test-stand experiments require specialized hardware, careful me-chanical setup, and dedicated calibration procedures, which can be costly and difficult to scale across large robotic plat-forms. Nevertheless, test-stand-based actuator characterization re-mains a valuable tool and is widely used in both academic and industrial settings. It provides a clear improvement over idealized torque-source assumptions and serves as a refer-ence point for evaluating alternative identification methods. In this work, test-stand measurements are used as a com-parative baseline to highlight the limitations of steady-state characterization and to motivate trajectory-based identifica-tion approaches that capture actuator behavior under dynamic operating conditions. 
+
+> C. DOMAIN RANDOMIZATION
+
+Domain randomization perturbs key simulation parameters (e.g., mass, friction, actuator gains/delays, torque limits) dur-ing training to encourage robustness [10], [24], [25]. In practice, domain randomization encourages robustness primarily with respect to the chosen training distribution;                                   
+
+> VOLUME 11, 2023 3Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+> TABLE 1. Comparison of actuator modeling and compensation approaches. Model complexity is a qualitative proxy for the number of trainable parameters and runtime evaluation cost.
+> Approach Instrumentation Data Regime Optimization Interpretability Model complexity Ideal PD/torque abstraction None Simulation assumption —High Low Domain randomization None Sim randomized ———Test-stand characterization Torque sensor + test stand Test stand (primarily quasi-static) Supervised Low-High Low-High Offline traj-ID None Real rollouts Self-supervised; gradient-free High Low Learned actuator modules / residual action None Real rollouts Self-supervised; gradient-based Low High Differentiable traj-ID (ours) None Real rollouts Self-supervised; gradient-based Low–High Low–High
+
+there is no guarantee that the real system lies within (or is well covered by) the randomized parameter ranges. Consequently, performance can be highly sensitive to which parameters are randomized and how their ranges are selected, which is typically problem-dependent and requires manual tuning. If the randomization is too broad, the induced uncertainty can bias learning toward risk-averse (over-conservative) be-haviors and can slow training or degrade asymptotic perfor-mance, especially in high-dimensional settings. Empirically, overly ‘‘heavy’’ randomization may underperform more tar-geted or ‘‘mild’’ randomization [5]. 
+
+D. OFFLINE TRAJECTORY-MATCHING IDENTIFICATION 
+
+More recently, learning-based approaches have explored identifying actuator dynamics directly from trajectory data by fitting model parameters such that simulated trajectories match real-world observations under identical control inputs. In practice, this is often performed using controlled excita-tion signals and gradient-free optimization (e.g., evolution strategies) when the simulator is non-differentiable [26], [27]. The main advantages are practicality and instrumentation simplicity: these methods can rely on observable kinematics (joint positions/velocities) without torque sensing or access to internal electrical states; however, they can require carefully designed excitation and may be sample-inefficient or less reliable outside the identification setting. 
+
+a: Limitation. 
+
+Gradient-free search can be sample-inefficient and sensitive to excitation design; when gradients are available, identifica-tion often converges faster and more reliably. 
+
+E. DIFFERENTIABLE TRAJECTORY-MATCHING IDENTIFICATION 
+
+Differentiable simulators enable gradient-based system iden-tification by backpropagating trajectory-matching losses through dynamics [28], [29]. This makes it possible to fit actuator- and simulator-level parameters (e.g., gains, friction, delay, and contact-related terms) directly from rollouts, often improving optimization efficiency compared to gradient-free search. Among widely used robotics simulators, MuJoCo is fre-quently reported to provide strong accuracy and numerical stability across diverse tasks [30], [31] and remains a common platform for RL and control research [10], [32], [33]. MJX (the JAX-based, differentiable MuJoCo) further enables end-to-end gradient-based fitting and is a widely adopted differ-entiable simulator in modern RL workflows [34]. Building on these foundations, our contribution is a scal-able, torque-sensor-free trajectory-matching identification method that leverages differentiable simulation to recover 
+
+system-level actuator behavior from observable motion alone, and is validated in real-robot experiments. In summary, prior approaches trade off instrumentation, optimization efficiency, interpretability, and fidelity. Our work targets the gap of transient, system-level actuator iden-tification without torque sensors or benches, using differ-entiable trajectory matching to obtain compact, physically meaningful actuator models that can be validated quantita-tively and translated into downstream control gains. 
+
+F. NEURAL RESIDUAL ACTUATION COMPENSATION 
+
+Several works learn neural modules to compensate dynamics mismatch—including actuation effects—so simulated roll-outs align more closely with real trajectories [35], [36]. In such approaches, the model (or simulator parameters) is trained to reduce state-prediction error so that rollouts more closely match measured real-system trajectories. For exam-ple, Fey et al. [35] introduce an Unsupervised Actuator Net 
+
+(UAN), a learned actuator module trained from real-world data without requiring torque sensing, and use it within a two-stage RL pipeline to improve sim-to-real transfer for athletic loco-manipulation. He et al. [36] propose ASAP, which deploys a pre-trained motion-tracking policy to collect real-world rollouts and then learns a residual ( delta ) action model that compensates for dynamics mismatch; this model is integrated into the simulator for subsequent policy fine-tuning. Compared to such neural residual compensators, our trajectory-based differentiable identification targets a com-pact and physically interpretable actuator parameterization that can be directly validated and stress-tested, at the cost of reduced expressiveness for unmodeled, history-dependent effects.                  
+
+> 4VOLUME 11, 2023 Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+> FIGURE 1. Illustration of the trajectory-matching optimization: The real system follows a trajectory {si}under control inputs {ai}. Simulated states {s′
+> i}are generated using a parameterized simulator. At each timestep, the state prediction error ei:= s′
+> i−siis computed, and the total trajectory error is minimized during optimization.
+
+The main advantage of these learning-based models is expressiveness: in principle, complex and history-dependent effects can be captured when sufficient excitation and data are available. However, purely data-driven models may be less physically interpretable and can be difficult to validate outside the training distribution. 
+
+a: Limitation. 
+
+Residual models can overfit to specific data regimes and reduce interpretability; validation outside the training distri-bution is challenging. In contrast, our parameterization em-phasizes physical interpretability and direct validation at the actuator/system level. 
+
+III. PROPOSED METHOD: TRAJECTORY-BASED ACTUATOR IDENTIFICATION VIA DIFFERENTIABLE SIMULATION 
+
+We pose actuator identification as a trajectory-matching prob-lem and solve it with gradient-based optimization enabled by a differentiable simulator (MJX). Consider a system with state si and control input ai at timestep i. We assume the existence of an unknown parameter vector z∗ (e.g., actuator and/or simulator parameters) that, if known, would allow the simulator to reproduce the real system dynamics: 
+
+si+1 = s′ 
+
+> i+1
+
+= Φ z∗ (si, ai, δ ), (1) where s′ 
+
+> i+1
+
+is the predicted next state, δ is the simulation timestep, and Φz(s, a, δ ) denotes a discrete-time integration of the system dynamics parameterized by z. The timestep 
+
+δ should be chosen small enough to achieve the desired numerical accuracy while avoiding excessive computational cost [37]. Equation (1) expresses the ideal condition in which the simulator perfectly matches the real system. In practice, we identify z by minimizing a trajectory-matching loss over measured rollouts, as illustrated in Fig. 1. 
+
+a: System and parameterization. 
+
+In our experiments the measured state is s = [ q, ˙q], where 
+
+q is joint angle and ˙q is joint velocity from encoders. Both components are retained in the observed state for generality and for simulator rollout dynamics. However, their contri-butions to the training loss are controlled separately by the weight matrix W in Eq. (2). The control input is the com-manded joint position a = qdes produced by the higher-level controller. The parameter vector z collects actuator/simulator parameters and depends on the chosen model. This might be a subset of MuJoCo joint parameters (e.g., armature, damping, frictionloss) or neural network weights. The exact choice of 
+
+z for each model is detailed in Section IV-A. All parameters have physical bounds. 
+
+A. OBJECTIVE 
+
+We minimize a weighted output mismatch without any pa-rameter regularization to avoid biasing physically meaning-ful parameters (e.g., PD gains). Numerical integration errors can accumulate over long horizons, potentially degrading the optimization. To mitigate this effect, the trajectory is divided into short segments of length N , and each optimization step minimizes the following minibatch objective over M sampled segments: 
+
+Lbatch (z) = 1
+
+MN  
+
+> M−1
+
+X
+
+> j=0
+> N
+
+X
+
+> i=1
+
+W  s′ 
+
+> i,j
+
+− si,j
+
+ 22
+
+s.t. s′ 
+
+> 0,j
+
+= s0,j,
+
+s′ 
+
+> i+1 ,j
+
+= Φ z(s′
+
+> i,j
+
+, ai,j, δ ),
+
+(2) where W = diag( wq, w˙q) is a diagonal weight matrix pe-nalizing angle and velocity residuals. Thus, state components may be present in the rollout state and model inputs even when their residuals are not penalized in the loss. Here, 
+
+i ∈ {1, . . . , N } indexes timesteps within a segment and 
+
+j ∈ { 0, . . . , M −1} indexes sampled segments. Each sampled segment j is rolled out from the measured initial state s′ 
+
+> 0,j
+
+=
+
+s0,j. Windows are extracted with overlap. The segmentation policy and concrete values of N , M, and δ are specified in Appendix B. 
+
+B. LIMITATIONS AND ASSUMPTIONS 
+
+This formulation assumes that the primary discrepancy be-tween simulation and reality can be captured by the parameter vector z. If unmodeled effects—such as external disturbances, time-varying properties, or sensor noise—are significant and not included in z, the predicted states s′ 
+
+> i+1
+
+may deviate from the true dynamics. Moreover, achieving exact equality in (1) is generally im-practical due to inherent modeling complexity. Nonetheless, the approach remains effective as long as the simulator with optimized parameters Φz∗ (s′ 
+
+> i
+
+, ai, δ ) provides an accurate ap-proximation of the true system dynamics within an acceptable error margin. 
+
+IV. VALIDATION AND COMPARATIVE ANALYSIS 
+
+We evaluate on a motor from the ROKI-2 robot [38]; hardware details are provided in Appendix A. Our main experimental validation focuses on a high-gear-ratio actuator (210:1) with   
+
+> VOLUME 11, 2023 5Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+
+a hand-tuned embedded controller, a setting whose dynamics are challenging to reproduce in simulation. Our objective is to reproduce the real robot’s joint motion as accurately as possible in simulation. We train three actuator models of in-creasing complexity using the proposed trajectory-matching identification procedure. As baselines, we include a super-vised model trained on test-stand torque data and a gradient-free black-box optimization model. Model parameterizations and training settings are summarized in Section IV-A. We then present the trajectory-matching experiment and comparative results in Section IV-B. Optimization stability and parameter identifia-bility are assessed in Section IV-C. Sensitivity to the objective weighting matrix is analyzed in Section IV-D, and the effect of prediction horizon is studied in Section IV-E. Conclusions and broader implications are discussed in Section VI.  
+
+> TABLE 2. Comparison of actuator models and training protocol.
+
+Model Supervision / data Model type Stand-based supervised baseline 
+
+Bench-Sup Supervised. MLP 
+
+Trajectory-based gradient-free baseline 
+
+Param-ES Self-supervised; gradient-free. PD gains, armature (evolution strategy) 
+
+Trajectory-based residual-action (ASAP) baseline 
+
+Residual-RL Self-supervised. MLP 
+
+Trajectory-based, torque-sensor-free (proposed, (2) )
+
+TrajID-Param Self-supervised. PD gains, armature TrajID-NN Self-supervised. MLP Torque-Oracle Self-supervised. Torque sequence 
+
+{τi}Ni=1 
+
+A. MODEL LEARNING 
+
+Table 2 summarizes the compared models and training pro-tocol. All torque-model baselines share the input–output sig-nature (qdes , q, ˙q) 7 → τ , where τ ∈ R denotes joint torque. The ASAP-inspired baseline Residual-RL instead learns a residual command correction δa that is added to the desired position command before simulation. All non-baseline models are trained via our trajectory-matching identification pipeline without torque sensing, us-ing robot rollouts under known loads. This yields datasets of (qdes , q, ˙q) sufficient to fit actuator parameters that re-produce measured trajectories. Dataset design and optimiza-tion hyperparameters are detailed in Appendix B. Unless otherwise noted, optimization settings are held constant across models for a fair comparison. Training minimizes the trajectory-matching objective in Eq. (2).  
+
+> •
+
+Baseline (Bench-Sup): a supervised multilayer per-ceptron (MLP) mapping (qdes , q, ˙q) → τ , trained on ground-truth torque from a motor test-stand dataset; architectural and data-collection details are provided in Appendix A.   
+
+> FIGURE 2. Measured vs simulated motor response under identical control inputs. Motor velocity measured on hardware (black dashed) versus simulated trajectories for each model (colored lines).
+> •
+
+Baseline (Param-ES): the same parametric model fam-ily as TrajID-Param (PD gains, armature), but optimized with sMAES [39], a population-based derivative-free evolution strategy, as a gradient-free baseline.  
+
+> •
+
+Baseline (Residual-RL): an ASAP-inspired residual-action baseline that learns a correction δai to the com-manded position rather than actuator parameters. Unlike the original ASAP pipeline, this proxy is implemented in the same simulator environment as the other compared models for fairness. Because it operates in command space, it does not directly update built-in simulator pa-rameters such as armature or friction loss. For compa-rability, we match the hidden-layer size of TrajID-NN, train on the same rollout data budget, and evaluate it with the same held-out rollout metric; training details are given in Appendix B.  
+
+> •
+
+Identified parametric TrajID (TrajID-Param): a de-liberately simple, interpretable actuator model that op-timizes PD gains ( kp: position stiffness, kv: velocity damping) together with a MuJoCo joint parameter (ar-mature)—three parameters in total—to match measured trajectories.  
+
+> •
+
+Identified neural TrajID (TrajID-NN): a feed-forward MLP, used to capture richer static nonlinearities. For fairness, it uses the same instantaneous inputs (no recur-rence, no state history). This design keeps the compar-ison aligned with the other actuator models, but it also limits the network’s ability to represent time-dependent effects. Model size and training details are given in Appendix B.  
+
+> •
+
+Torque oracle (Torque-Oracle): an upper-bound ref-erence that directly optimizes a free per-timestep torque sequence {τi}Ni=1 (i.e., N free parameters per evaluated trajectory segment), indicating the best achievable tra-jectory fit; it also yields pseudo-labels (qdes , q, ˙q, τ ) that can seed subsequent supervised training. 
+
+B. EXPERIMENT 
+
+a: Description. 
+
+We evaluate how accurately each actuator model repro-duces measured joint trajectories under identical command   
+
+> 6VOLUME 11, 2023 Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+> FIGURE 3. Position MAE comparison across actuator models.
+> Box-and-whisker plot of the mean absolute position error (Eq. 3) on the held-out trajectory. Boxes indicate the interquartile range; the central line indicates the median; whiskers show the spread of the observed values.
+
+sequences. Models are compared by their ability to minimize the discrepancy between simulated and measured motions in position (and velocity). We collect time-aligned joint position 
+
+q and velocity ˙q under known loads using the same exper-imental protocol (sampling rate, command design, trajecto-ries) described in Appendix B. 
+
+b: Setup. 
+
+Each rollout is initialized from the measured initial state s0 =[q0, ˙q0]. For the torque-model baselines, at every timestep i,the model receives (qdes  
+
+> i
+
+, qsim  
+
+> i
+
+, ˙qsim  
+
+> i
+
+) and outputs a torque τi;the simulator then advances the state. For Residual-RL, the model outputs a residual command correction δai, and the simulator is driven by the corrected command ˜ai = ai + δai.No future or measured states beyond the initial condition are used. Control and simulation run at 500 Hz for 10 s per trajectory. We report trajectory-tracking accuracy using the MAE: 
+
+MAE = 1
+
+H
+
+> H
+
+X
+
+> i=1
+
+|qsim  
+
+> i
+
+− qmeas  
+
+> i
+
+|. (3) Here H is the total number of evaluation timesteps, qsim  
+
+> i
+
+the simulated joint angle, and qmeas  
+
+> i
+
+the measured joint angle at step i.
+
+c: Results. 
+
+Fig. 2 shows representative overlays of measured and sim-ulated trajectories. All models track joint position closely; differences are most visible in velocity during fast transients. Quantitative results are shown in Fig. 3. The test-stand baseline Bench-Sup yields the highest error (14 .20 ±
+
+11 .50 mrad), reflecting its steady-state-only training data. All trajectory-identified models outperform it substantially. Residual-RL achieves 7.17 ± 4.56 mrad, i.e., nearly the same performance as TrajID-NN, which is expected because both use neural models with comparable capacity. TrajID-NN achieves 7.54 ±4.57 mrad, demonstrating that gradient-based differentiable optimization can exploit a higher-capacity model. This comparison suggests that action-space residual compensation can match a neural torque model on this task when model capacity is similar. In this sense, Residual-RL covers the ASAP-style action-residual family. However, residual-action methods such as Residual-RL do not di-rectly identify built-in simulator parameters such as armature, whereas our trajectory-identification framework can optimize those quantities and also supports compact analytical param-eterizations such as TrajID-Param. In addition, our approach is 23 .4× faster to train in wall-clock time, requiring 1.98 
+
+minutes for TrajID-NN versus 46 .34 minutes for Residual-RL. TrajID-Param and Param-ES reach nearly identical er-rors ( 8.73 ± 5.31 mrad each), showing that the gradient-free optimizer converges to the same solution on this low-dimensional ( 3-parameter) problem. Both methods also con-verge in nearly the same wall-clock time, approximately 1.43 
+
+minutes each. Crucially, the advantage of our gradient-based method becomes apparent with higher-capacity parameteri-zations: TrajID-NN requires optimizing over ∼1200 parame-ters, a regime where gradient-free search is impractical, yet differentiable simulation handles it directly. Torque-Oracle serves as an upper bound ( 2.86 ± 2.12 mrad), reflecting the best achievable fit with a free per-timestep torque sequence. 
+
+C. STABILITY AND SENSITIVITY ANALYSIS 
+
+To assess optimization stability and parameter identifiability, we run TrajID-Param for 25 independent trials with different random seeds, varying both batch sampling and parameter initialization. Each run lasts 3000 epochs. Fig. 4 shows the convergence of parameters, loss, and gradient norm across runs (mean ± std). The identified parameters are highly consistent across runs: 
+
+kp (position stiffness) = 3.684 ± 0.013 N m/rad, kv (ve-locity damping) = 0 .552 ± 0.002 N m s/rad, and armature 
+
+= 0 .00321 ± 2.5 × 10 −5 kg m 2. The best loss is 2.211 ×
+
+10 −7 ± 3.2 × 10 −12 across all runs. In every trial, training converged to this value without early stopping. In summary, the near-zero dispersion in both parameters and loss suggests that the objective is well-conditioned and produces stable solutions in our experiments. 
+
+D. OBJECTIVE-WEIGHT SENSITIVITY (W SWEEP) 
+
+We sweep the objective weights W = diag( wq, w˙q) with 
+
+wq = α and w˙q = 1 − α for α ∈ [0 , 1] , keeping all other training settings fixed. Fig. 5 shows validation MAE versus 
+
+α for TrajID-Param, TrajID-NN, and Torque-Oracle. TrajID-Param exhibits negligible sensitivity: MAE re-mains near 8.73 mrad across all α, indicating that the paramet-ric model fits the trajectory regardless of the position–velocity weighting. TrajID-NN shows mild sensitivity, with best MAE 
+
+≈ 7.21 mrad at α ≈ 0.57 and slightly higher values (up to 
+
+≈ 7.59 mrad) at the extremes. Torque-Oracle is largely flat for α < 1 (MAE ≈ 9.95 mrad) but drops to 2.86 mrad at 
+
+α = 1 , where the objective weights position only. The large error at α < 1 stems from overfitting on noisy velocity in the data.      
+
+> VOLUME 11, 2023 7Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+> FIGURE 4. Parameter, loss, and gradient norm convergence of TrajID-Param over 25 independent runs. Each run lasts 3000 epochs. Shaded regions indicate mean ±std.
+
+In summary, the parametric model is robust to weight choice, while flexible models trade off overfitting on noisy velocity against position-only weighting. 
+
+E. PREDICTION-HORIZON ANALYSIS 
+
+We evaluate validation MAE versus prediction horizon for TrajID-Param, TrajID-NN, and Torque-Oracle under identi-cal training settings. Fig. 6 shows the results for horizons 1–4. TrajID-Param is the most stable across horizons: MAE decreases slightly from 9.49 mrad at horizon 1 to 8.74 mrad at horizon 4, indicating robust long-horizon consistency. TrajID-NN exhibits a pronounced spike at horizon 2(25.5 mrad) but recovers to 7.00 mrad at horizon 4, suggesting sensitivity to certain horizon lengths. Torque-Oracle is highly          
+
+> FIGURE 5. Validation MAE versus objective weight α(wq=α,
+> w_q= 1 −α) for TrajID-Param, TrajID-NN, and Torque-Oracle.
+> FIGURE 6. Validation MAE versus prediction horizon for TrajID-Param, TrajID-NN, and Torque-Oracle.
+
+horizon-dependent: MAE is 612 mrad at horizon 1, drops to 2.86 mrad at horizon 3, then rises to 6.14 mrad at horizon 4. The poor performance at short horizons reflects the or-acle’s per-timestep optimization, which can overfit to local noise when the rollout is too short. Parametric models are nearly insensitive to horizon, unlike the more flexible TrajID-NN and Torque-Oracle. Models with more parameters tend to overfit on noisy velocity and position data. Conversely, longer horizons accumulate prediction errors as integration and model mismatch compound over time. In summary, parametric models offer the most stable hori-zon behavior. The trade-off between overfitting on noise and error accumulation favors compact parameterizations at mod-erate horizons. 
+
+V. SCOPE AND APPLICATIONS 
+
+In this section we evaluate how the proposed actuator-identification approach transfers to a real-world task within the same actuator class considered in the main identifica-tion experiments. For the miniPi robot [40], we use a struc-tured parameterization focused on MuJoCo internal param-eters: armature , frictionloss , and damping , with PD gains held at their default values. We identify these pa-rameters using the same trajectory-matching procedure de-scribed in Section III and Appendix B, and then use the refined model to train a locomotion policy. The identified MuJoCo parameters for miniPi converged to armature =0.0066 kg m 2, frictionloss = 0 .1821 , and damping 
+
+= 0 .2824 N m s /rad . We interpret these values as physically   
+
+> 8VOLUME 11, 2023 Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+
+plausible effective joint-space parameters for the simulator model, rather than as one-to-one estimates of manufacturer-reported hardware quantities, because they are simulator-side modeling terms and the manufacturer documentation does not provide directly comparable inertial or friction parameters for this actuator. We cannot include a Bench-Sup locomotion baseline for miniPi because the available test-stand measure-ments did not provide sufficiently reliable torque labels to train a supervised actuator model suitable for policy learning. We therefore compare only the default (unadjusted) actuator model against the trajectory-identified model in the down-stream locomotion study. This mirrors common deployment settings in which robots arrive with fixed low-level controllers and only a default actuator model is available. Concretely, in many simulator robot models these internal parameters are not specified and thus remain at simulator defaults; we use this unmodified setting as the baseline to reflect standard RL practice when such parameters are unavailable, rather than a hand-tuned “best possible” physics model. We test whether a policy trained on the refined (identified) model outperforms one trained on the default baseline in a forward-walking task. 
+
+a: Task. 
+
+We train two policies in simulation—one using the trajectory-identified actuator model and one using the default actuator model (the default torque-source/PD actuation model, with 
+
+armature , frictionloss , and damping left at their model-default values)—and compare their real-robot perfor-mance. 
+
+b: Setup. 
+
+Training uses LeggedGym [13] without domain random-ization (rewards and details in Appendix C, Table 4). The reward function and all training hyperparameters are held fixed across both policies; only the underlying actuator model differs. After training, both policies are deployed on the same miniPi robot under identical conditions. To account for inertial measurement unit velocity scaling due to noise, the angular-velocity command on hardware is set to half the simulation value. The commanded forward (linear) velocity is set to its maximum to encourage distance covered. Each policy is evaluated over 10 runs of 7 s. We report mean distance traveled in the commanded direction and mean yaw deviation from the initial heading. 
+
+c: Results. 
+
+As shown in Fig. 7 and Table 3, the baseline policy traveled 
+
+1.12 ± 0.13 m with 109 ± 14 .3◦ of rotational deviation, whereas the policy trained on the refined model traveled 
+
+1.64 ± 0.08 m with only 27 ± 6.4◦. This corresponds to a 
+
+46% increase in distance and a 75% reduction in rotation. We report these results as supporting downstream valida-tion that the trajectory-identified actuator model offers a con-sistent practical advantage over the default simulator setting in this locomotion task.                           
+
+> FIGURE 7. Robot Performance Comparison: Refined vs. Baseline RL Policies. The traveled distance is denoted as d, and the rotation deviation from the original direction is represented as ϕ. The top image shows robot performance using the baseline model, exhibiting excessive rotation and reduced travel distance. The bottom image shows the robot’s performance using the refined model, demonstrating improvements in both travel distance and rotational alignment.
+> TABLE 3. Comparison of our method vs. baseline
+> Metric Default Model TrajID Model (mean ±std) (mean ±std) RL Policy Comparison
+> Rotation deviation (deg) ↓109 ±14 .327 ±6.4
+> Travel distance (m) ↑1.12 ±0.13 1.64 ±0.08
+
+VI. CONCLUSION 
+
+We address the actuation gap in sim-to-real transfer by in-troducing a practical identification pipeline that learns an effective actuator model directly from observed motion tra-jectories using a differentiable simulator (MJX). We formu-late identification as trajectory matching and solve it with gradient-based optimization over actuator and simulator pa-rameters, enabling system-level calibration without torque sensors or access to internal electrical states. We validate the approach on a hand-tuned, high-gear-ratio actuator. Across held-out rollouts under identical com-mands, trajectory-identified actuator models outperformed a stand-based baseline. MAE decreased by ≈ 1.88 × (from 14.20 mrad for the baseline to 7.54–8.73 mrad with tra-jectory identification), indicating that fitting to system-level trajectories better captures the effective closed-loop actuation behavior required for high-fidelity simulation. Although the framework is model-agnostic in formulation, the present ex-perimental evidence supports conclusions only for the tested   
+
+> VOLUME 11, 2023 9Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+
+actuator class with embedded PD control. Beyond single-actuator calibration, improved actuator fi-delity translates to downstream control gains. In a real-robot locomotion case study (miniPi), a policy trained with the refined motor model showed a consistent practical advantage over the default simulator setting, increasing mean real-world travel distance from 1.12 ± 0.13 m to 1.64 ± 0.08 m and reducing mean rotation deviation from 109 ± 14 .3◦ to 27 ±
+
+6.4◦ under the same protocol. These results support differen-tiable trajectory-level identification as a scalable alternative to purely steady-state test-stand characterization when accurate closed-loop motion reproduction is the goal. We summarize key advantages and limitations below.  
+
+> a: Advantages
+> •
+
+System-level identification: learns an effective actuator model directly from closed-loop trajectories, targeting the behavior that matters for simulation fidelity.  
+
+> •
+
+Torque sensor-free: requires only commanded inputs and encoder motion; no torque sensors or electrical mea-surements are needed for identification.  
+
+> •
+
+Quantitative accuracy gains: improves held-out trajec-tory alignment versus a stand-based steady-state base-line, reducing MAE from 14.20 mrad to as low as 7.54 mrad ( ≈1.88 ×).  
+
+> •
+
+Downstream impact: improves real-robot locomotion performance, increasing travel distance by 46% and reducing rotational deviation by 75% under the same protocol.  
+
+> b: Limitations
+> •
+
+Model expressiveness is bounded by the chosen param-eterization; unmodeled effects (e.g., temperature drift, battery-voltage sag, hysteresis, contact mismatch) can remain as residual errors.  
+
+> •
+
+Performance depends on excitation richness and sensor quality; long-horizon rollouts can accumulate integra-tion error.  
+
+> •
+
+Results are reported for a single actuator class and a limited number of hardware instances; broader valida-tion across actuator technologies and platforms is left as future work. Several directions remain open for future work. The parameterization can be broadened to capture additional non-idealities such as dead zones, rate limits, and explicit delay. Robustness to noise and non-stationarity can be im-proved through regularization and dataset design, including systematic analysis of Torque-Oracle overfitting. Scaling to multi-joint robots and contact-rich tasks with standardized sim-to-real benchmarks is a natural next step. Recurrent and history-based neural architectures offer a path toward captur-ing hysteresis, delay, and other path-dependent effects that instantaneous models cannot represent, and may help reduce the remaining gap between TrajID-NN and Torque-Oracle. Finally, broader RL ablations would help isolate the actuator-model contribution to downstream locomotion performance. 
+
+> APPENDIX A MOTOR TEST STAND: DATASET CHARACTERIZATION AND ACTUATOR-MODEL LEARNING
+
+The actuator under test [41] has a high gear ratio (210:1), a 72 MHz microcontroller, and operates from a 12 V sup-ply. The embedded low-level controller is a hand-tuned PD regulator. We adopt a simple outer-loop structure that maps desired position and measured motion to a pulse-width modu-lation (PWM) duty cycle, which modulates phase current and thereby torque. The resulting control pathway is qdes , q, ˙q →
+
+u → I → τ , where I denotes the phase current. Here 
+
+u ∈ [−1, 1] denotes the PWM duty cycle, computed as 
+
+u = clip  Kp(qdes − q) − Kd ˙q, −1, 1 . (4) This controller implements a PD mapping from position error and velocity to the PWM duty cycle; the gains Kp and Kd
+
+are dimensionless and tuned empirically for stable tracking. The PWM duty cycle drives the motor via the power stage, effectively shaping the average phase current and the output torque. The mapping from current to torque is treated as a black box that aggregates electrical and mechanical effects (e.g., back electromotive force, current limits, drivetrain friction, and gear-train inertia). The motor is characterized on a dedicated test stand (Fig. 8) comprising a driven motor, a brake motor, and a DYN-200 inline torque sensor mounted on a rigid bench and coupled on a common shaft. To avoid uncertainty from unknown composite inertia, we restrict measurements to steady-state operating points: we command a PWM duty cycle u while the brake motor applies increasing resistive torque, and we record the resulting steady angular velocity ˙q and output torque τ .These data define the steady-state map (u, ˙q) → τ . Non-steady segments with high acceleration are filtered out prior to analysis. Using the steady-state dataset, we train a compact feed-forward MLP to predict torque τ from (u, ˙q). The MLP uses two rectified linear unit hidden layers with widths 128 and 64, followed by a 1-D torque output (Linear 2 → 128 →
+
+64 → 1); inputs are standardized (mean/scale) and the network has 8,705 trainable parameters. For trajectory-level experi-ments, the PD law above maps (qdes , q, ˙q) to u, after which the learned map outputs τ , yielding the overall mapping 
+
+(qdes , q, ˙q) → τ .Fig. 9 compares the learned map with measured steady-state torque data. The relationship is approximately linear when the commanded direction and measured velocity agree, while a pronounced near-zero-velocity region exhibits increased resistive torque (braking behavior). During braking tests, we observed repeated shaft damage when the braking torque exceeded approximately 7-8 N m. To avoid further hardware failure, we limited subsequent data collection to approximately 5-6 N m. As a result, the Bench-Sup dataset under-samples the high-load, low-speed braking regime near zero velocity. We therefore clarify that Bench-Sup is less          
+
+> 10 VOLUME 11, 2023 Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+> FIGURE 8. Motor test-stand setup: Experimental apparatus used to characterize the actuator under controlled loading. The rig couples a test motor and a load (brake) motor through an inline torque transducer, enabling synchronized torque/velocity measurements.
+> FIGURE 9. Measured vs. model-predicted torque. Steady-state motor torque τ(N m) versus motor velocity (rad/s) for two PWM duty-cycle commands ( u= 0 .2 and u= 0 .8). Gray markers show downsampled test-stand measurements; the orange curve shows the learned (Bench-Sup) model evaluated on a dense velocity grid.
+
+well supported in this operating region than in the rest of the test-stand map, and that this coverage gap likely biases the comparison against Bench-Sup in this regime. The re-sulting test-stand map serves as a practical baseline for the trajectory-level comparisons in the main text. 
+
+APPENDIX B TRAJECTORY DATASET AND IDENTIFICATION SETUP 
+
+A. OVERVIEW 
+
+This appendix details how we collect and preprocess the 
+
+trajectory dataset used to identify TrajID-Param, TrajID-NN, Residual-RL, and Torque-Oracle. The Bench-Sup baseline is trained separately from dedicated test-stand measurements  
+
+> FIGURE 10. Table-top setup with actuator and rigid rod load used to collect identification trajectories.
+
+(see Appendix A). 
+
+a: Experimental setup. 
+
+The actuator is mounted on a table-top rig with a known exter-nal load to induce repeatable, nontrivial dynamics (Fig. 10). In our setup, the load is a rigid bar attached to the motor shaft, with mass m = 0 .24 kg and dimensions 0.04 ×0.02 ×0.352 m 
+
+(width × thickness × length). 
+
+b: Desired trajectory generation. 
+
+The optimization in Eq. (2) requires real trajectories {si}
+
+under known commands {ai}. The measured state is 
+
+si = [ qi, ˙qi ]T (5) where qi and ˙qi are joint angle and velocity at timestep i.We synthesize commanded velocity profiles as a sum of randomly sampled Fourier modes to ensure diverse excita-tion: 
+
+˙qdes (t) = 
+
+> K
+
+X
+
+> k=1
+
+Ak sin( ωk t + ϕk ). (6) The number of modes K , amplitudes Ak , frequencies ωk ,and phases ϕk are sampled uniformly from predefined ranges, and ˙qdes is clipped to hardware limits | ˙qdes (t)| ≤ ˙qmax .
+
+˙qdes (t) is only an intermediate signal used to shape frequency content and amplitude. We chose this random-Fourier design empirically to increase dataset diversity rather than to satisfy a formal persistence-of-excitation condition. In practice, it produces a mixture of transient segments, near-limit operating points where the actuator approaches its velocity bound, and quasi-steady regions, improving coverage of the actuator’s relevant operating regime. We therefore present this excita-tion as an empirical strategy for improving practical parame-ter observability, not as a formal identifiability guarantee. We then integrate ˙qdes to obtain the position command qdes (t).We set the action to the desired position, ai = qdes  
+
+> i
+
+. Ap-plied via the embedded position servo, the hardware executes 
+
+qdes , q, ˙q → u → I → τ (Appendix A). We treat the command-to-torque stack as a fixed black-box mapping that we seek to identify.   
+
+> VOLUME 11, 2023 11 Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+
+We collect training trajectories of duration Ttrain = 40 s 
+
+and one test trajectory of duration Ttest = 10 s . All trajecto-ries are logged at δ = 0 .002 s (500 Hz). 
+
+c: Train/test split, segmentation, and simulator settings. 
+
+During optimization, training trajectories are divided into short segments of length N = 3 (i.e., N δ = 6 ms ) for the main trajectory-matching results. We choose N = 3 as a compromise between short segments (which tend to overfit on noise) and long segments (which accumulate prediction errors), as discussed in Section IV-E. Segments are sampled with overlap. For Φz(s, a, δ ), we use MuJoCo’s explicit Euler integrator for efficiency. In Eq. (2), we set W = diag(1 , 0) ,i.e., wq = 1 , w˙q = 0 , so the objective penalizes position error only. Velocity remains part of the observed state and simulator rollout, but velocity residuals are not penalized because the measured velocity signal is noticeably noisier than position. The sensitivity sweep over W = diag( α, 1−α)
+
+in Section IV-D shows that flexible models overfit on velocity when it is weighted, whereas position-only weighting yields robust results across models. All identified models minimize the segmented trajectory-matching objective in Eq. (2) using Adam (Optax) with learn-ing rate 10 −2. In our experiments, M = 2,000 sampled trajectory segments are used in each optimization step. Early stopping uses patience = 200 and min _delta = 0 . We retain the parameters with the lowest loss on the entire training dataset. 
+
+d: Neural actuator model ( TrajID-NN ). 
+
+The neural actuator model is a feed-forward MLP that maps the concatenated input [qdes , q, ˙q] ∈ R3 to torque τ ∈ R,with architecture [3 , 32 , 32 , 1] (two hidden layers of width 32; 1,217 trainable parameters). No recurrence or history is used. Inputs are normalized to zero mean and unit variance. Training follows Eq. (2) with the same segmentation and optimizer as above. 
+
+e: ASAP-inspired residual baseline ( Residual-RL ). 
+
+To compare against action-space compensation methods, we add Residual-RL, an ASAP-inspired proxy that learns a resid-ual position correction δai instead of simulator parameters or torque outputs. At timestep i, the model observes the current rollout state and produces a corrected command 
+
+˜ai = ai + δai. (7) The corrected position command is then converted to torque by a fixed PD regulator with gains kp = 5 and kv = 1;these values were chosen near the optimum identified by TrajID-Param. Unlike the original ASAP method, which is implemented in a different simulator stack and for a different robot/control pipeline, Residual-RL is implemented in the same simulator environment as the other compared models for fairness. To keep model capacity comparable, the residual policy uses the same hidden-layer widths as TrajID-NN. 
+
+> TABLE 4. Reward terms used in the RL experiments.
+
+Term Formula Scale 
+
+Tracking linear ve-locity 
+
+exp   − (v−vcmd )2
+
+> σ2
+
+ for vx , vy 1.5 Tracking angular velocity (yaw) 
+
+exp   − 4 ( ωz − ωcmd  
+
+> z
+
+)2 1.5 Base upright (roll/pitch) 
+
+exp   − 30 ∥[roll , pitch] ∥2
+
+ 0.9 Base height exp   − 500 ( z/ztarget − 1) 2 0.8 Base acceleration penalty 
+
+exp   − P 
+
+> j
+
+|aroot  
+
+> j
+
+| 0.1 Action smoothness 
+
+∥at −at−1∥2 +∥at +at−2 −2at−1∥2 -0.02 Joint tracking to reference 
+
+exp   − 6 ∥q − qref ∥2
+
+ 1.5 Default posture exp   − ∥ q − qdef ∥2
+
+ 0.5 Feet clearance Reward when foot height near target during swing 0.8 Feet orientation exp   − (P |roll | + |pitch |) on feet 0.3 Ankle roll regular-ization 
+
+exp   − P |θankle _roll | 2.0 
+
+The Residual-RL policy observes (qi, ˙qi, qdes  
+
+> i
+
+) at each timestep. The residual policy is trained with Stable-Baselines3 PPO [42]. Its reward is implemented as the negative rollout loss corresponding to Eq. (2), so that PPO maximizes the same objective that the identification models minimize. Re-ward normalization is enabled, as we observed substantially improved learning with normalized rewards. The residual policy uses a feed-forward MLP with dimen-sions [3 , 32 , 32 , 1] , i.e., two hidden layers of width 32 and a scalar residual-action output, matching the hidden-layer widths of TrajID-NN. PPO training uses 8 million timesteps with 256 parallel environments and 256 rollout steps per environment, and takes 46.34 minutes in wall-clock time. We use learning rate 
+
+4 × 10 −4, minibatch size 64, 10 PPO epochs per update, discount factor γ = 1 .0, GAE parameter λ = 0 .95 , clip range 0.2, entropy coefficient 0.0, and value-loss coefficient 0.5. 
+
+APPENDIX C REINFORCEMENT LEARNING PROBLEM FORMULATION 
+
+For completeness, we provide the RL problem setup used in the experiments. This includes the state and action definitions, reward functions (Table 4), and any scaling or normalization applied to the observations or actions. Specific formulations for locomotion tasks, reward shaping, and termination condi-tions are detailed here to allow reproducibility and compari-son with prior work.   
+
+> 12 VOLUME 11, 2023 Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+
+a: Task interface and parameters. 
+
+Observations (48 dims): base angular velocity, gravity, ve-locity commands [vx , vy, ω z], standing mask, gait phase, joint positions and velocities, last action. In the velocity-tracking reward, σ is the acceptance bandwidth (speed tolerance). Actions: target joint positions for 12 actuators, scaled as 
+
+qtarget = qdef + 0 .25 a. Simulation: timestep 1 ms, policy at 100 Hz; PhysX. Episode length 16 s. Command ranges: vx ∈
+
+[−0.4, 0.4] m/s, vy ∈ [−0.25 , 0.25] m/s, ωz ∈ [−0.6, 0.6] 
+
+rad/s. Control: position control with joint stiffness and damp-ing (hip, thigh, calf, ankle). Gait: cycle time 0.4 s, target foot height 0.02 m, base height 0.345 m. Termination: on timeout or base contact force > 1 N. Training (Proximal Policy Op-timization): Kullback–Leibler divergence target 0.01, 3001 max updates. 
+
+REFERENCES 
+
+[1] J. Di Carlo, P. M. Wensing, B. Katz, G. Bledt, and S. Kim, ‘‘Dynamic loco-motion in the mit cheetah 3 through convex model-predictive control,’’ in 
+
+2018 IEEE/RSJ international conference on intelligent robots and systems (IROS) . IEEE, 2018, pp. 1–9. [2] D. Kim, J. Di Carlo, B. Katz, G. Bledt, and S. Kim, ‘‘Highly dynamic quadruped locomotion via whole-body impulse control and model predic-tive control,’’ arXiv preprint arXiv:1909.06586 , 2019. [3] M. Gaertner, M. Bjelonic, F. Farshidian, and M. Hutter, ‘‘Collision-free mpc for legged robots in static and dynamic scenes,’’ in 2021 IEEE International Conference on Robotics and Automation (ICRA) . IEEE, 2021, pp. 8266–8272. [4] J. Hwangbo, J. Lee, A. Dosovitskiy, D. Bellicoso, V. Tsounis, V. Koltun, and M. Hutter, ‘‘Learning agile and dynamic motor skills for legged robots,’’ Science Robotics , vol. 4, no. 26, p. eaau5872, 2019. [5] S. James, P. Wohlhart, M. Kalakrishnan, D. Kalashnikov, A. Irpan, J. Ibarz, S. Levine, R. Hadsell, and K. Bousmalis, ‘‘Sim-to-real via sim-to-sim: Data-efficient robotic grasping via randomized-to-canonical adaptation networks,’’ in Proceedings of the IEEE/CVF conference on computer vision and pattern recognition , 2019, pp. 12 627–12 637. [6] E. Aljalbout, J. Xing, A. Romero, I. Akinola, C. R. Garrett, E. Heiden, A. Gupta, T. Hermans, Y. Narang, D. Fox et al. , ‘‘The reality gap in robotics: Challenges, solutions, and best practices,’’ Annual Review of Control, Robotics, and Autonomous Systems , vol. 9, 2025. [7] Z. Xie, P. Gergondet, F. Kanehiro et al. , ‘‘Learning bipedal walking for humanoids with current feedback,’’ IEEE Access , vol. 11, pp. 82 013– 82 023, 2023. [8] J. Siekmann, Y. Godse, A. Fern, and J. Hurst, ‘‘Sim-to-real learning of all common bipedal gaits via periodic reward composition,’’ in 2021 IEEE International Conference on Robotics and Automation (ICRA) . IEEE, 2021, pp. 7309–7315. [9] D. Rodriguez and S. Behnke, ‘‘Deepwalk: Omnidirectional bipedal gait by deep reinforcement learning,’’ in 2021 IEEE international conference on robotics and automation (ICRA) . IEEE, 2021, pp. 3033–3039. [10] Z. Li, X. B. Peng, P. Abbeel, S. Levine, G. Berseth, and K. Sreenath, ‘‘Reinforcement learning for versatile, dynamic, and robust bipedal lo-comotion control,’’ The International Journal of Robotics Research , p. 02783649241285161, 2024. [11] P. Ravichandar, L. Krishna, N. Sobanbabu, and Q. Nguyen, ‘‘Pref-erenced oracle guided multi-mode policies for dynamic bipedal loco-manipulation,’’ in 2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) . IEEE, 2025, pp. 6600–6606. [12] H. Zhang, L. Zhang, Z. Chen, L. Chen, Y. Wang, and R. Xiong, ‘‘Natural humanoid robot locomotion with generative motion prior,’’ arXiv preprint arXiv:2503.09015 , 2025. [13] N. Rudin, D. Hoeller, P. Reist, and M. Hutter, ‘‘Learning to walk in minutes using massively parallel deep reinforcement learning,’’ in Conference on Robot Learning . PMLR, 2022, pp. 91–100. [14] V. Makoviychuk, L. Wawrzyniak, Y. Guo, M. Lu, K. Storey, M. Macklin, D. Hoeller, N. Rudin, A. Allshire, A. Handa et al. , ‘‘Isaac gym: High per-formance gpu-based physics simulation for robot learning,’’ arXiv preprint arXiv:2108.10470 , 2021. [15] M. Mittal, P. Roth, J. Tigue, A. Richard, O. Zhang, P. Du, A. Serrano-Muñoz, X. Yao, R. Zurbrügg, N. Rudin, L. Wawrzyniak, M. Rakhsha, A. Denzler, E. Heiden, A. Borovicka, O. Ahmed, I. Akinola, A. Anwar, M. T. Carlson, J. Y. Feng, A. Garg, R. Gasoto, L. Gulich, Y. Guo, M. Gussert, A. Hansen, M. Kulkarni, C. Li, W. Liu, V. Makoviychuk, G. Malczyk, H. Mazhar, M. Moghani, A. Murali, M. Noseworthy, A. Poddubny, N. Ratliff, W. Rehberg, C. Schwarke, R. Singh, J. L. Smith, B. Tang, R. Thaker, M. Trepte, K. V. Wyk, F. Yu, A. Millane, V. Ramasamy, R. Steiner, S. Subramanian, C. Volk, C. Chen, N. Jawale, A. V. Kuruttukulam, M. A. Lin, A. Mandlekar, K. Patzwaldt, J. Welsh, H. Zhao, F. Anes, J.-F. Lafleche, N. Moënne-Loccoz, S. Park, R. Stepinski, D. V. Gelder, C. Amevor, J. Carius, J. Chang, A. H. Chen, P. de Heras Ciechomski, G. Daviet, M. Mohajerani, J. von Muralt, V. Reutskyy, M. Sauter, S. Schirm, E. L. Shi, P. Terdiman, K. Vilella, T. Widmer, G. Yeoman, T. Chen, S. Grizan, C. Li, L. Li, C. Smith, R. Wiltz, K. Alexis, Y. Chang, D. Chu, L. J. Fan, F. Farshidian, A. Handa, S. Huang, M. Hutter, Y. Narang, S. Pouya, S. Sheng, Y. Zhu, M. Macklin, A. Moravanszky, P. Reist, Y. Guo, D. Hoeller, and G. State, ‘‘Isaac lab: A gpu-accelerated simulation framework for multi-modal robot learning,’’ arXiv preprint arXiv:2511.04831 , 2025. [Online]. Available: https://arxiv.org/abs/2511.04831 [16] A. Schmidt, T. Gumpert, S. Schreiber, and A. Albu-Schäffer, ‘‘Practical approach to characterize realistic motor dynamics for robotic simulation independent of the use case,’’ in 2022 IEEE/ASME International Confer-ence on Advanced Intelligent Mechatronics (AIM) . IEEE, 2022, pp. 1144– 1151. [17] A. C. Bittencourt, E. Wernholt, S. Sander-Tavallaey, and T. Brogårdh, ‘‘An extended friction model to capture load and temperature effects in robot joints,’’ in 2010 IEEE/RSJ international conference on intelligent robots and systems . IEEE, 2010, pp. 6161–6167. [18] S. Wolf and M. Iskandar, ‘‘Extending a dynamic friction model with nonlinear viscous and thermal dependency for a motor and harmonic drive gear,’’ in 2018 IEEE International Conference on Robotics and Automation (ICRA) . IEEE, 2018, pp. 783–790. [19] F. Wang, Z. Zhang, X. Mei, J. Rodríguez, and R. Kennel, ‘‘Advanced con-trol strategies of induction machine: Field oriented control, direct torque control and model predictive control,’’ energies , vol. 11, no. 1, p. 120, 2018. [20] Y. Zhang, B. Xia, H. Yang, and J. Rodriguez, ‘‘Overview of model pre-dictive control for induction motor drives,’’ Chinese Journal of Electrical Engineering , vol. 2, no. 1, pp. 62–76, 2016. [21] A. Martyr and M. Plint, ‘‘8 - dynamometers and the measurement of torque,’’ in Engine Testing (Third Edition) , third edition ed., A. Martyr and M. Plint, Eds. Oxford: Butterworth-Heinemann, 2007, pp. 144– 169. [Online]. Available: https://www.sciencedirect.com/science/article/ pii/B9780750684392500116 [22] G. Sziki, A. Szanto, J. Kiss, G. Juhasz, and E. Adamko, ‘‘Measurement system for the experimental study and testing of electric motors at the faculty of engineering,’’ University of Debrecen. Applied Sciences, 12 (19) ,pp. 1–18, 2022. [23] T.-W. Lee and D.-K. Hong, ‘‘Performance validation of high-speed motor for electric turbochargers using various test methods,’’ Electronics , vol. 12, no. 13, p. 2937, 2023. [24] I. Akkaya, M. Andrychowicz, M. Chociej, M. Litwin, B. McGrew, A. Petron, A. Paino, M. Plappert, G. Powell, R. Ribas et al. , ‘‘Solving rubik’s cube with a robot hand,’’ arXiv preprint arXiv:1910.07113 , 2019. [25] G. Tiboni, P. Klink, J. Peters, T. Tommasi, C. D’Eramo, and G. Chalvatzaki, ‘‘Domain randomization via entropy maximization,’’ arXiv preprint arXiv:2311.01885 , 2023. [26] T. Haarnoja, B. Moran, G. Lever, S. H. Huang, D. Tirumala, J. Hump-lik, M. Wulfmeier, S. Tunyasuvunakool, N. Y. Siegel, R. Hafner et al. ,‘‘Learning agile soccer skills for a bipedal robot with deep reinforcement learning,’’ Science Robotics , vol. 9, no. 89, p. eadi8022, 2024. [27] M. Duclusaud, G. Passault, V. Padois, and O. Ly, ‘‘Extended friction models for the physics simulation of servo actuators,’’ in 2025 IEEE International Conference on Robotics and Automation (ICRA) . IEEE, 2025, pp. 12 091–12 097. [28] C. D. Freeman, E. Frey, A. Raichuk, S. Girgin, I. Mordatch, and O. Bachem, ‘‘Brax - a differentiable physics engine for large scale rigid body simulation,’’ 2021. [Online]. Available: http://github.com/google/brax [29] E. Heiden, D. Millard, E. Coumans, Y. Sheng, and G. S. Sukhatme, ‘‘NeuralSim: Augmenting differentiable simulators with neural networks,’’ in Proceedings of the IEEE International Conference on Robotics and Automation (ICRA) , 2021. [Online]. Available: https://github.com/ google-research/tiny-differentiable-simulator   
+
+> VOLUME 11, 2023 13 Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+
+[30] T. Erez, Y. Tassa, and E. Todorov, ‘‘Simulation tools for model-based robotics: Comparison of bullet, havok, mujoco, ode and physx,’’ in 2015 IEEE international conference on robotics and automation (ICRA) . IEEE, 2015, pp. 4397–4404. [31] C. Liao, Y. Wang, X. Ding, Y. Ren, X. Duan, and J. He, ‘‘Performance comparison of typical physics engines using robot models with multiple joints,’’ IEEE Robotics and Automation Letters , 2023. [32] Z. Xie, G. Berseth, P. Clary, J. Hurst, and M. Van de Panne, ‘‘Feedback control for cassie with deep reinforcement learning,’’ in 2018 IEEE/RSJ In-ternational Conference on Intelligent Robots and Systems (IROS) . IEEE, 2018, pp. 1241–1246. [33] Z. Xie, P. Clary, J. Dao, P. Morais, J. Hurst, and M. van de Panne, ‘‘Iterative reinforcement learning based design of dynamic locomotion skills for cassie,’’ arXiv preprint arXiv:1903.09537 , 2019. [34] M. Kaup, C. Wolff, H. Hwang, J. Mayer, and E. Bruni, ‘‘A review of nine physics engines for reinforcement learning research,’’ arXiv preprint arXiv:2407.08590 , 2024. [35] N. Fey, G. B. Margolis, M. Peticco, and P. Agrawal, ‘‘Bridging the sim-to-real gap for athletic loco-manipulation,’’ arXiv preprint arXiv:2502.10894 ,2025. [36] T. He, J. Gao, W. Xiao, Y. Zhang, Z. Wang, J. Wang, Z. Luo, G. He, N. Sobanbab, C. Pan et al. , ‘‘Asap: Aligning simulation and real-world physics for learning agile humanoid whole-body skills,’’ arXiv preprint arXiv:2502.01143 , 2025. [37] A. Aeran and H. G. Lemu, ‘‘Time integration schemes in dynamic problems-effect of damping on numerical stability and accuracy,’’ in 6th International Workshop of Advanced Manufacturing and Automation . At-lantis Press, 2016, pp. 213–220. [38] STARKIT, ‘‘Roki-2,’’ https://starkit.su/roki-2/, 2025. [Online]. Available: https://starkit.su/roki-2/ [39] N. Hansen, ‘‘The cma evolution strategy: A tutorial,’’ arXiv preprint arXiv:1604.00772 , 2016. [40] ‘‘High torque,’’ 2025. [Online]. Available: https://github.com/ HighTorque-Robotics [41] STARKIT, ‘‘Aluminum servo motor,’’ https://starkit.su/servo-alum/, 2025. [Online]. Available: https://starkit.su/servo-alum/ [42] A. Raffin, A. Hill, A. Gleave, A. Kanervisto, M. Ernestus, and N. Dormann, ‘‘Stable-baselines3: Reliable reinforcement learning implementations,’’ 
+
+Journal of Machine Learning Research , vol. 22, no. 268, pp. 1–8, 2021. [Online]. Available: http://jmlr.org/papers/v22/20-1364.html 
+
+VYACHESLAV KOVALEV is a researcher at the Moscow Institute of Physics and Technology (MIPT) and a Ph.D. student in Mathematics and Computer Science since 2024. He received the B.Sc. degree in Physics from Southern Federal University in 2021 and the M.Sc. degree in Mathe-matics and Computer Science from the Skolkovo Institute of Science and Technology in 2023. His research interests include actuator modeling and system identification, differentiable simula-tion and trajectory-matching optimization, robot dynamics, and sim-to-real transfer for legged locomotion and control. 
+
+EKATERINA CHAIKOVSKAIA is a researcher at the Moscow Institute of Physics and Technology (MIPT). She received her B.Sc. degree in Automa-tion of Technological Processes and Production from Bauman Moscow State Technical University in 2020, and her M.Sc. degree in Engineering Sys-tems with a specialization in Robotics from the Skolkovo Institute of Science and Technology in 2022. Her research interests include reinforcement learning for locomotion, legged robotics, and con-trol systems. Ekaterina is the author of seven scientific publications in the field of control systems.   
+
+> 14 VOLUME 11, 2023 Kovalev et al. : Trajectory-based Actuator Identification via Differentiable Simulation
+
+EGOR DAVYDENKO is a researcher at the Moscow Institute of Physics and Technology (MIPT). He received his Ph.D. from Vladimir State University in 2009 and his M.Sc. from Yaroslavl State University in 2005. His research focuses on robotics, mechatronics, engineering, simulation, and computer vision, with particular emphasis on optimal control and reinforcement learning for legged robots. His work aims to enhance robotic locomotion and perception in dynamic environ-ments by integrating advanced control strategies, computer vision, and engi-neering principles. Egor is the author of 15 scientific publications and holds one invention. As part of the Starkit team, he contributed to winning first place in the RoboCup Worldwide Humanoid League in 2021, along with several other awards. 
+
+ROMAN GORBACHEV is the Head of the Lab-oratory of Wave Processes and Control Systems and Director of the Research Center for Applied Artificial Intelligence Systems at the Moscow In-stitute of Physics and Technology (MIPT). He re-ceived his Ph.D. (Candidate of Technical Sciences) from MIPT in 2018, and his Bachelor’s (2004) and Master’s degrees (2008) from the Faculty of Radio Engineering and Cybernetics at MIPT. His research interests include robotics, systems anal-ysis, multi-agent system optimization, and the development of intelligent control systems, with a focus on collaborative manipulators and humanoid robotics. His work aims to advance adaptive control systems and integrate artificial intelligence methods into robotic platforms. Roman is the author of over 20 scientific publications, holds 5 patents for inventions, 5 utility model patents, and 12 software copyrights. He also coordinates the Starkit team, which won the RoboCup World Championship in 2021 and is a multiple-time winner of regional championships.
