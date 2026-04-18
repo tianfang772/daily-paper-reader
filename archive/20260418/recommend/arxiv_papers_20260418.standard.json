@@ -1,0 +1,676 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-04-18T20:09:33.971519+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 13,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 18,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2604.08780v1",
+      "source": "arxiv",
+      "title": "Toward Hardware-Agnostic Quadrupedal World Models via Morphology Conditioning",
+      "abstract": "World models promise a paradigm shift in robotics, where an agent learns the underlying physics of its environment once to enable efficient planning and behavior learning. However, current world models are often hardware-locked specialists: a model trained on a Boston Dynamics Spot robot fails catastrophically on a Unitree Go1 due to the mismatch in kinematic and dynamic properties, as the model overfits to specific embodiment constraints rather than capturing the universal locomotion dynamics. Consequently, a slight change in actuator dynamics or limb length necessitates training a new model from scratch. In this work, we take a step towards a framework for training a generalizable Quadrupedal World Model (QWM) that disentangles environmental dynamics from robot morphology. We address the limitations of implicit system identification, where treating static physical properties (like mass or limb length) as latent variables to be inferred from motion history creates an adaptation lag that can compromise zero-shot safety and efficiency. Instead, we explicitly condition the generative dynamics on the robot's engineering specifications. By integrating a physical morphology encoder and a reward normalizer, we enable the model to serve as a neural simulator capable of generalizing across morphologies. This capability unlocks zero-shot control across a range of embodiments. We introduce, for the first time, a world model that enables zero-shot generalization to new morphologies for locomotion. While we carefully study the limitations of our method, QWM operates as a distribution-bounded interpolator within the quadrupedal morphology family rather than a universal physics engine, this work represents a significant step toward morphology-conditioned world models for legged locomotion.",
+      "authors": [
+        "Mohamad H. Danesh",
+        "Chenhao Li",
+        "Amin Abyaneh",
+        "Anas Houssaini",
+        "Kirsty Ellis",
+        "Glen Berseth",
+        "Marco Hutter",
+        "Hsiu-Chin Lin"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-04-09T21:31:24+00:00",
+      "link": "https://arxiv.org/pdf/2604.08780v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "generalizable Quadrupedal World Model (QWM) for universal locomotion dynamics",
+      "llm_evidence_cn": "用于通用运动动力学的泛化四足机器人世界模型 (QWM)",
+      "llm_evidence": "用于通用运动动力学的泛化四足机器人世界模型 (QWM)",
+      "canonical_evidence": "用于通用运动动力学的泛化四足机器人世界模型 (QWM)",
+      "llm_tldr_en": "Proposes a hardware-agnostic world model for quadrupeds that disentangles environment and morphology.",
+      "llm_tldr_cn": "提出一种与硬件无关的四足机器人世界模型，实现了环境动力学与形态学的解耦。",
+      "llm_tldr": "提出一种与硬件无关的四足机器人世界模型，实现了环境动力学与形态学的解耦。",
+      "llm_tags": [
+        "query:q4"
+      ],
+      "matched_query_tag": "query:q4",
+      "matched_query_text": "Application of world models in legged robot locomotion and control",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.09993v1",
+      "source": "arxiv",
+      "title": "GPU-Accelerated Continuous-Time Successive Convexification for Contact-Implicit Legged Locomotion",
+      "abstract": "Contact-implicit trajectory optimization (CITO) enables the automatic discovery of contact sequences, but most methods rely on fine time discretization to capture all contact events accurately, which increases problem size and runtime while tying solution quality to grid resolution. We extend the recently proposed sequential convex programming (SCP) approach for trajectory optimization, continuous-time successive convexification (ct-SCvx), to CITO by introducing integral cross-complementarity constraints, which eliminate the risk of missing contact events between discretization nodes while preserving the flexibility of contact mode changes. The resulting framework, contact-implicit successive convexification (ci-SCvx), models full multibody dynamics in maximal coordinates, including stick-slip friction and partially elastic impacts. To handle complementarity constraints, we embed a backtracking homotopy scheme within SCP for reliable convergence. We implement this framework in a stand-alone Python software, leveraging JAX for GPU acceleration and a custom canonical-form parser for the convex subproblems of SCP to avoid the overhead of general-purpose modeling tools such as CVXPY. We demonstrate ci-SCvx on diverse legged-locomotion tasks. In particular, we validate the approach in MuJoCo with the Gymnasium HalfCheetah model against the MuJoCo MPC baseline, showing that a tracking simulation with the optimized torque profiles from ci-SCvx produces physically consistent trajectories with lesser energy consumption. We also show that the resulting software achieves faster solve times than existing state-of-the-art SCP implementations by over an order of magnitude, thereby demonstrating a practically important contribution to scalable real-time trajectory optimization.",
+      "authors": [
+        "Samuel C. Buckner",
+        "Purnanand Elango"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "math.OC"
+      ],
+      "published": "2026-04-11T02:40:29+00:00",
+      "link": "https://arxiv.org/pdf/2604.09993v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Contact-implicit trajectory optimization for legged locomotion",
+      "llm_evidence_cn": "足式机器人运动的接触隐式轨迹优化",
+      "llm_evidence": "足式机器人运动的接触隐式轨迹优化",
+      "canonical_evidence": "足式机器人运动的接触隐式轨迹优化",
+      "llm_tldr_en": "Introduces a GPU-accelerated convexification framework for contact-implicit legged locomotion trajectory optimization.",
+      "llm_tldr_cn": "引入了一种GPU加速的凸化框架，用于足式机器人运动的接触隐式轨迹优化。",
+      "llm_tldr": "引入了一种GPU加速的凸化框架，用于足式机器人运动的接触隐式轨迹优化。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.11981v1",
+      "source": "arxiv",
+      "title": "Bipedal-Walking-Dynamics Model on Granular Terrains",
+      "abstract": "Bipeds have demonstrated high agility and mobility in unstructured environments such as sand. The yielding of such granular media brings significant sinkage and slip of the bipedal feet, leading to uncertainty and instability of walking locomotion. We present a new dynamics-modeling approach to capture and predict bipedal-walking locomotion on granular media. A dynamic foot-terrain interaction model is integrated to compute the ground reaction force (GRF). The proposed granular dynamic model has three additional degree-of-freedom (DoF) to estimate foot sinkage and slip that are critical to capturing robot-walking kinematics and kinetics such as cost of transport (CoT). Using the new model, we analyze bipedal kinetics, CoT, and foot-terrain rolling and intrusion affects. Experiments are conducted using a biped robotic walker on sand to validate the proposed dynamic model with robot-gait profiles, media-intrusion prediction, and GRF estimations. This new dynamics model can further serve as an enabling tool for locomotion control and optimization of bipedal robots to efficiently walk on granular terrains.",
+      "authors": [
+        "Xunjie Chen",
+        "Xinyan Huang",
+        "Peter Shan",
+        "Jingang Yi",
+        "Tao Liu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-13T19:12:22+00:00",
+      "link": "https://arxiv.org/pdf/2604.11981v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Bipedal walking dynamics and locomotion on granular terrains",
+      "llm_evidence_cn": "双足机器人在颗粒地貌上的行走动力学与运动",
+      "llm_evidence": "双足机器人在颗粒地貌上的行走动力学与运动",
+      "canonical_evidence": "双足机器人在颗粒地貌上的行走动力学与运动",
+      "llm_tldr_en": "Presents a dynamics-modeling approach to predict bipedal walking locomotion on unstable granular media.",
+      "llm_tldr_cn": "提出一种动力学建模方法，用于预测双足机器人在颗粒介质上的行走运动。",
+      "llm_tldr": "提出一种动力学建模方法，用于预测双足机器人在颗粒介质上的行走运动。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.12274v1",
+      "source": "arxiv",
+      "title": "Asymptotically Stable Gait Generation and Instantaneous Walkability Determination for Planar Almost Linear Biped with Knees",
+      "abstract": "A class of planar bipedal robots with unique mechanical properties has been proposed, where all links are balanced around the hip joint, preventing natural swinging motion due to gravity. A common property of their equations of motion is that the inertia matrix is a constant matrix, there are no nonlinear velocity terms, and the gravity term contains simple nonlinear terms. By performing a Taylor expansion of the gravity term and making a linear approximation, it is easy to derive a linearized model, and calculations for future states or walkability determination can be performed instantaneously without the need for numerical integration. This paper extends the method to a planar biped robot model with knees. First, we derive the equations of motion, constraint conditions, and inelastic collisions for a planar 6-DOF biped robot, design its control system, and numerically generate a stable bipedal gait on a horizontal plane. Next, we reduce the equations of motion to a 3-DOF model, and derive a linearized model by approximating the gravity term as linear around the expansion point for the thigh frame angle. Through numerical simulations, we demonstrate that calculations for future states and walkability determination can be completed in negligible time. By applying control inputs to the obtained model, performing state-space realization, and then discretizing it, instantaneous walkability determination through iterative calculation becomes possible. Through detailed gait analysis, we discuss how the knee joint flexion angle and the expansion point affect the accuracy of the linear approximation, and the issues that arise when descending a small step.",
+      "authors": [
+        "Fumihiko Asano",
+        "Ning Lei",
+        "Taiki Sedoguchi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-14T04:36:59+00:00",
+      "link": "https://arxiv.org/pdf/2604.12274v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Gait generation and walkability for biped robots",
+      "llm_evidence_cn": "双足机器人的步态生成与行走能力判定",
+      "llm_evidence": "双足机器人的步态生成与行走能力判定",
+      "canonical_evidence": "双足机器人的步态生成与行走能力判定",
+      "llm_tldr_en": "Provides a linearized model for stable gait generation and instantaneous walkability in bipedal robots.",
+      "llm_tldr_cn": "为双足机器人提供了一种用于稳定步态生成和瞬时行走能力判定的线性化模型。",
+      "llm_tldr": "为双足机器人提供了一种用于稳定步态生成和瞬时行走能力判定的线性化模型。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.12852v1",
+      "source": "arxiv",
+      "title": "PAINT: Partner-Agnostic Intent-Aware Cooperative Transport with Legged Robots",
+      "abstract": "Collaborative transport requires robots to infer partner intent through physical interaction while maintaining stable loco-manipulation. This becomes particularly challenging in complex environments, where interaction signals are difficult to capture and model. We present PAINT, a lightweight yet efficient hierarchical learning framework for partner-agonistic intent-aware collaborative legged transport that infers partner intent directly from proprioceptive feedback. PAINT decouples intent understanding from terrain-robust locomotion: A high-level policy infers the partner interaction wrench using an intent estimator and a teacher-student training scheme, while a low-level locomotion backbone ensures robust execution. This enables lightweight deployment without external force-torque sensing or payload tracking. Extensive simulation and real-world experiments demonstrate compliant cooperative transport across diverse terrains, payloads, and partners. Furthermore, we show that PAINT naturally scales to decentralized multi-robot transport and transfers across robot embodiments by swapping the underlying locomotion backbone. Our results suggest that proprioceptive signals in payload-coupled interaction provide a scalable interface for partner-agnostic intent-aware collaborative transport.",
+      "authors": [
+        "Zhihao Cao",
+        "Tianxu An",
+        "Chenhao Li",
+        "Stelian Coros",
+        "Marco Hutter"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-14T15:06:38+00:00",
+      "link": "https://arxiv.org/pdf/2604.12852v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Legged robot locomotion and collaborative transport in complex environments",
+      "llm_evidence_cn": "复杂环境下足式机器人的运动与协作运输",
+      "llm_evidence": "复杂环境下足式机器人的运动与协作运输",
+      "canonical_evidence": "复杂环境下足式机器人的运动与协作运输",
+      "llm_tldr_en": "A hierarchical learning framework for intent-aware collaborative transport using legged robots.",
+      "llm_tldr_cn": "一种用于足式机器人意图感知协作运输的分层学习框架。",
+      "llm_tldr": "一种用于足式机器人意图感知协作运输的分层学习框架。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.14565v1",
+      "source": "arxiv",
+      "title": "Model-Based Reinforcement Learning Exploits Passive Body Dynamics for High-Performance Biped Robot Locomotion",
+      "abstract": "Embodiment is a significant keyword in recent machine learning fields. This study focused on the passive nature of the body of a biped robot to generate walking and running locomotion using model-based deep reinforcement learning. We constructed two models in a simulator, one with passive elements (e.g., springs) and the other, which is similar to general humanoids, without passive elements. The training of the model with passive elements was highly affected by the attractor of the system. This lead that although the trajectories quickly converged to limit cycles, it took a long time to obtain large rewards. However, thanks to the attractor-driven learning, the acquired locomotion was robust and energy-efficient. The results revealed that robots with passive elements could efficiently acquire high-performance locomotion by utilizing stable limit cycles generated through dynamic interaction between the body and ground. This study demonstrates the importance of implementing passive properties in the body for future embodied AI.",
+      "authors": [
+        "Tomoya Kamimura",
+        "Haruka Washiyama",
+        "Akihito Sano"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "published": "2026-04-16T02:54:00+00:00",
+      "link": "https://arxiv.org/pdf/2604.14565v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "model-based reinforcement learning for biped robot locomotion",
+      "llm_evidence_cn": "基于模型的双足机器人运动强化学习",
+      "llm_evidence": "基于模型的双足机器人运动强化学习",
+      "canonical_evidence": "基于模型的双足机器人运动强化学习",
+      "llm_tldr_en": "Exploits passive body dynamics via model-based RL to achieve robust bipedal walking and running.",
+      "llm_tldr_cn": "通过基于模型的强化学习利用被动身体动力学，实现稳健的双足行走与奔跑。",
+      "llm_tldr": "通过基于模型的强化学习利用被动身体动力学，实现稳健的双足行走与奔跑。",
+      "llm_tags": [
+        "query:q4"
+      ],
+      "matched_query_tag": "query:q4",
+      "matched_query_text": "Application of world models in legged robot locomotion and control",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.08958v2",
+      "source": "arxiv",
+      "title": "WOMBET: World Model-based Experience Transfer for Robust and Sample-efficient Reinforcement Learning",
+      "abstract": "Reinforcement learning (RL) in robotics is often limited by the cost and risk of data collection, motivating experience transfer from a source task to a target task. Offline-to-online RL leverages prior data but typically assumes a given fixed dataset and does not address how to generate reliable data for transfer. We propose \\textit{World Model-based Experience Transfer} (WOMBET), a framework that jointly generates and utilizes prior data. WOMBET learns a world model in the source task and generates offline data via uncertainty-penalized planning, followed by filtering trajectories with high return and low epistemic uncertainty. It then performs online fine-tuning in the target task using adaptive sampling between offline and online data, enabling a stable transition from prior-driven initialization to task-specific adaptation. We show that the uncertainty-penalized objective provides a lower bound on the true return and derive a finite-sample error decomposition capturing distribution mismatch and approximation error. Empirically, WOMBET improves sample efficiency and final performance over strong baselines on continuous control benchmarks, demonstrating the benefit of jointly optimizing data generation and transfer.",
+      "authors": [
+        "Mintae Kim",
+        "Koushil Sreenath"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-04-10T04:57:54+00:00",
+      "link": "https://arxiv.org/pdf/2604.08958v2",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "world model-based experience transfer for robot reinforcement learning",
+      "llm_evidence_cn": "基于世界模型的机器人强化学习经验迁移",
+      "llm_evidence": "基于世界模型的机器人强化学习经验迁移",
+      "canonical_evidence": "基于世界模型的机器人强化学习经验迁移",
+      "llm_tldr_en": "WOMBET uses world models to generate and transfer experience for sample-efficient robot learning.",
+      "llm_tldr_cn": "WOMBET 利用世界模型生成并迁移经验，以实现高效的机器人强化学习。",
+      "llm_tldr": "WOMBET 利用世界模型生成并迁移经验，以实现高效的机器人强化学习。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.08958v1",
+      "source": "arxiv",
+      "title": "WOMBET: World Model-based Experience Transfer for Robust and Sample-efficient Reinforcement Learning",
+      "abstract": "Reinforcement learning (RL) in robotics is often limited by the cost and risk of data collection, motivating experience transfer from a source task to a target task. Offline-to-online RL leverages prior data but typically assumes a given fixed dataset and does not address how to generate reliable data for transfer. We propose \\textit{World Model-based Experience Transfer} (WOMBET), a framework that jointly generates and utilizes prior data. WOMBET learns a world model in the source task and generates offline data via uncertainty-penalized planning, followed by filtering trajectories with high return and low epistemic uncertainty. It then performs online fine-tuning in the target task using adaptive sampling between offline and online data, enabling a stable transition from prior-driven initialization to task-specific adaptation. We show that the uncertainty-penalized objective provides a lower bound on the true return and derive a finite-sample error decomposition capturing distribution mismatch and approximation error. Empirically, WOMBET improves sample efficiency and final performance over strong baselines on continuous control benchmarks, demonstrating the benefit of jointly optimizing data generation and transfer.",
+      "authors": [
+        "Mintae Kim",
+        "Koushil Sreenath"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-04-10T04:57:54+00:00",
+      "link": "https://arxiv.org/pdf/2604.08958v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "World model-based planning and experience transfer for robotics RL",
+      "llm_evidence_cn": "基于世界模型的机器人强化学习规划与经验迁移",
+      "llm_evidence": "基于世界模型的机器人强化学习规划与经验迁移",
+      "canonical_evidence": "基于世界模型的机器人强化学习规划与经验迁移",
+      "llm_tldr_en": "A framework using world models for sample-efficient reinforcement learning and experience transfer in robotics.",
+      "llm_tldr_cn": "一种利用世界模型进行高效强化学习和机器人经验迁移的框架。",
+      "llm_tldr": "一种利用世界模型进行高效强化学习和机器人经验迁移的框架。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.10351v1",
+      "source": "arxiv",
+      "title": "Trajectory-based actuator identification via differentiable simulation",
+      "abstract": "Accurate actuation models are critical for bridging the gap between simulation and real robot behavior, yet obtaining high-fidelity actuator dynamics typically requires dedicated test stands and torque sensing. We present a trajectory-based actuator identification method that uses differentiable simulation to fit system-level actuator models from encoder motion alone. Identification is posed as a trajectory-matching problem: given commanded joint positions and measured joint angles and velocities, we optimize actuator and simulator parameters by backpropagating through the simulator, without torque sensors, current/voltage measurements, or access to embedded motor-control internals. The framework supports multiple model classes, ranging from compact structured parameterizations to neural actuator mappings, within a unified optimization pipeline. On held-out real-robot trajectories under identical commands, the proposed torque-sensor-free identification achieves much tighter trajectory alignment than a supervised stand-trained baseline dominated by steady-state data, reducing mean absolute position error from 14.20 mrad to as low as 7.54 mrad (1.88 times). Finally, we demonstrate downstream impact in a real-robot locomotion study: training policies with the refined actuator model increases travel distance by 46% and reduces rotational deviation by 75% relative to the baseline.",
+      "authors": [
+        "Vyacheslav Kovalev",
+        "Ekaterina Chaikovskaia",
+        "Egor Davydenko",
+        "Roman Gorbachev"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-11T21:36:34+00:00",
+      "link": "https://arxiv.org/pdf/2604.10351v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Learning actuator dynamics via differentiable simulation",
+      "llm_evidence_cn": "通过可微仿真学习执行器动力学",
+      "llm_evidence": "通过可微仿真学习执行器动力学",
+      "canonical_evidence": "通过可微仿真学习执行器动力学",
+      "llm_tldr_en": "Identifies actuator dynamics using differentiable simulation, supporting high-fidelity robot control models.",
+      "llm_tldr_cn": "利用可微仿真识别执行器动力学，支持高保真机器人控制模型。",
+      "llm_tldr": "利用可微仿真识别执行器动力学，支持高保真机器人控制模型。",
+      "llm_tags": [
+        "query:q3"
+      ],
+      "matched_query_tag": "query:q3",
+      "matched_query_text": "Learning latent dynamics for legged robot control",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.10057v1",
+      "source": "arxiv",
+      "title": "Natural Gradient Gaussian Approximation Filter on Lie Groups for Robot State Estimation",
+      "abstract": "Accurate state estimation for robotic systems evolving on Lie group manifolds, such as legged robots, is a prerequisite for achieving agile control. However, this task is challenged by nonlinear observation models defined on curved manifolds, where existing filters rely on local linearization in the tangent space to handle such nonlinearity, leading to accumulated estimation errors. To address this limitation, we reformulate manifold filtering as a parameter optimization problem over a Gaussian-distributed increment variable, thereby avoiding linearization. Under this formulation, the increment can be mapped to the Lie group through the exponential operator, where it acts multiplicatively on the prior estimate to yield the posterior state. We further propose a natural gradient optimization scheme for solving this problem, whose iteration process leverages the Fisher information matrix of the increment variable to account for the curvature of the tangent space. This results in an iterative algorithm named the Natural Gradient Gaussian Approximation on Lie Groups (NANO-L) filter. Leveraging the perturbation model in Lie derivative, we prove that for the invariant observation model widely adopted in robotic localization tasks, the covariance update in NANO-L admits an exact closed-form solution, eliminating the need for iterative updates thus improving computational efficiency. Hardware experiments on a Unitree GO2 legged robot operating across different terrains demonstrate that NANO-L achieves approximately 40% lower estimation error than commonly used filters at a comparable computational cost.",
+      "authors": [
+        "Tianyi Zhang",
+        "Wenhan Cao",
+        "Chang Liu",
+        "Yao Lyu",
+        "Shengbo Eben Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-11T06:50:16+00:00",
+      "link": "https://arxiv.org/pdf/2604.10057v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "State estimation for legged robots to achieve agile control",
+      "llm_evidence_cn": "足式机器人实现敏捷控制的状态估计",
+      "llm_evidence": "足式机器人实现敏捷控制的状态估计",
+      "canonical_evidence": "足式机器人实现敏捷控制的状态估计",
+      "llm_tldr_en": "Proposes a Lie group manifold filter for accurate state estimation in legged robotic systems.",
+      "llm_tldr_cn": "提出一种李群流形滤波器，用于足式机器人系统的精确状态估计。",
+      "llm_tldr": "提出一种李群流形滤波器，用于足式机器人系统的精确状态估计。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.09330v1",
+      "source": "arxiv",
+      "title": "VAG: Dual-Stream Video-Action Generation for Embodied Data Synthesis",
+      "abstract": "Recent advances in robot foundation models trained on large-scale human teleoperation data have enabled robots to perform increasingly complex real-world tasks. However, scaling these systems remains difficult because collecting task-specific demonstrations is expensive and labor-intensive. Synthetic data, especially generated videos, offer a promising direction, but existing World Models (WMs) are not directly suitable for policy learning since they do not provide paired action trajectories. World-Action (WA) models partially address this by predicting actions with visual outputs, yet often lack strong video-action alignment, while two-stage pipelines that generate video first and then infer actions introduce inefficiency and error accumulation. To address these limitations, we propose VAG, a unified flow-matching-based dual-stream framework that jointly generates video and action under visual and language conditioning. By synchronizing denoising in both branches and using an adaptive 3D pooling mechanism to transfer compact global video context to the action branch, VAG improves cross-modal consistency during generation. Across both simulated and real-world settings, VAG produces aligned video-action pairs with competitive prediction quality, supports executable trajectory replay, and provides useful synthetic pretraining data that improves downstream policy generalization, indicating its potential as a practical world-action model for embodied data synthesis.",
+      "authors": [
+        "Xiaolei Lang",
+        "Yang Wang",
+        "Yukun Zhou",
+        "Chaojun Ni",
+        "Kerui Li",
+        "Jiagang Zhu",
+        "Tianze Liu",
+        "Jiajun Lv",
+        "Xingxing Zuo",
+        "Yun Ye",
+        "Guan Huang",
+        "Xiaofeng Wang",
+        "Zheng Zhu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-04-10T13:59:54+00:00",
+      "link": "https://arxiv.org/pdf/2604.09330v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "World models for policy learning and action generation",
+      "llm_evidence_cn": "用于策略学习和动作生成的世界模型",
+      "llm_evidence": "用于策略学习和动作生成的世界模型",
+      "canonical_evidence": "用于策略学习和动作生成的世界模型",
+      "llm_tldr_en": "Presents VAG for dual-stream video-action generation to improve world models for embodied policy learning.",
+      "llm_tldr_cn": "提出VAG双流视频动作生成模型，以改进用于具身策略学习的世界模型。",
+      "llm_tldr": "提出VAG双流视频动作生成模型，以改进用于具身策略学习的世界模型。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.10351v2",
+      "source": "arxiv",
+      "title": "Trajectory-based actuator identification via differentiable simulation",
+      "abstract": "Accurate actuation models are critical for bridging the gap between simulation and real robot behavior, yet obtaining high-fidelity actuator dynamics typically requires dedicated test stands and torque sensing. We present a trajectory-based actuator identification method that uses differentiable simulation to fit system-level actuator models from encoder motion alone. Identification is posed as a trajectory-matching problem: given commanded joint positions and measured joint angles and velocities, we optimize actuator and simulator parameters by backpropagating through the simulator, without torque sensors, current/voltage measurements, or access to embedded motor-control internals. The framework supports multiple model classes, ranging from compact structured parameterizations to neural actuator mappings, within a unified optimization pipeline. On held-out real-robot trajectories for a high-gear-ratio actuator with an embedded PD controller, the proposed torque-sensor-free identification achieves much tighter trajectory alignment than a supervised stand-trained baseline dominated by steady-state data, reducing mean absolute position error from 14.20 mrad to as low as 7.54 mrad (1.88 times). Finally, we demonstrate downstream impact for the same actuator class in a real-robot locomotion study: training policies with the refined actuator model increases travel distance by 46% and reduces rotational deviation by 75% relative to the baseline.",
+      "authors": [
+        "Vyacheslav Kovalev",
+        "Ekaterina Chaikovskaia",
+        "Egor Davydenko",
+        "Roman Gorbachev"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-11T21:36:34+00:00",
+      "link": "https://arxiv.org/pdf/2604.10351v2",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "actuator identification for bridging sim-to-real gap in robot behavior",
+      "llm_evidence_cn": "执行器辨识以弥合机器人行为的虚实差距",
+      "llm_evidence": "执行器辨识以弥合机器人行为的虚实差距",
+      "canonical_evidence": "执行器辨识以弥合机器人行为的虚实差距",
+      "llm_tldr_en": "A method to identify actuator dynamics using differentiable simulation to improve robot model accuracy.",
+      "llm_tldr_cn": "一种利用可微仿真识别执行器动力学的方法，旨在提高机器人模型的准确性。",
+      "llm_tldr": "一种利用可微仿真识别执行器动力学的方法，旨在提高机器人模型的准确性。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.11090v1",
+      "source": "arxiv",
+      "title": "Simulator Adaptation for Sim-to-Real Learning of Legged Locomotion via Proprioceptive Distribution Matching",
+      "abstract": "Simulation trained legged locomotion policies often exhibit performance loss on hardware due to dynamics discrepancies between the simulator and the real world, highlighting the need for approaches that adapt the simulator itself to better match hardware behavior. Prior work typically quantify these discrepancies through precise, time-aligned matching of joint and base trajectories. This process requires motion capture, privileged sensing, and carefully controlled initial conditions. We introduce a practical alternative based on proprioceptive distribution matching, which compares hardware and simulation rollouts as distributions of joint observations and actions, eliminating the need for time alignment or external sensing. Using this metric as a black-box objective, we explore adapting simulator dynamics through parameter identification, action-delta models, and residual actuator models. Our approach matches the parameter recovery and policy-performance gains of privileged state-matching baselines across extensive sim-to-sim ablations on the Go2 quadruped. Real-world experiments demonstrate substantial drift reduction using less than five minutes of hardware data, even for a challenging two-legged walking behavior. These results demonstrate that proprioceptive distribution matching provides a practical and effective route to simulator adaptation for sim-to-real transfer of learned legged locomotion.",
+      "authors": [
+        "Jeremy Dao",
+        "Alan Fern"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-13T07:10:52+00:00",
+      "link": "https://arxiv.org/pdf/2604.11090v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "sim-to-real learning of legged locomotion via distribution matching",
+      "llm_evidence_cn": "通过分布匹配进行腿足机器人运动的虚实迁移学习",
+      "llm_evidence": "通过分布匹配进行腿足机器人运动的虚实迁移学习",
+      "canonical_evidence": "通过分布匹配进行腿足机器人运动的虚实迁移学习",
+      "llm_tldr_en": "Adapts simulators for legged robots by matching proprioceptive distributions between simulation and reality.",
+      "llm_tldr_cn": "通过匹配仿真与现实间的本体感受分布，为腿足机器人调整仿真器环境。",
+      "llm_tldr": "通过匹配仿真与现实间的本体感受分布，为腿足机器人调整仿真器环境。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.09474v1",
+      "source": "arxiv",
+      "title": "SafeMind: A Risk-Aware Differentiable Control Framework for Adaptive and Safe Quadruped Locomotion",
+      "abstract": "Learning-based quadruped controllers achieve impressive agility but typically lack formal safety guarantees under model uncertainty, perception noise, and unstructured contact conditions. We introduce SafeMind, a differentiable stochastic safety-control framework that unifies probabilistic Control Barrier Functions with semantic context understanding and meta-adaptive risk calibration. SafeMind explicitly models epistemic and aleatoric uncertainty through a variance-aware barrier constraint embedded in a differentiable quadratic program, thereby preserving gradient flow for end-to-end training. A semantics-to-constraint encoder modulates safety margins using perceptual or language cues, while a meta-adaptive learner continuously adjusts risk sensitivity across environments. We provide theoretical conditions for probabilistic forward invariance, feasibility, and stability under stochastic dynamics. SafeMind is deployed on Unitree A1 and ANYmal C at 200~Hz and validated across 12 terrain types, dynamic obstacles, morphology perturbations, and semantically defined tasks. Experiments show that SafeMind reduces safety violations by 3--10x and energy consumption by 10--15% relative to state-of-the-art CBF, MPC, and hybrid RL baselines, while maintaining real-time control performance.",
+      "authors": [
+        "Zukun Zhang",
+        "Kai Shu",
+        "Mingqiao Mo"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-04-10T16:33:32+00:00",
+      "link": "https://arxiv.org/pdf/2604.09474v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "differentiable control framework for adaptive and safe quadruped locomotion",
+      "llm_evidence_cn": "用于自适应安全四足运动的可微控制框架",
+      "llm_evidence": "用于自适应安全四足运动的可微控制框架",
+      "canonical_evidence": "用于自适应安全四足运动的可微控制框架",
+      "llm_tldr_en": "SafeMind provides a risk-aware differentiable control framework for safe quadruped robot locomotion.",
+      "llm_tldr_cn": "SafeMind 为四足机器人安全运动提供了一个风险感知的可微控制框架。",
+      "llm_tldr": "SafeMind 为四足机器人安全运动提供了一个风险感知的可微控制框架。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.13533v1",
+      "source": "arxiv",
+      "title": "Evolvable Embodied Agent for Robotic Manipulation via Long Short-Term Reflection and Optimization",
+      "abstract": "Achieving general-purpose robotics requires empowering robots to adapt and evolve based on their environment and feedback. Traditional methods face limitations such as extensive training requirements, difficulties in cross-task generalization, and lack of interpretability. Prompt learning offers new opportunities for self-evolving robots without extensive training, but simply reflecting on past experiences.However, extracting meaningful insights from task successes and failures remains a challenge. To this end, we propose the evolvable embodied agent (EEAgent) framework, which leverages large vision-language models (VLMs) for better environmental interpretation and policy planning. To enhance reflection on past experiences, we propose a long short-term reflective optimization (LSTRO) mechanism that dynamically refines prompts based on both past experiences and newly learned lessons, facilitating continuous self-evolution, thereby enhancing overall task success rates. Evaluations on six VIMA-Bench tasks reveal that our approach sets a new state-of-the-art, notably outperforming baselines in complex scenarios.",
+      "authors": [
+        "Jianzong Wang",
+        "Botao Zhao",
+        "Yayun He",
+        "Junqing Peng",
+        "Xulong Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-04-15T06:29:02+00:00",
+      "link": "https://arxiv.org/pdf/2604.13533v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "VLM-based policy planning and environmental interpretation",
+      "llm_evidence_cn": "基于大视觉语言模型的策略规划与环境解释",
+      "llm_evidence": "基于大视觉语言模型的策略规划与环境解释",
+      "canonical_evidence": "基于大视觉语言模型的策略规划与环境解释",
+      "llm_tldr_en": "Proposes EEAgent using VLMs for self-evolving robotic manipulation through reflection and planning.",
+      "llm_tldr_cn": "提出EEAgent框架，利用大视觉语言模型通过反思和规划实现机器人操作的自我进化。",
+      "llm_tldr": "提出EEAgent框架，利用大视觉语言模型通过反思和规划实现机器人操作的自我进化。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.11302v1",
+      "source": "arxiv",
+      "title": "3D-Anchored Lookahead Planning for Persistent Robotic Scene Memory via World-Model-Based MCTS",
+      "abstract": "We present 3D-Anchored Lookahead Planning (3D-ALP), a System 2 reasoning engine for robotic manipulation that combines Monte Carlo Tree Search (MCTS) with a 3D-consistent world model as the rollout oracle. Unlike reactive policies that evaluate actions from the current camera frame only, 3D-ALP maintains a persistent camera-to-world (c2w) anchor that survives occlusion, enabling accurate replanning to object positions that are no longer directly observable. On a 5-step sequential reach task requiring spatial memory (Experiment E3), 3D-ALP achieves 0.650 0.109 success rate on memory-required steps versus 0.006 0.008 for a greedy reactive baseline (Δ=+0.645), while step 5 success reaches 0.822 against 0.000 for greedy. An ablation study (30 episodes, 3 seeds) isolates tree search spatial memory as the primary driver (+0.533, 82% of gain) with additional benefit from deeper lookahead (+0.111, 17%). We also identify and resolve four structural failure modes in applying UCT-MCTS (Upper Confidence Bounds applied to Trees [10]) to continuous robotic manipulation.",
+      "authors": [
+        "Bronislav Sidik",
+        "Dror Mizrahi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-04-13T11:01:30+00:00",
+      "link": "https://arxiv.org/pdf/2604.11302v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "World-model-based MCTS for robotic planning",
+      "llm_evidence_cn": "基于世界模型的MCTS机器人规划",
+      "llm_evidence": "基于世界模型的MCTS机器人规划",
+      "canonical_evidence": "基于世界模型的MCTS机器人规划",
+      "llm_tldr_en": "Combines MCTS with a 3D-consistent world model for lookahead planning and spatial memory in robotics.",
+      "llm_tldr_cn": "将MCTS与3D一致性世界模型结合，用于机器人的前瞻规划和空间记忆。",
+      "llm_tldr": "将MCTS与3D一致性世界模型结合，用于机器人的前瞻规划和空间记忆。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.11135v1",
+      "source": "arxiv",
+      "title": "AIM: Intent-Aware Unified world action Modeling with Spatial Value Maps",
+      "abstract": "Pretrained video generation models provide strong priors for robot control, but existing unified world action models still struggle to decode reliable actions without substantial robot-specific training. We attribute this limitation to a structural mismatch: while video models capture how scenes evolve, action generation requires explicit reasoning about where to interact and the underlying manipulation intent. We introduce AIM, an intent-aware unified world action model that bridges this gap via an explicit spatial interface. Instead of decoding actions directly from future visual representations, AIM predicts an aligned spatial value map that encodes task-relevant interaction structure, enabling a control-oriented abstraction of future dynamics. Built on a pretrained video generation model, AIM jointly models future observations and value maps within a shared mixture-of-transformers architecture. It employs intent-causal attention to route future information to the action branch exclusively through the value representation. We further propose a self-distillation reinforcement learning stage that freezes the video and value branches and optimizes only the action head using dense rewards derived from projected value-map responses together with sparse task-level signals. To support training and evaluation, we construct a simulation dataset of 30K manipulation trajectories with synchronized multi-view observations, actions, and value-map annotations. Experiments on RoboTwin 2.0 benchmark show that AIM achieves a 94.0% average success rate, significantly outperforming prior unified world action baselines. Notably, the improvement is more pronounced in long-horizon and contact-sensitive manipulation tasks, demonstrating the effectiveness of explicit spatial-intent modeling as a bridge between visual world modeling and robot control.",
+      "authors": [
+        "Liaoyuan Fan",
+        "Zetian Xu",
+        "Chen Cao",
+        "Wenyao Zhang",
+        "Mingqi Yuan",
+        "Jiayu Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-04-13T07:48:58+00:00",
+      "link": "https://arxiv.org/pdf/2604.11135v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Unified world action model for robot control and future dynamics abstraction",
+      "llm_evidence_cn": "用于机器人控制和未来动力学抽象的统一世界动作模型",
+      "llm_evidence": "用于机器人控制和未来动力学抽象的统一世界动作模型",
+      "canonical_evidence": "用于机器人控制和未来动力学抽象的统一世界动作模型",
+      "llm_tldr_en": "Introduces AIM, an intent-aware world action model using spatial value maps for better robot control.",
+      "llm_tldr_cn": "引入AIM，一种利用空间价值图进行机器人控制的意图感知世界动作模型。",
+      "llm_tldr": "引入AIM，一种利用空间价值图进行机器人控制的意图感知世界动作模型。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
