@@ -6,73 +6,76 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-04-20
-- 运行时间：2026-04-20 20:16:05 UTC
+- 最新运行日期：2026-04-21
+- 运行时间：2026-04-21 20:34:28 UTC
 - 运行状态：成功
-- 本次总论文数：17
-- 精读区：6
+- 本次总论文数：18
+- 精读区：7
 - 速读区：11
 
 ### 今日简报（AI）
-今日精选 17 篇前沿成果，深度攻克双足机器人高性能运动与 Sim-to-Real 迁移难题。
-核心突破在于利用被动身体动力学优化强化学习，并结合本体感受分布匹配实现精准的仿真适配。
-建议优先研读 10 分满分论文，探索物理动力学与模型强化学习融合的极致性能。
-- 详情：[/202604/20/README](/202604/20/README)
+今日精选 18 篇机器人前沿论文，重点攻克足式机器人在复杂地形下的感知适应与动力学控制难题。
+满分论文展示了如何通过时序序列选择实现地形自适应，以及利用被动身体动力学大幅提升双足机器人的行走性能。
+建议深入研读强化学习与物理特性融合的最新成果，探索足式机器人迈向自然、稳健运动的底层逻辑。
+- 详情：[/202604/21/README](/202604/21/README)
 
 ### 精读区论文标签
-1. [Model-Based Reinforcement Learning Exploits Passive Body Dynamics for High-Performance Biped Robot Locomotion](/202604/20/2604.14565v1-model-based-reinforcement-learning-exploits-passive-body-dynamics-for-high-performance-biped-robot-locomotion)  
-   标签：评分：10.0/10、query:q4
-   evidence：利用被动动力学的双足机器人运动模型强化学习
-2. [Simulator Adaptation for Sim-to-Real Learning of Legged Locomotion via Proprioceptive Distribution Matching](/202604/20/2604.11090v1-simulator-adaptation-for-sim-to-real-learning-of-legged-locomotion-via-proprioceptive-distribution-matching)  
-   标签：评分：9.0/10、query:q4
-   evidence：用于足式机器人运动仿真转现实的模拟器自适应
-3. [A Foot Resistive Force Model for Legged Locomotion on Muddy Terrains](/202604/20/2604.12006v1-a-foot-resistive-force-model-for-legged-locomotion-on-muddy-terrains)  
-   标签：评分：9.0/10、query:q2
-   evidence：专注于足式机器人运动以及足部与地形交互的导航模型
-4. [Asymptotically Stable Gait Generation and Instantaneous Walkability Determination for Planar Almost Linear Biped with Knees](/202604/20/2604.12274v1-asymptotically-stable-gait-generation-and-instantaneous-walkability-determination-for-planar-almost-linear-biped-with-knees)  
-   标签：评分：9.0/10、query:q2
-   evidence：平面双足机器人的步态生成与行走能力判定
-5. [PAINT: Partner-Agnostic Intent-Aware Cooperative Transport with Legged Robots](/202604/20/2604.12852v1-paint-partner-agnostic-intent-aware-cooperative-transport-with-legged-robots)  
-   标签：评分：9.0/10、query:profile-1
-   evidence：足式机器人的意图感知协作运输
-6. [CART: Context-Aware Terrain Adaptation using Temporal Sequence Selection for Legged Robots](/202604/20/2604.14344v1-cart-context-aware-terrain-adaptation-using-temporal-sequence-selection-for-legged-robots)  
-   标签：评分：9.0/10、query:q4
+1. [CART: Context-Aware Terrain Adaptation using Temporal Sequence Selection for Legged Robots](/202604/21/2604.14344v1-cart-context-aware-terrain-adaptation-using-temporal-sequence-selection-for-legged-robots)  
+   标签：评分：10.0/10、query:profile-1
    evidence：结合视觉与本体感知的足式机器人上下文感知地形自适应
+2. [Model-Based Reinforcement Learning Exploits Passive Body Dynamics for High-Performance Biped Robot Locomotion](/202604/21/2604.14565v1-model-based-reinforcement-learning-exploits-passive-body-dynamics-for-high-performance-biped-robot-locomotion)  
+   标签：评分：10.0/10、query:q4
+   evidence：基于模型的强化学习用于双足机器人运动
+3. [Simulator Adaptation for Sim-to-Real Learning of Legged Locomotion via Proprioceptive Distribution Matching](/202604/21/2604.11090v1-simulator-adaptation-for-sim-to-real-learning-of-legged-locomotion-via-proprioceptive-distribution-matching)  
+   标签：评分：9.0/10、query:q2
+   evidence：通过分布匹配进行足式机器人运动的从仿真到现实学习
+4. [A Foot Resistive Force Model for Legged Locomotion on Muddy Terrains](/202604/21/2604.12006v1-a-foot-resistive-force-model-for-legged-locomotion-on-muddy-terrains)  
+   标签：评分：9.0/10、query:q2
+   evidence：泥泞地形下足式机器人运动的阻力模型
+5. [Asymptotically Stable Gait Generation and Instantaneous Walkability Determination for Planar Almost Linear Biped with Knees](/202604/21/2604.12274v1-asymptotically-stable-gait-generation-and-instantaneous-walkability-determination-for-planar-almost-linear-biped-with-knees)  
+   标签：评分：9.0/10、query:q2
+   evidence：双足机器人的步态生成
+6. [PAINT: Partner-Agnostic Intent-Aware Cooperative Transport with Legged Robots](/202604/21/2604.12852v1-paint-partner-agnostic-intent-aware-cooperative-transport-with-legged-robots)  
+   标签：评分：9.0/10、query:q2
+   evidence：腿足机器人协作运输与意图估计
+7. [Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking](/202604/21/2604.17335v1-learning-whole-body-humanoid-locomotion-via-motion-generation-and-motion-tracking)  
+   标签：评分：9.0/10、query:q2
+   evidence：全身类人机器人运动与地形感知自适应
 
 ### 速读区论文标签
-1. [AIM: Intent-Aware Unified world action Modeling with Spatial Value Maps](/202604/20/2604.11135v1-aim-intent-aware-unified-world-action-modeling-with-spatial-value-maps)  
+1. [AIM: Intent-Aware Unified world action Modeling with Spatial Value Maps](/202604/21/2604.11135v1-aim-intent-aware-unified-world-action-modeling-with-spatial-value-maps)  
    标签：评分：8.0/10、query:q1
-   evidence：用于机器人控制的统一世界动作建模
-2. [CLAW: Composable Language-Annotated Whole-body Motion Generation](/202604/20/2604.11251v1-claw-composable-language-annotated-whole-body-motion-generation)  
+   evidence：带有空间价值图的统一世界动作建模
+2. [CLAW: Composable Language-Annotated Whole-body Motion Generation](/202604/21/2604.11251v1-claw-composable-language-annotated-whole-body-motion-generation)  
    标签：评分：8.0/10、query:q2
-   evidence：人足机器人的全身运动生成
-3. [CLAW: Composable Language-Annotated Whole-body Motion Generation](/202604/20/2604.11251v3-claw-composable-language-annotated-whole-body-motion-generation)  
-   标签：评分：8.0/10、query:q2
-   evidence：宇树 G1 人形机器人的全身运动生成
-4. [3D-Anchored Lookahead Planning for Persistent Robotic Scene Memory via World-Model-Based MCTS](/202604/20/2604.11302v1-3d-anchored-lookahead-planning-for-persistent-robotic-scene-memory-via-world-model-based-mcts)  
-   标签：评分：8.0/10、query:q1
-   evidence：结合蒙特卡洛树搜索与3D一致性世界模型进行机器人规划
-5. [ScoRe-Flow: Complete Distributional Control via Score-Based Reinforcement Learning for Flow Matching](/202604/20/2604.10962v1-score-flow-complete-distributional-control-via-score-based-reinforcement-learning-for-flow-matching)  
-   标签：评分：7.0/10、query:q1
-   evidence：用于机器人控制的流匹配策略与强化学习微调
-6. [CLAW: Composable Language-Annotated Whole-body Motion Generation](/202604/20/2604.11251v2-claw-composable-language-annotated-whole-body-motion-generation)  
-   标签：评分：7.0/10、query:q2
    evidence：人形机器人的全身运动生成
-7. [ComSim: Building Scalable Real-World Robot Data Generation via Compositional Simulation](/202604/20/2604.11386v1-comsim-building-scalable-real-world-robot-data-generation-via-compositional-simulation)  
+3. [CLAW: Composable Language-Annotated Whole-body Motion Generation](/202604/21/2604.11251v2-claw-composable-language-annotated-whole-body-motion-generation)  
+   标签：评分：8.0/10、query:q2
+   evidence：人形机器人全身运动生成与运动学规划器
+4. [CLAW: Composable Language-Annotated Whole-body Motion Generation](/202604/21/2604.11251v3-claw-composable-language-annotated-whole-body-motion-generation)  
+   标签：评分：8.0/10、query:q2
+   evidence：类人机器人的全身运动生成
+5. [Vision-and-Language Navigation for UAVs: Progress, Challenges, and a Research Roadmap](/202604/21/2604.13654v1-vision-and-language-navigation-for-uavs-progress-challenges-and-a-research-roadmap)  
+   标签：评分：7.0/10、query:q5
+   evidence：具身智能与导航中世界模型的综述
+6. [HY-World 2.0: A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds](/202604/21/2604.14268v1-hy-world-20-a-multi-modal-world-model-for-reconstructing-generating-and-simulating-3d-worlds)  
    标签：评分：7.0/10、query:q1
-   evidence：利用世界模型实现机器人自主任务执行和数据生成
-8. [Evolving the Complete Muscle: Efficient Morphology-Control Co-design for Musculoskeletal Locomotion](/202604/20/2604.12855v1-evolving-the-complete-muscle-efficient-morphology-control-co-design-for-musculoskeletal-locomotion)  
-   标签：评分：7.0/10、query:q2
-   evidence：肌肉骨骼运动的形态与控制协同设计
-9. [Trajectory-based actuator identification via differentiable simulation](/202604/20/2604.10351v1-trajectory-based-actuator-identification-via-differentiable-simulation)  
-   标签：评分：6.0/10、query:q3
-   evidence：通过可微仿真进行执行器识别以优化机器人行为
-10. [Trajectory-based actuator identification via differentiable simulation](/202604/20/2604.10351v2-trajectory-based-actuator-identification-via-differentiable-simulation)  
-   标签：评分：6.0/10、query:q3
-   evidence：通过可微仿真进行机器人动力学执行器识别
-11. [Vision-and-Language Navigation for UAVs: Progress, Challenges, and a Research Roadmap](/202604/20/2604.13654v1-vision-and-language-navigation-for-uavs-progress-challenges-and-a-research-roadmap)  
+   evidence：用于3D世界生成与模拟的多模态世界模型
+7. [Human Cognition in Machines: A Unified Perspective of World Models](/202604/21/2604.16592v1-human-cognition-in-machines-a-unified-perspective-of-world-models)  
+   标签：评分：7.0/10、query:q5
+   evidence：世界模型的统一视角与现状
+8. [Sonata: A Hybrid World Model for Inertial Kinematics under Clinical Data Scarcity](/202604/21/2604.18058v1-sonata-a-hybrid-world-model-for-inertial-kinematics-under-clinical-data-scarcity)  
+   标签：评分：7.0/10、query:q3
+   evidence：用于IMU表示和状态预测的潜空间世界模型
+9. [ScoRe-Flow: Complete Distributional Control via Score-Based Reinforcement Learning for Flow Matching](/202604/21/2604.10962v1-score-flow-complete-distributional-control-via-score-based-reinforcement-learning-for-flow-matching)  
    标签：评分：6.0/10、query:q1
-   evidence：将生成式世界模型与VLA架构集成用于导航
+   evidence：基于得分的强化学习用于机器人控制
+10. [Beyond State Consistency: Behavior Consistency in Text-Based World Models](/202604/21/2604.13824v1-beyond-state-consistency-behavior-consistency-in-text-based-world-models)  
+   标签：评分：6.0/10、query:q1
+   evidence：文本世界模型中的行为一致性
+11. [From Seeing to Simulating: Generative High-Fidelity Simulation with Digital Cousins for Generalizable Robot Learning and Evaluation](/202604/21/2604.15805v1-from-seeing-to-simulating-generative-high-fidelity-simulation-with-digital-cousins-for-generalizable-robot-learning-and-evaluation)  
+   标签：评分：6.0/10、query:q1
+   evidence：用于模拟和机器人学习的生成式框架
 
 
 <div class="dpr-home-promo-card">

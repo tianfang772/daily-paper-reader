@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.16592v1/fig-001.webp",
+      "caption": "Fig. 5. Above are the typical architectures encountered when reviewing embodied World Models.",
+      "page": 30,
+      "index": 1,
+      "width": 725,
+      "height": 923
+    },
+    {
+      "url": "assets/figures/arxiv/2604.16592v1/fig-002.webp",
+      "caption": "Fig. 3. The component-parts of our Unified World Model built from first principles in cognitive architecture theory [123] and meta-cognition [10]. This serves as a conceptual road-map for World Model research.",
+      "page": 7,
+      "index": 2,
+      "width": 725,
+      "height": 506
+    },
+    {
+      "url": "assets/figures/arxiv/2604.16592v1/fig-003.webp",
+      "caption": "Fig. 6. Above are the typical architecture and Global Workspace frameworks encountered when reviewing World Models for scientific discovery used with a human-in-theloop subject-matter expert.",
+      "page": 34,
+      "index": 3,
+      "width": 725,
+      "height": 770
+    },
+    {
+      "url": "assets/figures/arxiv/2604.16592v1/fig-004.webp",
+      "caption": "Fig. 1. Our survey studies the convergence of three different but inter-related fields: human cognition, machine cognition, and World Models.",
+      "page": 3,
+      "index": 4,
+      "width": 725,
+      "height": 282
+    },
+    {
+      "url": "assets/figures/arxiv/2604.16592v1/fig-005.webp",
+      "caption": "Table 2: A check (✓) indicates the work makes a clear contribution to that cognitive function in the context of video World Models; a cross (✗) indicates it is not a contribution.",
+      "page": 18,
+      "index": 5,
+      "width": 841,
+      "height": 1073
+    },
+    {
+      "url": "assets/figures/arxiv/2604.16592v1/fig-006.webp",
+      "caption": "Fig. 2. The taxonomy of World Models covered in our survey correspond to the component parts of cognitive architecture theory [123] they innovate most.",
+      "page": 4,
+      "index": 6,
+      "width": 725,
+      "height": 399
+    },
+    {
+      "url": "assets/figures/arxiv/2604.16592v1/fig-007.webp",
+      "caption": "Table 4. Epistemic World Model works in this report mapped to Cognitive Architecture Theory (CAT) functions and subtasks. In the Subtask column, T = Trust, Human-alignment, and Interpretability, C = Software Co-pilots, M = Medical Research and Application, and S = Social Science. Composite labels indicate that a work contributes to multiple Human–AI collaboration subtasks. A check (✓) indicates the work makes a clear contribution to that CAT function in the context of collaboration; a cross (✗) indicates it is not a contribution.",
+      "page": 36,
+      "index": 7,
+      "width": 710,
+      "height": 924
+    },
+    {
+      "url": "assets/figures/arxiv/2604.16592v1/fig-008.webp",
+      "caption": "Fig. 4. Above are the typical architectures encountered when reviewing video World Models.",
+      "page": 20,
+      "index": 8,
+      "width": 725,
+      "height": 1134
+    },
+    {
+      "url": "assets/figures/arxiv/2604.16592v1/fig-009.webp",
+      "caption": "Table 1. Comparison of World Model survey scope. A check (✓) indicates the survey explicitly covers that domain. The survey withn our report is the first to classify World Models by the cognitive functions they innovate using Cognitive Architecture Theory (CAT).",
+      "page": 5,
+      "index": 9,
+      "width": 606,
+      "height": 300
+    }
+  ]
+}

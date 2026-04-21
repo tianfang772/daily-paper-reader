@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.18058v1/fig-001.webp",
+      "caption": "Figure 2: Sonata architecture, pretraining objective, and downstream probe. Top: The input sequence is embedded into H(0) and processed by a hybrid backbone interleaving LongConvBlocks (C) and GatedDeltaNetBlocks (G). Intermediate recurrent states weave across units via state injection (eq. (3)). During self-supervised pretraining, the terminal latent state St is routed through an expand–compress projector πϕ and linear predictor Wp to minimize the Latent World Model (LWM) objective (algorithm 1). For downstream tasks, the LWM heads are discarded, the encoder is frozen, and the final MLP-block embeddings are mean-pooled over time before a lightweight logistic-regression probe is applied. Bottom: Detailed schematics of the LongConvBlock [47] and GatedDeltaNetBlock [39] comprising the hybrid sequence mixer. Full operational details and mathematical formulations are provided in section 4.2.",
+      "page": 6,
+      "index": 1,
+      "width": 1102,
+      "height": 445
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18058v1/fig-002.webp",
+      "caption": "Table 4: Consolidated ablation summary. Each row changes one design decision relative to production; all other hyperparameters are held fixed. Predictor-head variants are omitted (see table 3). Bold: production value, or a strict improvement over it on that column.",
+      "page": 11,
+      "index": 2,
+      "width": 725,
+      "height": 309
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18058v1/fig-003.webp",
+      "caption": "Table 3: Predictor ablation under a fixed JEPA encoder. Only the predictor head varies; the encoder, projector, data pipeline, and training schedule are shared. Bold marks the best value per row. PAMAP2 is fully withheld from pretraining (OOD). GDN training diverged at epoch 4; results reflect this early checkpoint. Arrows indicate the preferred direction of each metric.",
+      "page": 11,
+      "index": 3,
+      "width": 877,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18058v1/fig-004.webp",
+      "caption": "Table 7: Primary mathematical notation used in the Sonata architecture and objective formulation.",
+      "page": 18,
+      "index": 4,
+      "width": 512,
+      "height": 656
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18058v1/fig-005.webp",
+      "caption": "Table 5: Evaluation battery used to assess frozen encoder representations. LOOCV denotes leave-one-subject-out cross-validation; AWGN denotes additive white Gaussian noise. Scope indicates whether a probe is planned for all predictor arms or only for the primary shared-backbone LIN/MAE comparison, where MAE denotes the raw-signal forecasting baseline trained with mean absolute error.",
+      "page": 17,
+      "index": 5,
+      "width": 1062,
+      "height": 262
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18058v1/fig-006.webp",
+      "caption": "Table 2: Controlled comparison between the production latent world-model objective (LIN) and a causal raw-signal forecasting baseline (MAE, named for its mean-absolute-error loss) on the same hybrid encoder backbone. The comparison keeps the encoder, latent read-out, and downstream probe fixed, changing only the pretraining head and supervisory target: LIN predicts the latent state of the next window with projector + linear predictor + SIGReg, whereas MAE predicts the final 48 raw IMU samples from a 464-sample context via a cross-attention decoder. Bold indicates the better value in each row; OOD marks PAMAP2-based probes withheld from pretraining. Arrows indicate the preferred direction of each metric.",
+      "page": 9,
+      "index": 6,
+      "width": 1060,
+      "height": 400
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18058v1/fig-007.webp",
+      "caption": "Figure 3: Latent geometry on SisFall activities and fall directions, shown as two-dimensional t-SNE projections of the terminal latent state for the production LIN model, three alternative predictor heads, and the raw-signal forecasting MAE baseline. The visualization is designed to be read comparatively: while no model achieves clean class separation, the token-level world-model variants (LIN and MLP) preserve more coherent local clustering than the sequence-level predictors or the MAE baseline, mirroring the quantitative performance gaps in Table 2 and Table 3. The residual overlap across all panels is itself informative, suggesting that SisFall imposes a meaningful separability ceiling under this windowing and labeling setup.",
+      "page": 9,
+      "index": 7,
+      "width": 1059,
+      "height": 238
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18058v1/fig-008.webp",
+      "caption": "Table 1: Pretraining corpus. Fall % denotes the fraction of windows carrying a positive fall label for that source. For LTMM, fall-positive labels reflect retrospective faller-subject status rather than within-window impact events (see text).",
+      "page": 5,
+      "index": 8,
+      "width": 700,
+      "height": 286
+    }
+  ]
+}
