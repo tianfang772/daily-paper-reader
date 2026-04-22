@@ -1,0 +1,968 @@
+Title: Asymptotically Stable Gait Generation and Instantaneous Walkability Determination for Planar Almost Linear Biped with Knees
+
+URL Source: https://arxiv.org/pdf/2604.12274v1
+
+Published Time: Wed, 15 Apr 2026 00:49:41 GMT
+
+Number of Pages: 7
+
+Markdown Content:
+# Asymptotically Stable Gait Generation and Instantaneous Walkability Determination for Planar Almost Linear Biped with Knees 
+
+Fumihiko Asano, Ning Lei, and Taiki Sedoguchi 
+
+Abstract — A class of planar bipedal robots with unique mechanical properties has been proposed, where all links are balanced around the hip joint, preventing natural swinging motion due to gravity. A common property of their equations of motion is that the inertia matrix is a constant matrix, there are no nonlinear velocity terms, and the gravity term contains simple nonlinear terms. By performing a Taylor expansion of the gravity term and making a linear approximation, it is easy to derive a linearized model, and calculations for future states or walkability determination can be performed instantaneously without the need for numerical integration. This paper extends the method to a planar biped robot model with knees. First, we derive the equations of motion, constraint conditions, and inelastic collisions for a planar 6-DOF biped robot, design its control system, and numerically generate a stable bipedal gait on a horizontal plane. Next, we reduce the equations of motion to a 3-DOF model, and derive alinearized model by approximating the gravity term as linear around the expansion point for the thigh frame angle. Through numerical simulations, we demonstrate that calculations for future states and walkability determination can be completed in negligible time. By applying control inputs to the obtained model, performing state-space realization, and then discretizing it, instantaneous walkability determination through iterative calculation becomes possible. Through detailed gait analysis, we discuss how the knee joint flexion angle and the expansion point affect the accuracy of the linear approximation, and the issues that arise when descending a small step. 
+
+I. INTRODUCTION The primary reason why the efficient gait generation theory for legged locomotion robots, originating from passive dynamic walking research [1], [2], has yet to permeate industry is the difficulty of having to spend an enormous amount of time analyzing whether it can safely walk to the target destination. While recent advances in visual informa-tion processing enable high-precision, high-speed recogni-tion of road surface conditions, determining the stability of hybrid zero dynamics (HZD) [3], [4] remains complex, and theoretical improvements for practical implementation have not progressed. To safely operate bipedal robots in complex environments, it is essential to determine in real time not only whether the inherently generated gait is stable but also whether safe walking to the target destination is feasible. The objective of our study is to generate asymptotically stable gaits for a planar biped robot described by an almost                       
+
+> This research was partially supported by Grant-in-Aid for Scientific Re-search (C) No. 23K03727, provided by the Japan Society for the Promotion of Science (JSPS). The authors are with the Graduate School of Advanced Science and Technology, Japan Advanced Institute of Science and Technology, 1-1 Asahidai, Nomi, Ishikawa 923-1292, Japan
+
+{fasano,s2510193,sedoguchi }@jaist.ac.jp 
+
+linear equation of motion, and to construct an ultrahigh-speed future state calculation method that does not require numeri-cal integration by utilizing the approximate HZD. Compared to general bipedal humanoids, the biped robots addressed in this study have a slightly different appearance, but they possess the mathematical characteristics described below. Therefore, even when performing approximate linearization of motion, significant differences between the original non-linear model and the linearized model are unlikely to arise, enabling high-precision future state calculations without the need for numerical integration. Kiefer and Ramesh proposed an almost linear biped con-sisting of two leg frames and a reaction wheel sandwiched between them, and examined the wheel gait generation problem [5]. The mathematical characteristic of the robot is that the centers of mass (COMs) of the leg frames and the reaction wheel are located at the same position as the hip joint that connects them, which results in a very simple equation of motion. Generating stable wheel gait is not an easy problem, but since the swing leg rotates in the same direction as the stance leg, there is no risk of swing-foot scuffing at mid-stance. Subsequently, Spong et al. examined feedback linearization for gait generation using the same model [6]. Furthermore, Agrawal and Fattah proposed a planar biped model with knees and the COMs of both legs at the same position as the hip joint, and discussed the gait generation problem for one step [7]. A common feature of these almost linear legged locomotion (AL3) robots is that their equations of motion have a constant inertia matrix, no nonlinear velocity term, and nonlinear terms in the gravity term that can be easily approximated as linear. This paper reconstructs the biped model proposed in [7], [8] and develops an instantaneous walkability determination method through its dimensionality reduction, approximate linearization, and discretization. Numerical simulations an-alyze how the knee bending angle and the expansion point of the thigh frame angle in the approximate linearization affect the approximation accuracy. Furthermore, considering the situation of descending a small step during walking, we discuss issues in the control system that require improvement through this instantaneous walkability determination. II. NONLINEAR MODEL AND STABLE GAIT GENERATION 
+
+A. Equations of Motion and Constraint Conditions 
+
+Figure 1 shows the model of the planar 6-DOF biped robot with knees discussed in this paper. The position of the stance foot is (x, z ), the lower leg of the stance leg is Link 1, the    
+
+> © 2026 IEEE. This is the author’s version of the work. A typographical error in the inertia matrix Mhas been corrected.
+> arXiv:2604.12274v1 [cs.RO] 14 Apr 2026 Fig. 1. Model of planar, 6-DOF, almost linear biped with knees
+
+thigh of it is Link 2, the thigh of the swing leg is Link 3, the lower leg of it is Link 4, and the absolute angle of Link k from the vertical upward direction is θk. The stance foot is assumed to be in contact with the ground at a single point and not to slide during motion. Additionally, rotational torques u1, u2, and u3 can be applied to the knee joint of the stance leg, the hip joint, and the knee joint of the swing leg, respectively. The stance knee is, however, mechanically locked during motion, and u1 is effectively non-functional. Let the masses of the lower leg and thigh frames be m1
+
+and m2, respectively. On each frame, the respective masses are divided equally and placed at a distance r1 and r2 from the COM. As a result, the moments of inertia around the COM are I1 = m1r21 and I2 = m2r22 , respectively. As shown in Fig. 1 left, let L1 denote the length from the lower end of the lower leg frame to the knee joint (equivalent to the COM), L2 denote the length from the knee joint to the hip joint on the thigh frame, and ˆL2 denote the length from the knee joint to the COM. The condition for the COM of the thigh frame to align with the hip joint when the lower leg frame is attached becomes 
+
+ˆL2 = L2
+
+(
+
+1 + m1
+
+m2
+
+)
+
+. (1) Since the COM of the lower leg is at the same position as the knee joint, no natural swinging motion due to gravity occurs around this point. The COM of the upper leg is above the hip joint, and the masses of the upper and lower legs balance each other, resulting in the overall COM of the leg being at the same position as the hip joint. In other words, around the hip joint, none of the links exhibit natural swinging motion due to gravity. Let q = [ x z θ 1 θ2 θ3 θ4
+
+]T be the generalized coordinate vector. The robot equation of motion then becomes 
+
+M ¨q + C ˙q + g = Su + JT 
+
+> c
+
+λc, (2) where 
+
+M =
+
+
+
+m 0 mL 1C1 mL 2C2 0 0
+
+m −mL 1S1 −mL 2S2 0 0
+
+mL 21 + I1 mL 1L2C12 0 0   
+
+> (m1+2 m2)mL 22
+> 2m2
+
++ I2 0 0  
+
+> m1mL 22
+> 2m2
+
++ I2 0Sym . I1
+
+
+
+,
+
+C=
+
+
+
+0 0 −mL 1 ˙θ1S1 −mL 2 ˙θ2S2 0 0 0 0 −mL 1 ˙θ1C1 −mL 2 ˙θ2C2 0 0 0 0 0 mL 1L2 ˙θ2S12 0 0 0 0 −mL 1L2 ˙θ1S12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+
+
+, g =
+
+
+
+0
+
+mg 
+
+−mgL 1S1
+
+−mgL 2S2
+
+00
+
+
+
+.
+
+Here, m := 2( m1 + m2) is the robot’s total mass, C1 := cos θ1, S1 := sin θ1, C2 := cos θ2, S2 := sin θ2, C12 := cos( θ1 − θ2) and S12 := sin( θ1 − θ2).The details of the driving matrix and control input vector are as follows. 
+
+Su =
+
+
+
+0 0 00 0 01 0 0
+
+−1 1 00 −1 10 0 −1
+
+ u1
+
+u2
+
+u3
+
+ (3) 
+
+As mentioned, however, the stance knee is mechanically locked during motion, and u1 is effectively non-functional. Therefore, only u2 and u3 need to be designed. The velocity constraint conditions that the stance foot is in contact with the ground at a single point without slipping are described ˙x = 0 and ˙z = 0 . The relative angle between the lower leg link and upper leg link of the stance leg, i.e., the bending angle of the stance knee, is assumed to be mechanically fixed at β at all times. This geometric condition is described as θ1 − θ2 = β, and by differentiating this with respect to time, we obtain the velocity constraint condition ˙θ1 − ˙θ2 = 0 . Summarizing these three equations yields 
+
+Jc ˙q =
+
+ 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 −1 0 0 
+
+ ˙q = 03×1. (4) The time derivative of this becomes J c ¨q = 03×1. Using this and Eq. (2), the undetermined multiplier vector λc ∈ R3 can be determined. Its first component is the horizontal ground reaction force Fx, the second component is the vertical ground reaction force Fz , and the third component is the constraint force at the stance knee. One condition necessary for stable gait generation is that Fz remains positive at all times. The model in Fig. 1 maintains the entire COM at the same position as the hip joint throughout. Since the COM moves as a single inverted pendulum, even when the hip joint or swing-knee joint undergoes high-speed rotational motion, the COM does not fluctuate violently up and down, and Fz remains stable. 
+
+B. Collision Equation 
+
+As shown in Fig. 1 right, if the position of the swing foot is denoted as (¯ x, ¯z), the landing occurs at the instant when ¯z
+
+decreases monotonically while maintaining a positive value and reaches zero. ¯z is specifically described by 
+
+¯z = z + L1 cos θ1 + L2 cos θ2 − L2 cos θ3 − L1 cos θ4. (5) After this completely inelastic collision, the swing foot or fore foot is assumed to contact the ground at a single point and not slide. The inelastic collision equation becomes 
+
+M ˙q+ = M ˙q− + J T 
+
+> I
+
+λI . (6) The second term on the right-hand side of this equation is the impulse vector, and its Jacobian J I ∈ R4×6 is determined as follows. The velocity constraint conditions, which state that the swing foot collides inelastically with the ground and remains in contact without sliding immediately after the collision, are specified as follows. 
+
+˙¯x+ = d 
+
+> dt
+
+(x + L1S1 + L2S2 − L2S3 − L1S4)+ = 0 (7) 
+
+˙¯z+ = d 
+
+> dt
+
+(z + L1C1 + L2C2 − L2C3 − L1C4)+ = 0 (8) In addition to these, the velocity constraint conditions that the knee joints of both legs are mechanically locked at the same angle β during the collision phase are specified as ˙θ+1 − ˙θ+2 =0 and ˙θ+3 − ˙θ+4 = 0 . In other words, the robot causes inelastic collision equivalent to that of a compass-like biped robot with two bent legs [9]. Summarizing these four conditions yields 
+
+J I ˙q+ =
+
+
+
+1 0 L1C1 L2C2 −L2C3 −L1C4
+
+0 1 −L1S1 −L2S2 L2S3 L1S4
+
+0 0 1 −1 0 00 0 0 0 1 −1
+
+ ˙q+ = 04×1.
+
+(9) At this stage, note that the angular positions included in J I
+
+is immediately before impact, as the exchange between the stance leg and swing leg has not yet been considered. Solving for ˙q+ from the simultaneous equations (6) and (9), and further considering the exchange of coordinates between the stance and swing legs (rear and fore legs), the velocity vector immediately after the collision can be obtained as 
+
+˙q+ =
+
+[
+
+0 0 ξ ˙θ− 
+
+> 1
+
+ξ ˙θ− 
+
+> 1
+
+˙θ− 
+
+> 1
+
+˙θ−
+
+> 1
+
+]T
+
+, (10) where 
+
+ξ := N1
+
+D1
+
+, (11) 
+
+N1 = m1(m1 + m2)L22 + m2(I1 + I2)+m2m cos α (L21 + L22 + 2 L1L2 cos β) , (12) 
+
+D1 = ( m1 + m2)( m1 + 2 m2)L22 + m2
+
+(mL 21 + I1 + I2
+
+)
+
++2 m2mL 1L2 cos β. (13) 
+
+C. Control System Design 
+
+This subsection provides only an overview of output following control. The robot has three active joints, and the relative joint angle controlled by the control torque uk
+
+generates motion according to the acceleration command signal vk. In this paper, however, since the stance knee is mechanically locked, the two controllable active joints are the hip and swing knee joints. Their relative angles are chosen as the control output vector as follows. 
+
+y := 
+
+[ θ2 − θ3
+
+θ3 − θ4
+
+]
+
+(14) Hereafter, let t be a time variable reset to zero at each collision, and Tset be the target settling time. The relative hip-joint angle is −α immediately after impact, that is, at 
+
+t = 0 +, and we interpolate it using a fifth-order time function so that it becomes α at t = Tset . The relative joint angle of the swing knee is −β immediately after impact, and we bend it further by γ from there, then follow a time function of the cube of sin so that it becomes −β again at t = Tset . We then determine the target time trajectory vector as follows. 
+
+yd(t) := 
+
+[ ∑5 
+
+> k=0
+
+aktk
+
+−β − γ sin 3 ( πt 
+
+> Tset
+
+)]
+
+(0 ≤ t ≤ Tset )
+
+[ α
+
+−β
+
+]
+
+(t > T set )
+
+(15) We require that, however, the target impact posture must be achieved at t = Tset before the next impact as a necessary condition for stable gait generation. Immediately before each impact, the robot mechanically locks both knee joints and falls down as a 1-DOF rigid body. By designing and applying control inputs that achieve ¨y =
+
+v using v = ¨ yd(t) ∈ R2 as the acceleration command vector, we can generate an asymptotically stable bipedal gait on the horizontal plane as described below. To avoid including PD feedback terms in v, the coefficients of the target fifth-order time function are designed so that not only the hip joint angle but also the angular velocity immediately after impact match the actual values. The specific coefficients are obtained as 
+
+a5 = 12 α − 3( ξ − 1) ˙θ− 
+
+> 1
+
+Tset 
+
+T 5set 
+
+, a 4 = −30 α + 8( ξ − 1) ˙θ− 
+
+> 1
+
+Tset 
+
+T 4set 
+
+,a3 = 20 α − 6( ξ − 1) ˙θ− 
+
+> 1
+
+Tset 
+
+T 3set 
+
+, a 1 = ( ξ − 1) ˙θ− 
+
+> 1
+
+, a 0 = −α, and a2 = 0 . Note that, however, since these coefficients include ˙θ− 
+
+> 1
+
+, recalculation is required for each collision. The method for determining the control input will be detailed in the next section when discussing control system design for the linearized reduced model; therefore, specifics are omitted here. 
+
+D. Typical Bipedal Gait 
+
+Figure 2 shows the simulation results of generating an asymptotically stable gait on a horizontal plane. Here, (a) is the angular positions, (b) the angular velocities, (c) the control inputs, (d) the ground reaction forces, and (e) the Z-position of the swing foot. The robot’s physical and control parameters were chosen as the values listed in Table I. The robot started walking from the target impact posture where the velocity vector was set as in Eq. (10) with 
+
+˙θ− 
+
+> 1
+
+= 0 .8 [rad/s]. From Fig. 2(b), we can see that during         
+
+> −0.6
+> −0.4
+> −0.200.20.40.6012345
+> θ1θ2θ3θ4
+> Angular position [rad] Time [s]
+
+(a) Angular positions         
+
+> −3.5
+> −3
+> −2.5
+> −2
+> −1.5
+> −1
+> −0.500.511.5012345
+> ˙θ1˙θ2˙θ3˙θ4
+> Angular velocity [rad/s] Time [s]
+
+(b) Angular velocities      
+
+> −8
+> −6
+> −4
+> −202468012345
+> u2
+> u3
+> Control input [N ·m] Time [s]
+
+(c) Control inputs       
+
+> −10 010 20 30 40 50 012345
+> FxFz
+> Ground reaction force [N] Time [s]
+
+(d) Ground reaction forces      
+
+> 00.02 0.04 0.06 0.08 0.1012345
+> Swing foot position [m] Time [s]
+
+(e) Z-position of swing foot Fig. 2. Simulation results of asymptotically stable walking of kneed biped TABLE I PHYSICAL AND CONTROL PARAMETERS 
+
+m1 1.0 kg 
+
+m2 1.0 kg 
+
+L1 0.5 m
+
+L2 0.5 m
+
+r1 0.25 m
+
+r2 0.25 m
+
+I1
+
+(= m1r21
+
+) 0.0625 kg ·m2
+
+I2
+
+(= m2r22
+
+) 0.0625 kg ·m2
+
+α π 
+
+> 6
+
+rad 
+
+β 0.1 rad 
+
+γ 0.3 rad 
+
+Tset 0.7 s
+
+motion, ˙θ1 = ˙θ2 always holds true. Furthermore, after 
+
+t = Tset , all angular velocities change while maintaining the same value. In the reduced-dimensional model discussed in the subsequent sections, the lower-leg angle θ1 will no longer appear in the equations. When referring to the angular velocity immediately before impact, however, we will consistently use the notation ˙θ− 
+
+> 1
+
+. Fig. 2(d) shows that the vertical ground reaction force Fz exhibits a stable waveform with minimal variation. As mentioned, this is because the entire COM performs simple rotational motion as a single inverted pendulum. This is also a common characteristic of the AL3 robot. From Fig. 2(e), we can see that the swing-foot clearance is always maintained, enabling walking without scuffing the floor. III. REDUCED LINEARIZED MODEL AND DISCRETIZATION 
+
+A. Linearized Reduced Model 
+
+This section describes a method for instantaneously calcu-lating future states through iterative computation by reduc-ing, linearizing, and discretizing the nonlinear model. Considering that the velocity constraint condition in Eq. (4) always holds, the velocity vector can be reduced to three dimensions as follows. 
+
+˙q =
+
+
+
+0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 
+
+
+
+˙θ2
+
+˙θ3
+
+˙θ4
+
+ =: V ˙¯q (16) Using this relationship, multiplying both sides of Eq. (2) by 
+
+V T from the left yields the following 3-DOF model. 
+
+¯M ¨¯q + ¯ g = ¯S ¯u (17) The details of each term are as follows. 
+
+¯M =
+
+
+
+¯M11 0 00 m1 mL 22 
+
+> 2m2
+
++ I2 00 0 I1
+
+ , ¯S ¯u =
+
+ 1 0
+
+−1 10 −1
+
+[ u2
+
+u3
+
+]
+
+¯g =
+
+ −mg (L1 sin ( θ2 + β) + L2S2)00
+
+ , ¯q =
+
+ θ2
+
+θ3
+
+θ4
+
+
+
+¯M11 = mL 21 + (m1 + 2 m2)mL 22
+
+2m2
+
++ 2 mL 1L2 cos β
+
++I1 + I2
+
+Defining the first component of the ¯g vector as ¯g1 (θ2, β ) and its partial derivative with respect to θ2 as ¯g′ (θ2, β ), the linear approximation of this vector around θ2 = θ∗ 
+
+> 2
+
+then yields 
+
+¯g ≈
+
+ ¯g′ 
+
+> 1
+
+(θ∗ 
+
+> 2
+
+, β ) 0 0 0 0 0 0 0 0 
+
+ θ2
+
+θ3
+
+θ4
+
+ +
+
+ ¯g1 (θ∗ 
+
+> 2
+
+, β ) − ¯g′ 
+
+> 1
+
+(θ∗ 
+
+> 2
+
+, β ) θ∗
+
+> 2
+
+00
+
+
+
+=: ¯G¯q + ¯ gβ .
+
+We finally obtain the reduced linearized model as 
+
+¯M¨¯q + ¯G¯q + ¯ gβ = ¯S ¯u. (18) Note that the ¯gβ vector acts as a propulsive force in the walking direction. For example, when θ∗ 
+
+> 2
+
+= 0, the first component of this vector becomes ¯g1 (0 , β ) = −mgL 1 sin β,and this is the same mechanical effect as applying a control torque mgL 1 sin β around the ground contact point of the stance leg. When β is maintained at zero, that is, when walking with the stance knee fully extended, this propulsive force vanishes. 
+
+B. Discretization of Controlled Reduced Linearized Model 
+
+Hereinafter, we assume that the robot starts walking from the target impact posture immediately after impact; this is defined as the 0-th impact. The next fore-foot impact is the 1-st impact, and the motion between the 0-th and 1-st impacts is called the “0-th step”. The subsequent impacts and steps are contextually counted. The period from the i-th impact to the i + 1 -th impact is defined as the i-th step period, Ti. The steady step period is then written as T∞.The second-order derivative of y in Eq. (14) with respect to time becomes 
+
+¨y = ¯ST¨¯q = ¯ST ¯M −1 ( ¯S ¯u − ¯G¯q − ¯gβ
+
+) . (19) Then, we can determine the control input ¯u for achieving 
+
+¨y = v as 
+
+¯u =
+
+( ¯ST ¯M −1 ¯S
+
+)−1 (
+
+v + ¯ST ¯M −1 ( ¯G¯q + ¯ gβ
+
+))
+
+. (20) By substituting this into Eq. (18) and arranging, the state-space realization of the controlled linearized reduced (CLRed) model becomes 
+
+˙x = Ax + b1 + b2v2 + b3v3, (21) where 
+
+A =
+
+
+
+03×3 I3
+
+¯M −1
+
+(
+
+¯S
+
+( ¯ST ¯M −1 ¯S
+
+)−1 ¯ST ¯M −1 − I3
+
+)
+
+¯G 03×3
+
+ ,
+
+b1 =
+
+
+
+03×1
+
+¯M −1
+
+(
+
+¯S
+
+( ¯ST ¯M −1 ¯S
+
+)−1 ¯ST ¯M −1 − I3
+
+)
+
+¯gβ
+
+ ,
+
+b2 =
+
+
+
+03×1
+
+¯M −1 ¯S
+
+( ¯ST ¯M −1 ¯S
+
+)−1 [ 10
+
+] ,
+
+b3 =
+
+
+
+03×1
+
+¯M −1 ¯S
+
+( ¯ST ¯M −1 ¯S
+
+)−1 [ 01
+
+] .
+
+By solving Eq. (21), the state at t = Tset in the i-th step can be obtained as 
+
+x (Tset ) = e ATset (x+ 
+
+> i
+
++ η1 + η2i + η3
+
+) , (22) where 
+
+η1 := 
+
+∫ Tset 
+
+> 0+
+
+e−Aτ b1dτ, ηk := 
+
+∫ Tset 
+
+> 0+
+
+e−Aτ bkvk(τ )d τ (k = 2 , 3) .
+
+Note that η2 is defined as a definite integral calculation involving v2, meaning it is a function vector containing the angular velocity immediately before the i-th impact, ˙θ−
+
+> 1i
+
+.Therefore, since η2 must be recalculated at each collision, it is denoted as η2i in Eq. (22). After this, the robot falls forward as a 1-DOF rigid body, but in this phase, v2 = 0 and v3 = 0 , so the state equation becomes ˙x = Ax + b1. This is redundant, however, and 
+
+A is not a regular matrix, so dimensionality reduction is performed for efficient calculation. The A matrix and b1
+
+vector have the following simple structure. 
+
+A =
+
+
+
+0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+
+ω2 0 0 0 0 0 
+
+ω2 0 0 0 0 0 
+
+ω2 0 0 0 0 0 
+
+, b1 =
+
+
+
+000
+
+b1
+
+b1
+
+b1
+
+, ω =
+
+√ N2
+
+D2
+
+, b 1 = N3
+
+D2
+
+N2 = m2(m1 + m2)g (L1 cos ( θ∗ 
+
+> 2
+
++ β) + L2 cos θ∗ 
+
+> 2
+
+)
+
+N3 = m2(m1 + m2)g (L1 sin ( θ∗ 
+
+> 2
+
++ β) + L2 sin θ∗ 
+
+> 2
+
+)
+
+−m2(m1 + m2)gθ ∗ 
+
+> 2
+
+(L1 cos ( θ∗ 
+
+> 2
+
++ β) + L2 cos θ∗ 
+
+> 2
+
+)
+
+D2 = ( m1 + m2)2L22 + m2
+
+((m1 + m2)L21 + I1 + I2
+
+)
+
++m2mL 1L2 cos β
+
+Extracting only the motion of θ2 yields the following two-dimensional state equation. 
+
+d
+
+dt
+
+[ θ2
+
+˙θ2
+
+]
+
+=
+
+[ 0 1
+
+ω2 0
+
+] [ θ2
+
+˙θ2
+
+]
+
++
+
+[ 0
+
+b1
+
+]
+
+(23) Hereafter, this is denoted as ˙¯x = ¯A¯x + ¯b1. Since the ¯A
+
+matrix is regular, the state vector immediately before the next impact can be easily calculated as follows. 
+
+¯x− 
+
+> i+1
+
+= e ¯A(Ti−Tset ) (
+
+¯x (Tset ) + ¯A−1¯b1
+
+)
+
+− ¯A−1¯b1 (24) In this phase, θ2 uniquely determines all other angles, so ¯z
+
+can be calculated as follows. 
+
+¯z = L1 cos ( θ2 + β) + L2 cos θ2 − L2 cos ( θ2 − α)
+
+−L1 cos ( θ2 − α + β) (25) The moment when this value decreases to zero can be deter-mined numerically and instantaneously using the bisection method. Compared to numerical integration, the computa-tional load is significantly lower. IV. GAIT ANALYSIS 
+
+A. Comparison of Gait Descriptors in Stable Bipedal Gait 
+
+Figure 3 plots the gait descriptors against the number of steps in the generated gaits of the nonlinear and CLRed models. Here, (a) is the step period, and (b) is the angular velocity immediately before impact. This time, β was set to 0.5 [rad], while all other system parameters were set to the same values as in Table I. The robot started walking from the target impact posture where the velocity vector was 0.80.85 0.90.95 11.05 0 5 10 15 20 25 30      
+
+> Nonlinear model CLRed model with θ∗
+> 2= 0
+> CLRed model with θ∗
+> 2=−0.25
+> Step period [s] Number of steps
+
+(a) Step period            
+
+> 0.74 0.75 0.76 0.77 0.78 0.79 0.80510 15 20 25 30
+> Nonlinear model CLRed model with θ∗
+> 2= 0
+> CLRed model with θ∗
+> 2=−0.25
+> Angular velocity [rad/s] Number of steps
+
+(b) Angular velocity immediately before impact Fig. 3. Evolution of gait descriptors in asymptotically stable gaits of nonlinear and CLRed models where β = 0 .5 [rad] 
+
+set as in Eq. (10) with ˙θ− 
+
+> 1
+
+= 0 .8 [rad/s]. For the nonlinear model, the gait descriptors were calculated by conducting numerical integration; however, completing the calculations for 30 steps took several minutes. In the CLRed models, the gait descriptors were calculated instantaneously through iterative calculations, and the expansion points were set to two values: θ∗ 
+
+> 2
+
+= 0 and θ∗ 
+
+> 2
+
+= −0.5β = −0.25 [rad]. The former approximates the gravity term as linear around the posture where the thigh frame faces vertically upward, while the latter does so around the posture where the entire body’s COM or hip joint is directly above the stance foot. From Fig. 3(a), it can be seen that the CLRed model with 
+
+θ∗ 
+
+> 2
+
+= −0.25 [rad] shows step period values nearly identical to those of the nonlinear model, while the CLRed model with θ∗ 
+
+> 2
+
+= 0 [rad] shows significantly smaller values. From Fig. 3(b), it can be seen that the former shows slightly larger angular velocity values than the nonlinear model, while the latter shows significantly larger values. In the next subsection, we will analyze in greater detail how the approximation accuracy changes with respect to β and θ∗ 
+
+> 2
+
+.
+
+B. Effects of β and θ∗ 
+
+> 2
+
+on Gait Characteristics and Approx-imation Accuracy 
+
+Building on the results from the previous subsection, this subsection further generalizes the expansion point for gait analysis and discusses the approximation accuracy of the CLRed model. Treating κ as a negative constant, the expansion point is defined by θ∗ 
+
+> 2
+
+= κβ .Figure 4 shows the results of analyzing gait descriptors with respect to β of the nonlinear model and CLRed models by setting κ to seven different values. Here, (a) is the steady step period, T∞, (b) the steady angular velocity immediately before impact, ˙θ−
+
+> 1∞
+
+, (c) the step length, and (d) the walking speed. All system parameters other than β were set to the same values as those in Table I. Although the graphs in each figure have β intervals set very finely at 0.001 [rad], by utilizing high-speed calculations with the CLRed model, computations for all β ranges at a single κ could be completed within a few minutes. The robot was set to                                                                  
+
+> 0.70.75 0.80.85 0.90.95 11.05 1.100.511.522.5
+> Nonlinear model
+> κ= 0
+> κ=−0.1
+> κ=−0.2
+> κ=−0.3
+> κ=−0.4
+> κ=−0.5
+> κ=−0.6
+> Step period [s]
+> β[rad]
+> (a) T∞
+> 0.60.65 0.70.75 0.80.85 00.511.522.5
+> Nonlinear model
+> κ= 0
+> κ=−0.1
+> κ=−0.2
+> κ=−0.3
+> κ=−0.4
+> κ=−0.5
+> κ=−0.6
+> Angular velocity [rad/s]
+> β[rad]
+> (b) ˙θ−
+> 1∞
+> 0.20.25 0.30.35 0.40.45 0.50.55 00.511.522.5
+> Step length [m]
+> β[rad]
+> (c) Step length
+> 0.30.35 0.40.45 0.50.55 0.60.65 0.700.511.522.5
+> Nonlinear model
+> κ= 0
+> κ=−0.1
+> κ=−0.2
+> κ=−0.3
+> κ=−0.4
+> κ=−0.5
+> κ=−0.6
+> Walking speed [m/s]
+> β[rad]
+> (d) Walking speed
+
+Fig. 4. Gait descriptors with respect to β for seven values of κ where 
+
+Tset = 0 .7 [s] of nonlinear and CLRed models 
+
+an appropriate initial state and started walking; data from 20 steps after the 1000-th step was saved, and the average value was plotted. Calculation for a single point was completed in near-instantaneous time. From the results of the nonlinear model, it can be seen that as β increases, the step period and step length monotonically shorten, whereas the walking speed monotonically increases. Results from Figs. 4(a) and (d) show that the case with κ =
+
+−0.5 achieves a very high level of approximation accuracy for the values of steady step period and walking speed. From (b), however, it appears that the value of ˙θ− 
+
+> 1∞
+
+is approximated with higher precision for κ = −0.4. Regarding the step length in (c), since it is uniquely determined by the values of 
+
+α and β in all cases, it was plotted using the theoretical value as a reference. The walking speed was calculated as the step length divided by the step period. Although both step length and step period decrease monotonically with increasing β,the fact that walking speed also decreases monotonically indicates that the reduction in step length has a greater influence. 
+
+C. Descending Small Step 
+
+This subsection considers the following walking situation. The robot begins walking from the target impact posture with an appropriate initial angular velocity, walks on a flat surface for a while, descends a 2.0 [cm] step at the 10-th impact, and then walks on a flat surface again. As a result, the 9-th step period becomes slightly longer, and the step length (horizontal distance traveled by the stance foot) of the 9-th step becomes slightly shorter, as shown in Figure 5. First, we investigated walkability using the CLRed model with Tset =0.7 [s], but forward motion accelerated immediately after descending the step, preventing control completion before the 0.50.60.70.80.911.10 5 10 15 20               
+
+> T′
+> set = 0 .70
+> T′
+> set = 0 .65
+> T′
+> set = 0 .60
+> T′
+> set = 0 .55
+> T′
+> set = 0 .50
+> T′
+> set = 0 .45
+> T′
+> set = 0 .40
+> Step period [s] Number of steps
+
+(a) Step period     
+
+> 0.4858 0.4859 0.486 0.4861 0.4862 0.4863 0.4864 0510 15 20
+> Step length [m] Number of steps
+
+(b) Step length Fig. 5. Evolution of gait descriptors during generated gaits involving descending 2.0 [cm] step for seven values of T ′ 
+
+> set
+
+where β = 0 .7 [rad] 
+
+11-th impact. Therefore, as shown in Fig. 5(a), data for step periods beyond the 10-th step was not saved. As a solution to this problem, we propose modifying Tset to be shorter T ′
+
+> set
+
+only for the 10-th step and analyze its effect below. This time, β was set to 0.7 [rad] and κ = −0.5, while all other system parameters were set to the same values as in Table I again. For all T ′ 
+
+> set
+
+values, the robot performs exactly the same motion up until the 10-th impact, but starting from the 10-th step motion, it generates different movements for each case. From Fig. 4(a), it can be seen that when T ′
+
+> set
+
+is set to three values, 0.55, 0.50 and 0.45 [s], the robot successfully descends the step and returns to steady walking. Fig. 5(b) plots the step length calculated in these successful cases. When T ′ 
+
+> set
+
+is set to the three larger values, the absence of the 10-th step value indicates that the 10-th step motion could not be generated correctly. This is because T ′ 
+
+> set
+
+was too long, preventing the control from completing before the 11-th impact, as described above. When T ′ 
+
+> set
+
+is set to 0.40 [s], motion generation succeeded up to the 10-th step, but failed for the 11-th step. This occurred because the target settling time for the 10-th step motion was set too short, causing the forward motion to accelerate significantly. When resetting T ′ 
+
+> set
+
+to Tset at the start of the 11-th step motion, control could not be completed before the 12-th impact. In the gait generation considered in this subsection, how-ever, Tset was changed to T ′ 
+
+> set
+
+at the 10-th impact. Therefore, it is important to note that at this specific moment, not only 
+
+η2i but also η1 and η3 require recalculation based on the value of T ′
+
+> set
+
+. If control parameters such as Tset , α and β are adjusted every step to generate more robust walking modtion, 
+
+η1 and η3 in Eq. (22) must also be recalculated at each collision as η1i and η3i, similar to η2i.V. CONCLUSION AND FUTURE WORK This paper discussed the mathematical modeling, dimen-sionality reduction, linearization, control system design, and motion analysis of the planar 6-DOF biped with all frames balanced around the hip joint. By utilizing the proposed CLRed model, it has become possible to investigate changes in gait characteristics corresponding to the stance-knee angle, 
+
+β, as well as the feasibility of descending a small step, in a very short time. Furthermore, it was demonstrated that by appropriately setting the expansion point for linearization of the gravity term, a highly accurate CLRed model can be obtained regardless of the value of β. It is anticipated that this advantage unique to AL3 robots [5]–[8] will enable instan-taneous walkability determination under various conditions. The biped robot model discussed in this paper does not exhibit the natural swinging motion or knee flexion/extension movements of the swing leg seen in passive dynamic walkers [1], [2]. The authors believe that, however, this balanced body structure may reduce the risk of falls and facilitate the generation of highly stable walking motion. As reported in the previous section, it offers advantages in high-precision approximate linearization, and we anticipate it possesses various other potential benefits. Section IV-C analyzed the walkability when descending a small step. It was revealed that despite the step height being very small compared to leg length, continued walking becomes impossible, and that adjusting only the target set-tling time could not generate sufficiently adaptive walking motion. In the future, we aim to develop a control strategy for generating more robust walking motion designed for challenging conditions, such as traversing stepping stones [9]–[11]. This strategy will incorporate adjustments not only to the target settling time but also to knee and hip joint angles, starting before approaching the step, based on visual perception of the ground surface conditions. REFERENCES [1] T. McGeer, “Passive dynamic walking,” Int. J. of Robotics Research ,Vol. 9, Iss. 2, pp. 62–82, 1990. [2] T. McGeer, “Passive walking with knees,” Proc. of the IEEE Int. Conf. on Robotics and Automation , Vol. 3, pp. 1640–1645, 1990. [3] J. W. Grizzle, G. Abba and F. Plestan. “Asymptotically stable walking for biped robots: Analysis via systems with impulse effects,” IEEE Trans. on Automatic Control , Vol. 46, Iss. 1, pp. 51–64, 2001. [4] E. R. Westervelt, J. W. Grizzle, C. Chevallereau, J. H. Choi, and B. Morris, Feedback Control of Dynamic Bipedal Robot Locomotion ,CRC Press, 2007. [5] J. Kiefer and B. Ramesh, “Walking viability and gait synthesis for a novel class of dynamically-simple bipeds.” Informatica , Vol. 17, Iss. 2, pp. 145–155, 1993. [6] M. W. Spong, R. Lozano and R. Mahony, “An almost linear biped,” 
+
+Proc. of the 39th IEEE Conf. on Decision and Control , pp. 4803–4808, 2000. [7] S. K. Agrawal and A. Fattah, “Motion control of a novel planar biped with nearly linear dynamics,” IEEE/ASME Trans. on Mechatronics ,Vol. 11, Iss. 2, pp. 162–168, 2006. [8] V. Sangwan and S. K. Agrawal, “Differentially flat design of bipeds ensuring limit cycles,” IEEE/ASME Trans. on Mechatronics , Vol. 14, Iss. 6, pp. 647–657, 2009. [9] F. Asano, “A novel generation method for underactuated bipedal gait with landing position control of swing leg based on property of zero dynamics,” Proc. of the IEEE Int. Conf. on Advanced Intelligent Mechatronics , pp. 1184-1189, 2015. [10] J. Li and Q. Nguyen, “Dynamic walking of bipedal robots on uneven stepping stones via adaptive-frequency MPC,” IEEE Control Systems Letters , Vol. 7, pp. 1279–1284, 2023. [11] F. Jenelten, R. Grandia, F. Farshidian and M. Hutter, “TAMOLS: Terrain-aware motion optimization for legged systems,” IEEE Trans. on Robotics , Vol. 38, Iss. 6, pp. 3395–3413, 2022.

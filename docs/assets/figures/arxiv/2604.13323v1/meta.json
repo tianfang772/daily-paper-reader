@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.13323v1/fig-001.webp",
+      "caption": "Fig. 5: CDF plot benchmarking planner performance for the line and plane constrained problems, binned by number of environment obstacles. 1. LP - Line with Position Constraint only, 2. LPO - Line with Position and Orientation Constraint, 3. PP - Plane with Position Constraint, 4. PPO - Plane with Position and Orientation Constraint For most problems, McVAMP is 1000 times faster than the baselines achieving a 100% success rates, while the other planners suffer in the success rate as the number of obstacles increases.",
+      "page": 6,
+      "index": 1,
+      "width": 994,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13323v1/fig-002.webp",
+      "caption": "Fig. 6: Solving a Maze. Here the tip of the marker is constrained to the floor of the maze. Consequently, the robot has to solve the maze to find a plan from start to goal. Planning is done at 20Hz. (b) when a dynamic obstacle blocks the path (red sphere here), the planner can compute a new path due to the high motion validation and planning throughput",
+      "page": 6,
+      "index": 2,
+      "width": 387,
+      "height": 387
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13323v1/fig-003.webp",
+      "caption": "TABLE II: KUKA IIWA Bimanual Planning Results: Time in milliseconds (top) and Path Cost (bottom in parenthesis).",
+      "page": 6,
+      "index": 3,
+      "width": 479,
+      "height": 272
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13323v1/fig-004.webp",
+      "caption": "Fig. 8: Experimental results for dynamic environment obstacle avoidance.",
+      "page": 7,
+      "index": 4,
+      "width": 512,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13323v1/fig-005.webp",
+      "caption": "Fig. 7: The different constraints of the Digit robot. (i) CB , the bimanual fixed pose constraint, (ii) CCL, the closed linkage constraint, (iii) CCOM , the center of mass constraint, and (iv) CF , the fixed feet placement constraint.",
+      "page": 7,
+      "index": 5,
+      "width": 450,
+      "height": 285
+    },
+    {
+      "url": "assets/figures/arxiv/2604.13323v1/fig-006.webp",
+      "caption": "Fig. 2: Methodology. (a) RRT-Extend Step: A random configuration in ambient space is sampled. (b) qsteer is computed at a fixed distance from qnear and samples around qsteer are projected onto the manifold until any one succeeds. (c) Interpolated samples along the vector connecting the start and the initial projected point are projected in parallel. (d) Configurations are interpolated between the projected particles and are projected and validated recursively until desired resolution is achieved. n = 4 here for illustrative purposes, each represented by a different color.",
+      "page": 4,
+      "index": 6,
+      "width": 1044,
+      "height": 185
+    }
+  ]
+}

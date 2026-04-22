@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.19102v1/fig-001.webp",
+      "caption": "Fig. 1. Overview of the multi-gait learning pipeline. Policies are trained in simulation with or without AMP depending on gait type, then deployed on the physical robot.",
+      "page": 2,
+      "index": 1,
+      "width": 487,
+      "height": 773
+    }
+  ]
+}

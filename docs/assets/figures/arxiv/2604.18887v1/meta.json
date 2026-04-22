@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.18887v1/fig-001.webp",
+      "caption": "Figure 3: The three systems of study, their configurations, and their impacts.",
+      "page": 6,
+      "index": 1,
+      "width": 814,
+      "height": 246
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18887v1/fig-002.webp",
+      "caption": "Figure 4: A visual guide of the losses.",
+      "page": 7,
+      "index": 2,
+      "width": 327,
+      "height": 375
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18887v1/fig-003.webp",
+      "caption": "Figure 8: A 9-step rollout with true hardware, encoded-decoded, and latent ROM trajectories.",
+      "page": 10,
+      "index": 3,
+      "width": 688,
+      "height": 200
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18887v1/fig-004.webp",
+      "caption": "Figure 6: Decoded visualization of the boundary of Ωz in full-order coordinates of the G1. Plotted states correspond to the center-of-mass position relative to the stance foot.",
+      "page": 10,
+      "index": 4,
+      "width": 634,
+      "height": 383
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18887v1/fig-005.webp",
+      "caption": "Table 2: RL controller implementation details.",
+      "page": 18,
+      "index": 5,
+      "width": 768,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18887v1/fig-006.webp",
+      "caption": "Table 1: Summary of the loss terms. W denotes trainable weights (excluding biases), and g (k−1) ρ denotes repeated application of gρ. In addition, B denotes the mini-batch size and K denotes the trajectory length.",
+      "page": 8,
+      "index": 6,
+      "width": 856,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18887v1/fig-007.webp",
+      "caption": "Table 4: Hopper RL observations.",
+      "page": 19,
+      "index": 7,
+      "width": 540,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18887v1/fig-008.webp",
+      "caption": "Table 5: G1 humanoid RL observations.",
+      "page": 19,
+      "index": 8,
+      "width": 714,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18887v1/fig-009.webp",
+      "caption": "Figure 5: Per-step normalized error of the learned ROM over 3,000 test trajectories for each system. (Top) shows single-step reconstruction error, and (bottom) shows multi-step latent forward-propagation error. Solid curves denote the mean and shaded bands denote ±σ.",
+      "page": 9,
+      "index": 9,
+      "width": 390,
+      "height": 396
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18887v1/fig-010.webp",
+      "caption": "Table 6: Autoencoder ROM training details. The G1 state vector is 59-dimensional due to the quaternion representation of base orientation (nq = 30, nv = 29), though the underlying state space is 58-dimensional.",
+      "page": 20,
+      "index": 10,
+      "width": 656,
+      "height": 400
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18887v1/fig-011.webp",
+      "caption": "Figure 2: An attractive invariant manifold for a discrete-time system (in red) can have a lower dimensional embedding (in blue). This embedding informs a choice of latent dimension and reduced-order model.",
+      "page": 5,
+      "index": 11,
+      "width": 725,
+      "height": 229
+    }
+  ]
+}

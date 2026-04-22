@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.19104v1/fig-001.webp",
+      "caption": "Fig. 10: Key test scenario snapshots.",
+      "page": 6,
+      "index": 1,
+      "width": 454,
+      "height": 623
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19104v1/fig-002.webp",
+      "caption": "Fig. 2: Tinker zero position.",
+      "page": 2,
+      "index": 2,
+      "width": 454,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19104v1/fig-003.webp",
+      "caption": "Fig. 3: Multi-Task RL Control Architecture for Tinker.",
+      "page": 2,
+      "index": 3,
+      "width": 514,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19104v1/fig-004.webp",
+      "caption": "Fig. 4: State Transition Flowchart.",
+      "page": 3,
+      "index": 4,
+      "width": 512,
+      "height": 317
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19104v1/fig-005.webp",
+      "caption": "Fig. 5: Cumulative Reward for Fall Recovery Network.",
+      "page": 4,
+      "index": 5,
+      "width": 454,
+      "height": 291
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19104v1/fig-006.webp",
+      "caption": "Fig. 6: Cumulative Reward for Ball Seeking and Kicking Network.",
+      "page": 4,
+      "index": 6,
+      "width": 514,
+      "height": 311
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19104v1/fig-007.webp",
+      "caption": "Fig. 8: Distribution of Robot Recovery Time.",
+      "page": 5,
+      "index": 7,
+      "width": 483,
+      "height": 346
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19104v1/fig-008.webp",
+      "caption": "Fig. 9: Spatial Adaptability in Corner Scenarios.",
+      "page": 5,
+      "index": 8,
+      "width": 483,
+      "height": 343
+    }
+  ]
+}

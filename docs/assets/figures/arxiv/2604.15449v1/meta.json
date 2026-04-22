@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.15449v1/fig-001.webp",
+      "caption": "Fig. 1: Time of convergence of the four filters considered in this work (IterIEKF, IEKF, SO(3)-EKF and IterSO(3)-EKF) with the same initial state, process and measurement white noise. The simulation stops when the error in the base velocity is less than 0.05m/s and the error in gravity direction is less than 0.015 rad. The result shows that the IterIEKF converges faster than the other three filters.",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 292
+    },
+    {
+      "url": "assets/figures/arxiv/2604.15449v1/fig-002.webp",
+      "caption": "Fig. 8: Comparison of the update step using IterIEKF a) for different values of P b) and IEKF with almost noise-free velocity measurements in the base frame.",
+      "page": 11,
+      "index": 2,
+      "width": 512,
+      "height": 242
+    },
+    {
+      "url": "assets/figures/arxiv/2604.15449v1/fig-003.webp",
+      "caption": "Fig. 7: a) The Kalman Filter update can be seen as an oblique projection on the observed set. b) Update step with EKF (X̂ + δx̂) and IterIEKF (ξ̂ ⊕ X̂ ). While after the update with IterIEKF the state is guaranteed to belong to the constraint and there is no uncertainty orthogonal to it, neither of these properties can be guaranteed by the EKF.",
+      "page": 11,
+      "index": 3,
+      "width": 756,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2604.15449v1/fig-004.webp",
+      "caption": "Fig. 14: Comparison of the z-component relative velocity in the base frame, obtained with the reference trajectory, and the nominal velocity obtained with 17. The measurement noise is significantly higher than that obtained in the simulation.",
+      "page": 15,
+      "index": 4,
+      "width": 376,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2604.15449v1/fig-005.webp",
+      "caption": "Fig. 12: Results of the numerical Monte Carlo experiment with a simulated quadruped robot on a challenging terrain. a) Average normalized error for the velocity in the base frame. b) Average normalized error for the gravity direction. c) Average NEES. d) Histogram for the number of iterations required for IterIEKF and IterSO(3)-EKF convergence. e) Average estimated pitch angle for each method.",
+      "page": 14,
+      "index": 5,
+      "width": 1060,
+      "height": 470
+    },
+    {
+      "url": "assets/figures/arxiv/2604.15449v1/fig-006.webp",
+      "caption": "Fig. 13: a) Samples of the trajectory followed by the AnymalD robot in the Pilatus-Hike2 dataset. b) Poses of the reference trajectory during its beginning, where it descends a staircase with an inclination of approx 30◦.",
+      "page": 14,
+      "index": 6,
+      "width": 500,
+      "height": 390
+    },
+    {
+      "url": "assets/figures/arxiv/2604.15449v1/fig-007.webp",
+      "caption": "Fig. 16: Estimates obtained with different filters on the Pilatus-Hike2 dataset under Scenario 2 conditions. a) x-component, b) y-component, c) z-component of the relative velocity R̄i|iv̄i|i. d) Estimate of the pitch angle ϕ̄i|i. e) Estimate of the roll angle θ̄i|i. f) Error in the gravity direction acos(ūi|i · ui).",
+      "page": 18,
+      "index": 7,
+      "width": 1016,
+      "height": 466
+    },
+    {
+      "url": "assets/figures/arxiv/2604.15449v1/fig-008.webp",
+      "caption": "Fig. 17: Estimates obtained with different filters on the Pilatus-Hike2 dataset under Scenario 3 conditions. a) x-component, b) y-component, c) z-component of the relative velocity R̄i|iv̄i|i. d) Estimate of the pitch angle ϕ̄i|i. e) Estimate of the roll angle θ̄i|i. f) Error in the gravity direction acos(ūi|i · ui).",
+      "page": 18,
+      "index": 8,
+      "width": 1035,
+      "height": 470
+    },
+    {
+      "url": "assets/figures/arxiv/2604.15449v1/fig-009.webp",
+      "caption": "Fig. 10: Results of the numerical Monte Carlo experiment with synthetic data. a) Average normalized error for the velocity in the base frame. b) Average normalized error for the gravity direction. c) Average NEES. d) Histogram for the number of iterations required for IterIEKF and IterSO(3)-EKF convergence. e) One realization of the Monte Carlo simulation.",
+      "page": 13,
+      "index": 9,
+      "width": 1052,
+      "height": 501
+    },
+    {
+      "url": "assets/figures/arxiv/2604.15449v1/fig-010.webp",
+      "caption": "Fig. 15: Estimates obtained with different filters on the Pilatus-Hike2 dataset under Scenario 1 conditions. a) x-component, b) y-component, c) z-component of the relative velocity R̄i|iv̄i|i. d) Estimate of the pitch angle ϕ̄i|i. e) Estimate of the roll angle θ̄i|i. f) Estimate of the trajectory p̄i|i.",
+      "page": 16,
+      "index": 10,
+      "width": 1048,
+      "height": 932
+    }
+  ]
+}

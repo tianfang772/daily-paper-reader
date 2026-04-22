@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.18701v1/fig-001.webp",
+      "caption": "Figure 6: Seed-averaged visitation heatmaps at three training windows: Early (steps 0–5k), Mid (steps 15k–20k), and Late (steps 30–35k), shown for the five most representative methods. Rows correspond to training windows; columns to methods. The highlighted column (blue outline) shows Ours (Neural Critic Model), which exhibits a clear shift from broad early exploration to targeted late-training concentration in the deterministic region. The oracle critic (right most) maintains high deterministic-region focus throughout. All other methods either plateau or remain fixated on the stochastic region (Curiosity V1 [1], prediction error as reward) across all windows. Curiosity V1 and V2 are convenience shorthands for [1] and [2] respectively.",
+      "page": 15,
+      "index": 1,
+      "width": 826,
+      "height": 554
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18701v1/fig-002.webp",
+      "caption": "Figure 1: Step-wise operation of The Curiosity-Critic Architecture. Solid black arrows: forward-pass flow. Dashed gray arrows: backward-pass training signals entering each model. Steps: (1) World Model computes the raw prediction θt(st, at), then the prediction error e(st, at |θt) (blue dashed box). (2) World Model parameters are updated (θt→θt+1) on the ground-truth observation st+1. (3) Neural Critic parameters are updated (ϕt→ϕt+1) on the post-update error e(st, at |θt+1). (4) Neural Critic forward pass produces the curiosity-critic baseline ϕt+1(st, at) (orange dash-dot box). (5) Reward rt = e(st, at |θt)− ϕt+1(st, at) is computed; each term is enclosed in its matching box style from steps (1) and (4). (6) rt is used as an RL signal to update the Curiosity Agent policy πt; the agent then samples the next action.",
+      "page": 10,
+      "index": 2,
+      "width": 606,
+      "height": 598
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18701v1/fig-003.webp",
+      "caption": "Figure 5: Seed-averaged visitation heatmaps at the end of training (final 5,000 of 35,000 steps), shown for the five most representative methods. Each cell’s brightness encodes the fraction of time spent there, normalised per method. The cyan dashed line marks the boundary between the deterministic region (left) and the stochastic region (right). Ours (Neural Critic Model) concentrates the vast majority of late-training visits in the deterministic half, closely resembling the oracle critic’s pattern. Curiosity V1 [1] (prediction error as reward) shows the opposite: near-complete concentration in the stochastic region. Random exploration produces near-uniform coverage of both halves. Curiosity V1 and V2 are convenience shorthands for [1] and [2] respectively.",
+      "page": 14,
+      "index": 3,
+      "width": 826,
+      "height": 688
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18701v1/fig-004.webp",
+      "caption": "Figure 4: Fraction of environment steps spent in the deterministic region (columns 0–14) over training, averaged over five seeds with ±1 standard deviation shading. Curiosity V1 [1] (prediction error as reward) collapses to zero within the first few thousand steps as it becomes entirely absorbed by stochastic cells. Ours (Neural Critic Model) builds up a consistently high deterministic-region fraction throughout training (70.9% in the final 5,000 steps on average), closely tracking the oracle critic’s coverage (95.3%), without any privileged knowledge of cell type. Curiosity V2 [2] (one-step learning progress as reward) and Visitation Count [3] both achieve moderate coverage but fail to sustain or increase it over time.",
+      "page": 13,
+      "index": 4,
+      "width": 829,
+      "height": 363
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18701v1/fig-005.webp",
+      "caption": "Figure 2: Mean L2 prediction error on deterministic cells versus environment steps, averaged over five seeds with ±1 standard deviation shading. Curiosity V1 [1] uses raw prediction error as the intrinsic reward; Curiosity V2 [2] uses the one-step reduction in prediction error. Left: full 35,000-step training run across all seven methods. Right: final 10,000 steps (steps 25k–35k), excluding Curiosity V1 [1] and Visitation Count [3] to resolve the ordering of the converging methods. Lower is better.",
+      "page": 12,
+      "index": 5,
+      "width": 829,
+      "height": 335
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18701v1/fig-006.webp",
+      "caption": "Figure 3: Snapshot of agent trajectories at environment step 30,000. Each panel shows one method; coloured blobs represent individual seeds (five seeds per method, simultaneously animated). Green cells are deterministic (learnable); grey cells are stochastic (irreducibly noisy). The rightmost column shows the live mean L2 prediction error trace up to this step. Curiosity V1 [1] (prediction error as intrinsic reward) and Curiosity V2 [2] (one-step learning progress as intrinsic reward) are shorthands used throughout. A full real-time animation is available at youtu.be/Jv1n346TWbQ.",
+      "page": 12,
+      "index": 6,
+      "width": 826,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18701v1/fig-007.webp",
+      "caption": "Table 1: Final mean L2 prediction error on deterministic cells after 35,000 environment steps, averaged over five independent seeds (lower is better). Bold denotes the best non-oracle result. Italicised rows use privileged knowledge of the environment’s noise floor and are included as reference.",
+      "page": 9,
+      "index": 7,
+      "width": 825,
+      "height": 194
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18701v1/fig-008.webp",
+      "caption": "Figure 7: Mean neural critic estimate over all deterministic cells (left) and all stochastic cells (right) versus environment steps, averaged over five seeds with ±1 standard deviation shading. The dashed horizontal line marks the oracle noise floor (0 for deterministic, √ 200× 0.5 ≈ 7.07 for stochastic). The critic estimate for stochastic cells converges to within 5% of the oracle by step 400; the critic estimate for deterministic cells rises in the first ∼ 500 steps (tracking the large world model error early in training) and then declines as the world model learns the learnable region.",
+      "page": 16,
+      "index": 8,
+      "width": 826,
+      "height": 312
+    }
+  ]
+}

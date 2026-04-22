@@ -6,76 +6,82 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-04-21
-- 运行时间：2026-04-21 20:34:28 UTC
+- 最新运行日期：2026-04-22
+- 运行时间：2026-04-22 20:34:27 UTC
 - 运行状态：成功
-- 本次总论文数：18
-- 精读区：7
-- 速读区：11
+- 本次总论文数：20
+- 精读区：10
+- 速读区：10
 
 ### 今日简报（AI）
-今日精选 18 篇机器人前沿论文，重点攻克足式机器人在复杂地形下的感知适应与动力学控制难题。
-满分论文展示了如何通过时序序列选择实现地形自适应，以及利用被动身体动力学大幅提升双足机器人的行走性能。
-建议深入研读强化学习与物理特性融合的最新成果，探索足式机器人迈向自然、稳健运动的底层逻辑。
-- 详情：[/202604/21/README](/202604/21/README)
+今日聚焦双足机器人运动控制与世界模型前沿，深度解析 20 篇论文中的具身智能突破。
+满分论文揭示了利用被动动力学与混合自编码（HALO）提升双足行走性能的关键，同时探讨了 VLA 系统中的隐式规划。
+建议优先研读关于双足机器人稳定性的两篇满分佳作，掌握物理仿真与认知模型结合的最新趋势。
+- 详情：[/202604/22/README](/202604/22/README)
 
 ### 精读区论文标签
-1. [CART: Context-Aware Terrain Adaptation using Temporal Sequence Selection for Legged Robots](/202604/21/2604.14344v1-cart-context-aware-terrain-adaptation-using-temporal-sequence-selection-for-legged-robots)  
+1. [Model-Based Reinforcement Learning Exploits Passive Body Dynamics for High-Performance Biped Robot Locomotion](/202604/22/2604.14565v1-model-based-reinforcement-learning-exploits-passive-body-dynamics-for-high-performance-biped-robot-locomotion)  
    标签：评分：10.0/10、query:profile-1
-   evidence：结合视觉与本体感知的足式机器人上下文感知地形自适应
-2. [Model-Based Reinforcement Learning Exploits Passive Body Dynamics for High-Performance Biped Robot Locomotion](/202604/21/2604.14565v1-model-based-reinforcement-learning-exploits-passive-body-dynamics-for-high-performance-biped-robot-locomotion)  
-   标签：评分：10.0/10、query:q4
-   evidence：基于模型的强化学习用于双足机器人运动
-3. [Simulator Adaptation for Sim-to-Real Learning of Legged Locomotion via Proprioceptive Distribution Matching](/202604/21/2604.11090v1-simulator-adaptation-for-sim-to-real-learning-of-legged-locomotion-via-proprioceptive-distribution-matching)  
+   evidence：利用动力学的基于模型的强化学习用于双足机器人运动
+2. [HALO: Hybrid Auto-encoded Locomotion with Learned Latent Dynamics, Poincaré Maps, and Regions of Attraction](/202604/22/2604.18887v1-halo-hybrid-auto-encoded-locomotion-with-learned-latent-dynamics-poincar-maps-and-regions-of-attraction)  
+   标签：评分：10.0/10、query:q3
+   evidence：学习用于腿足机器人运动的潜空间降阶模型
+3. [Asymptotically Stable Gait Generation and Instantaneous Walkability Determination for Planar Almost Linear Biped with Knees](/202604/22/2604.12274v1-asymptotically-stable-gait-generation-and-instantaneous-walkability-determination-for-planar-almost-linear-biped-with-knees)  
    标签：评分：9.0/10、query:q2
-   evidence：通过分布匹配进行足式机器人运动的从仿真到现实学习
-4. [A Foot Resistive Force Model for Legged Locomotion on Muddy Terrains](/202604/21/2604.12006v1-a-foot-resistive-force-model-for-legged-locomotion-on-muddy-terrains)  
+   evidence：平面双足机器人的步态生成
+4. [PAINT: Partner-Agnostic Intent-Aware Cooperative Transport with Legged Robots](/202604/22/2604.12852v1-paint-partner-agnostic-intent-aware-cooperative-transport-with-legged-robots)  
+   标签：评分：9.0/10、query:q4
+   evidence：用于腿足机器人运动与意图估计的分层学习
+5. [CART: Context-Aware Terrain Adaptation using Temporal Sequence Selection for Legged Robots](/202604/22/2604.14344v1-cart-context-aware-terrain-adaptation-using-temporal-sequence-selection-for-legged-robots)  
+   标签：评分：9.0/10、query:profile-1
+   evidence：结合视觉与本体感知的腿足机器人地形自适应
+6. [Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking](/202604/22/2604.17335v1-learning-whole-body-humanoid-locomotion-via-motion-generation-and-motion-tracking)  
+   标签：评分：9.0/10、query:profile-1
+   evidence：具有地形感知自适应的人形机器人全身运动
+7. [Multi-Gait Learning for Humanoid Robots Using Reinforcement Learning with Selective Adversarial Motion Prior](/202604/22/2604.19102v1-multi-gait-learning-for-humanoid-robots-using-reinforcement-learning-with-selective-adversarial-motion-prior)  
+   标签：评分：9.0/10、query:profile-1
+   evidence：基于强化学习的人形机器人多步态学习
+8. [Reinforcement Learning Enabled Adaptive Multi-Task Control for Bipedal Soccer Robots](/202604/22/2604.19104v1-reinforcement-learning-enabled-adaptive-multi-task-control-for-bipedal-soccer-robots)  
    标签：评分：9.0/10、query:q2
-   evidence：泥泞地形下足式机器人运动的阻力模型
-5. [Asymptotically Stable Gait Generation and Instantaneous Walkability Determination for Planar Almost Linear Biped with Knees](/202604/21/2604.12274v1-asymptotically-stable-gait-generation-and-instantaneous-walkability-determination-for-planar-almost-linear-biped-with-knees)  
-   标签：评分：9.0/10、query:q2
-   evidence：双足机器人的步态生成
-6. [PAINT: Partner-Agnostic Intent-Aware Cooperative Transport with Legged Robots](/202604/21/2604.12852v1-paint-partner-agnostic-intent-aware-cooperative-transport-with-legged-robots)  
-   标签：评分：9.0/10、query:q2
-   evidence：腿足机器人协作运输与意图估计
-7. [Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking](/202604/21/2604.17335v1-learning-whole-body-humanoid-locomotion-via-motion-generation-and-motion-tracking)  
-   标签：评分：9.0/10、query:q2
-   evidence：全身类人机器人运动与地形感知自适应
+   evidence：双足机器人运动控制与基于强化学习的多任务控制
+9. [Mask World Model: Predicting What Matters for Robust Robot Policy Learning](/202604/22/2604.19683v1-mask-world-model-predicting-what-matters-for-robust-robot-policy-learning)  
+   标签：评分：9.0/10、query:q1
+   evidence：预测语义掩码的世界模型用于鲁棒机器人策略
+10. [UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling](/202604/22/2604.19734v1-unit-toward-a-unified-physical-language-for-human-to-humanoid-policy-learning-and-world-modeling)  
+   标签：评分：9.0/10、query:profile-1
+   evidence：用于类人机器人策略学习和跨具身迁移的世界建模
 
 ### 速读区论文标签
-1. [AIM: Intent-Aware Unified world action Modeling with Spatial Value Maps](/202604/21/2604.11135v1-aim-intent-aware-unified-world-action-modeling-with-spatial-value-maps)  
+1. [World-Value-Action Model: Implicit Planning for Vision-Language-Action Systems](/202604/22/2604.14732v1-world-value-action-model-implicit-planning-for-vision-language-action-systems)  
    标签：评分：8.0/10、query:q1
-   evidence：带有空间价值图的统一世界动作建模
-2. [CLAW: Composable Language-Annotated Whole-body Motion Generation](/202604/21/2604.11251v1-claw-composable-language-annotated-whole-body-motion-generation)  
-   标签：评分：8.0/10、query:q2
-   evidence：人形机器人的全身运动生成
-3. [CLAW: Composable Language-Annotated Whole-body Motion Generation](/202604/21/2604.11251v2-claw-composable-language-annotated-whole-body-motion-generation)  
-   标签：评分：8.0/10、query:q2
-   evidence：人形机器人全身运动生成与运动学规划器
-4. [CLAW: Composable Language-Annotated Whole-body Motion Generation](/202604/21/2604.11251v3-claw-composable-language-annotated-whole-body-motion-generation)  
-   标签：评分：8.0/10、query:q2
-   evidence：类人机器人的全身运动生成
-5. [Vision-and-Language Navigation for UAVs: Progress, Challenges, and a Research Roadmap](/202604/21/2604.13654v1-vision-and-language-navigation-for-uavs-progress-challenges-and-a-research-roadmap)  
-   标签：评分：7.0/10、query:q5
-   evidence：具身智能与导航中世界模型的综述
-6. [HY-World 2.0: A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds](/202604/21/2604.14268v1-hy-world-20-a-multi-modal-world-model-for-reconstructing-generating-and-simulating-3d-worlds)  
+   evidence：用于VLA系统隐式规划的世界模型
+2. [Human Cognition in Machines: A Unified Perspective of World Models](/202604/22/2604.16592v1-human-cognition-in-machines-a-unified-perspective-of-world-models)  
+   标签：评分：8.0/10、query:q5
+   evidence：世界模型的统一视角与前沿综述
+3. [Curiosity-Critic: Cumulative Prediction Error Improvement as a Tractable Intrinsic Reward for World Model Training](/202604/22/2604.18701v1-curiosity-critic-cumulative-prediction-error-improvement-as-a-tractable-intrinsic-reward-for-world-model-training)  
+   标签：评分：8.0/10、query:q1
+   evidence：世界模型训练的内在奖励机制
+4. [Evolving the Complete Muscle: Efficient Morphology-Control Co-design for Musculoskeletal Locomotion](/202604/22/2604.12855v1-evolving-the-complete-muscle-efficient-morphology-control-co-design-for-musculoskeletal-locomotion)  
+   标签：评分：7.0/10、query:q2
+   evidence：肌肉骨骼运动的形态-控制协同设计
+5. [Vectorizing Projection in Manifold-Constrained Motion Planning for Real-Time Whole-Body Control](/202604/22/2604.13323v1-vectorizing-projection-in-manifold-constrained-motion-planning-for-real-time-whole-body-control)  
+   标签：评分：7.0/10、query:profile-1
+   evidence：人形机器人的实时全身控制
+6. [Beyond State Consistency: Behavior Consistency in Text-Based World Models](/202604/22/2604.13824v1-beyond-state-consistency-behavior-consistency-in-text-based-world-models)  
    标签：评分：7.0/10、query:q1
-   evidence：用于3D世界生成与模拟的多模态世界模型
-7. [Human Cognition in Machines: A Unified Perspective of World Models](/202604/21/2604.16592v1-human-cognition-in-machines-a-unified-perspective-of-world-models)  
-   标签：评分：7.0/10、query:q5
-   evidence：世界模型的统一视角与现状
-8. [Sonata: A Hybrid World Model for Inertial Kinematics under Clinical Data Scarcity](/202604/21/2604.18058v1-sonata-a-hybrid-world-model-for-inertial-kinematics-under-clinical-data-scarcity)  
-   标签：评分：7.0/10、query:q3
-   evidence：用于IMU表示和状态预测的潜空间世界模型
-9. [ScoRe-Flow: Complete Distributional Control via Score-Based Reinforcement Learning for Flow Matching](/202604/21/2604.10962v1-score-flow-complete-distributional-control-via-score-based-reinforcement-learning-for-flow-matching)  
+   evidence：用于评估动作后果和规划中行为一致性的世界模型
+7. [Iterated Invariant EKF for Quadruped Robot Odometry](/202604/22/2604.15449v1-iterated-invariant-ekf-for-quadruped-robot-odometry)  
+   标签：评分：7.0/10、query:q2
+   evidence：四足机器人里程计的状态估计
+8. [RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation](/202604/22/2604.19092v1-robowm-bench-a-benchmark-for-evaluating-world-models-in-robotic-manipulation)  
+   标签：评分：7.0/10、query:q1
+   evidence：评估机器人世界模型的基准
+9. [Multimodal embodiment-aware navigation transformer](/202604/22/2604.19267v1-multimodal-embodiment-aware-navigation-transformer)  
+   标签：评分：7.0/10、query:q2
+   evidence：基于扩散模型的地面机器人多模态导航
+10. [Vision-and-Language Navigation for UAVs: Progress, Challenges, and a Research Roadmap](/202604/22/2604.13654v1-vision-and-language-navigation-for-uavs-progress-challenges-and-a-research-roadmap)  
    标签：评分：6.0/10、query:q1
-   evidence：基于得分的强化学习用于机器人控制
-10. [Beyond State Consistency: Behavior Consistency in Text-Based World Models](/202604/21/2604.13824v1-beyond-state-consistency-behavior-consistency-in-text-based-world-models)  
-   标签：评分：6.0/10、query:q1
-   evidence：文本世界模型中的行为一致性
-11. [From Seeing to Simulating: Generative High-Fidelity Simulation with Digital Cousins for Generalizable Robot Learning and Evaluation](/202604/21/2604.15805v1-from-seeing-to-simulating-generative-high-fidelity-simulation-with-digital-cousins-for-generalizable-robot-learning-and-evaluation)  
-   标签：评分：6.0/10、query:q1
-   evidence：用于模拟和机器人学习的生成式框架
+   evidence：生成式世界模型与VLA架构在机器人导航中的集成
 
 
 <div class="dpr-home-promo-card">
