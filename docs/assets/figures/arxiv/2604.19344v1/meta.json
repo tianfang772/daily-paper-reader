@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.19344v1/fig-001.webp",
+      "caption": "Fig. 1: The mixture of experts works outside of laboratory conditions in environments with noisier lighting and obstacles that are dis-similar to the training obstacles including a narrow walkway.",
+      "page": 1,
+      "index": 1,
+      "width": 527,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19344v1/fig-002.webp",
+      "caption": "Fig. 4: Depth images that are rendered start off with perfectly correct information. We degrade it in various steps to add noise that is similar to the noise seen on the real hardware, an Intel Realsense D435f Depth Camera.",
+      "page": 6,
+      "index": 2,
+      "width": 1067,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19344v1/fig-003.webp",
+      "caption": "TABLE III: Small, Medium, and Large sequential MLP policies when deployed and tested on challenging obstacles 80% of the robot’s height multiple times under-perform the MoE severely. These policies have less than or equal to the number of parameters of the MoE at inference time. The Extra-Large Sequential MLP policy has comparable performance on the obstacle to the MoE but with more scrambling and recoveries. This policy has the total number of parameters of the MoE and underperforms in computational time tests. Ablation studies examining noise and regularized online adapatation are conducted showing both are important to success in the real world.",
+      "page": 6,
+      "index": 3,
+      "width": 1010,
+      "height": 191
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19344v1/fig-004.webp",
+      "caption": "Fig. 5: Selected expert weights throughout the trial in figure 2 are analyzed. Figure 5a shows strong cyclical signals for experts with indices 5, 6, and 8 which is expected given the cyclical nature of locomotion and indicates expert specialization at different points in the cycle. Expert index 8 has highly non-cyclical weighting but figure 5b analyzes the gradient of weights where by proprioception oproprio",
+      "page": 7,
+      "index": 4,
+      "width": 1065,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19344v1/fig-005.webp",
+      "caption": "Fig. 2: The 32cm Box is show with the mixture of experts policy controlling the robot. Four key moments are identified where the robot approaches the box 2a, gets its front legs on the box 2b, stands on the box 2c, and dismounts 2d. Depth images are shown without any processing.",
+      "page": 3,
+      "index": 5,
+      "width": 1059,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19344v1/fig-006.webp",
+      "caption": "Fig. 3: Model architecture during phase 1 and phase 2 training. Perception input is encoded with a multi-layer perceptron (MLP) during phase 1 and a general recurent unit (GRU) during phase 2. During phase 2 the depth encoder is also used to output yaw estimates. Privileged information like center of mass, friction coefficients, and motor strengths are encoded during phase 1 and estimated in phase 2 from the proprioceptive history. Linear velocity is estimated in phase 2. The actor is a mixture of experts (MoE) that has a linear layer connected to the MoE layer that blends various experts sparsely according to a gating matrix and passes the output to a final linear layer.",
+      "page": 3,
+      "index": 6,
+      "width": 1051,
+      "height": 584
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19344v1/fig-007.webp",
+      "caption": "TABLE I: Domain randomization. Distribution type, u for uniform between bounds low l and high h, g for gaussian parametrized by a mean µ and sigma σ, and b for a binomial distribution parametrized by a probability p.",
+      "page": 5,
+      "index": 7,
+      "width": 490,
+      "height": 501
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19344v1/fig-008.webp",
+      "caption": "TABLE II: Rewards terms used including coefficients and their applications.",
+      "page": 5,
+      "index": 8,
+      "width": 527,
+      "height": 465
+    }
+  ]
+}
