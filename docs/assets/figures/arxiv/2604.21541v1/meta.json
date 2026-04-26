@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.21541v1/fig-001.webp",
+      "caption": "Fig. 1: Illustration of X2-N in dual locomotion modes with 4/7-DoF arms, operating on stairs and slopes.",
+      "page": 1,
+      "index": 1,
+      "width": 487,
+      "height": 496
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21541v1/fig-002.webp",
+      "caption": "Fig. 7: Leg-joint configuration comparison of workspace and manipulability between X2-N and conventional humanoid.",
+      "page": 6,
+      "index": 2,
+      "width": 512,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21541v1/fig-003.webp",
+      "caption": "Fig. 2: Overview of different classic legged robot platforms.",
+      "page": 2,
+      "index": 3,
+      "width": 512,
+      "height": 396
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21541v1/fig-004.webp",
+      "caption": "Fig. 8: Three different locomotion modes of X2-N and plotted data (position, angular velocity, output torque) of some key joints (hip pitch, knee, ankle pitch and wheel).",
+      "page": 7,
+      "index": 4,
+      "width": 512,
+      "height": 662
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21541v1/fig-005.webp",
+      "caption": "Fig. 9: Experiments of X2-N on different scenarios: stair climbing, slope leaping, package carrying and manipulation.",
+      "page": 7,
+      "index": 5,
+      "width": 512,
+      "height": 531
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21541v1/fig-006.webp",
+      "caption": "Fig. 4: Illustration of X2-N’s structural details (linkage and locking mechanism), and joint topology in different modes.",
+      "page": 3,
+      "index": 6,
+      "width": 512,
+      "height": 473
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21541v1/fig-007.webp",
+      "caption": "Fig. 3: Illustration of X2-N’s specifications.",
+      "page": 3,
+      "index": 7,
+      "width": 487,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21541v1/fig-008.webp",
+      "caption": "Fig. 5: Illustration of X2-N’s control architecture.",
+      "page": 4,
+      "index": 8,
+      "width": 512,
+      "height": 398
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21541v1/fig-009.webp",
+      "caption": "Fig. 6: Illustration of X2-N’s transformation processes. The top figures show the transition from foot-legged to wheellegged; the bottom figures show the inverse mode transition.",
+      "page": 5,
+      "index": 9,
+      "width": 514,
+      "height": 342
+    }
+  ]
+}

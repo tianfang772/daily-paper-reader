@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.21351v1/fig-001.webp",
+      "caption": "Figure 1. In conclusion, our contributions are as follows: leftmargin=12pt, parsep=0pt",
+      "page": 2,
+      "index": 1,
+      "width": 491,
+      "height": 414
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21351v1/fig-002.webp",
+      "caption": "Fig. 3: WM in Sitting and Lying-down. During typical human sitting and lying-down motions, the body often relaxes after reaching a certain critical point. For example, after attaining a specific extreme position during sitting b), the lower limbs become fully relaxed, allowing the upper body to free-fall onto the chair to complete the sitting motion. Similarly, when leaning back to a certain limit c), the upper body relaxes and free-falls onto the bed to accomplish the lying-down motion.",
+      "page": 2,
+      "index": 2,
+      "width": 462,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21351v1/fig-003.webp",
+      "caption": "Fig. 8: For different motions, the weightlessness network demonstrates a clear capability to identify distinct temporal intervals of weightlessness.",
+      "page": 7,
+      "index": 3,
+      "width": 512,
+      "height": 314
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21351v1/fig-004.webp",
+      "caption": "Fig. 5: Framework. The method consist of 4 components: (a) We collected videos of sitting, lying, and leaning (shoulder and elbow) motions, from which SMPL motions and terrains were extracted, followed by motion retargeting and terrain reconstructed. (b) Label the robot’s joint weightlessness states and weightless time interval via annotation method, and train a WM network using LSTM. (c) Train the action policy using imitation learning. (d) Integrate the WM network to fine-tune the learned policy.",
+      "page": 4,
+      "index": 4,
+      "width": 1052,
+      "height": 472
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21351v1/fig-005.webp",
+      "caption": "TABLE I: LSTM Network Configurations",
+      "page": 5,
+      "index": 5,
+      "width": 508,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21351v1/fig-006.webp",
+      "caption": "TABLE II: Reward Terms for Training",
+      "page": 5,
+      "index": 6,
+      "width": 508,
+      "height": 326
+    }
+  ]
+}
