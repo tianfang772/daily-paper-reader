@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.22251v1/fig-001.webp",
+      "caption": "Fig. 3. Planar SLIP sweep showing mechanism transfer from 1D. Left. Primary D2D normalized CoM mismatch. Center. Secondary stance-timing deviation. Both exhibit a monotonic trend as α decreases, with 15◦ (red) and 20◦ (orange) curves nearly superposed, indicating the primary mechanism is angle-insensitive in this range. Right. Tertiary friction ratio |Fh|/Fv , essentially flat in α and sitting near tan(θTD) for each touchdown angle. The dashed red line marks the friction cone at µ = 0.7. The 30◦ spot check (stars on all three panels) confirms transfer into the aggressive-geometry regime.",
+      "page": 8,
+      "index": 1,
+      "width": 1022,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22251v1/fig-002.webp",
+      "caption": "Fig. 2. Empirical 50 percent crossing α50 versus predicted αcrit from (17) across ten parameter combinations. Log-log fit yields R2 = 0.986 with a consistent proportionality α50 ≈ 0.67αcrit. Points lie systematically below the diagonal because αcrit marks the onset of infeasibility, while α50 measures a performance threshold reached after deviation accumulates.",
+      "page": 6,
+      "index": 2,
+      "width": 529,
+      "height": 485
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22251v1/fig-003.webp",
+      "caption": "TABLE I NOTATION USED THROUGHOUT THE PAPER.",
+      "page": 3,
+      "index": 3,
+      "width": 442,
+      "height": 325
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22251v1/fig-004.webp",
+      "caption": "Fig. 4. Conservative tuning and structural reach. (A) Conservatism curve ∆k′(α)/∆k with three shaded regimes. The infeasible regime is α < αinfeas, the conservative-tuning regime is αinfeas ≤ α < αcrit, and no restriction is needed for α ≥ αcrit. The curve saturates at unity for α ≥ αcrit, indicating conservative tuning is unnecessary there. (B) Conditional cost J/Jideal for unrestricted parameter-based (orange), conservative parameter-based (red), and stiffness-as-state (blue). In the overlap regime all three sit within approximately 10 percent of one another. (C) Reach as horizontal bars. Stiffness-as-state covers the full range. Conservative parameter-based terminates at αinfeas. Unrestricted parameter-based is guaranteed only for α ≥ αcrit. Restricting the admissible stiffness range preserves realizability at the cost of reach, not cost.",
+      "page": 10,
+      "index": 4,
+      "width": 1022,
+      "height": 340
+    }
+  ]
+}
