@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.23761v1/fig-001.webp",
+      "caption": "Fig. 6. (a) t-SNE visualization of kinematic features for five gait modes. Convex hulls delineate the region occupied by each mode. The low-speed modes form a compact cluster, with Hybrid bridging Stepping and Rolling, while the high-speed modes are distinctly separated, validating the mode categorization. Quantitative analysis of the emergent avoidance behaviors under varying reaction times and approach angles. (b) Kinematic-level gait Segmentation, showing the distribution of Stepping, Rolling, and Hybrid gaits. (c) Policy-level mode selection, illustrating the transition between Navigation Avoidance and Reflexive Evasion.",
+      "page": 6,
+      "index": 1,
+      "width": 1000,
+      "height": 243
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23761v1/fig-002.webp",
+      "caption": "TABLE IV QUANTITATIVE COMPARISON OF START-UP DYNAMICS BETWEEN ROLLING AND STEPPING MODES.",
+      "page": 6,
+      "index": 2,
+      "width": 462,
+      "height": 272
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23761v1/fig-003.webp",
+      "caption": "Fig. 1. AWARE: Adaptive Wheeled-Legged Avoidance and Reflexive Evasion. AWARE enables wheeled-legged robots to execute agile obstacle avoidance in both single-mode reflexive evasion (a, c, d, e) and continuous mixed-mode scenarios (b, f), with seamless transitions between smooth navigation avoidance and reflexive evasion maneuvers. The figure presents representative real-world results under three dynamic obstacle interactions—stick poking (a, c, f), human kicking (b), and box throwing (d, e)—demonstrating the robustness and agility of the proposed framework across diverse threat conditions.",
+      "page": 2,
+      "index": 3,
+      "width": 890,
+      "height": 333
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23761v1/fig-004.webp",
+      "caption": "TABLE I SYSTEM INPUTS FOR OBSTACLE AVOIDANCE",
+      "page": 2,
+      "index": 4,
+      "width": 520,
+      "height": 239
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23761v1/fig-005.webp",
+      "caption": "Fig. 2. Overview of the AWARE framework. (a) Hierarchical Architecture: A high-level policy generates evasion commands that are executed by specialized low-level experts for either smooth navigation or high-dynamic reflexive evasion. (b) Two-Stage Training: A decoupled pipeline sequentially trains the low-level experts and the high-level policy to optimize overall evasion performance and efficiency. (c) Real-Robot Deployment: We deploy our system on the M20 robot platform under diverse high-dynamic obstacle scenarios.",
+      "page": 3,
+      "index": 5,
+      "width": 890,
+      "height": 598
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23761v1/fig-006.webp",
+      "caption": "Fig. 8. Real-robot experiments for high-dynamic obstacle avoidance. (a) Reflexive evasion of a y-direction obstacle using a rolling gait. (b) Reflexive evasion of an x-direction obstacle using a stepping gait. (c-d) Continuous mixed-mode evasion for obstacles with varying speeds, initiating with navigation avoidance and transitioning to reflexive evasion. Red represents the reflexive evasion phase, blue represents the navigation avoidance phase, and green represents the standing recovery phase.",
+      "page": 8,
+      "index": 6,
+      "width": 924,
+      "height": 447
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23761v1/fig-007.webp",
+      "caption": "TABLE II DOMAIN RANDOMIZATION FOR SIM-TO-REAL TRANSFER",
+      "page": 4,
+      "index": 7,
+      "width": 512,
+      "height": 385
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23761v1/fig-008.webp",
+      "caption": "Fig. 4. Visualization of the dual-mode high-dynamic obstacle avoidance system. Reflexive Evasion Mode (a–d): Triggered by high-speed obstacles (red ball) from varying directions, the system emerges extreme maneuvers, specifically lateral jumping within the stepping mode (a, b) and forward leaping within the rolling mode (c, d). Navigation Avoidance Mode (e–f): Under lower threat levels (silver ball), the robot executes smooth and continuous avoidance utilizing stepping and hybrid gaits.",
+      "page": 5,
+      "index": 8,
+      "width": 1046,
+      "height": 268
+    }
+  ]
+}
