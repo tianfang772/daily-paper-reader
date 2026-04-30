@@ -1,0 +1,741 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-04-30T20:02:46.847013+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 16,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 16,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2604.20990v1",
+      "source": "arxiv",
+      "title": "A Survey of Legged Robotics in Non-Inertial Environments: Past, Present, and Future",
+      "abstract": "Legged robots have demonstrated remarkable agility on rigid, stationary ground, but their locomotion reliability remains limited in non-inertial environments, where the supporting ground moves, tilts, or accelerates. Such conditions arise in ground transportation, maritime platforms, and aerospace settings, and they introduce persistent time-varying disturbances that break the stationary-ground assumptions underlying conventional legged locomotion. This survey reviews the state of the art in modeling, state estimation, and control for legged robots in non-inertial environments. We summarize representative application domains and motion characteristics, analyze the root causes of locomotion performance degradation, and review existing methods together with their key assumptions and limitations. We further identify open problems in robot-environment coupling, observability, robustness, and experimental validation, and discuss future directions in autonomy, system-level design, bio-inspired strategies, safety, and testing. The survey aims to clarify the technical foundations of this emerging area and support the development of reliable legged robots for real-world dynamic environments.",
+      "authors": [
+        "I-Chia Chang",
+        "Xinyan Huang",
+        "Tzu-Yuan Lin",
+        "Sangli Teng",
+        "Wenjing Li",
+        "Maani Ghaffari",
+        "Jingang Yi",
+        "Yan Gu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "published": "2026-04-22T18:21:49+00:00",
+      "link": "https://arxiv.org/pdf/2604.20990v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Survey of state of the art in legged robotics modeling and control in non-inertial environments",
+      "llm_evidence_cn": "非惯性环境下足式机器人建模与控制的现状综述",
+      "llm_evidence": "非惯性环境下足式机器人建模与控制的现状综述",
+      "canonical_evidence": "非惯性环境下足式机器人建模与控制的现状综述",
+      "llm_tldr_en": "A comprehensive survey on legged robot locomotion, state estimation, and control in moving or tilting environments.",
+      "llm_tldr_cn": "关于足式机器人在移动或倾斜等非惯性环境下的运动、状态估计和控制的全面综述。",
+      "llm_tldr": "关于足式机器人在移动或倾斜等非惯性环境下的运动、状态估计和控制的全面综述。",
+      "llm_tags": [
+        "query:q5"
+      ],
+      "matched_query_tag": "query:q5",
+      "matched_query_text": "State of the art in world models for legged robotics research",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.23702v1",
+      "source": "arxiv",
+      "title": "QuietWalk: Physics-Informed Reinforcement Learning for Ground Reaction Force-Aware Humanoid Locomotion Under Diverse Footwear",
+      "abstract": "Humanoid robots operating in human-centered environments (e.g., homes, hospitals, and offices) must mitigate foot--ground impact transients, as impact-induced vibration and noise degrade user experience and repeated impacts accelerate hardware wear. However, existing low-noise locomotion training often relies on kinematic proxy objectives or fragile force sensors, and footwear-induced changes in contact dynamics introduce distribution shifts that hinder policy generalization.We present QuietWalk, a physics-informed reinforcement learning framework for ground-reaction-force-aware humanoid locomotion under diverse footwear conditions. QuietWalk employs an inverse-dynamics-constrained physics-informed neural network (PINN) to estimate per-foot vertical ground reaction forces (GRFs) from proprioceptive signals, and integrates the frozen predictor into the RL training loop to penalize predicted impact forces without requiring force sensors at deployment.On a held-out real-robot dataset, enforcing inverse-dynamics consistency reduces vertical GRF prediction errors by 82%-86% compared with a purely supervised predictor and improves the coefficient of determination from 0.39/0.67 to 0.99/0.99 for the left/right feet. On hardware at 1.2 m/s (barefoot; averaged over four floor materials), QuietWalk reduces mean A-weighted noise level by 7.17 dB and peak noise level by 4.98 dB under a consistent recording setup. Cross-footwear experiments (barefoot, skate shoes, athletic sneakers, and high heels) across multiple surfaces further demonstrate robust adaptation to footwear-induced contact variations.",
+      "authors": [
+        "Hanze Hu",
+        "Luying Feng",
+        "Silu Chen",
+        "Tianjiang Zheng",
+        "Dexin Jiang",
+        "Wei Chen",
+        "Chi Zhang",
+        "Guilin Yang",
+        "Yaochu Jin"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-26T13:34:21+00:00",
+      "link": "https://arxiv.org/pdf/2604.23702v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Physics-informed RL for humanoid locomotion and ground reaction force control",
+      "llm_evidence_cn": "物理启发的强化学习用于类人机器人运动和地面反作用力控制",
+      "llm_evidence": "物理启发的强化学习用于类人机器人运动和地面反作用力控制",
+      "canonical_evidence": "物理启发的强化学习用于类人机器人运动和地面反作用力控制",
+      "llm_tldr_en": "QuietWalk uses physics-informed RL to achieve low-noise humanoid locomotion across diverse footwear conditions.",
+      "llm_tldr_cn": "QuietWalk利用物理启发强化学习，在不同鞋履条件下实现低噪音类人机器人运动。",
+      "llm_tldr": "QuietWalk利用物理启发强化学习，在不同鞋履条件下实现低噪音类人机器人运动。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.23761v1",
+      "source": "arxiv",
+      "title": "Unleashing the Agility of Wheeled-Legged Robots for High-Dynamic Reflexive Obstacle Evasion",
+      "abstract": "Wheeled-legged robots combine the energy efficiency of wheeled locomotion with the terrain adaptability of legged systems, making them promising platforms for agile mobility in complex and dynamic environments. However, enabling high-dynamic reflexive evasion against fast-moving obstacles remains challenging due to the hybrid morphology, mode coupling, and non-holonomic constraints of such platforms. In this work, we propose AWARE, Adaptive Wheeled-Legged Avoidance and Reflexive Evasion, a hierarchical reinforcement learning framework for high-dynamic obstacle avoidance in wheeled-legged robots. The proposed system naturally exhibits diverse emergent gaits and evasive behaviors, including forward lunge and lateral dodge, thereby leveraging the robot's hybrid morphology to enhance agility under highly dynamic threats. Extensive experiments in Isaac Lab simulation and real-world deployment on the M20 platform across diverse dynamic scenarios demonstrate that AWARE achieves robust and agile obstacle avoidance while revealing behaviorally distinct evasive strategies. These results highlight both the practical effectiveness of AWARE and the intrinsic reflexive agility of wheeled-legged robots.",
+      "authors": [
+        "Yongen Zhao",
+        "Zihao Xu",
+        "Wenzhi Lu",
+        "Zhen Chu",
+        "Ce Hao"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-26T15:21:33+00:00",
+      "link": "https://arxiv.org/pdf/2604.23761v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Hierarchical RL for high-dynamic obstacle evasion in wheeled-legged robots",
+      "llm_evidence_cn": "分层强化学习用于轮足机器人的高动态障碍物规避",
+      "llm_evidence": "分层强化学习用于轮足机器人的高动态障碍物规避",
+      "canonical_evidence": "分层强化学习用于轮足机器人的高动态障碍物规避",
+      "llm_tldr_en": "AWARE framework enables wheeled-legged robots to perform agile reflexive evasion in complex dynamic environments.",
+      "llm_tldr_cn": "AWARE框架使轮足机器人能够在复杂的动态环境中执行敏捷的反射性规避。",
+      "llm_tldr": "AWARE框架使轮足机器人能够在复杂的动态环境中执行敏捷的反射性规避。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.26182v1",
+      "source": "arxiv",
+      "title": "Lifting Embodied World Models for Planning and Control",
+      "abstract": "World models of embodied agents predict future observations conditioned on an action taken by the agent. For complex embodiments, action spaces are high-dimensional and difficult to specify: for example, precisely controlling a human agent requires specifying the motion of each joint. This makes the world model hard to control and expensive to plan with as search-based methods like CEM scale poorly with action dimensionality. To address this issue, we train a lightweight policy that maps high-level actions to sequences of low-level joint actions. Composing this policy with the frozen world model produces a lifted world model that predicts a sequence of future observations from a single high-level action. We instantiate this framework for a human-like embodiment, defining the high-level action space as a small set of 2D waypoints annotated on the current observation frame, each specifying a near-term goal position for a leaf joint (pelvis, head, hands). Waypoints are low-dimensional, visually interpretable, and easy to specify manually or to search over. We show that the lifted world model substantially outperforms searching directly in low-level joint space ($3.8\\times$ lower mean joint error to the goal pose), while remaining more compute-efficient and generalizing to environments unseen by the policy.",
+      "authors": [
+        "Alex N. Wang",
+        "Trevor Darrell",
+        "Pavel Izmailov",
+        "Yutong Bai",
+        "Amir Bar"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-04-28T23:59:19+00:00",
+      "link": "https://arxiv.org/pdf/2604.26182v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "lifting embodied world models for planning and control",
+      "llm_evidence_cn": "提升具身世界模型用于规划与控制",
+      "llm_evidence": "提升具身世界模型用于规划与控制",
+      "canonical_evidence": "提升具身世界模型用于规划与控制",
+      "llm_tldr_en": "Trains a policy to map high-level actions to low-level joint sequences to improve world model planning efficiency.",
+      "llm_tldr_cn": "训练一种策略将高层动作映射到低层关节序列，以提高世界模型规划效率。",
+      "llm_tldr": "训练一种策略将高层动作映射到低层关节序列，以提高世界模型规划效率。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.26504v1",
+      "source": "arxiv",
+      "title": "HiPAN: Hierarchical Posture-Adaptive Navigation for Quadruped Robots in Unstructured 3D Environments",
+      "abstract": "Navigating quadruped robots in unstructured 3D environments poses significant challenges, requiring goal-directed motion, effective exploration to escape from local minima, and posture adaptation to traverse narrow, height-constrained spaces. Conventional approaches employ a sequential mapping-planning pipeline but suffer from accumulated perception errors and high computational overhead, restricting their applicability on resource-constrained platforms. To address these challenges, we propose Hierarchical Posture-Adaptive Navigation (HiPAN), a framework that operates directly on onboard depth images at deployment. HiPAN adopts a hierarchical design: a high-level policy generates strategic navigation commands (planar velocity and body posture), which are executed by a low-level, posture-adaptive locomotion controller. To mitigate myopic behaviors and facilitate long-horizon navigation, we introduce Path-Guided Curriculum Learning, which progressively extends the navigation horizon from reactive obstacle avoidance to strategic navigation. In simulation, HiPAN achieves higher navigation success rates and greater path efficiency than classical reactive planners and end-to-end baselines, while real-world experiments further validate its applicability across diverse, unstructured 3D environments.",
+      "authors": [
+        "Jeil Jeong",
+        "Minsung Yoon",
+        "Seokryun Choi",
+        "Heechan Shin",
+        "Taegeun Yang",
+        "Sung-eui Yoon"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-29T10:08:48+00:00",
+      "link": "https://arxiv.org/pdf/2604.26504v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "navigation for quadruped robots in unstructured 3D environments",
+      "llm_evidence_cn": "非结构化3D环境中的四足机器人导航",
+      "llm_evidence": "非结构化3D环境中的四足机器人导航",
+      "canonical_evidence": "非结构化3D环境中的四足机器人导航",
+      "llm_tldr_en": "Proposes a hierarchical framework for quadruped robot navigation in complex 3D environments using depth images.",
+      "llm_tldr_cn": "提出了一种利用深度图像在复杂3D环境中进行四足机器人导航的分层框架。",
+      "llm_tldr": "提出了一种利用深度图像在复杂3D环境中进行四足机器人导航的分层框架。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.26910v1",
+      "source": "arxiv",
+      "title": "Bi-Level Optimization for Contact and Motion Planning in Rope-Assisted Legged Robots",
+      "abstract": "This paper presents a planning pipeline framework for locomotion in rope-assisted robots climbing vertical surfaces. The proposed framework is formulated as a bi-level optimization scheme that addresses a mixed-integer problem: selecting feasible terrain regions for landing while simultaneously optimizing the control inputs, namely rope tensions and leg forces, and landing location. The outer level of the optimization is solved using the Cross-Entropy Method, while the inner level relies on gradient-based nonlinear optimization to compute dynamically feasible motions. The approach is validated on a novel climbing robot platform, ALPINE, across a variety of challenging terrain configurations.",
+      "authors": [
+        "Ruben Malacarne",
+        "Ioannis Tsikelis",
+        "Enrico Mingo Hoffman",
+        "Michele Focchi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-29T17:18:29+00:00",
+      "link": "https://arxiv.org/pdf/2604.26910v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "contact and motion planning in rope-assisted legged robots",
+      "llm_evidence_cn": "绳索辅助足式机器人的接触与运动规划",
+      "llm_evidence": "绳索辅助足式机器人的接触与运动规划",
+      "canonical_evidence": "绳索辅助足式机器人的接触与运动规划",
+      "llm_tldr_en": "Presents a bi-level optimization framework for locomotion and contact planning in climbing legged robots.",
+      "llm_tldr_cn": "提出了一种用于攀爬足式机器人运动和接触规划的双层优化框架。",
+      "llm_tldr": "提出了一种用于攀爬足式机器人运动和接触规划的双层优化框架。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.20246v1",
+      "source": "arxiv",
+      "title": "Cortex 2.0: Grounding World Models in Real-World Industrial Deployment",
+      "abstract": "Industrial robotic manipulation demands reliable long-horizon execution across embodiments, tasks, and changing object distributions. While Vision-Language-Action models have demonstrated strong generalization, they remain fundamentally reactive. By optimizing the next action given the current observation without evaluating potential futures, they are brittle to the compounding failure modes of long-horizon tasks. Cortex 2.0 shifts from reactive control to plan-and-act by generating candidate future trajectories in visual latent space, scoring them for expected success and efficiency, then committing only to the highest-scoring candidate. We evaluate Cortex 2.0 on a single-arm and dual-arm manipulation platform across four tasks of increasing complexity: pick and place, item and trash sorting, screw sorting, and shoebox unpacking. Cortex 2.0 consistently outperforms state-of-the-art Vision-Language-Action baselines, achieving the best results across all tasks. The system remains reliable in unstructured environments characterized by heavy clutter, frequent occlusions, and contact-rich manipulation, where reactive policies fail. These results demonstrate that world-model-based planning can operate reliably in complex industrial environments.",
+      "authors": [
+        "Adriana Aida",
+        "Walid Amer",
+        "Katarina Bankovic",
+        "Dhruv Behl",
+        "Fabian Busch",
+        "Annie Bhalla",
+        "Minh Duong",
+        "Florian Gienger",
+        "Rohan Godse",
+        "Denis Grachev",
+        "Ralf Gulde",
+        "Elisa Hagensieker",
+        "Junpeng Hu",
+        "Shivam Joshi",
+        "Tobias Knobloch",
+        "Likith Kumar",
+        "Damien LaRocque",
+        "Keerthana Lokesh",
+        "Omar Moured",
+        "Khiem Nguyen",
+        "Christian Preyss",
+        "Ranjith Sriganesan",
+        "Vikram Singh",
+        "Carsten Sponner",
+        "Anh Tong",
+        "Dominik Tuscher",
+        "Marc Tuscher",
+        "Pavan Upputuri"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T06:49:12+00:00",
+      "link": "https://arxiv.org/pdf/2604.20246v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "generating candidate future trajectories in visual latent space for planning",
+      "llm_evidence_cn": "在视觉潜空间中生成候选未来轨迹用于规划",
+      "llm_evidence": "在视觉潜空间中生成候选未来轨迹用于规划",
+      "canonical_evidence": "在视觉潜空间中生成候选未来轨迹用于规划",
+      "llm_tldr_en": "Cortex 2.0 uses world models to generate and score future trajectories for long-horizon industrial manipulation.",
+      "llm_tldr_cn": "Cortex 2.0利用世界模型生成并评估未来轨迹，用于长程工业操作。",
+      "llm_tldr": "Cortex 2.0利用世界模型生成并评估未来轨迹，用于长程工业操作。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.19980v1",
+      "source": "arxiv",
+      "title": "Efficient Reinforcement Learning using Linear Koopman Dynamics for Nonlinear Robotic Systems",
+      "abstract": "This paper presents a model-based reinforcement learning (RL) framework for optimal closed-loop control of nonlinear robotic systems. The proposed approach learns linear lifted dynamics through Koopman operator theory and integrates the resulting model into an actor-critic architecture for policy optimization, where the policy represents a parameterized closed-loop controller. To reduce computational cost and mitigate model rollout errors, policy gradients are estimated using one-step predictions of the learned dynamics rather than multi-step propagation. This leads to an online mini-batch policy gradient framework that enables policy improvement from streamed interaction data. The proposed framework is evaluated on several simulated nonlinear control benchmarks and two real-world hardware platforms, including a Kinova Gen3 robotic arm and a Unitree Go1 quadruped. Experimental results demonstrate improved sample efficiency over model-free RL baselines, superior control performance relative to model-based RL baselines, and control performance comparable to classical model-based methods that rely on exact system dynamics.",
+      "authors": [
+        "Wenjian Hao",
+        "Yuxuan Fang",
+        "Zehui Lu",
+        "Shaoshuai Mou"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "published": "2026-04-21T20:40:22+00:00",
+      "link": "https://arxiv.org/pdf/2604.19980v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Model-based RL using learned linear Koopman dynamics for robot control",
+      "llm_evidence_cn": "基于学习的线性Koopman动力学的模型强化学习用于机器人控制",
+      "llm_evidence": "基于学习的线性Koopman动力学的模型强化学习用于机器人控制",
+      "canonical_evidence": "基于学习的线性Koopman动力学的模型强化学习用于机器人控制",
+      "llm_tldr_en": "Proposes an efficient model-based RL framework using Koopman operator theory for nonlinear robotic systems.",
+      "llm_tldr_cn": "提出了一种利用Koopman算子理论的高效模型强化学习框架，用于非线性机器人系统。",
+      "llm_tldr": "提出了一种利用Koopman算子理论的高效模型强化学习框架，用于非线性机器人系统。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.20305v1",
+      "source": "arxiv",
+      "title": "AdaTracker: Learning Adaptive In-Context Policy for Cross-Embodiment Active Visual Tracking",
+      "abstract": "Realizing active visual tracking with a single unified model across diverse robots is challenging, as the physical constraints and motion dynamics vary drastically from one platform to another. Existing approaches typically train separate models for each embodiment, leading to poor scalability and limited generalization. To address this, we propose AdaTracker, an adaptive in-context policy learning framework that robustly tracks targets on diverse robot morphologies. Our key insight is to explicitly model embodiment-specific constraints through an Embodiment Context Encoder, which infers embodiment-specific constraints from history. This contextual representation dynamically modulates a Context-Aware Policy, enabling it to infer optimal control actions for unseen embodiments in a zero-shot manner. To enhance robustness, we introduce two auxiliary objectives to ensure accurate context identification and temporal consistency. Experiments in both simulation and the real world demonstrate that AdaTracker significantly outperforms state-of-the-art methods in cross-embodiment generalization, sample efficiency, and zero-shot adaptation.",
+      "authors": [
+        "Kui Wu",
+        "Hao Chen",
+        "Jinzhu Han",
+        "Haijun Liu",
+        "Churan Wang",
+        "Yizhou Wang",
+        "Zhoujun Li",
+        "Si Liu",
+        "Fangwei Zhong"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-22T08:06:32+00:00",
+      "link": "https://arxiv.org/pdf/2604.20305v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "modeling embodiment-specific constraints and motion dynamics",
+      "llm_evidence_cn": "建模特定具身约束和运动动力学",
+      "llm_evidence": "建模特定具身约束和运动动力学",
+      "canonical_evidence": "建模特定具身约束和运动动力学",
+      "llm_tldr_en": "Learns adaptive policies across diverse robot morphologies by explicitly modeling embodiment-specific constraints.",
+      "llm_tldr_cn": "通过显式建模特定具身约束，学习跨多种机器人形态的自适应策略。",
+      "llm_tldr": "通过显式建模特定具身约束，学习跨多种机器人形态的自适应策略。",
+      "llm_tags": [
+        "query:q3"
+      ],
+      "matched_query_tag": "query:q3",
+      "matched_query_text": "Learning latent dynamics for legged robot control",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.21541v1",
+      "source": "arxiv",
+      "title": "X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation",
+      "abstract": "Wheel-legged robots combine the efficiency of wheeled locomotion with the versatility of legged systems, enabling rapid traversal over both continuous and discrete terrains. However, conventional designs typically employ fixed wheels as feet and limited degrees of freedom (DoFs) at the hips, resulting in reduced stability and mobility during legged locomotion compared to humanoids with flat feet. In addition, most existing platforms lack a full upper body with arms, which limits their ability to perform dexterous manipulation tasks.   In this letter, we present X2-N, a high-DoF transformable robot with dual-mode locomotion and manipulation. X2-N can operate in both humanoid and wheel-legged forms and transform seamlessly between them through joint reconfiguration. We further propose a reinforcement learning (RL)-based whole-body control framework tailored to this morphology, enabling unified control across hybrid locomotion, transformation, and manipulation. We validate X2-N in a range of challenging locomotion and manipulation tasks, including dynamic skating-like motion, stair climbing and package delivery. Results demonstrate high locomotion efficiency, strong terrain adaptability, and stable loco-manipulation performance of X2-N, highlighting its potential for real-world deployment.",
+      "authors": [
+        "Yan Ning",
+        "Xingzhou Chen",
+        "Delong Li",
+        "Hao Zhang",
+        "Hanfu Gai",
+        "Tongyuan Li",
+        "Cheng Zhang",
+        "Zhihui Peng",
+        "Ling Shi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-23T11:10:11+00:00",
+      "link": "https://arxiv.org/pdf/2604.21541v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "transformable wheel-legged humanoid robot locomotion",
+      "llm_evidence_cn": "可变形轮足类人机器人的运动控制",
+      "llm_evidence": "可变形轮足类人机器人的运动控制",
+      "canonical_evidence": "可变形轮足类人机器人的运动控制",
+      "llm_tldr_en": "Develops a transformable wheel-legged humanoid robot capable of dual-mode locomotion and manipulation.",
+      "llm_tldr_cn": "开发了一种能够进行双模式运动和操作的可变形轮足类人机器人。",
+      "llm_tldr": "开发了一种能够进行双模式运动和操作的可变形轮足类人机器人。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.24916v1",
+      "source": "arxiv",
+      "title": "asRoBallet: Closing the Sim2Real Gap via Friction-Aware Reinforcement Learning for Underactuated Spherical Dynamics",
+      "abstract": "We introduce asRoBallet, to the best of our knowledge, the first successful deployment of reinforcement learning (RL) on a humanoid ballbot hardware. Historically, ballbots have served as a canonical benchmark for underactuated and nonholonomic control, which are characterized by a reality gap in complex friction models for wheel-sphere-ground interactions. While current literature demonstrates successful handling of 3D balancing with LQR and MPC, transitioning to actual hardware for a humanoid ballbot using RL is currently hindered by critical gaps in contact modeling, actuator latency & jitter, and safe hardware exploration, and safe hardware exploration. This study proposes a high-fidelity MuJoCo simulation that explicitly models the discrete roller mechanics of ETH-type omni-wheels, thereby capturing parasitic vibrations and contact discontinuities that are previously ignored. We also developed a Friction-Aware Reinforcement Learning framework that achieves zero-shot Sim2Real transfer by mastering the coupled rolling, lateral, and torsional friction channels at the wheel-sphere and sphere-ground interfaces. We designed asRoBallet through subtractive reconfiguration, repurposing key components from an overconstrained quadruped and integrating them into a newly designed structural frame to achieve a robust research platform at low cost. We also developed a generalized iOS ecosystem that transforms consumer electronics into a low-latency interface, enabling a single operator to orchestrate expressive humanoid maneuvers via intuitive natural motion.",
+      "authors": [
+        "Fang Wan",
+        "Guangyi Huang",
+        "Tianyu Wu",
+        "Zishang Zhang",
+        "Bangchao Huang",
+        "Haoran Sun",
+        "Mingdong Chen",
+        "Chaoyang Song"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-04-27T18:51:01+00:00",
+      "link": "https://arxiv.org/pdf/2604.24916v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "reinforcement learning for humanoid ballbot locomotion and sim2real gap",
+      "llm_evidence_cn": "类人球形机器人运动的强化学习与虚实迁移",
+      "llm_evidence": "类人球形机器人运动的强化学习与虚实迁移",
+      "canonical_evidence": "类人球形机器人运动的强化学习与虚实迁移",
+      "llm_tldr_en": "Introduces asRoBallet, applying RL to humanoid ballbot hardware by addressing friction and contact modeling gaps.",
+      "llm_tldr_cn": "引入asRoBallet，通过解决摩擦和接触建模差距，将强化学习应用于类人球形机器人硬件。",
+      "llm_tldr": "引入asRoBallet，通过解决摩擦和接触建模差距，将强化学习应用于类人球形机器人硬件。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.20834v2",
+      "source": "arxiv",
+      "title": "PokeVLA: Empowering Pocket-Sized Vision-Language-Action Model with Comprehensive World Knowledge Guidance",
+      "abstract": "Recent advances in Vision-Language-Action (VLA) models have opened new avenues for robot manipulation, yet existing methods exhibit limited efficiency and a lack of high-level knowledge and spatial awareness. To address these challenges, we propose PokeVLA, a lightweight yet powerful foundation model for embodied manipulation that effectively infuses vision-language understanding into action learning. Our framework introduces a two-stage training paradigm: first, we pre-train a compact vision-language model (PokeVLM) on a curated multimodal dataset of 2.4M samples encompassing spatial grounding, affordance, and embodied reasoning tasks; second, we inject manipulation-relevant representations into the action space through multi-view goal-aware semantics learning, geometry alignment, and a novel action expert. Extensive experiments demonstrate state-of-the-art performance on the LIBERO-Plus benchmark and in real-world deployment, outperforming comparable baselines in success rate and robustness under diverse perturbations. To foster reproducibility and community progress, we will open-source our code, model weights, and the scripts for the curated pre-training dataset. Project page: https://getterupper.github.io/PokeVLA",
+      "authors": [
+        "Yupeng Zheng",
+        "Xiang Li",
+        "Songen Gu",
+        "Yuhang Zheng",
+        "Shuai Tian",
+        "Weize Li",
+        "Linbo Wang",
+        "Senyu Fei",
+        "Pengfei Li",
+        "Yinfeng Gao",
+        "Zebin Xing",
+        "Yilun Chen",
+        "Qichao Zhang",
+        "Haoran Li",
+        "Wenchao Ding"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-22T17:58:19+00:00",
+      "link": "https://arxiv.org/pdf/2604.20834v2",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "world knowledge guidance for vision-language-action models",
+      "llm_evidence_cn": "视觉-语言-动作模型的世界知识引导",
+      "llm_evidence": "视觉-语言-动作模型的世界知识引导",
+      "canonical_evidence": "视觉-语言-动作模型的世界知识引导",
+      "llm_tldr_en": "Proposes a lightweight VLA model that infuses world knowledge into action learning for robot manipulation.",
+      "llm_tldr_cn": "提出了一种轻量级VLA模型，将世界知识注入机器人操作的动作学习中。",
+      "llm_tldr": "提出了一种轻量级VLA模型，将世界知识注入机器人操作的动作学习中。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.21741v1",
+      "source": "arxiv",
+      "title": "Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training",
+      "abstract": "Post-training is essential for turning pretrained generalist robot policies into reliable task-specific controllers, but existing human-in-the-loop pipelines remain tied to physical execution: each correction requires robot time, scene setup, resets, and operator supervision in the real world. Meanwhile, action-conditioned world models have been studied mainly for imagination, synthetic data generation, and policy evaluation. We propose \\textbf{Human-in-the-World-Model (Hi-WM)}, a post-training framework that uses a learned world model as a reusable corrective substrate for failure-targeted policy improvement. A policy is first rolled out in closed loop inside the world model; when the rollout becomes incorrect or failure-prone, a human intervenes directly in the model to provide short corrective actions. Hi-WM caches intermediate states and supports rollback and branching, allowing a single failure state to be reused for multiple corrective continuations and yielding dense supervision around behaviors that the base policy handles poorly. The resulting corrective trajectories are then added back to the training set for post-training. We evaluate Hi-WM on three real-world manipulation tasks spanning both rigid and deformable object interaction, and on two policy backbones. Hi-WM improves real-world success by 37.9 points on average over the base policy and by 19.0 points over a world-model closed-loop baseline, while world-model evaluation correlates strongly with real-world performance (r = 0.953). These results suggest that world models can serve not only as generators or evaluators, but also as effective corrective substrates for scalable robot post-training.",
+      "authors": [
+        "Yaxuan Li",
+        "Zhongyi Zhou",
+        "Yefei Chen",
+        "Yanjiang Guo",
+        "Jiaming Liu",
+        "Shanghang Zhang",
+        "Jianyu Chen",
+        "Yichen Zhu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-23T14:42:54+00:00",
+      "link": "https://arxiv.org/pdf/2604.21741v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "world model as a corrective substrate for robot post-training",
+      "llm_evidence_cn": "世界模型作为机器人后期训练的纠正基质",
+      "llm_evidence": "世界模型作为机器人后期训练的纠正基质",
+      "canonical_evidence": "世界模型作为机器人后期训练的纠正基质",
+      "llm_tldr_en": "Proposes using a learned world model for human-in-the-loop robot policy improvement without physical execution.",
+      "llm_tldr_cn": "提出利用学习到的世界模型进行人在回路的机器人策略改进，无需物理执行。",
+      "llm_tldr": "提出利用学习到的世界模型进行人在回路的机器人策略改进，无需物理执行。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.25788v1",
+      "source": "arxiv",
+      "title": "KinDER: A Physical Reasoning Benchmark for Robot Learning and Planning",
+      "abstract": "Robotic systems that interact with the physical world must reason about kinematic and dynamic constraints imposed by their own embodiment, their environment, and the task at hand. We introduce KinDER, a benchmark for Kinematic and Dynamic Embodied Reasoning that targets physical reasoning challenges arising in robot learning and planning. KinDER comprises 25 procedurally generated environments, a Gymnasium-compatible Python library with parameterized skills and demonstrations, and a standardized evaluation suite with 13 implemented baselines spanning task and motion planning, imitation learning, reinforcement learning, and foundation-model-based approaches. The environments are designed to isolate five core physical reasoning challenges: basic spatial relations, nonprehensile multi-object manipulation, tool use, combinatorial geometric constraints, and dynamic constraints, disentangled from perception, language understanding, and application-specific complexity. Empirical evaluation shows that existing methods struggle to solve many of the environments, indicating substantial gaps in current approaches to physical reasoning. We additionally include real-to-sim-to-real experiments on a mobile manipulator to assess the correspondence between simulation and real-world physical interaction. KinDER is fully open-sourced and intended to enable systematic comparison across diverse paradigms for advancing physical reasoning in robotics. Website and code: https://prpl-group.com/kinder-site/",
+      "authors": [
+        "Yixuan Huang",
+        "Bowen Li",
+        "Vaibhav Saxena",
+        "Yichao Liang",
+        "Utkarsh Aashu Mishra",
+        "Liang Ji",
+        "Lihan Zha",
+        "Jimmy Wu",
+        "Nishanth Kumar",
+        "Sebastian Scherer",
+        "Danfei Xu",
+        "Tom Silver"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-28T15:58:09+00:00",
+      "link": "https://arxiv.org/pdf/2604.25788v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "benchmark for kinematic and dynamic reasoning in robot learning and planning",
+      "llm_evidence_cn": "机器人学习与规划中的运动学和动力学推理基准",
+      "llm_evidence": "机器人学习与规划中的运动学和动力学推理基准",
+      "canonical_evidence": "机器人学习与规划中的运动学和动力学推理基准",
+      "llm_tldr_en": "Introduces a benchmark for physical reasoning in robot learning and planning across diverse environments.",
+      "llm_tldr_cn": "引入了一个用于机器人学习和规划中物理推理的基准测试，涵盖多种环境。",
+      "llm_tldr": "引入了一个用于机器人学习和规划中物理推理的基准测试，涵盖多种环境。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.22152v1",
+      "source": "arxiv",
+      "title": "dWorldEval: Scalable Robotic Policy Evaluation via Discrete Diffusion World Model",
+      "abstract": "Evaluating robotics policies across thousands of environments and thousands of tasks is infeasible with existing approaches. This motivates the need for a new methodology for scalable robotics policy evaluation. In this paper, we propose dWorldEval, which uses a discrete diffusion world model as a scalable evaluation proxy for robotics policies. Specifically, dWorldEval maps all modalities - including vision, language, and robotic actions - into a unified token space, modeling them via a single transformer-based denoising network. In this paper, we propose dWorldEval, using a discrete diffusion world model as a scalable evaluation proxy for robotics policy. Specifically, it maps all modalities, including vision, language, and robotics action into a unified token space, then denoises them with a single transformer network. Building on this architecture, we employ a sparse keyframe memory to maintain spatiotemporal consistency. We also introduce a progress token that indicates the degree of task completion. At inference, the model jointly predicts future observations and progress token, allowing automatically determine success when the progress reaches 1. Extensive experiments demonstrate that dWorldEval significantly outperforms previous approaches, i.e., WorldEval, Ctrl-World, and WorldGym, on LIBERO, RoboTwin, and multiple real-robot tasks. It paves the way for a new architectural paradigm in building world simulators for robotics evaluation at scale.",
+      "authors": [
+        "Yaxuan Li",
+        "Zhongyi Zhou",
+        "Yefei Chen",
+        "Yaokai Xue",
+        "Yichen Zhu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-24T01:50:53+00:00",
+      "link": "https://arxiv.org/pdf/2604.22152v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "discrete diffusion world model for robotic policy evaluation",
+      "llm_evidence_cn": "用于机器人策略评估的离散扩散世界模型",
+      "llm_evidence": "用于机器人策略评估的离散扩散世界模型",
+      "canonical_evidence": "用于机器人策略评估的离散扩散世界模型",
+      "llm_tldr_en": "Uses a discrete diffusion world model as a scalable proxy for evaluating diverse robotic policies.",
+      "llm_tldr_cn": "使用离散扩散世界模型作为评估各种机器人策略的可扩展代理。",
+      "llm_tldr": "使用离散扩散世界模型作为评估各种机器人策略的可扩展代理。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.26934v1",
+      "source": "arxiv",
+      "title": "World2VLM: Distilling World Model Imagination into VLMs for Dynamic Spatial Reasoning",
+      "abstract": "Vision-language models (VLMs) have shown strong performance on static visual understanding, yet they still struggle with dynamic spatial reasoning that requires imagining how scenes evolve under egocentric motion. Recent efforts address this limitation either by scaling spatial supervision with synthetic data or by coupling VLMs with world models at inference time. However, the former often lacks explicit modeling of motion-conditioned state transitions, while the latter incurs substantial computational overhead. In this work, we propose World2VLM, a training framework that distills spatial imagination from a generative world model into a vision-language model. Given an initial observation and a parameterized camera trajectory, we use a view-consistent world model to synthesize geometrically aligned future views and derive structured supervision for both forward (action-to-outcome) and inverse (outcome-to-action) spatial reasoning. We post-train the VLM with a two-stage recipe on a compact dataset generated by this pipeline and evaluate it on multiple spatial reasoning benchmarks. World2VLM delivers consistent improvements over the base model across diverse benchmarks, including SAT-Real, SAT-Synthesized, VSI-Bench, and MindCube. It also outperforms the test-time world-model-coupled methods while eliminating the need for expensive inference-time generation. Our results suggest that world models can serve not only as inference-time tools, but also as effective training-time teachers, enabling VLMs to internalize spatial imagination in a scalable and efficient manner.",
+      "authors": [
+        "Wanyue Zhang",
+        "Wenxiang Wu",
+        "Wang Xu",
+        "Jiaxin Luo",
+        "Helu Zhi",
+        "Yibin Huang",
+        "Shuo Ren",
+        "Zitao Liu",
+        "Jiajun Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-04-29T17:48:01+00:00",
+      "link": "https://arxiv.org/pdf/2604.26934v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "distilling world model imagination for dynamic spatial reasoning",
+      "llm_evidence_cn": "将世界模型的想象力蒸馏用于动态空间推理",
+      "llm_evidence": "将世界模型的想象力蒸馏用于动态空间推理",
+      "canonical_evidence": "将世界模型的想象力蒸馏用于动态空间推理",
+      "llm_tldr_en": "World2VLM distills spatial imagination from generative world models into VLMs to improve dynamic reasoning.",
+      "llm_tldr_cn": "World2VLM将生成式世界模型的空间想象力蒸馏到VLM中，以提高动态推理能力。",
+      "llm_tldr": "World2VLM将生成式世界模型的空间想象力蒸馏到VLM中，以提高动态推理能力。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.22251v1",
+      "source": "arxiv",
+      "title": "False Feasibility in Variable Impedance MPC for Legged Locomotion",
+      "abstract": "Variable impedance model predictive control (MPC) formulations that treat joint stiffness as an instantaneous decision variable operate on a feasible set strictly larger than the physically realizable set under first-order actuator dynamics. We identify this as a formulation error rather than a modeling approximation, formalize the distinction between the parameter-based feasible set Fparam and the realizable set Freal, and characterize the regime of mismatch via the dimensionless parameter alpha = omega_sT (actuator bandwidth times task timescale). For the 1D hopping monoped, we prove that below an analytical threshold alpha_crit derived in closed form from task physics, no admissible stiffness command realizes the parameter-based prediction. Numerical validation in 1D shows monotonic deviation growth as alpha decreases, with the predicted scaling holding across ten parameter combinations (log-log R2 = 0.99). Mechanism transfer to planar spring-loaded inverted pendulum dynamics confirms center-of-mass and stance-timing deviation as the primary consequence, with regime-dependent friction effects as a tertiary observable. A second threshold alpha_infeas < alpha_crit establishes a floor below which restricting the admissible stiffness range cannot repair realizability, closing the conservative-tuning objection on structural grounds. Augmenting the prediction state with stiffness closes the mismatch by construction.",
+      "authors": [
+        "Vishal Ramesh"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-24T05:49:14+00:00",
+      "link": "https://arxiv.org/pdf/2604.22251v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Variable impedance MPC for legged locomotion and feasibility analysis",
+      "llm_evidence_cn": "用于足式运动的可变阻抗MPC及可行性分析",
+      "llm_evidence": "用于足式运动的可变阻抗MPC及可行性分析",
+      "canonical_evidence": "用于足式运动的可变阻抗MPC及可行性分析",
+      "llm_tldr_en": "Identifies formulation errors in variable impedance MPC for legged robots regarding actuator dynamics.",
+      "llm_tldr_cn": "识别了足式机器人可变阻抗MPC在执行器动力学方面的建模错误。",
+      "llm_tldr": "识别了足式机器人可变阻抗MPC在执行器动力学方面的建模错误。",
+      "llm_tags": [
+        "query:q4"
+      ],
+      "matched_query_tag": "query:q4",
+      "matched_query_text": "Application of world models in legged robot locomotion and control",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-001.webp",
+      "caption": "Table 3: Ablation study of RL policy in simulation.",
+      "page": 11,
+      "index": 1,
+      "width": 876,
+      "height": 285
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-002.webp",
+      "caption": "Table 2: Comparison between LQR controller and RL policy simulation with different task complexities.",
+      "page": 11,
+      "index": 2,
+      "width": 1016,
+      "height": 493
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-003.webp",
+      "caption": "Figure 9: Performance of real robot experiments.",
+      "page": 15,
+      "index": 3,
+      "width": 976,
+      "height": 716
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-004.webp",
+      "caption": "Table 1: Summary of reward terms.",
+      "page": 7,
+      "index": 4,
+      "width": 615,
+      "height": 337
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-005.webp",
+      "caption": "Figure 5: Scalable Human-Robot Interaction via iOS & our app.",
+      "page": 10,
+      "index": 5,
+      "width": 976,
+      "height": 333
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-006.webp",
+      "caption": "Figure 6: Our iOS app ecosystem for multi-modal data streaming and sim-like interactive control.",
+      "page": 10,
+      "index": 6,
+      "width": 976,
+      "height": 626
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-007.webp",
+      "caption": "Figure 8: Successful Sim2Real deployment of asRoBallet on various indoor & outdoor floor textures and lighting conditions.",
+      "page": 14,
+      "index": 7,
+      "width": 976,
+      "height": 1010
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-008.webp",
+      "caption": "Figure 1: Structural transformation from the asOverDog quadruped (top left) to the asRoBallet humanoid (right).",
+      "page": 3,
+      "index": 8,
+      "width": 979,
+      "height": 638
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-009.webp",
+      "caption": "Figure 7: Velocity-tracking learning curves (mean episode reward) for the proposed RL policy and ablations.",
+      "page": 13,
+      "index": 9,
+      "width": 979,
+      "height": 659
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-010.webp",
+      "caption": "Figure 2: Repurpose mobile perception & computing from an iPhone for robotics, the same for asRoBallet & asOverDog.",
+      "page": 4,
+      "index": 10,
+      "width": 976,
+      "height": 714
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-011.webp",
+      "caption": "Figure 4: iPhone’s ARKit pose estimation performance and peer-to-peer latency results.",
+      "page": 9,
+      "index": 11,
+      "width": 979,
+      "height": 1023
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24916v1/fig-012.webp",
+      "caption": "Figure 3: High-fidelity MuJoCo simulation of asRoBallet’s highly underactuated spherical dynamics.",
+      "page": 5,
+      "index": 12,
+      "width": 979,
+      "height": 877
+    }
+  ]
+}
