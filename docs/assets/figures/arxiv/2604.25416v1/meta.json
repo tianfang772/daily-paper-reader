@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-001.webp",
+      "caption": "Figure 8: Comparison of predicted physical trajectories in ID and OOD settings for physical dynamics model from Infoprop.",
+      "page": 15,
+      "index": 1,
+      "width": 827,
+      "height": 195
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-002.webp",
+      "caption": "Table 1: OOD start states and their interpretation; rootx is body position in forward direction, rooty body rotation, rootz vertical body position, velx forward velocity, vely angular velocity of body.",
+      "page": 15,
+      "index": 2,
+      "width": 827,
+      "height": 191
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-003.webp",
+      "caption": "Figure 7: RL performance is largely unchanged by the use of the physical state decoder (PD) between approaches. Evaluated over 5 seeds.",
+      "page": 15,
+      "index": 3,
+      "width": 820,
+      "height": 407
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-004.webp",
+      "caption": "Figure 3: A Dreamer agent’s performance is largely unchanged by the use of a physical state decoder (PD). Results averaged over 5 seeds across 4 DMC Suite tasks, shaded areas show standard deviation.",
+      "page": 7,
+      "index": 4,
+      "width": 664,
+      "height": 243
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-005.webp",
+      "caption": "Figure 6: Attractor analysis of RSSM and Cat-RSSM across the Cartpole Swingup, Hopper Hop, and Walker Run environments, shown for both ID (left subplots) and OOD (right subplots) settings.",
+      "page": 14,
+      "index": 5,
+      "width": 822,
+      "height": 846
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-006.webp",
+      "caption": "Figure 1: Illustrative visualization of our key findings. For RSSM and probabilistic ensemble (PE), we show PCA-embedded transition dynamics with an exemplary trajectory initialized from an outof-distribution state (left), and the corresponding physical discrepancy to true environment dynamics and model uncertainty (right). While the PE trajectory becomes unstable, exhibiting large prediction errors and high uncertainty, the RSSM trajectory converges to familiar latent regions, where uncertainty decreases despite elevated physical discrepancy.",
+      "page": 3,
+      "index": 6,
+      "width": 829,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-007.webp",
+      "caption": "Figure 11: Comparison of reconstructed physical trajectories in ID setting for RSSM and Cat-RSSM.",
+      "page": 18,
+      "index": 7,
+      "width": 827,
+      "height": 1294
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-008.webp",
+      "caption": "Figure 4: Physical discrepancy versus prior uncertainty for ID and OOD start states, evaluated on RSSM and Cat-RSSM. Solid lines are averaged over 5 seeds per task, shaded areas show standard deviation. The gray dashed line marks the end of warm-up steps. As expected, physical discrepancy grows steadily for both ID and OOD prior rollouts. While OOD uncertainty starts high, it quickly drops due to an attractor effect producing latent trajectories that appear confident despite persistent physical errors.",
+      "page": 8,
+      "index": 8,
+      "width": 836,
+      "height": 627
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-009.webp",
+      "caption": "Figure 12: Comparison of reconstructed physical trajectories in OOD setting for RSSM and CatRSSM.",
+      "page": 19,
+      "index": 9,
+      "width": 827,
+      "height": 1135
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-010.webp",
+      "caption": "Figure 10: Comparison of reconstructed image trajectories in OOD setting for RSSM and Cat-RSSM.",
+      "page": 17,
+      "index": 10,
+      "width": 827,
+      "height": 1135
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-011.webp",
+      "caption": "Figure 5: Signed reward discrepancies rpred t − rsim t in prior and posterior rollouts in RSSM and Cat-RSSM. Solid lines are averaged over 5 seeds per task, shaded areas show standard deviation. The gray dashed line indicated end of warm-up steps. Prior rollouts systematically overestimate rewards, suggesting the attractors bias toward well-represented, high-reward latent regions.",
+      "page": 9,
+      "index": 11,
+      "width": 827,
+      "height": 386
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25416v1/fig-012.webp",
+      "caption": "Figure 9: Comparison of reconstructed image trajectories in ID setting for RSSM and Cat-RSSM.",
+      "page": 16,
+      "index": 12,
+      "width": 827,
+      "height": 1294
+    }
+  ]
+}
