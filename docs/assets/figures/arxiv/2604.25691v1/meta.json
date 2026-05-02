@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.25691v1/fig-001.webp",
+      "caption": "Fig. 6. Position prediction performance of different model configurations across a long random trajectory. The evaluation consists of three phases: one-step prediction from 0 to 150 s, auto-regressive prediction from 150 to 300 s, and a reversion to one-step prediction after 300 s. The legend indicates the average position errors for each configuration across all phases.",
+      "page": 6,
+      "index": 1,
+      "width": 1025,
+      "height": 431
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25691v1/fig-002.webp",
+      "caption": "Fig. 7. Tracking performance under varying payload disturbances (0g, 50g, and 100g). The baseline Feedback and Hybrid controllers exhibit self-excited oscillations as the load increases, while the Feedforward method suffers from substantial steady-state error. In contrast, our neural control policy demonstrates superior robustness and maintains accurate tracking. The 100g trial for the Hybrid controller was prematurely terminated to prevent hardware damage from divergent instability.",
+      "page": 7,
+      "index": 2,
+      "width": 1008,
+      "height": 396
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25691v1/fig-003.webp",
+      "caption": "Fig. 1. (a) The 0.768m tall three-section TDCR platform used in this study. (b) The system dynamics from control inputs to sensory outputs.",
+      "page": 3,
+      "index": 3,
+      "width": 500,
+      "height": 335
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25691v1/fig-004.webp",
+      "caption": "Fig. 4. Architecture of the 4-layer RNNs used in our model. LayerNorm [40], activation, and dropout [41] are applied after each hidden layer.",
+      "page": 5,
+      "index": 4,
+      "width": 484,
+      "height": 281
+    }
+  ]
+}
