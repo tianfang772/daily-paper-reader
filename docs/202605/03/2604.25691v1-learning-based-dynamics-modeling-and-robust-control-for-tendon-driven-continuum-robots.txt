@@ -1,0 +1,285 @@
+Title: Learning-Based Dynamics Modeling and Robust Control for Tendon-Driven Continuum Robots
+
+URL Source: https://arxiv.org/pdf/2604.25691v1
+
+Published Time: Wed, 29 Apr 2026 01:15:40 GMT
+
+Number of Pages: 8
+
+Markdown Content:
+# Learning-Based Dynamics Modeling and Robust Control for Tendon-Driven Continuum Robots 
+
+Ziqing Zou ∗, Ke Qiu ∗, Fei Wang, Haojian Lu, Rong Xiong and Yue Wang †
+
+Abstract — Tendon-Driven Continuum Robots (TDCRs) pose significant modeling and control challenges due to complex nonlinearities, such as frictional hysteresis and transmission compliance. This paper proposes a differentiable learning framework that integrates high-fidelity dynamics modeling with robust neural control. We develop a GRU-based dynamics model featuring bidirectional multi-channel connectivity and residual prediction to effectively suppress compounding errors during long-horizon auto-regressive prediction. By treating this model as a gradient bridge, an end-to-end neural control policy is optimized through backpropagation, allowing it to implicitly internalize compensation for intricate nonlinearities. Experimental validation on a physical three-section TDCR demonstrates that our framework achieves accurate tracking and superior robustness against unseen payloads, outperforming Jacobian-based methods by eliminating self-excited oscillations. 
+
+I. I NTRODUCTION 
+
+Continuum robots have emerged as a promising solution for navigating unstructured and constrained environments owing to the inherent compliance [ 1], which enables their application in interventional medicine and industrial inspection [ 2]. Meanwhile, tendon-driven mechanisms are increasingly integrated into dexterous robotic hands and specialized manipulators [ 3 ]. With bio-inspired architectures, continuum systems overcome the dexterity limitations of traditional rigid-link robots, facilitating delicate and adaptable manipulation in unstructured settings. However, precise modeling and robust control for Tendon-Driven Continuum Robots (TDCRs) remain a nontrivial task, primarily due to the intricate nonlinearities in physical deformation and tendon actuation. On one hand, due to the inherent transmission compliance of elastic tendons and backbone [ 4], actuator motions are not accurately reflected in the effective tendon length, resulting in significant response latency. On the other hand, transmission friction introduces hysteresis and dead-zone nonlinearities [ 5], making feedback control prone to limit-cycle oscillations or divergence, particularly for large inertia or in high-speed tracking. Furthermore, the mechanical properties of TDCRs exhibit both spatial and temporal variations. The friction profile often varies with the instantaneous robot configuration and bending history. Additionally, factors such as material creep, viscoelastic deformation, and stress relaxation lead to a gradual shift in both kinematic and dynamic characteristics over time [ 6]. These uncertainties severely undermine the modeling accuracy and control robustness of TDCRs. 
+
+> The authors are with Department of Control Science and Engineering, Zhejiang University, Hangzhou, China (e-mail: ywang24@zju.edu.cn).
+> ∗These authors contributed equally to this work.
+> †Corresponding author.
+
+For the modeling, widely adopted kinematic approaches like Piecewise Constant Curvature (PCC) [ 7] typically treat the robot as a quasi-static entity, failing to capture intricate nonlinearities. Conversely, high-fidelity dynamics models such as the Cosserat rod model [ 8] rely on precise material parame-ter identification and often face convergence issues in solving nonlinear boundary value problems (BVPs). For the control, Jacobian-based methods provide a linear mapping from task space to actuation space but neglect high-order dynamic characteristics. Furthermore, Model Predictive Control (MPC) is constrained by heavy computational overhead, making it difficult to achieve real-time high-precision performance. Learning-based approaches have become increasingly viable for the modeling and real-time control of complex nonlinear systems with the advancements of deep learning and accelerated hardware [ 9]. Recurrent Neural Networks (RNNs), with their inherent temporal processing capabilities, are particularly suited for modeling TDCRs and capturing history-dependent nonlinearities and dynamics shifts. How-ever, NN-based auto-regressive prediction is typically plagued by compounding errors. Moreover, the learning of robust control policies via neural networks presents further hurdles. Supervised learning and imitation learning suffer from poor generalization to Out-Of-Distribution (OOD) scenarios, where even minor domain shifts can lead to catastrophic failures [ 10 ]. Conversely, Reinforcement Learning (RL) is hindered by sample inefficiency [ 11 ], [ 12 ], where stochastic exploration in the early stages often inflicts irreversible damage on physical TDCR hardware. In this paper, we propose a differentiable learning framework for the precise modeling and robust control of TDCRs. We employ a Gated Recurrent Unit (GRU) as the backbone of our architecture to leverage its efficient gating mechanism in characterizing non-Markovian behaviors. To solve the critical challenge of error accumulation in multi-step prediction, we incorporate bidirectional multi-channel connectivity and residual prediction, ensuring stable gradient flow over extended temporal horizons. Utilizing this differentiable dynamics model as a surrogate environment, we develop an end-to-end neural control policy. Unlike traditional optimization-based controllers, our policy is optimized offline by backpropagating task-level tracking errors through the dynamics computational graph. This allows the policy to implicitly compensate for transmission compliance and friction, achieving robust performance. Our contributions are summarized as follows:  
+
+> •
+
+High-Fidelity Dynamics Modeling: We develop an RNN-based architecture featuring bidirectional con-
+
+> arXiv:2604.25691v1 [cs.RO] 28 Apr 2026
+
+nectivity and residual prediction to capture TDCR nonlinear dynamics. This design effectively suppresses compounding errors, enabling stable and accurate long-horizon prediction.  
+
+> •
+
+Differentiable Policy Optimization: We propose a learning pipeline that optimizes the control policy by backpropagating tracking errors through the differ-entiable dynamics model. This approach internalizes complex nonlinear compensation laws, ensuring efficient real-time execution.  
+
+> •
+
+Experimental Hardware Validation: We validate our framework on a physical 3-section TDCR, demonstrating superior tracking precision and robustness under external payloads. The results further confirm that our controller effectively suppresses self-excited oscillations common in traditional feedback schemes. II. R ELATED WORK 
+
+A. Continuum Robots Modeling 
+
+Modeling of TDCRs typically involves a trade-off between efficiency and fidelity. The PCC model is a widely adopted kinematic model for its simplicity and practicality, offering a rapid mapping from tendon lengths to configuration space [ 7 ]. However, this circular arc assumption often fails under complex loading or significant deformations [ 1 ]. Although variable curvature models improve shape estimation through modal functions [ 13 ], [ 14 ], they introduce higher complexity while still neglecting critical nonlinear dynamics, such as transmission compliance and routing friction. Conversely, the Cosserat rod model provides a geometrically exact description of large elastic deformations and also captures dynamic effects, making it better suited for high-fidelity modeling [ 8 ]. Although it can formulate physically rigorous statics via ODEs and dynamics via PDEs [ 15 ], [ 16 ], its performance relies on precise identification of material parameters. Furthermore, the high computational cost and convergence issues of solving nonlinear BVPs hinder its application in real-time tasks. Data-driven approaches are adopted for both kinemat-ics [17 ] and dynamics modeling [18 ]. For articulated continuum robots, RNN-based dynamics learning has been implemented [ 19 ], yet the limited training data necessitates a long warm-up period for hidden state convergence. To improve kinematics and dynamics generalization, Physics-Informed Neural Networks(PINNs) leverage first-principle physics [ 20 ], but they require rigorous calibration and accurate physical parameters. Meta-learning architectures address dynamic shifts in TDCRs [ 21 ], while requiring computationally intensive online parameter updates. Our method exhibits dynamic adaptability and maintains accurate multi-step prediction without these limitations. 
+
+B. Continuum Robots Control 
+
+Controlling TDCRs remains challenging due to their inherent nonlinearities. While Jacobian-based methods pro-vide a linear mapping from task space to actuation space by solving inverse kinematics [ 22 ], [ 23 ], they are often hampered by estimation drifts and singularities. Even with analytical Jacobians provided by the PCC model [ 24 ], [ 25 ] or numerical Jacobians derived from the Cosserat rod model [ 26 ], [ 27 ], these local techniques typically treat the system as quasi-static, thereby neglecting high-order nonlinear dynamics. Dynamic controllers have been implemented to mitigate these effects [ 28 ], [ 29 ]. To consider the future behavior of the robot, MPC has been applied to concentric tube robots [ 30 ] and pneumatically actuated continuum robots [ 31 ], incorporating multi-step dynamics and system constraints. However, its performance is highly dependent on model fidelity and sensitive to optimization hyperparameters [ 19 ]. Moreover, the heavy computational overhead associated with long-horizon optimization makes high-precision and real-time MPC difficult to achieve in practice. Learning-based approaches offer a promising alternative for the control of continuum robots by bypassing explicit analyti-cal modeling [ 32 ]. Deep learning has been employed to learn inverse kinematics, enabling both tip pose control [ 33 ], [ 34 ]and full-body shape control [ 35 ]. For dynamic scenarios, data-driven models have been integrated with optimization-based frameworks to achieve open-loop control [ 18 ]. Furthermore, MPC has also been implemented using RNNs and PINNs [ 19 ], [ 20 ], but non-convex optimization complexity limits the look-ahead horizon to fewer than five steps, thus hindering performance in high-speed dynamics tasks. Although these methods utilize neural networks as forward models within an optimization loop, there remains a lack of an end-to-end neural control policy that enables both fast inference and robust performance in high-dynamic maneuvers. 
+
+C. Differentiable Policy Learning 
+
+Differentiable Policy Learning (DPL) reformulates robot dynamics and control as an end-to-end differentiable computational graph. Unlike ”black-box” reinforcement learning methods such as PPO [ 11 ] and SAC [ 12 ], DPL leverages analytical or numerical gradients to enable direct optimization from task-level loss to policy parameters. In aerial robotics, agile flight has been optimized through differentiable physics incorporating Newtonian dynamics [ 36 ]. Similar principles have been applied to heavy machinery, where high-precision tracking is achieved via differentiable closed-loop dynamics [ 37 ], with further enhancements through online model-policy co-optimization [ 38 ]. In the domain of dexterous manipulation, DPL-based residual policies have been trained to compensate for unmodeled dynamics and bridge the sim-to-real gap [ 39 ]. Our approach extends DPL to the domain of continuum robots, utilizing a differentiable training pipeline to learn a neural control policy that implicitly compensates for nonlinear dynamics and enables precise real-time control. III. D YNAMICS MODEL 
+
+This section analyzes the intricate transmission character-istics of TDCRs and formulates a learning framework. 
+
+A. Dynamics Analysis 
+
+The 3-section TDCR utilized in this study, as shown in Fig. 1(a), is driven by 9 motors, with each section articulated Fig. 1. (a) The 0.768m tall three-section TDCR platform used in this study. (b) The system dynamics from control inputs to sensory outputs. 
+
+by a trio of actuators. To protect the compliant backbone from excessive axial compression or tension, we impose a zero-net-extension constraint and a maximum speed limit on the motor velocity commands. Let Sk = {3k − 2, 3k − 1, 3k}
+
+denotes the set of motor indices for the k-th section, then for all i ∈ S k and k ∈ { 1, 2, 3}, the actual command ui for the 
+
+i-th motor is calculated by 
+
+ui = clip 
+
+ai − 13
+
+X
+
+> j∈S k
+
+aj , −umax , u max 
+
+ , (1) where a ∈ R9 represents a raw command and umax is the maximum motor velocity. In our model, we consider the actual command u as the input and the tip pose T as the output. Intermediate states, including motor response, effective tendon lengths, and tension distributions, are collectively categorized as variables in the configuration space. Consequently, our model establishes a relationship from the actuation space to the task space. In fact, it is composed of two distinct dynamic mappings:  
+
+> •
+
+From the actuation to configuration space. The control command u does not instantaneously equate to the actual motor velocity v due to the inherent response latency of motors, which is strongly coupled with the motor torque induced by tendon tension and friction.  
+
+> •
+
+From the configuration to task space. The viscoelastic deformation and transmission compliance make the motor rotation length l and velocity v not linearly transmitted to the effective tendon length and extension velocity, while the tip pose T is a collective result of the effective tendon lengths, motor torques, gravity, and the friction along the routing paths. To capture the above two mappings, we utilize onboard sensors at the motor side to measure a subset of configuration-space variables, specifically the motor rotation length l and velocity v. Additionally, for high-precision trajectory tracking, a motion capture system is employed to provide ground-truth measurements of pose T.   
+
+> Fig. 2. Training pipeline of the dynamics model. During inference steps, the hidden state his updated recurrently to incorporate historical context. During auto-regressive steps, the model performs multi-step rollouts where both the hidden state and the predicted observations (purple arrows) are fed back into the pipeline, incorporating residual prediction (pink arrows).
+
+B. Dynamics Modeling 
+
+As shown in Fig. 1(b), we consolidate the physical system and its sensing modalities into a union dynamics model. The control input is defined as the actual motor velocity commands 
+
+u, while the observation vector is given by 
+
+o = ( l, v, p, ϕ), (2) where we parameterize the task-space pose T as the position vector p ∈ R3 and the rotation vector ϕ ∈ R3.We employ GRU as the backbone of the dynamics model to capture the temporal dependencies within the system’s response. The model maintains a hidden state h, which evolves at each time step to encode the historical context of the robot state. To improve prediction precision over long horizons and capture the underlying physical continuity, we formulate the observation prediction in a residual manner. Specifically, the dynamics model is formulated as 
+
+
+
+ht+1 = fθ (ht, ot, ut),
+
+∆ ˆ ot = gψ (ht+1 ),
+
+ˆot+1 = ot + ∆ ˆ ot.
+
+(3) As illustrated in Fig. 2, the training pipeline is partitioned into two phases. For the inference phase, we initialize the hidden state h0 as a zero vector to serve as a common starting point. Subsequently, the model undergoes a warm-up process starting from step t − Ni to step t. During this period, ground-truth observations and control inputs are sequentially fed into the GRU to refine the hidden state via the transition function fθ . This procedure ensures that the latent representation ht sufficiently encodes the system’s temporal context before performing future predictions. In the auto-regressive phase, the model performs multi-step rollouts to simulate long-term dynamics. Leveraging multi-channel connectivity for better training, not only the updated hidden states but also the predicted observations are iteratively fed back as inputs for subsequent steps, together with the ground-truth control inputs. The dynamics model is trained by minimizing the multi-step prediction error defined as 
+
+Lmodeling =
+
+> Nr
+
+X
+
+> i=1
+
+∥ ˆot+i − ot+i∥2 , (4) where Nr is the optimization horizon. Fig. 3. Training pipeline of the neural control policy. During auto-regressive steps, the policy recursively incorporates the hidden states and the predicted observations from the dynamics model (blue arrows), and generates residual actions (pink arrows) that are fed back into the pipeline (purple arrows). 
+
+Under this differentiable framework, the prediction loss in (4) is backpropagated through both the recurrent hidden states and the iteratively predicted observations. IV. N EURAL CONTROL POLICY 
+
+In this section, we introduce a neural control policy that leverages latent temporal context, and is optimized through an differentiable pipeline. Traditional control of TDCRs typically employs variants of Jacobian-based kinematic schemes. Specifically, we consider three representative control laws listed below: (Feedback control) u = J†Ke, (5) (Feedforward control) u = J† ˙r, (6) (Hybrid control) u = J†( ˙ r + Ke), (7) where r represents the reference point, e = r − o is the tracking error, K is a gain matrix, J = ∂o/∂ u denotes the Jacobian, and J† is the corresponding pseudo-inverse. Although intuitive and widely adopted, these controllers suffer from fundamental theoretical limitations when applied to TDCR systems. The primary deficit lies in the first-order Markovian assumption inherent in these formulations, which treats the robot as a quasi-static geometric entity rather than a higher-order dynamic system. In reality, the system is non-Markovian due to frictional hysteresis and viscoelasticity, making the mapping u → o a path-dependent functional. Consequently, the Jacobian J is a multi-valued operator. Its value at any pose is not unique but depends on the internal state and movement history. To bridge this gap, our policy incorporates the hidden state h from the learned dynamics model. By reformulating the control problem in a latent space that accounts for historical context, the policy can effectively transforming a non-Markovian physical process into a well-conditioned tracking task. We employ an RNN as the backbone of our control policy. Unlike memory-less controllers, this architecture enables the policy to act as an implicit non-linear observer utilizing the historical context embedded in h. To improve training stability, we also formulate the action output in a residual manner. The neural control policy is given by 
+
+(∆at = πμ(ht, at−1, ot, rt),
+
+at = at−1 + ∆ at, (8) where rt represents the desired tip pose in future Nf steps, i.e., 
+
+rt =
+
+
+
+p∗
+
+> t+1
+
+, ϕ∗
+
+> t+1
+
+, . . . , p∗ 
+
+> t+Nf
+
+, ϕ∗
+
+> t+Nf
+
+
+
+. (9) The multi-step reference provides the policy with preview capability, allowing it to proactively compensate for the time-lag and hysteresis inherent in TDCR dynamics. During training, we apply random shifts to the reference trajectories within the dataset to provide a broader distribution. The training pipeline of the control policy is illustrated in Fig. 3. During inference, the dynamics model recurrently evolves the hidden state h to encapsulate the historical context of the TDCR. Subsequently, the policy recursively leverages the hidden states and the predicted observations from the dynamics model to generate control commands. These commands are then subjected to the zero-net-extension constraint and the maximum speed limit defined in (1) , which are then fed back to actuate the dynamics model for the next auto-regressive step. The control policy is optimized by minimizing the multi-step tracking error of the tip pose 
+
+Ltracking =
+
+> Nr
+
+X
+
+> i=1
+
+λi−1( ˆpt+i − p∗ 
+
+> t+i
+> 2
+
++ ˆϕt+i − ϕ∗
+
+> t+i
+> 2
+
+)
+
+(10) and a control smoothness loss 
+
+Lsmooth = 
+
+> Nr−1
+
+X
+
+> i=1
+
+λi−1 ∥at+i − at+i−1∥2 (11) over the horizon Nr , where λ is the discount factor to pri-oritize immediate tracking accuracy and ensure optimization stability over long horizons. The fully differentiable control-dynamics chain allows the dynamics model to serve not merely as a predictor, but as a gradient bridge during training. Consequently, the policy network can directly perceive how its actions propagate to influence future observations, enabling precise long-horizon optimization of the tracking performance. Notably, this architecture is highly efficient for real-time implementation. Since the policy only requires a single forward pass of πμ
+
+and fθ within several milliseconds, it bypasses the need for computationally expensive full-horizon trajectory optimization while preserving long-term temporal awareness. V. E XPERIMENTS 
+
+A. Setup 1) Hardware platform: The hardware platform comprises a motion capture system, motors, and the continuum robot. The robot is actuated by 9 motors integrated in the base, driving the tendons to modulate its configuration. The motors are interfaced with a PLC, receiving control commands from the host computer and monitoring the states of the motors. For tip pose feedback, the motion capture system comprising 5 infrared cameras tracks the robot. While operating at 120 Hz, the data are downsampled to 50 Hz to synchronize with our control frequency. Fig. 4. Architecture of the 4-layer RNNs used in our model. LayerNorm [ 40 ], activation, and dropout [41] are applied after each hidden layer. 
+
+2) Dataset: To construct the dataset D = {(ot, ut, rt)},a baseline feedforward-feedback controller was employed to track 16 distinct trajectories. Various controller parameters were utilized to sufficiently excite the system’s underlying dynamics. These trajectories included both structured and random paths, augmented with control or reference noise at 1 Hz, 5 Hz, and stochastic frequencies to capture the system’s step and impulse responses. Data was collected over six separate days with the system re-zeroed at the start of each session, yielding a comprehensive dataset of 923,059 steps (approximately 5.1 hours). To rigorously evaluate the model, the data was partitioned into four subsets:  
+
+> •
+
+Dtrain : Consisting of 707,732 steps from the initial five-day collection, excluding any “T” trajectories, used for model training.  
+
+> •
+
+Dtest : Consisting of 157,820 steps from the initial five-day collection, excluding any “T” trajectories, used for validation.  
+
+> •
+
+Dtraj : Consisting of 29,532 steps of only “T” trajectories used to evaluate generalization across different motion patterns.  
+
+> •
+
+Ddate : Consisting of 27,975 steps collected on the separate day used to assess robustness against temporal dynamics drift. 
+
+3) Networks and parameters: The proposed network architecture is illustrated in Fig. 4. We employ a 4-layer RNN structure to capture complex, high-order dynamics, with LayerNorm [ 40 ] integrated after each hidden layer to enhance training stability. The model is configured with a hidden state dimension of 1024, and a dropout rate of 0.3 to prevent overfitting. During the dynamics training phase, we set the inference horizon and the auto-regressive length to Ni = 50 
+
+and Nr = 50 , respectively. For control policy optimization, the auto-regressive length is extended to Nr = 250 to ensure the convergence of trajectory tracking, and the discount factor is set to λ = 0 .98 balance immediate precision with long-term predictive stability. To mitigate scale discrepancies across modalities, all inputs are standardized to a unit normal distribution based on the whole dataset’s mean and standard deviation before entering the network, with model outputs subsequently denormalized to retrieve their original physical units.                                  
+
+> TABLE I AVERAGE FIRST -S TEP PREDICTION ERRORS ACROSS DATASETS (MM / °) Training Set Dtest Dtraj Ddate
+> Dtrain 1.27 / 1.33° 1.43 /1.40° 1.48 /0.84° 1.32 /1.23°
+> Dsmall 1.22 / 1.31° 1.58 / 1.64° 1.86 / 1.12° 1.57 / 1.39°
+> D2days 0.79 / 0.72° 2.18 / 1.63° 4.66 / 1.10° 3.67 / 1.94°
+> Dclean 0.90 / 0.80° 2.29 / 2.03° 2.28 / 2.66° 1.67 / 1.39°
+> Fig. 5. Average position and rotation errors of different model configurations relative to auto-regressive prediction steps on Dtest . Our method (red solid line) achieves the lowest prediction error, while exhibiting the slowest error accumulation rate as the prediction horizon extends.
+
+B. Performance of the Dynamics Model 
+
+In this section, we evaluate the prediction performance of the proposed dynamics model. Specifically, we aim to investigate (a) the generalization and adaptation capability of the model to unseen trajectories and dynamics shifts driven by dataset scale and diversity, (b) the long-term precision and stability of the model during auto-regressive prediction enhanced by residual and bidirectional multi-channel struc-tures, and (c) the comparative performance of our proposed architecture against alternative network structures. 
+
+1) Generalization and adaptation: To evaluate the impact of training data on model accuracy and generalization, we construct three subsets of Dtrain as follows:  
+
+> •
+
+Dsmall : Consisting of 339,338 steps randomly sampled from Dtrain to evaluate the impact of data scale.  
+
+> •
+
+D2days : Consisting of 336,747 steps comprising trajec-tories of two days to assess limited temporal coverage.  
+
+> •
+
+Dclean : Consisting of 333,031 steps comprising only noise-free trajectories to investigate the impact of limited dynamics patterns. To ensure a consistent total iteration steps, our model is trained for 100 epochs on Dtrain and 200 epochs on each smaller subsets ( Dsmall , D2days , and Dclean ). We evaluate the average first-step prediction errors of the tip position (mm) and orientation (°), across both training and unseen test Fig. 6. Position prediction performance of different model configurations across a long random trajectory. The evaluation consists of three phases: one-step prediction from 0 to 150 s, auto-regressive prediction from 150 to 300 s, and a reversion to one-step prediction after 300 s. The legend indicates the average position errors for each configuration across all phases. 
+
+sets ( Dsmall , D2days , and Dclean ), as shown in Table I. The model trained on Dtrain exhibits consistent per-formance across all test sets, demonstrating its ability to generalize across diverse trajectories and mitigate temporal dynamics drift. While the model trained on Dsmall achieves comparable training accuracy to Dtrain , its reduced perfor-mance on test sets underscores the importance of data scale for generalization. Furthermore, although models trained on 
+
+D2days and Dclean perform well on their respective training sets, their lower accuracy on other test sets suggests that both data diversity and high-frequency response information (contained in control noise) are crucial for model robustness. 
+
+2) Comparison and long-term precision: We also compare our proposed method against several baseline architectures to validate each component’s contribution, including  
+
+> •
+
+MultiResGRU (ours): Our method that leverage bidirectional multi-connectivity both in the hidden states and the predicted observations with residual prediction.  
+
+> •
+
+ResGRU: A variant that maintains auto-regressive connectivity of the predicted observations in the forward pass while detaching them from the gradient computational graph during backpropagation, restricting gradient flow solely through the hidden state path.  
+
+> •
+
+ResGRU TF : A configuration trained with teacher forcing, where both forward and backward connectivity through observations are severed by using ground-truth observations as inputs, leaving hidden states as the only temporal link.  
+
+> •
+
+MultiGRU: A version without residual prediction, where the network outputs the absolute values of the predicted observations directly.  
+
+> •
+
+GRU (baseline) : A standard GRU architecture lack-ing both bidirectional multi-channel connectivity and residual prediction.  
+
+> •
+
+MultiResLSTM / MultiResRNN : Architectures em-ploying Long Short-Term Memory (LSTM) or standard RNN cells as the backbone instead of GRU cells.  
+
+> •
+
+ResMLP : A Multi-Layer Perceptron (MLP) based model that takes a concatenated window of Ni historical observations and actions as input, updating the input buffer recursively with its own predictions. As shown in Fig. 5, models without residual prediction (MultiGRU and GRU baseline) exhibit initial errors exceeding 20 mm and 5 ◦, whereas other configurations start around 1 mm and 1 ◦, highlighting the critical role of residual learning in mitigating prediction errors. While ResGRU TF starts accurately, it suffers from rapid error accumulation. In contrast, the slower error growth in ResGRU demonstrates that feeding predicted observations back into the model effectively suppresses compounding errors. Our MultiResGRU further improves multi-step precision by enabling gradient flow through this observation path. Among the backbones, MultiResGRU performs best, likely because its unified update gate provides a more suitable inductive bias for the continuous dynamics. A more challenging evaluation of long-term auto-regression is presented in Fig. 6, where the models undergo a continuous 2.5-minute auto-regressive prediction phase. During this stage, the models receive only control actions without any ground-truth observation feedback. MultiResGRU (ours) achieves a mean prediction error of only 24.6 mm, and maintains high fidelity to the trajectory details. In contrast, ResGRU with only forward observation paths and ResMLP without hidden state connectivity fail to reconstruct details at trajectory extrema. Meanwhile, ResGRU TF, which links time steps only via hidden states, diverges rapidly during multi-step prediction. These results underscore that our bidirectional multi-channel connectivity is instrumental in enhancing multi-step precision and stability. Furthermore, MultiGRU avoids total divergence but suffers from significant prediction bias without residual learning. Fig. 7. Tracking performance under varying payload disturbances (0g, 50g, and 100g). The baseline Feedback and Hybrid controllers exhibit self-excited oscillations as the load increases, while the Feedforward method suffers from substantial steady-state error. In contrast, our neural control policy demonstrates superior robustness and maintains accurate tracking. The 100g trial for the Hybrid controller was prematurely terminated to prevent hardware damage from divergent instability. TABLE II AVERAGE TRACKING ERRORS OF DIFFERENT CONTROLLERS (MM / °) Speed Ours Feedforward Feedback Hybrid                   
+
+> 1.0x 25.3 / 7.2° 159.1 / 16.4° 46.6 / 26.5° 24.5 / 23.1° 1.7x 30.4 /8.2° 159.0 / 16.5° 62.8 / 23.7° 33.0 / 21.9° 2.5x 36.1 /10.0° 159.1 / 16.4° 79.6 / 22.8° 43.6 / 20.9°
+
+C. Performance of the Neural Control Policy 
+
+In this section, we evaluate the tracking performance of the proposed control policy. Specifically, we aim to investigate (a) the tracking accuracy and (b) the robustness to disturbances of our neural control policy in comparison with Jacobian-based controllers. 
+
+1) Tracking accuracy: To evaluate the controllers, we conduct tracking experiments on five distinct trajectories within the xy -plane at a constant height, including “R”, “O”, “B”, “T” shapes, and a straight line “–”. The average tracking errors are summarized in Table II. The results show that the Feedforward controller exhibits the largest errors, primarily due to its inability to compensate for accumulated drifts. While the Feedback controller improves performance, it remains inferior to the Hybrid method, which benefits from combining nominal dynamics with reactive corrections. Notably, at lower speeds (1.0x, around 23 mm/s), our neural control policy achieves position accuracy comparable to the Hybrid controller while providing a significant reduction in rotation error. Furthermore, as the execution speed increases (1.7x to 2.5x, around 58 mm/s), our method presents a widening performance advantage. This demonstrates that our neural policy more effectively captures the system’s high-frequency dynamics and nonlinearities, which are often neglected in kinematic controller. 
+
+2) Robustness: To evaluate the robustness of the controllers under external disturbances, we conduct tracking experiments with payloads of 50g and 100g attached to the robot’s end-effector, which are not seen in training data. As illustrated in Fig. 7, both Feedback and Hybrid controllers experience significant self-excited oscillations, which become increasingly pronounced as the payload increases. While the 
+
+Feedforward method avoids such oscillations, its tracking deviation grows substantially with the added load. In contrast, our proposed neural control policy maintains stable and effective tracking performance regardless of the payload conditions, demonstrating superior robustness. VI. C ONCLUSION 
+
+This work presents a differentiable recurrent framework for the high-fidelity modeling and robust control of TDCRs. By integrating bidirectional gradient flow with residual learning and leveraging diverse datasets, our dynamics model successfully captures path-dependent nonlinearities and adapts to temporal dynamics shifts, all while effectively suppressing compounding errors during long-horizon predictions. This allows the system’s non-Markovian physics to be implicitly internalized within a latent space, bypassing the need for explicit parameter identification. Hardware experiments con-firm that the resulting neural policy achieves centimeter-level tracking precision and eliminates the self-excited oscillations prevalent in Jacobian-based schemes. REFERENCES [1] J. Burgner-Kahrs, D. C. Rucker, and H. Choset, “Continuum robots for medical applications: A survey,” IEEE Transactions on Robotics ,vol. 31, no. 6, pp. 1261–1280, 2015. [2] J. Zhang, L. Liu, P. Xiang, Q. Fang, X. Nie, H. Ma, J. Hu, R. Xiong, Y. Wang, and H. Lu, “Ai co-pilot bronchoscope robot,” Nature Communications , vol. 15, no. 241, 2024. [3] L. Wen, Y. Li, M. Cong, H. Lang, and Y. Du, “Design and optimization of a tendon-driven robotic hand,” in 2017 IEEE International Conference on Industrial Technology (ICIT) , 2017, pp. 767–772. [4] E. Amanov, T.-D. Nguyen, and J. Burgner-Kahrs, “Tendon-driven continuum robots with extensible sections—a model-based evaluation of path-following motions,” The International Journal of Robotics Research , vol. 40, no. 1, pp. 7–23, 2021. [5] Y. Zhang, L. Fang, T. Song, and M. Zhang, “Model-free adaptive control based on prescribed performance and time delay estimation for robotic manipulators subject to backlash hysteresis,” Proceedings of the Institution of Mechanical Engineers, Part C: Journal of Mechanical Engineering Science , vol. 237, no. 23, pp. 5674–5691, 2023. [6] J. C. Case, E. L. White, and R. K. Kramer, “Soft material characterization for robotic applications,” Soft Robotics , vol. 2, no. 2, pp. 80–87, 2015. [7] R. J. Webster III and B. A. Jones, “Design and kinematic modeling of constant curvature continuum robots: A review,” The International Journal of Robotics Research , vol. 29, no. 13, pp. 1661–1683, 2010. [8] A. Hu and Y. Sun, “Contact force estimation of continuum robots without embedded sensors: A review,” Advanced Intelligent Systems ,p. e202500786, 2025. [9] J. Liu, Y. Duo, X. Chen, Z. Zuo, Y. Liu, and L. Wen, “Data-driven methods for sensing, modeling and control of soft continuum robot: A review,” IEEE/ASME Transactions on Mechatronics , 2025. [10] S. Ross, G. Gordon, and D. Bagnell, “A reduction of imitation learning and structured prediction to no-regret online learning,” in Proceedings of the Fourteenth International Conference on Artificial Intelligence and Statistics , ser. Proceedings of Machine Learning Research, G. Gordon, D. Dunson, and M. Dud ´ık, Eds., vol. 15. Fort Lauderdale, FL, USA: PMLR, 11–13 Apr 2011, pp. 627–635. [11] J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov, “Proximal policy optimization algorithms,” 2017. [Online]. Available: https://arxiv.org/abs/1707.06347 [12] T. Haarnoja, A. Zhou, P. Abbeel, and S. Levine, “Soft actor-critic: Off-policy maximum entropy deep reinforcement learning with a stochastic actor,” in Proceedings of the 35th International Conference on Machine Learning , ser. Proceedings of Machine Learning Research, J. Dy and A. Krause, Eds., vol. 80. PMLR, 10–15 Jul 2018, pp. 1861–1870. [13] F. Renda, C. Armanini, V. Lebastard, F. Candelier, and F. Boyer, “A geometric variable-strain approach for static modeling of soft manipulators with tendon and fluidic actuation,” IEEE Robotics and Automation Letters , vol. 5, no. 3, pp. 4006–4013, 2020. [14] F. Boyer, V. Lebastard, F. Candelier, and F. Renda, “Dynamics of continuum and soft robots: A strain parameterization based approach,” 
+
+IEEE Transactions on Robotics , vol. 37, no. 3, pp. 847–863, 2020. [15] D. C. Rucker and R. J. Webster III, “Statics and dynamics of continuum robots with general tendon routing and external loading,” IEEE Transactions on Robotics , vol. 27, no. 6, pp. 1033–1044, 2011. [16] J. Till, V. Aloi, and C. Rucker, “Real-time dynamics of soft and continuum robots based on Cosserat rod models,” The International Journal of Robotics Research , vol. 38, no. 6, pp. 723–746, 2019. [17] R. Grassmann, V. Modes, and J. Burgner-Kahrs, “Learning the forward and inverse kinematics of a 6-dof concentric tube continuum robot in se (3),” in 2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) . IEEE, 2018, pp. 5125–5132. [18] T. G. Thuruthel, E. Falotico, F. Renda, and C. Laschi, “Learning dynamic models for open loop predictive control of soft robotic manipulators,” Bioinspiration & biomimetics , vol. 12, no. 6, p. 066003, 2017. [19] H. Sch ¨afke, T.-L. Habich, C. Muhmann, S. F. G. Ehlers, T. Seel, and M. Schappler, “Learning-based nonlinear model predictive control of articulated soft robots using recurrent neural networks,” IEEE Robotics and Automation Letters , vol. 9, no. 12, pp. 11 609–11 616, 2024. [20] T.-L. Habich, A. Mohammad, S. F. G. Ehlers, M. Bensch, T. Seel, and M. Schappler, “Generalizable and fast surrogates: Model predictive control of articulated soft robots using physics-informed neural networks,” IEEE Transactions on Robotics , vol. 42, pp. 619–636, 2026. [21] Z. Tang, L. Tian, W. Xin, Q. Wang, D. Rus, and C. Laschi, “A general soft robotic controller inspired by neuronal structural and plastic synapses that adapts to diverse arms, tasks, and perturbations,” 
+
+Science Advances , vol. 12, no. 2, p. eaea3712, 2026. [22] J. Wang and A. Chortos, “Control strategies for soft robot systems,” 
+
+Advanced Intelligent Systems , vol. 4, no. 5, p. 2100165, 2022. [23] K. M. Lynch and F. C. Park, Modern robotics . Cambridge University Press, 2017. [24] K. Qiu, H. Zhang, J. Zhang, R. Xiong, H. Lu, and Y. Wang, “An actuator space optimal kinematic path tracking framework for tendon-driven continuum robots: Theory, algorithm and validation,” The International Journal of Robotics Research , vol. 44, no. 6, pp. 1006–1034, 2025. [25] P. S. Gonthina, M. B. Wooten, I. S. Godage, and I. D. Walker, “Mechanics for tendon actuated multisection continuum arms,” in 2020 IEEE International Conference on Robotics and Automation (ICRA) ,2020, pp. 3896–3902. [26] D. C. Rucker and R. J. Webster, “Computing jacobians and compliance matrices for externally loaded continuum robots,” in 2011 IEEE international conference on robotics and automation . IEEE, 2011, pp. 945–950. [27] F. Campisano, S. Cal ´o, A. A. Remirez, J. H. Chandler, K. L. Obstein, R. J. Webster III, and P. Valdastri, “Closed-loop control of soft continuum manipulators under tip follower actuation,” The International Journal of Robotics Research , vol. 40, no. 6-7, pp. 923–938, 2021. [28] C. Della Santina, R. K. Katzschmann, A. Bicchi, and D. Rus, “Model-based dynamic feedback control of a planar soft robot: trajectory tracking and interaction with the environment,” The International Journal of Robotics Research , vol. 39, no. 4, pp. 490–513, 2020. [29] A. Kazemipour, O. Fischer, Y. Toshimitsu, K. W. Wong, and R. K. Katzschmann, “Adaptive dynamic sliding mode control of soft continuum manipulators,” in 2022 International Conference on Robotics and Automation (ICRA) . IEEE, 2022, pp. 3259–3265. [30] M. Khadem, J. O’Neill, Z. Mitros, L. Da Cruz, and C. Bergeles, “Autonomous steering of concentric tube robots via nonlinear model predictive control,” IEEE Transactions on Robotics , vol. 36, no. 5, pp. 1595–1602, 2020. [31] F. A. Spinelli and R. K. Katzschmann, “A unified and modular model predictive control framework for soft continuum manipulators under internal and external constraints,” in 2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) . IEEE, 2022, pp. 9393–9400. [32] S. Satheeshbabu, N. K. Uppalapati, G. Chowdhary, and G. Krishnan, “Open loop position control of soft continuum arm using deep reinforcement learning,” in 2019 International Conference on Robotics and Automation (ICRA) . IEEE, 2019, pp. 5133–5139. [33] T. George Thuruthel, E. Falotico, M. Manti, A. Pratesi, M. Cianchetti, and C. Laschi, “Learning closed loop kinematic controllers for continuum manipulators in unstructured environments,” Soft robotics ,vol. 4, no. 3, pp. 285–296, 2017. [34] P. Yu, Z. Liang, and N. Tan, “Data-efficient and predefined-time stable control for continuum robots,” IEEE Transactions on Robotics , vol. 42, pp. 382–399, 2026. [35] E. Almanzor, F. Ye, J. Shi, T. G. Thuruthel, H. A. Wurdemann, and F. Iida, “Static shape control of soft continuum robots using deep visual inverse kinematic models,” IEEE Transactions on Robotics , vol. 39, no. 4, pp. 2973–2988, 2023. [36] Y. Zhang, Y. Hu, Y. Song, D. Zou, and W. Lin, “Learning vision-based agile flight via differentiable physics,” Nature Machine Intelligence ,vol. 7, no. 6, pp. 954–966, 2025. [37] Z. Zou, C. Wang, Y. Hu, X. Liu, B. Xu, R. Xiong, C. Fan, Y. Chen, and Y. Wang, “High-precision and high-efficiency trajectory tracking for excavators based on closed-loop dynamics,” in 2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) ,2025, pp. 5617–5624. [38] F. Nan, H. Ma, Q. Guan, J. Hughes, M. Muehlebach, and M. Hutter, “Efficient model-based reinforcement learning for robot control via online learning,” 2025. [Online]. Available: https://arxiv.org/abs/2510.18518 [39] X. Liu, H. Wang, and L. Yi, “DexNDM: Closing the reality gap for dexterous in-hand rotation via joint-wise neural dynamics model,” in 
+
+The fourteenth International Conference on Learning Representations ,2026. [40] J. L. Ba, J. R. Kiros, and G. E. Hinton, “Layer normalization,” 2016. [Online]. Available: https://arxiv.org/abs/1607.06450 [41] N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever, and R. Salakhut-dinov, “Dropout: A simple way to prevent neural networks from overfitting,” Journal of Machine Learning Research , vol. 15, no. 56, pp. 1929–1958, 2014.
