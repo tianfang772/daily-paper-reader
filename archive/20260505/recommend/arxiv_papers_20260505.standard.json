@@ -1,0 +1,190 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-05T20:47:20.167483+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2605.00080v1",
+      "source": "arxiv",
+      "title": "World Model for Robot Learning: A Comprehensive Survey",
+      "abstract": "World models, which are predictive representations of how environments evolve under actions, have become a central component of robot learning. They support policy learning, planning, simulation, evaluation, data generation, and have advanced rapidly with the rise of foundation models and large-scale video generation. However, the literature remains fragmented across architectures, functional roles, and embodied application domains. To address this gap, we present a comprehensive review of world models from a robot-learning perspective. We examine how world models are coupled with robot policies, how they serve as learned simulators for reinforcement learning and evaluation, and how robotic video world models have progressed from imagination-based generation to controllable, structured, and foundation-scale formulations. We further connect these ideas to navigation and autonomous driving, and summarize representative datasets, benchmarks, and evaluation protocols. Overall, this survey systematically reviews the rapidly growing literature on world models for robot learning, clarifies key paradigms and applications, and highlights major challenges and future directions for predictive modeling in embodied agents. To facilitate continued access to newly emerging works, benchmarks, and resources, we will maintain and regularly update the accompanying GitHub repository alongside this survey.",
+      "authors": [
+        "Bohan Hou",
+        "Gen Li",
+        "Jindou Jia",
+        "Tuo An",
+        "Xinying Guo",
+        "Sicong Leng",
+        "Haoran Geng",
+        "Yanjie Ze",
+        "Tatsuya Harada",
+        "Philip Torr",
+        "Oier Mees",
+        "Marc Pollefeys",
+        "Zhuang Liu",
+        "Jiajun Wu",
+        "Pieter Abbeel",
+        "Jitendra Malik",
+        "Yilun Du",
+        "Jianfei Yang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-04-30T14:35:31+00:00",
+      "link": "https://arxiv.org/pdf/2605.00080v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Comprehensive survey of world models for robot learning, planning, and control",
+      "llm_evidence_cn": "关于机器人学习、规划和控制中世界模型的全面综述",
+      "llm_evidence": "关于机器人学习、规划和控制中世界模型的全面综述",
+      "canonical_evidence": "关于机器人学习、规划和控制中世界模型的全面综述",
+      "llm_tldr_en": "A comprehensive survey of world models in robot learning, covering architectures, planning, and applications.",
+      "llm_tldr_cn": "一份关于机器人学习中世界模型的全面综述，涵盖了架构、规划及其实际应用。",
+      "llm_tldr": "一份关于机器人学习中世界模型的全面综述，涵盖了架构、规划及其实际应用。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.24916v1",
+      "source": "arxiv",
+      "title": "asRoBallet: Closing the Sim2Real Gap via Friction-Aware Reinforcement Learning for Underactuated Spherical Dynamics",
+      "abstract": "We introduce asRoBallet, to the best of our knowledge, the first successful deployment of reinforcement learning (RL) on a humanoid ballbot hardware. Historically, ballbots have served as a canonical benchmark for underactuated and nonholonomic control, which are characterized by a reality gap in complex friction models for wheel-sphere-ground interactions. While current literature demonstrates successful handling of 3D balancing with LQR and MPC, transitioning to actual hardware for a humanoid ballbot using RL is currently hindered by critical gaps in contact modeling, actuator latency & jitter, and safe hardware exploration, and safe hardware exploration. This study proposes a high-fidelity MuJoCo simulation that explicitly models the discrete roller mechanics of ETH-type omni-wheels, thereby capturing parasitic vibrations and contact discontinuities that are previously ignored. We also developed a Friction-Aware Reinforcement Learning framework that achieves zero-shot Sim2Real transfer by mastering the coupled rolling, lateral, and torsional friction channels at the wheel-sphere and sphere-ground interfaces. We designed asRoBallet through subtractive reconfiguration, repurposing key components from an overconstrained quadruped and integrating them into a newly designed structural frame to achieve a robust research platform at low cost. We also developed a generalized iOS ecosystem that transforms consumer electronics into a low-latency interface, enabling a single operator to orchestrate expressive humanoid maneuvers via intuitive natural motion.",
+      "authors": [
+        "Fang Wan",
+        "Guangyi Huang",
+        "Tianyu Wu",
+        "Zishang Zhang",
+        "Bangchao Huang",
+        "Haoran Sun",
+        "Mingdong Chen",
+        "Chaoyang Song"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-04-27T18:51:01+00:00",
+      "link": "https://arxiv.org/pdf/2604.24916v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Reinforcement learning for humanoid robot balancing and underactuated dynamics control",
+      "llm_evidence_cn": "针对类人机器人平衡与欠驱动动力学控制的强化学习方法",
+      "llm_evidence": "针对类人机器人平衡与欠驱动动力学控制的强化学习方法",
+      "canonical_evidence": "针对类人机器人平衡与欠驱动动力学控制的强化学习方法",
+      "llm_tldr_en": "This paper achieves sim-to-real transfer for a humanoid ballbot using friction-aware reinforcement learning.",
+      "llm_tldr_cn": "该研究通过摩擦感知强化学习实现了类人球轮机器人的从仿真到现实的平衡控制迁移。",
+      "llm_tldr": "该研究通过摩擦感知强化学习实现了类人球轮机器人的从仿真到现实的平衡控制迁移。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.27448v1",
+      "source": "arxiv",
+      "title": "LA-Pose: Latent Action Pretraining Meets Pose Estimation",
+      "abstract": "This paper revisits camera pose estimation through the lens of self-supervised pretraining, focusing on inverse-dynamics pretraining as a scalable alternative to the current trend of fully supervised training with 3D annotations. Concretely, we employ inverse- and forward-dynamics models to learn latent action representations, similar to Genie from large-scale driving videos. Our idea is simple yet effective. Existing methods use latent actions in their original capacity, that is, as action conditioning of world-models or as proxies of robot action parameters in policy networks. Our method, dubbed LA-Pose, repurposes the latent action features as inputs to a camera pose estimator, finetuned on a limited set of high-quality 3D annotations. This formulation enables accurate and generalizable pose prediction while maintaining feed-forward efficiency. Extensive experiments on driving benchmarks show that LA-Pose achieves competitive and even superior performance to state-of-the-art methods while using orders of magnitude less labeled data. Concretely, on the Waymo and PandaSet benchmarks, LA-Pose achieves over 10% higher pose accuracy than recent feed-forward methods. To our knowledge, this work is the first to demonstrate the power of inverse-dynamics self-supervised learning for pose estimation.",
+      "authors": [
+        "Zhengqing Wang",
+        "Saurabh Nair",
+        "Prajwal Chidananda",
+        "Pujith Kachana",
+        "Samuel Li",
+        "Matthew Brown",
+        "Yasutaka Furukawa"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-04-30T05:43:10+00:00",
+      "link": "https://arxiv.org/pdf/2604.27448v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Uses forward and inverse dynamics models to learn latent action representations for world models",
+      "llm_evidence_cn": "利用正向和逆向动力学模型学习世界模型的潜动作表示",
+      "llm_evidence": "利用正向和逆向动力学模型学习世界模型的潜动作表示",
+      "canonical_evidence": "利用正向和逆向动力学模型学习世界模型的潜动作表示",
+      "llm_tldr_en": "LA-Pose uses latent action pretraining from world models to improve camera pose estimation via dynamics learning.",
+      "llm_tldr_cn": "LA-Pose通过世界模型的动力学学习和潜动作预训练来改进相机位姿估计。",
+      "llm_tldr": "LA-Pose通过世界模型的动力学学习和潜动作预训练来改进相机位姿估计。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.01860v1",
+      "source": "arxiv",
+      "title": "Optimizing Trajectory-Trees in Belief Space: An Application from Model Predictive Control to Task and Motion Planning",
+      "abstract": "This paper explores the benefits of computing arborescent trajectories (trajectory-trees) instead of commonly used sequential trajectories for partially observable robotic planning problems. In such environments, a robot infers knowledge from observations, and the optimal course of action depends on these observations. \\revise{Trajectory-trees, optimized in belief space, naturally capture this dependency by branching where the belief state is expected to evolve into multiple distinct scenarios, such as upon receiving an observation. Unlike sequential trajectories, which model a single forward evolution of the system, trajectory-trees capture multiple possible contingencies.}   First, we focus on Model Predictive Control (MPC) and demonstrate the benefits of planning tree-like trajectories. We formulate the control problem as the optimization of a tree with a single branching (PO-MPC). This improves performance by reducing control costs through more informed planning. To satisfy the real-time constraints of MPC, we develop an optimization algorithm called Distributed Augmented Lagrangian (D-AuLa), which leverages the decomposability of the PO-MPC formulation to parallelize and accelerate the optimization. We apply the method to both linear and non-linear MPC problems using autonomous driving examples.   Second, we address Task And Motion Planning (TAMP), and introduce a planner (PO-LGP) reasoning on decision trees at task level, and trajectory-trees at motion-planning level. This approach builds upon the Logic-Geometric-Programming Framework (LGP) and extends it to partially observable problems. The experiments show the method's applicability to problems with a small belief state size, and scales to larger problems by optimizing explorative policies, which are used as macro-actions in an overarching task plan.",
+      "authors": [
+        "Camille Phiquepal",
+        "Marc Toussaint"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-03T13:06:20+00:00",
+      "link": "https://arxiv.org/pdf/2605.01860v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Planning in belief space with trajectory-trees for robotic control under uncertainty",
+      "llm_evidence_cn": "在信念空间中使用轨迹树进行不确定性下的机器人控制规划",
+      "llm_evidence": "在信念空间中使用轨迹树进行不确定性下的机器人控制规划",
+      "canonical_evidence": "在信念空间中使用轨迹树进行不确定性下的机器人控制规划",
+      "llm_tldr_en": "Optimizes trajectory-trees in belief space to handle contingencies in robotic task and motion planning.",
+      "llm_tldr_cn": "在信念空间中优化轨迹树，以处理机器人任务和运动规划中的偶然性。",
+      "llm_tldr": "在信念空间中优化轨迹树，以处理机器人任务和运动规划中的偶然性。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
