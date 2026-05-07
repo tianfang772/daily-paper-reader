@@ -1,0 +1,279 @@
+Title: Height Control and Optimal Torque Planning for Jumping With Wheeled-Bipedal Robots
+
+URL Source: https://arxiv.org/pdf/2605.03302v1
+
+Published Time: Wed, 06 May 2026 00:25:08 GMT
+
+Number of Pages: 6
+
+Markdown Content:
+# Height Control and Optimal Torque Planning for Jumping With Wheeled-Bipedal Robots 
+
+Yulun Zhuang 1, Yuan Xu 1, Binxin Huang 1, Mandan Chao 1,Guowei Shi 1, Xin Yang 1, Kuangen Zhang 2,3, Chenglong Fu 2
+
+Abstract — This paper mainly studies the accurate height jumping control of wheeled-bipedal robots based on torque planning and energy consumption optimization. Due to the characteristics of underactuated, nonlinear estimation, and instantaneous impact in the jumping process, accurate control of the wheeled-bipedal robot’s jumping height is complicated. In reality, robots often jump at excessive height to ensure safety, causing additional motor loss, greater ground reaction force and more energy consumption. To solve this problem, a novel wheeled-bipedal jumping dynamical model(W-JBD) is proposed to achieve accurate height control. It performs well but not suitable for the real robot because the torque has a striking step. Therefore, the Bayesian optimization for torque planning method(BOTP) is proposed, which can obtain the optimal torque planning without accurate dynamic model and within few iterations. BOTP method can reduce 82.3% height error, 26.9% energy cost with continuous torque curve. This result is validated in the Webots simulation platform. Based on the torque curve obtained in the W-JBD model to narrow the searching space, BOTP can quickly converge (40 times on average). Cooperating W-JBD model and BOTP method, it is possible to achieve the height control of real robots with reasonable times of experiments. 
+
+I. I NTRODUCTION 
+
+Over the past years, mobile robots have assumed a central role with the improvement of control methods and small-size actuator. Taking advantage of mobility [1], they offer the potential for applications on automatic patrolling, cleaning, warehousing, surveying and mapping. 
+
+This work was supported by the National Key R&D Program of China [Grant 2018YFB1305400]; National Natural Science Foundation of China [Grant U1913205]; Guangdong Basic and Applied Basic Research Foundation [Grant 2020B1515120098]; Guangdong Innovative and En-trepreneurial Research Team Program [Grant 2016ZT06G587]; the Science, Technology and Innovation Commission of Shenzhen Municipality [Grant SGLH20180619172011638 and Grant ZDSYS20200811143601004]; and Centers for Mechanical Engineering Research and Education at MIT and SUSTech; Special Funds for the Cultivation of Guangdong College Students’ Scientific and Technological Innovation[Grant pdjh2021c0041]. The first three authors contributed equally. The last two authors are co-corresponding authors. 
+
+> 1
+
+Yulun Zhuang, Yuan Xu, Binxin Huang, Mandan Chao, Guowei Shi, Xin Yang are with Department of Mechanical and Energy Engineering, Southern University of Science and Technology, Shenzhen, 518055, China.(e-mail:z1079931505@gmail.com, xuyuan2966@gmail.com, asqrew@126.com) 
+
+> 2
+
+Kuangen Zhang and Chenglong Fu are with Shenzhen Key Laboratory of Biomimetic Robotics and Intelligent Systems and Guangdong Provincial Key Laboratory of Human-Augmentation and Rehabilitation Robotics in Universities, Department of Mechanical and Energy Engineering, Southern University of Science and Technology, Shenzhen, 518055, China.(e-mail: kuangen.zhang@alumni.ubc.ca, fucl@sustech.edu.cn) 
+
+> 3
+
+Kuangen Zhang is also with the Department of Mechanical Engineering, The University of British Columbia, Vancouver, BC, V6T1Z4, Canada. 
+
+The traditional mobile robots including wheeled robots and bipedal robots [2] are incompetent to deal with complex scenarios and challenging terrains such as gaps, stepping and stones. Combined with the high mobility efficiency [3] from wheeled robots and the ability to deal with complicated terrains from bipedal robots [4], the wheeled-bipedal robots can complete flexible locomotion missions [5]. Previous research such as Handle and Ascento [6] [7], realized balanced stance, dynamic height control and other fundamental control work in wheeled-bipedal robots, and developed hardware platforms that can be applied to complex motions. Ascento applied linear quadratic regulator (LQR) to the whole body control(WBC) in control. It is proposed to use the differential flatness of wheeled-bipedal robot model in the trajectories planning and LQR controller [8] in tracking the planning curves [9]. However, the system applied with the LQR controller requires linearity, which significantly limits the model control. The robot model always contains non-linear terms due to unknown complexity, especially of wheeled-bipedal robot, which has underactuation [10] [11] and coupling impeding the model control. Although recent research has revealed important insights into the wheeled-bipedal robot’s jumping, there currently ex-ists no comprehensive theoretical method linking to optimize the jumping process [12] [13]. To this end, we establish a wheeled-bipedal jumping dynamical(W-JBD) model to optimize the height control. However, for practical appli-cations, there are several factors hard to determine, such as the damping and friction of the joints [14]. Hence, we deploy the Bayesian optimization for torque planning(BOTP) method based on a joint optimization framework to obtain the optimal torque planning to achieve accurate height control, protect motors and minimize energy cost. In conclusion, the proposed W-JBD model provides a solution for achieving accurate jumping control with wheeled-bipedal robots [15] [16]. Furthermore, cooperating with the BOTP method, the application of height control on the real robot is available. II. M ODELS AND CONTROL 
+
+The whole jumping process consists of five phases: squat, stance, take-off, flying, and landing. It should satisfy the requirement of more precisely jump height control, less energy consumption, and motor protection. The inverted pendulum is applied to the stance phase for keeping balance and being on speed in part A. Robot squat to wait for action, which is realized by dynamic height control in part B. There are two methods of jumping. One is the W-JBD model. Given 
+
+> arXiv:2605.03302v1 [cs.RO] 5 May 2026
+
+a certain desired height, specific knee motors’ rotational angles and torque τ (θ) will be generated in part C. The other is the BOTP method in part D, which is more suitable for applying to real robots. The last phase is landing. With the intervening of the balance controller, the robot displays a hard landing and restores to stance pose. So that soft landing is the future work.  
+
+> Fig. 1: Motion states
+
+A. Stance Model 
+
+In order to control the balance of the wheeled-bipedal robot, two knee joints’ angles maintain unchanged. A single inverted pendulum model abstracts the essential dynamics of wheeled-bipedal robot. Equations of the force and torque of wheels in steady state are given below. 
+
+
+
+Fx = f − m¨αr τ = 12 mr 2 ¨α + f r 
+
+2Fx = M ddt 2 (x + L sin θ)2Fy − M g = M ddt 2 (L cos θ)
+
+M L 2 ¨θ = M gL sin θ − M ¨αrL cos θ − 2τ
+
+(1) We define state variables x = [ θ, ˙θ]T and control variable 
+
+u = 2 τ . By solving equations (1), ¨θ in ˙x is given as 
+
+¨θ = −δ1δ2θ2 + δ1M gr + 6 δ1Jω g/r − 2τ (δ2 + M r 2 + 6 Jω )6Jω M L 2 + δ21 (2) where Jω = 12 mr 2 is wheel’s moment of inertia, and δ1 =
+
+M Lr sin θ, δ2 = M Lr cos θ.When the robot is around the upright position where 
+
+ˆxθ = [0 , 0] T , the model can be linearized by using Taylor expansion at that point. The linearized model is given as 
+
+ˆA = ∂f ∂x θ ˆxθ
+
+=
+
+" 0 1   
+
+> g(M r 2+6 Jω)6JωL
+
+0
+
+#
+
+(3) 
+
+ˆB = ∂f ∂u ˆxθ
+
+=
+
+" 0
+
+− M Lr +M r 2+6 Jω 
+
+> 6JωM L 2
+
+#
+
+(4) We implement state feed back control to balance the robot by selecting the desired closed-loop eigenvalues and computing the gain Matrix K such that eigs ( ˆA − ˆBK) = 
+
+s1,2.
+
+B. Squat Model 
+
+The robot needs to squat before taking off, and after that, legs will crank to overcome obstacles. Therefore, dynamic height control is essential for the robot to complete the jumping task. The essene of dynamic height control is to plan the trajectory of the center of mass (CoM) of the robot [17], and the CoM satisfies three specific constraints while squatting. The constraints are  
+
+> •
+
+The robot base remains upright during squat  
+
+> •
+
+The CoM of robot except wheels is always on the line of gravity of wheels  
+
+> •
+
+The distance h from the CoM of the robot base to the CoM of the wheels satisfies the kinematics constraints We establish a simplified kinematic model of the wheeled-bipedal robot shown in Fig.2  
+
+> Fig. 2: 2D notations of the Kinematics model for wheeled-bipedal robot
+
+We define the joint variables q = [ q1, q 2, q 3]T be the angle of hip, knee and wheel motors respectively. We implement the squat controller by solving the inverse kinematics to obtain the control sequence of q in joint space and using position control of hip and knee motors to squat the robot. The relationship between q and h is shown in Fig.3  
+
+> Fig. 3: The motion planning curve for squatting
+
+C. W-JBD Model 
+
+To jump to a specified height, we model the robot’s jumping process. Some researches have used the SLIP model for robot jumping. However, it considers the robot a mass point at the top, ignoring other parts’ mass. During the flying phase, the robot will contract legs to overcome obstacles, which is unconsidered in the SLIP model. Therefore, this paper further proposes the W-JBD model, which has note-worthy improvement compared to SLIP model.  
+
+> Fig. 4: The W-JBD Model of the Wheeled-Bipedal Robots
+
+In the take-off phase, since the balance controller is and mature and stable, the robot body’s pitch angle can be steered to a small value at the moment of jumping, and there is almost no speed in the pitch direction. i.e. θ ≈ 0 and 
+
+˙θ ≈ 0 (Fig.4). Therefore, we can further simplify the model only along Z-axis. Firstly, we apply the SLIP model to the robot. Assuming the spring displacement ∆L, the equivalent centroid mass mb (total mass except wheels’), the take-off velocity ˙L, we can derive the equation with the energy conservation. 
+
+12 Ks∆L − mbg∆L = 12 mb ˙L2 (5) The robot will leave the ground when the equivalent spring comes to the original length. The robot step into the flying phase after take-off, and the legs will crouch from angle αi to angle αf before CoM reaching the highest point, which helps maximize the flying height to overcome the obstacle. During the flying phase, the CoM rising and the legs crouching are simultaneous but two independent processes. For analyzing more conveniently, two processes are drawn respectively. The parameters are shown in Fig.5. Finally, we can directly solve the height hw, which is the wheels’ distance off the ground.  
+
+> Fig. 5: The W-JBD Model of the Wheeled-Bipedal Robots
+
+
+
+mb ˙L2 = ( mω + mb)VCoM 
+
+V 2 
+
+> CoM
+
+= 2 gh c
+
+(mω + mb)∆ h = 2 mbr[sin αi 
+
+> 2
+
+− sin αf 
+
+> 2
+
+]
+
+hw = hc + ∆ h
+
+(6) finally, deriving the height of wheel 
+
+hω = 12g ( mω + mb
+
+mb
+
+)2 + 2 r[sin αi
+
+2 − sin αf
+
+2 ] mb
+
+mω + mb
+
+(7) Substitute Eqn(7) into Eqn(5), we can derive the rela-tionship between designed spring displacement ∆eL, spring stiffness Ks and desired height ehw
+
+Ks∆eL2 − 2mbg∆eL = 2 gehw
+
+M 2
+
+mb
+
+− 4ηgrM (8) where M = mω + mb, η = sin αi 
+
+> 2
+
+− sin αf 
+
+> 2
+
+, ∆eL = L0 −
+
+2rsin eα 
+
+> 2
+
+and eα is the corresponding designed angle of knee motors before jump. 
+
+D. BOTP Method 
+
+In addition to the feedforward control based on the W-JBD model, this paper also proposes the BOTP method, which will plan motors’ torque curve τ (t) according to the desired jumping height. In Eqn(7), reversely, if hw in the above formula is replaced by the desired height ehw, the desired take-off velocity ˙Ld can be obtained. The sensor can obtain the actual body speed of the model. When the vertical velocity reaches the desired take-off velocity ˙Ld that we designed, the motors will stop applying torque, and then the robot will get off the ground. However, in the BOTP method, the motors’ angle αi varies from different torque curves τ (t), making the influence of cranking legs unpredictable, which will significantly affect the final jumping height. Therefore, the value of desired take-off velocity ˙Ld should be different from the ˙L calculated in W-JBD model. Since it is unpractical to derive the explicit relationship between τ (t) and the ˙Ld, we decide to use the Bayesian optimization to find the best solution, and more information is presented in the next part. III. O PTIMIZATION AND SIMULATION 
+
+Model-based optimization can simultaneously combine the advantages of model and optimization, reduce model accu-racy requirements, reduce the number of parameters required to be optimized, and decrease the optimization epochs. In the W-JBD model, we simplify the robot’s physical properties, but due to the estimation error of inertial matrix of legs, friction, and damping of motors, solving the optimal control sequence of input torque online is a complex constrained nonlinear programming problem (NLP). For this factor, we propose a simulation-based joint optimization framework, which combines the Webots simulator and the Advisor optimizer to achieve accurate control of the jumping process by simultaneously optimizing the control sequence of the input torque and the critical speed of the take-off phase. With this approach, we can obtain the optimal parameters of BOTP to control the robot’s jumping height accurately and meet the actual constraints.  
+
+> Fig. 6: The simulation-based joint optimization framework
+
+A. Bayesian Optimization 
+
+Firstly, we build the optimization model. The optimization goal is the difference between the actual jumping height of the robot’s wheels hw and the target height ehw. The actual jumping height of the robot’s wheels is calculated by the simulation physics engine. In the model and controller section, we abstract it into a nonlinear model. We hope to optimize the control sequence of input torque to minimize the jumping height error, that is, the most accurate jumping height. The constrained NLP problem is modeled as follows. 
+
+min ∥hw − ehw∥2 (9a) 
+
+s.t. G(q) ≤ 0 (9b) 
+
+H(q) ¨ q + C(q, ˙q) = Bu (9c) 
+
+q ∈ Q, u ∈ U (9d) where G(q) are constraints comes from dynamics, kinemat-ics and power limits of the robot. Furthermore, we use the square penalty function to convert the constrained NLP into an unconstrained NLP. While removing the constraints, the penalty function method pun-ishes the infeasible solution of the constrained problem by modifying the objective function. 
+
+min ∥hw − ehw∥2 + μ
+
+> m
+
+X
+
+> i=1
+
+pi (10) where pi = (max {0, g i})2 and μ is the penalty factor. It is easier to experiment with the robot jumping task than to fully understand the jumping model. Manual adjustment of parameters through trial and error is time-consuming and inefficient. We can optimize the NLP problem as a black-box optimization problem. Black-box optimization is the task of optimizing an objective function F (zk) with a limited budget for evaluations. Bayesian optimization provides an elegant method of using information from previous search points to determine the next search point for solving the black-box optimization problem [18], and has been shown its performance is better than other global optimization algorithms [19]. In this work, we use the well-implemented Bayesian Optimization Algorithm (BOA) of the Advisor optimizer to solve the optimization problem. Advisor is an open-source implementation of Google Vizier [20], which is a hyperparameter tuning system for black-box optimization, especially used for auto machine learning (AutoML). 
+
+B. Simulation Platform 
+
+The open-source Webots simulator based on a simplified wheeled-bipedal robot shown in Fig. 7 was used to verify the overall model and controllers. The total mass of the robot is 
+
+7.8kg . The joint torque limit of the hip and knee motors is set to 35 N · m, and the joint torque limit of the wheel is set to 5N · m, which accurately represents the actuator torque limit of the motor used in the actual robot. We added friction and damping coefficients to the joint motor in the model to make the simulation closer to actual conditions.  
+
+> Fig. 7: Simplified model for simulation
+
+C. Joint Optimization Framework 
+
+The overall simulation-based optimization framework is set up by jointly combining Advisor optimizer and Webots simulator as shown in Fig.6 Initially, we determine the optimizer setting (i.e., number of iterations, parameters specifications) in a configuration file, and then run the Advisor optimizer. Advisor optimizer invokes BOA after a warm start (a certain number of random searches) [19], passes in new controller parameters for Webots simulator, and then eval-uates the returned objective value to update the black-box model. Note that the automated stopping algorithm will decide whether to terminate the optimization early according to the Performance Curve Stopping Rule [20]. In Webots simulator, the simulation engine receives the optimized controller parameters, and then calculates the op-timal control sequence of input torque based on the proposed model. It quantitatively evaluates the robot’s jumping per-formance (jumping height deviation and energy consumption under constraints) as the objective value of this optimization. IV. R ESULTS 
+
+A. Jumping Performance 
+
+The afterimage shown in Fig.8 illustrates the whole pro-cess of jumping. The jumping performance is mainly mea-sured by the deviation of jumping height. In comparation, both W-JBD and BOTP can reach a height deviation within 4% (Fig.9, the sampling rate is 10Hz).   
+
+> Fig. 8: The afterimage of jumping
+> Fig. 9: The jumping trajectory of W-JBD and BOTP(desired height is 0.3m)
+
+B. Optimization Performance 
+
+BOA can optimize the objective values of the given jump-ing task within 100 iterations and be close to convergence within 40 iterations (Fig.10). By using the joint optimization framework, we optimize different jumping heights to obtain the control parameter sequence corresponding to the certain jumping height, and build the jumping parameter library of the robot to adapt to more general jumping tasks. Fig. 10: Typical decreasing objective values during optimization 
+
+In the experiment, we analyze the optimization param-eters of three different desired jumping heights (hw =0.2, 0.3, 0.4) shown in Fig.11, the error bars represent the standard deviation of top ten sets of optimal parameters. This shows that the robot’s best optimal take-off speed has a clear positive correlation with desired jumping height.  
+
+> Fig. 11: Optimal taking off speed with different desired jumping height
+
+C. The Precision of Jumping Height 
+
+The first indicator of evaluating the performance is the accuracy of jumping height shown as Fig.12. It plots that the W-JBD model and BOTP method both show good per-formance in this indicator, as the error is limited within 4% for W-JBD model(corresponding absolute error is limited at most 0.015m with maximum desired height 0.5m), and 0.2% for BOTP method, which has better accuracy in jumping height.  
+
+> Fig. 12: The height error of W-JBD model and BOTP method with different desired height
+
+D. The Torque Trajectory 
+
+Our experiments focus on the take-off phase optimization, i.e., the curve shown below between the blue points. Fig.13 illustrates the torque curve of the knee motors in the case of the W-JBD model with the desired height of 0.3m. Notice that there is a striking step from -4.96N·m to -35N·m at the first blue point, which may damage the motors when the torque curve is applied to a real robot.  
+
+> Fig. 13: The toque trajectory of W-JBD model in stance and take-off phase
+
+BOTP is employed to find a proper torque curve τ (t),which is continuous and will not damage the motors. With W-JBD providing the torque curve that can determine a reasonable searching space for Bayesian optimization, sig-nificantly reducing the number of iterations of parameter optimization, the W-JBD model helps the BOTP method to work better, making the BOTP method workable on the real robot. We get a sample performance shown in Fig.14 with desired height 0.3m.  
+
+> Fig. 14: The toque trajectory of BOTP method in stance and take-off phase
+
+E. Energy Cost 
+
+Energy Cost is the work energy of the knee motors, which is transformed to gravitational potential energy and damping energy loss. Normally, the energy cost increases along with the height increment(Fig.15). Analyzing the data in Fig.15, BOTP takes less energy, though it needs the larger torque but its take-off phase traveled less stroke as shown in Fig.16. Fig. 15: The energy cost using W-JBD model and BOTP method with different desired height 
+
+Fig. 16: The encoder value of knee motors via time, the curve between the points(red or blue respectfully) stands for the take-off phase 
+
+V. C ONCLUSION 
+
+In this paper, a novel wheeled-bipedal jumping dynamical (W-JBD) model is proposed for achieving accurate height control for jumping. The W-JBD model performs well on height control, but it does not consider the joint’s torque limit so that the improper torque planning will harm motors, making it unavailable to apply to the real robot. To opti-mize the torque planning, a simulation-based joint optimiza-tion framework is developed. Cooperating with the W-JBD model, a Bayesian optimization for torque planning(BOTP) method is proposed and obtains the optimal torque planning with 40 epochs averagely, which is reasonable for applying on the real robot. The performance of the overall framework is verified with Webots simulation. In the future, we aim to apply the BOTP method to optimize the landing phase of jumping, minimize the damage caused by ground impact. Furthermore, we will improve the BOTP method to reduce the number of iterations further. VI. A CKNOWLEDGEMENT 
+
+The authors would like to thank Prof.Wei Zhang and Prof. Hua Chen for providing the Mini-NeZha model, and essential guidance in stance control of wheeled-bipedal robot. REFERENCES [1] X. Li, H. Zhou, H. Feng, S. Zhang, and Y. Fu, “Design and ex-periments of a novel hydraulic wheel-legged robot (wlr),” in 2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) , 2018, pp. 3292–3297. [2] M. Li, Z. Jiang, P. Wang, L. Sun, and S. Sam Ge, “Control of a quadruped robot with bionic springy legs in trotting gait,” Journal of Bionic Engineering , vol. 11, no. 2, pp. 188–198, 2014. [3] Y. Zhang, L. Zhang, W. Wang, Y. Li, and Q. Zhang, “Design and implementation of a two-wheel and hopping robot with a linkage mechanism,” IEEE Access , vol. 6, pp. 42 422–42 430, 2018. [4] M. Hutter, C. Gehring, D. Jud, A. Lauber, C. D. Bellicoso, V. Tsounis, J. Hwangbo, K. Bodie, P. Fankhauser, M. Bloesch, R. Diethelm, S. Bachmann, A. Melzer, and M. Hoepflinger, “Anymal - a highly mobile and dynamic quadrupedal robot,” in 2016 IEEE/RSJ Interna-tional Conference on Intelligent Robots and Systems (IROS) , 2016, pp. 38–44. [5] W. Shen, Z. Pan, M. Li, and H. Peng, “A lateral control method for wheel-footed robot based on sliding mode control and steering prediction,” IEEE Access , vol. 6, pp. 58 086–58 095, 2018. [6] V. Klemm, A. Morra, C. Salzmann, F. Tschopp, K. Bodie, L. Gulich, N. Kung, D. Mannhart, C. Pfister, M. Vierneisel, and et al., “Ascento: A two-wheeled jumping robot,” 2019 International Conference on Robotics and Automation (ICRA) , May 2019. [7] V. Klemm, A. Morra, L. Gulich, D. Mannhart, D. Rohr, M. Kamel, Y. de Viragh, and R. Siegwart, “Lqr-assisted whole-body control of a wheeled bipedal robot with kinematic loops,” IEEE Robotics and Automation Letters , vol. 5, no. 2, pp. 3745–3752, Apr 2020. [8] A. Ashraf, W. Mei, L. Gaoyuan, M. M. Kamal, and A. Mutahir, “Linear feedback and lqr controller design for aircraft pitch control,” in 2018 IEEE 4th International Conference on Control Science and Systems Engineering (ICCSSE) , 2018, pp. 276–278. [9] H. Chen, B. Wang, Z. Hong, C. Shen, P. M. Wensing, and W. Zhang, “Underactuated motion planning and control for jumping with wheeled-bipedal robots,” 2020. [10] M. Park, D. Chwa, and S. Hong, “Decoupling control of a class of underactuated mechanical systems based on sliding mode control,” in 
+
+2006 SICE-ICASE International Joint Conference , 2006, pp. 806–810. [11] M. W. Spong, “Partial feedback linearization of underactuated mechan-ical systems,” in Proceedings of IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS’94) , vol. 1, 1994, pp. 314– 321 vol.1. [12] I. Poulakakis and J. W. Grizzle, “The spring loaded inverted pendu-lum as the hybrid zero dynamics of an asymmetric hopper,” IEEE Transactions on Automatic Control , vol. 54, no. 8, pp. 1779–1793, 2009. [13] P. M. Wensing and D. E. Orin, “Development of high-span running long jumps for humanoids,” in 2014 IEEE International Conference on Robotics and Automation (ICRA) , 2014, pp. 222–227. [14] P. R. Dahl, “Solid friction damping of mechanical vibrations,” AIAA journal , vol. 14, no. 12, pp. 1675–1682, 1976. [15] J. Li, J. Wang, H. Peng, Y. Hu, and H. Su, “Fuzzy-torque approximation-enhanced sliding mode control for lateral stability of mobile robot,” IEEE Transactions on Systems, Man, and Cybernetics: Systems , pp. 1–10, 2021. [16] J. Li, J. Wang, H. Peng, L. Zhang, Y. Hu, and H. Su, “Neural fuzzy approximation enhanced autonomous tracking control of the wheel-legged robot under uncertain physical interaction,” Neurocomputing ,vol. 410, pp. 342–353, 2020. [17] T. Liu, C. Zhang, S. Song, and M. Q.-H. Meng, “Dynamic height balance control for bipedal wheeled robot based on ros-gazebo,” in 
+
+2019 IEEE International Conference on Robotics and Biomimetics (ROBIO) . IEEE, 2019, pp. 1875–1880. [18] J. Mockus, V. Tiesis, and A. Zilinskas, “The application of bayesian methods for seeking the extremum,” Towards Global Optimization ,vol. 2, no. 117-129, p. 2, 1978. [19] D. R. Jones, “A taxonomy of global optimization methods based on response surfaces,” Journal of Global Optimization , vol. 21, no. 4, pp. 345–383, 2001. [20] D. Golovin, B. Solnik, S. Moitra, G. Kochanski, J. Karro, and D. Sculley, “Google vizier: A service for black-box optimization,” in Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining , 2017, pp. 1487–1495.

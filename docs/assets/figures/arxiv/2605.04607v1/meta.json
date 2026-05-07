@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.04607v1/fig-001.webp",
+      "caption": "Fig. 2. Average NLP cost, solve time, height and velocity error for bipedal walking over no. of SQP iterations. RT capable settings are marked in green.",
+      "page": 4,
+      "index": 1,
+      "width": 517,
+      "height": 335
+    },
+    {
+      "url": "assets/figures/arxiv/2605.04607v1/fig-002.webp",
+      "caption": "TABLE I DIAGONAL COST WEIGHTS USED IN THE WB AND SRB PHASES.",
+      "page": 5,
+      "index": 2,
+      "width": 468,
+      "height": 415
+    },
+    {
+      "url": "assets/figures/arxiv/2605.04607v1/fig-003.webp",
+      "caption": "Fig. 1. The multi-phase model predictive control (MPC) predicts the first Nwb steps using the whole-body (WB) dynamics, while the following Nsrb steps are predicted using single-rigid-body (SRB) dynamics. This way prediction accuracy and solve time can be balanced effectively.",
+      "page": 1,
+      "index": 3,
+      "width": 529,
+      "height": 297
+    }
+  ]
+}
