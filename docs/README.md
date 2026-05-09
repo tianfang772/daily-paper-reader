@@ -6,73 +6,85 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-08
-- 运行时间：2026-05-08 20:29:19 UTC
+- 最新运行日期：2026-05-09
+- 运行时间：2026-05-09 20:27:52 UTC
 - 运行状态：成功
-- 本次总论文数：17
-- 精读区：6
+- 本次总论文数：21
+- 精读区：10
 - 速读区：11
 
 ### 今日简报（AI）
-今日深度解析17篇机器人前沿论文，聚焦四足机器人触觉感知与世界动作模型（WAM）的协同突破。
-重点关注MotuBrain与Being-H0.7等高分研究，它们展示了利用潜空间动力学和第一视角视频实现高精度控制的新范式。
-建议普通读者从“世界模型”如何赋能具身智能入手，探索触觉反馈在复杂环境操作中的关键应用。
-- 详情：[/202605/08/README](/202605/08/README)
+今日精选 21 篇前沿论文，深度聚焦四足与轮足机器人在复杂环境下的动力学感知与运动控制。
+重点推荐通过内在动力学头提升感知力的满分研究，以及基于任务条件不确定性代价图的足式机器人导航方案。
+建议关注强化学习稳定性与轮足跳跃规划的结合，探索复杂地形下更稳健的机器人运动算法。
+- 详情：[/202605/09/README](/202605/09/README)
 
 ### 精读区论文标签
-1. [Learning Tactile-Aware Quadrupedal Loco-Manipulation Policies](/202605/08/2604.27224v1-learning-tactile-aware-quadrupedal-loco-manipulation-policies)  
+1. [Dynamics Aware Quadrupedal Locomotion via Intrinsic Dynamics Head](/202605/09/2605.01227v1-dynamics-aware-quadrupedal-locomotion-via-intrinsic-dynamics-head)  
+   标签：评分：10.0/10、query:q3
+   evidence：四足运动的内在动力学头
+2. [Task-Conditioned Uncertainty Costmaps for Legged Locomotion](/202605/09/2605.00261v1-task-conditioned-uncertainty-costmaps-for-legged-locomotion)  
    标签：评分：9.0/10、query:q2
-   evidence：触觉感知的四足机器人运动与操作策略学习
-2. [MotuBrain: An Advanced World Action Model for Robot Control](/202605/08/2604.27792v1-motubrain-an-advanced-world-action-model-for-robot-control)  
-   标签：评分：9.0/10、query:q1
-   evidence：用于机器人控制和动力学建模的统一世界动作模型
-3. [World Model for Robot Learning: A Comprehensive Survey](/202605/08/2605.00080v1-world-model-for-robot-learning-a-comprehensive-survey)  
+   evidence：足式运动的不确定性代价图
+3. [Physically Native World Models: A Hamiltonian Perspective on Generative World Modeling](/202605/09/2605.00412v1-physically-native-world-models-a-hamiltonian-perspective-on-generative-world-modeling)  
    标签：评分：9.0/10、query:q5
-   evidence：机器人学习和具身应用中世界模型的全面综述
-4. [Task-Conditioned Uncertainty Costmaps for Legged Locomotion](/202605/08/2605.00261v1-task-conditioned-uncertainty-costmaps-for-legged-locomotion)  
+   evidence：机器人生成式世界模型的最新技术
+4. [VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids](/202605/09/2605.01518v1-vofa-visual-object-goal-pushing-with-force-adaptive-control-for-humanoids)  
    标签：评分：9.0/10、query:profile-1
-   evidence：足式机器人运动规划中的不确定性代价地图
-5. [Dynamics Aware Quadrupedal Locomotion via Intrinsic Dynamics Head](/202605/08/2605.01227v1-dynamics-aware-quadrupedal-locomotion-via-intrinsic-dynamics-head)  
-   标签：评分：9.0/10、query:q3
-   evidence：内在动力学头学习四足运动的状态到转矩动力学
-6. [Right Model, Right Time: Real-Time Cascaded-Fidelity MPC for Bipedal Walking](/202605/08/2605.04607v1-right-model-right-time-real-time-cascaded-fidelity-mpc-for-bipedal-walking)  
+   evidence：视觉目标条件下的类人机器人运动-操作系统
+5. [VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids](/202605/09/2605.01518v2-vofa-visual-object-goal-pushing-with-force-adaptive-control-for-humanoids)  
+   标签：评分：9.0/10、query:profile-1
+   evidence：具有自我感知能力的类人机器人运动与操作系统
+6. [VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids](/202605/09/2605.01518v3-vofa-visual-object-goal-pushing-with-force-adaptive-control-for-humanoids)  
+   标签：评分：9.0/10、query:profile-1
+   evidence：视觉目标条件下的类人机器人运动-操作系统
+7. [SigLoMa: Learning Open-World Quadrupedal Loco-Manipulation from Ego-Centric Vision](/202605/09/2605.03846v1-sigloma-learning-open-world-quadrupedal-loco-manipulation-from-ego-centric-vision)  
    标签：评分：9.0/10、query:q2
-   evidence：使用级联保真度模型的双足行走模型预测控制
+   evidence：基于自我中心视觉的四足机器人运动与操作控制
+8. [Right Model, Right Time: Real-Time Cascaded-Fidelity MPC for Bipedal Walking](/202605/09/2605.04607v1-right-model-right-time-real-time-cascaded-fidelity-mpc-for-bipedal-walking)  
+   标签：评分：9.0/10、query:q2
+   evidence：用于双足行走运动的分级保真度MPC
+9. [HaM-World: Soft-Hamiltonian World Models with Selective Memory for Planning](/202605/09/2605.05951v1-ham-world-soft-hamiltonian-world-models-with-selective-memory-for-planning)  
+   标签：评分：9.0/10、query:q1
+   evidence：用于模型预测规划的结构化世界模型
+10. [Reconstruction or Semantics? What Makes a Latent Space Useful for Robotic World Models](/202605/09/2605.06388v1-reconstruction-or-semantics-what-makes-a-latent-space-useful-for-robotic-world-models)  
+   标签：评分：9.0/10、query:q1
+   evidence：机器人世界模型的潜空间与策略评估
 
 ### 速读区论文标签
-1. [RAY-TOLD: Ray-Based Latent Dynamics for Dense Dynamic Obstacle Avoidance with TDMPC](/202605/08/2604.27450v1-ray-told-ray-based-latent-dynamics-for-dense-dynamic-obstacle-avoidance-with-tdmpc)  
-   标签：评分：8.0/10、query:q3
-   evidence：使用 TDMPC 的移动机器人避障潜空间动力学
-2. [MotuBrain: An Advanced World Action Model for Robot Control](/202605/08/2604.27792v2-motubrain-an-advanced-world-action-model-for-robot-control)  
+1. [Stability of Control Lyapunov Function Guided Reinforcement Learning](/202605/09/2605.01978v1-stability-of-control-lyapunov-function-guided-reinforcement-learning)  
+   标签：评分：8.0/10、query:q2
+   evidence：使用强化学习实现类人机器人运动控制
+2. [Stability of Control Lyapunov Function Guided Reinforcement Learning](/202605/09/2605.01978v2-stability-of-control-lyapunov-function-guided-reinforcement-learning)  
+   标签：评分：8.0/10、query:q2
+   evidence：用于类人机器人运动控制的强化学习
+3. [Height Control and Optimal Torque Planning for Jumping With Wheeled-Bipedal Robots](/202605/09/2605.03302v1-height-control-and-optimal-torque-planning-for-jumping-with-wheeled-bipedal-robots)  
+   标签：评分：8.0/10、query:q2
+   evidence：轮足机器人的跳跃控制
+4. [RoboAlign-R1: Distilled Multimodal Reward Alignment for Robot Video World Models](/202605/09/2605.03821v1-roboalign-r1-distilled-multimodal-reward-alignment-for-robot-video-world-models)  
    标签：评分：8.0/10、query:q1
-   evidence：用于机器人控制和动力学建模的统一世界动作模型
-3. [Being-H0.7: A Latent World-Action Model from Egocentric Videos](/202605/08/2605.00078v1-being-h07-a-latent-world-action-model-from-egocentric-videos)  
-   标签：评分：8.0/10、query:q1
-   evidence：用于未来感知机器人推理的潜空间世界动作模型
-4. [Physically Native World Models: A Hamiltonian Perspective on Generative World Modeling](/202605/08/2605.00412v1-physically-native-world-models-a-hamiltonian-perspective-on-generative-world-modeling)  
-   标签：评分：8.0/10、query:q1
-   evidence：具身决策生成式世界建模的哈密顿视角
-5. [LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models](/202605/08/2604.28192v1-last-r1-reinforcing-action-via-adaptive-physical-latent-reasoning-for-vla-models)  
+   evidence：机器人视频世界模型的奖励对齐
+5. [Action Agent: Agentic Video Generation Meets Flow-Constrained Diffusion](/202605/09/2605.01477v1-action-agent-agentic-video-generation-meets-flow-constrained-diffusion)  
    标签：评分：7.0/10、query:q1
-   evidence：VLA 机器人控制模型的自适应物理潜空间推理
-6. [LaST-R1: Reinforcing Robotic Manipulation via Adaptive Physical Latent Reasoning](/202605/08/2604.28192v2-last-r1-reinforcing-robotic-manipulation-via-adaptive-physical-latent-reasoning)  
+   evidence：机器人导航的智能视频生成
+6. [Embody4D: A Generalist 4D World Model for Embodied AI](/202605/09/2605.01799v1-embody4d-a-generalist-4d-world-model-for-embodied-ai)  
    标签：评分：7.0/10、query:q1
-   evidence：机器人基础模型中物理动力学的潜推理
-7. [LaST-R1: Reinforcing Robotic Manipulation via Adaptive Physical Latent Reasoning](/202605/08/2604.28192v3-last-r1-reinforcing-robotic-manipulation-via-adaptive-physical-latent-reasoning)  
+   evidence：具身智能的4D世界模型
+7. [Optimizing Trajectory-Trees in Belief Space: An Application from Model Predictive Control to Task and Motion Planning](/202605/09/2605.01860v1-optimizing-trajectory-trees-in-belief-space-an-application-from-model-predictive-control-to-task-and-motion-planning)  
    标签：评分：7.0/10、query:q1
-   evidence：机器人控制中视觉-语言-动作模型的潜推理
-8. [Embody4D: A Generalist 4D World Model for Embodied AI](/202605/08/2605.01799v1-embody4d-a-generalist-4d-world-model-for-embodied-ai)  
+   evidence：机器人规划中的轨迹树
+8. [TRAP: Tail-aware Ranking Attack for World-Model Planning](/202605/09/2605.01950v1-trap-tail-aware-ranking-attack-for-world-model-planning)  
    标签：评分：7.0/10、query:q1
-   evidence：用于具身智能和空间推理的通用世界模型
-9. [LA-Pose: Latent Action Pretraining Meets Pose Estimation](/202605/08/2604.27448v1-la-pose-latent-action-pretraining-meets-pose-estimation)  
+   evidence：世界模型规划中的安全风险
+9. [CoRAL: Contact-Rich Adaptive LLM-based Control for Robotic Manipulation](/202605/09/2605.02600v1-coral-contact-rich-adaptive-llm-based-control-for-robotic-manipulation)  
    标签：评分：6.0/10、query:q1
-   evidence：潜动作表示作为世界模型的动作调节
-10. [PRTS: A Primitive Reasoning and Tasking System via Contrastive Representations](/202605/08/2604.27472v1-prts-a-primitive-reasoning-and-tasking-system-via-contrastive-representations)  
+   evidence：基于大语言模型的控制与采样运动规划器
+10. [OGPO: Sample Efficient Full-Finetuning of Generative Control Policies](/202605/09/2605.03065v1-ogpo-sample-efficient-full-finetuning-of-generative-control-policies)  
    标签：评分：6.0/10、query:q1
-   evidence：通过目标条件强化学习进行机器人控制的 VLA 基础模型
-11. [Optimizing Trajectory-Trees in Belief Space: An Application from Model Predictive Control to Task and Motion Planning](/202605/08/2605.01860v1-optimizing-trajectory-trees-in-belief-space-an-application-from-model-predictive-control-to-task-and-motion-planning)  
-   标签：评分：6.0/10、query:q1
-   evidence：信念空间中的轨迹树用于机器人规划问题
+   evidence：用于机器人学习和操作的生成式控制策略
+11. [ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting](/202605/09/2605.06593v1-reactor-reinforcement-learning-for-physics-aware-motion-retargeting)  
+   标签：评分：6.0/10、query:profile-1
+   evidence：机器人物理感知运动重定向
 
 
 <div class="dpr-home-promo-card">
