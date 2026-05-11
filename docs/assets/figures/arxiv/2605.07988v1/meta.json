@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.07988v1/fig-001.webp",
+      "caption": "Fig. 4. The maximum slope angle climbed by the robot during learning. The thick line and shaded area show the mean and the standard error, respectively, over 15 seeds.",
+      "page": 2,
+      "index": 1,
+      "width": 461,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2605.07988v1/fig-002.webp",
+      "caption": "Fig. 5. Hurdling scenario, in which the robot is tasked to overcome the vertical obstacle located on the ground. The robot actively uses its spine to increase the clearance while jumping over the wall.",
+      "page": 2,
+      "index": 2,
+      "width": 437,
+      "height": 291
+    },
+    {
+      "url": "assets/figures/arxiv/2605.07988v1/fig-003.webp",
+      "caption": "Fig. 3. The maximum stair height climbed by the robot during learning. The thick line and shaded area show the mean and the standard error, respectively, over 20 seeds.",
+      "page": 2,
+      "index": 3,
+      "width": 462,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2605.07988v1/fig-004.webp",
+      "caption": "Fig. 2. The maximum forward velocity achieved by the robot during learning. The thick line and shaded area show the mean and the standard error, respectively, over 20 seeds.",
+      "page": 1,
+      "index": 4,
+      "width": 462,
+      "height": 283
+    },
+    {
+      "url": "assets/figures/arxiv/2605.07988v1/fig-005.webp",
+      "caption": "Fig. 8. The minimum height of the passage overcome by the robot during learning. The thick line and shaded area show the mean and the standard error, respectively, over 15 seeds.",
+      "page": 3,
+      "index": 5,
+      "width": 461,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2605.07988v1/fig-006.webp",
+      "caption": "Fig. 7. The maximum wall height overcome by the robot during learning. The thick line and shaded area show the mean and the standard error, respectively, over 15 seeds.",
+      "page": 3,
+      "index": 6,
+      "width": 461,
+      "height": 265
+    }
+  ]
+}

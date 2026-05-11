@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.05707v1/fig-001.webp",
+      "caption": "Fig. 1. (a) Pendular direction (foot→CoM) versus the friction cone of halfangle arctanµ = 31◦ at µ = 0.6. Diagonal trot (N = 2): the pendular direction tilts 40.6◦ from vertical, outside the cone, so ∥ḢG∥ has an αindependent floor (Thm. 5). Four-foot stance (N = 4): tilt is ∼18◦, inside the cone, floor is zero. (b) Go1 numerical ∥ḢG∥/m vs. α: N = 4 follows K/α with K = 8.4 (Thm. 1); N = 2 saturates at 0.44 m2/s2.",
+      "page": 1,
+      "index": 1,
+      "width": 495,
+      "height": 566
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05707v1/fig-002.webp",
+      "caption": "Fig. 8. Go1 closed-loop trot MPC: ∥ḢG∥/m vs. α on (a) linear and (b) log-log axes. “MPC” marks the closed-loop trajectory; “floor” is the empirical asymptote ε̄∞≈1.71m2/s2, the control-augmented analogue of Theorem 5’s N = 2 floor; “O(1/α)” is a reference of slope −1 with K=27 that tracks the steep regime α≤30. The single point at α=300 is a closed-loop instability (∆h=2.9 cm).",
+      "page": 6,
+      "index": 2,
+      "width": 404,
+      "height": 480
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05707v1/fig-003.webp",
+      "caption": "Fig. 7. Go1 in MuJoCo with the per-step centroidal QP visualized. CoM (yellow star), pendular direction (orange dashed), QP-commanded contact forces (red). Left: α = 1, equal-magnitude vertical forces, ∥ḢG∥ = 18.0. Right: α = 1000, forces redistributed toward the pendular direction, ∥ḢG∥ = 0.14 in static stance. In trot the same QP is solved every 10ms but only N = 2 feet are in contact, so the achievable residual is bounded by Theorem 5.",
+      "page": 6,
+      "index": 3,
+      "width": 590,
+      "height": 276
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05707v1/fig-004.webp",
+      "caption": "Fig. 3. Theorem 7. (a) The prefactor λ/(α + λ) varies smoothly with log(λ/α), separating balance-dominated (λ/α≪ 1) from task-dominated (λ/α ≫ 1) locomotion. (b) Sample optima sliding from the pendular manifold (Ḣ∗ G=0) along the line to Ḣtask",
+      "page": 4,
+      "index": 4,
+      "width": 402,
+      "height": 591
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05707v1/fig-005.webp",
+      "caption": "Fig. 5. Go1 N = 4 body sway. (a) ∥ḢG∥/m vs. α; markers are simulation, dashed is the empirical fit Ke/α with Ke = 8.4, solid is the analytical prediction Ka/α with Ka = 9.8 from Proposition 2. (b) Compensated curve K(α) = ∥ḢG∥/m · α → K∞, with both empirical and analytical asymptotes shown; inset reports the three moment-Jacobian singular values, which match foot spans ℓdiag, 2Lx, 2Ly to four decimals.",
+      "page": 5,
+      "index": 5,
+      "width": 392,
+      "height": 475
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05707v1/fig-006.webp",
+      "caption": "Fig. 6. Go1 N = 2 diagonal trot: ∥ḢG∥/m vs. α saturates at the analytical floor (left); fraction of ḢG,0 along D̂ (uncancellable) versus excitation direction averages 64% (right).",
+      "page": 5,
+      "index": 6,
+      "width": 392,
+      "height": 466
+    }
+  ]
+}
