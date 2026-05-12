@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-001.webp",
+      "caption": "Figure 5: Vortex particle trajectory, plotted in the original state-space and the latent state space. Trajectories are simulated with an Euler solver using a time step of 0.06s.",
+      "page": 6,
+      "index": 1,
+      "width": 829,
+      "height": 342
+    },
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-002.webp",
+      "caption": "Figure 6: Function evaluations vs. mean squared error for the vortex particle simulations.",
+      "page": 6,
+      "index": 2,
+      "width": 829,
+      "height": 343
+    },
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-003.webp",
+      "caption": "Table 1: Network architecture and training hyperparameters for the linear system example (Section 3.1).",
+      "page": 11,
+      "index": 3,
+      "width": 427,
+      "height": 299
+    },
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-004.webp",
+      "caption": "Table 2: Network architecture and training hyperparameters for the vortex particle system (Section 3.2).",
+      "page": 11,
+      "index": 4,
+      "width": 440,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-005.webp",
+      "caption": "Figure 8: Original and Latent simulations for the VLM aircraft model. Solutions are obtained using an Euler solver with a timestep of 0.03s.",
+      "page": 7,
+      "index": 5,
+      "width": 829,
+      "height": 343
+    },
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-006.webp",
+      "caption": "Figure 9: Function evaluations vs. mean squared error for the vortex lattice aircraft simulations using original, PINODE, and latent equations. Solutions are obtained using Euler, RK4, and Dopri5 solvers.",
+      "page": 8,
+      "index": 6,
+      "width": 416,
+      "height": 315
+    },
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-007.webp",
+      "caption": "Figure 2: Linear system trajectories, plotted in the original state-space and the latent state space. Trajectories are simulated with an Euler solver using a time step of 0.08s.",
+      "page": 4,
+      "index": 7,
+      "width": 829,
+      "height": 342
+    },
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-008.webp",
+      "caption": "Table 3: Network architecture and training hyperparameters for the VLM aircraft model (Section 3.3).",
+      "page": 12,
+      "index": 8,
+      "width": 440,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-009.webp",
+      "caption": "Figure 12: Total computation time vs. VLM panel count for original and latent simulations.",
+      "page": 9,
+      "index": 9,
+      "width": 411,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-010.webp",
+      "caption": "Figure 11: Effect of latent dimension on Euler solver performance for vortex particle dynamics.",
+      "page": 9,
+      "index": 10,
+      "width": 408,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-011.webp",
+      "caption": "Figure 10: Euler solver function calls vs. final mean squared error for networks trained on various training sample sizes.",
+      "page": 9,
+      "index": 11,
+      "width": 829,
+      "height": 343
+    },
+    {
+      "url": "assets/figures/arxiv/2605.06980v1/fig-012.webp",
+      "caption": "Figure 3: Function calls plotted against final mean squared error for the original, PINODE, and latent equations using Euler, RK4, and Dopri5 solvers.",
+      "page": 5,
+      "index": 12,
+      "width": 416,
+      "height": 296
+    }
+  ]
+}

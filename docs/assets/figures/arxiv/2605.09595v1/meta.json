@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-001.webp",
+      "caption": "Figure 8: Convergence of stage-2 training for gradient scaling factor 1 σ and 1 σ2 . The center line and shaded region indicate the mean and standard deviation across 5 versions.",
+      "page": 25,
+      "index": 1,
+      "width": 815,
+      "height": 198
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-002.webp",
+      "caption": "Figure 7: Convergence of stage-1 training for three values of ϵrev. The center line and shaded region indicate the mean and standard deviation across 5 versions for ϵrev = 0.3 and ϵrev = 0.7. For ϵrev = 1.0, only 4 versions are aggregated because there is one version resulting in a numerical instability issue during training.",
+      "page": 25,
+      "index": 2,
+      "width": 813,
+      "height": 198
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-003.webp",
+      "caption": "Figure 9: Convergence of stage-1 training for dynamic and static gradient mask. The center line and shaded region indicate the mean and standard deviation across 5 versions.",
+      "page": 26,
+      "index": 3,
+      "width": 816,
+      "height": 198
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-004.webp",
+      "caption": "Figure 10: Step to convergence in the EP relaxation for both policy and value networks. The test is conducted in stage-1 training. The center line and shaded region indicate the mean and standard deviation across 5 versions. (c) and (d) show the percentage of the samples that converges within 50 steps. (g) indicates the convergence speed.",
+      "page": 26,
+      "index": 4,
+      "width": 821,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-005.webp",
+      "caption": "Table 3: Reward Function. The terms in the RL reward function. The reward coefficient for the x-directional linear velocity tracking is different in the stages. The details are in the Reward function section.",
+      "page": 15,
+      "index": 5,
+      "width": 794,
+      "height": 197
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-006.webp",
+      "caption": "Table 6: List of hyper-parameters. If a hyper-parameter is different in stage-1 and stage-2, the value in each stage will be displayed individually in the form (1: value1, 2: value2).",
+      "page": 30,
+      "index": 6,
+      "width": 822,
+      "height": 1098
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-007.webp",
+      "caption": "Figure 4: Per-update KL-divergence. The KL-divergence of all 5 versions, EP and BP algorithms, and both stages are plotted here. Here, the y-axis label KL(policyold|policynew) is the KL-divergence between the pre-update and post-update policy.",
+      "page": 22,
+      "index": 7,
+      "width": 820,
+      "height": 491
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-008.webp",
+      "caption": "Table 1: Observation spaces of CPG policy network and RES policy network.",
+      "page": 14,
+      "index": 8,
+      "width": 414,
+      "height": 355
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-009.webp",
+      "caption": "Figure 3: Locomotion performance measured in the walking test. From (a) to (g), the indicators are success rate, average forward velocity, average actuator total power, average absolute roll/pitch angle, and average absolute roll/pitch angular velocity. The center line and the error bar indicate the mean ± standard deviation over the 5 versions.",
+      "page": 8,
+      "index": 9,
+      "width": 806,
+      "height": 303
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-010.webp",
+      "caption": "Figure 1: The control architecture of the EP-based quadruped locomotion control. This schematic shows the stage-2 uneven terrain control iteration. The training process is not shown here. The overall control architecture follows Seto et al. (2025) with minor modifications.",
+      "page": 4,
+      "index": 10,
+      "width": 819,
+      "height": 371
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-011.webp",
+      "caption": "Table 4: Domain randomization in training",
+      "page": 16,
+      "index": 11,
+      "width": 740,
+      "height": 209
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09595v1/fig-012.webp",
+      "caption": "Table 5: Fixed walking testing hyper-parameters",
+      "page": 16,
+      "index": 12,
+      "width": 560,
+      "height": 232
+    }
+  ]
+}

@@ -1,0 +1,700 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-12T20:18:49.973892+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 13,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 17,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2605.03846v1",
+      "source": "arxiv",
+      "title": "SigLoMa: Learning Open-World Quadrupedal Loco-Manipulation from Ego-Centric Vision",
+      "abstract": "Designing an open-world quadrupedal loco-manipulation system is highly challenging. Traditional reinforcement learning frameworks utilizing exteroception often suffer from extreme sample inefficiency and massive sim-to-real gaps. Furthermore, the inherent latency of visual tracking fundamentally conflicts with the high-frequency demands of precise floating-base control. Consequently, existing systems lean heavily on expensive external motion capture and off-board computation. To eliminate these dependencies, we present SigLoMa, a fully onboard, ego-centric vision-based pick-and-place framework. At the core of SigLoMa is the introduction of Sigma Points, a lightweight geometric representation for exteroception that guarantees high scalability and native sim-to-real alignment. To bridge the frequency divide between slow perception and fast control, we design an ego-centric Kalman Filter to provide robust, high-rate state estimation. On the learning front, we alleviate sample inefficiency via an Active Sampling Curriculum guided by Hint Poses, and tackle the robot's structural visual blind spots using temporal encoding coupled with simulated random-walk drift. Real-world experiments validate that, relying solely on a 5Hz (200 ms latency) open-vocabulary detector, SigLoMa successfully executes dynamic loco-manipulation across multiple tasks, achieving performance comparable to expert human teleoperation.",
+      "authors": [
+        "Shiyi Chen",
+        "Haiyi Liu",
+        "Mingye Yang",
+        "Jiaqi Zhang",
+        "Debing Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-05T15:13:15+00:00",
+      "link": "https://arxiv.org/pdf/2605.03846v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "quadrupedal loco-manipulation from ego-centric vision",
+      "llm_evidence_cn": "基于自我中心视觉的四足机器人运动与操作",
+      "llm_evidence": "基于自我中心视觉的四足机器人运动与操作",
+      "canonical_evidence": "基于自我中心视觉的四足机器人运动与操作",
+      "llm_tldr_en": "SigLoMa enables onboard, vision-based quadrupedal loco-manipulation without external motion capture.",
+      "llm_tldr_cn": "SigLoMa 实现了无需外部动捕的板载视觉四足机器人运动与操作框架。",
+      "llm_tldr": "SigLoMa 实现了无需外部动捕的板载视觉四足机器人运动与操作框架。",
+      "llm_tags": [
+        "query:profile-1:composite"
+      ],
+      "matched_query_tag": "query:profile-1:composite",
+      "matched_query_text": "Papers central to 检索世界模型在腿足机器人（如四足、双足机器人）运动控制与感知中的应用论文, especially work that connects or combines: World models for robot control and planning; Legged robot locomotion and navigation; Learning latent dynamics for legged robot control; Application of world models in legged robot locomotion and control; State of the art in world models for legged robotics research.",
+      "matched_requirement_id": "req-composite-profile-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.04607v1",
+      "source": "arxiv",
+      "title": "Right Model, Right Time: Real-Time Cascaded-Fidelity MPC for Bipedal Walking",
+      "abstract": "This paper presents a multi-phase whole-body model predictive control approach for bipedal walking, combining a detailed whole-body model in the near horizon with a simplified single-rigid-body model in the later prediction steps. This reduces computational complexity while retaining prediction capabilities. The resulting nonlinear optimal control problem is solved using sequential quadratic programming (SQP) in acados. Using a prior specified contact schedule and a target walking speed, the controller optimizes joint torques without depending on prior selected foot step locations. The controller is validated in MuJoCo simulation on the 18-DoF bipedal robot HyPer-2",
+      "authors": [
+        "Franek Stark",
+        "Felix Wiebe",
+        "Shubham Vyas",
+        "Dennis Mronga",
+        "Frank Kirchner"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-06T07:54:49+00:00",
+      "link": "https://arxiv.org/pdf/2605.04607v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "model predictive control approach for bipedal walking",
+      "llm_evidence_cn": "双足行走模型预测控制方法",
+      "llm_evidence": "双足行走模型预测控制方法",
+      "canonical_evidence": "双足行走模型预测控制方法",
+      "llm_tldr_en": "A cascaded-fidelity MPC approach for real-time bipedal walking using whole-body and simplified models.",
+      "llm_tldr_cn": "一种结合全身模型和简化模型的级联精度 MPC 方法，用于实时双足行走控制。",
+      "llm_tldr": "一种结合全身模型和简化模型的级联精度 MPC 方法，用于实时双足行走控制。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.05951v1",
+      "source": "arxiv",
+      "title": "HaM-World: Soft-Hamiltonian World Models with Selective Memory for Planning",
+      "abstract": "World models enable model-based planning through learned latent dynamics, but imagined rollouts become unstable as the planning horizon grows or the dynamics distribution shifts. We argue that this instability reflects two missing structures in planner-facing latents: history-conditioned memory for approximate Markov completeness, and geometric organization that separates configuration, momentum, and task semantics. We propose HaM-World (HMW), a structured world model that decomposes the latent state into a canonical (q, p) subspace and a context subspace c, while using Mamba selective state-space memory as the history-conditioned input to the same latent dynamics. Within this interface, (q, p) evolves through an energy-derived Hamiltonian vector field plus learnable residual/control dynamics, while c captures semantic, dissipative, and non-conservative factors. This gives the planner a single latent state shared by dynamics prediction, reward/value estimation, imagined rollouts, and CEM action search. On four DeepMind Control Suite tasks, HaM-World reaches the highest Avg. AUC (117.9, +9.5%), reduces long-horizon rollout error to 45% of a strong baseline model, and wins 11/12 k in {3,5,7} MSE cells. Under 12 OOD perturbations spanning dynamics shifts, action delay, and observation masking, HaM-World achieves the highest return in every condition, with average OOD-return gains of 10.2% on Finger Spin and 13.6% on Reacher Easy. Mechanism diagnostics further show bounded action-free Hamiltonian-energy drift, structured energy variation under policy rollouts, and coherent control-induced energy transfer, supporting the intended Soft-Hamiltonian dynamics design.",
+      "authors": [
+        "Haoyun Tang",
+        "Haodong Cui",
+        "Keyao Xu",
+        "Kun Wang",
+        "Zhandong Mei"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-07T09:58:18+00:00",
+      "link": "https://arxiv.org/pdf/2605.05951v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Structured world model with learned latent dynamics for planning",
+      "llm_evidence_cn": "具有用于规划的学习潜动力学的结构化世界模型",
+      "llm_evidence": "具有用于规划的学习潜动力学的结构化世界模型",
+      "canonical_evidence": "具有用于规划的学习潜动力学的结构化世界模型",
+      "llm_tldr_en": "Proposes HaM-World, a structured world model using Hamiltonian dynamics and Mamba memory for stable planning.",
+      "llm_tldr_cn": "提出HaM-World，一种结合哈密顿动力学和Mamba存储的结构化世界模型，用于稳定规划。",
+      "llm_tldr": "提出HaM-World，一种结合哈密顿动力学和Mamba存储的结构化世界模型，用于稳定规划。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.08020v1",
+      "source": "arxiv",
+      "title": "Active Embodiment Identification with Reinforcement Learning for Legged Robots",
+      "abstract": "We present an active embodiment identification method for legged robots that jointly learns information-seeking behavior and explicit embodiment prediction. Using a history-augmented URMA architecture, the method infers joint-level and global embodiment parameters through interaction with the environment in simulation across different morphologies.",
+      "authors": [
+        "Nico Bohlinger",
+        "Jan Peters"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-08T17:07:58+00:00",
+      "link": "https://arxiv.org/pdf/2605.08020v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Legged robot embodiment identification and interaction",
+      "llm_evidence_cn": "腿足机器人形态识别与交互",
+      "llm_evidence": "腿足机器人形态识别与交互",
+      "canonical_evidence": "腿足机器人形态识别与交互",
+      "llm_tldr_en": "Learns information-seeking behavior for active embodiment identification in legged robots.",
+      "llm_tldr_cn": "学习腿足机器人的信息寻求行为，以实现主动形态识别。",
+      "llm_tldr": "学习腿足机器人的信息寻求行为，以实现主动形态识别。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.09595v1",
+      "source": "arxiv",
+      "title": "Neuromorphic Reinforcement Learning for Quadruped Locomotion Control on Uneven Terrain",
+      "abstract": "Reinforcement learning (RL) has enabled robust quadruped locomotion over complex terrain, but most learned controllers are trained offline with backpropagation in massively parallel simulation and deployed as fixed policies, limiting adaptation to terrain variation, payload changes, actuator wear, and other real-world conditions under onboard power constraints. Local learning provides a potential path toward energy-aware on-robot adaptation by replacing global backpropagation graphs with updates driven by local neural states, making the learning rule more compatible with neuromorphic and in-memory computing substrates. This work proposes an equilibrium-propagation (EP)-based proximal policy optimization (PPO) framework for uneven-terrain quadruped locomotion. The controller combines a bio-inspired central pattern generator (CPG) policy with a residual postural adjustment policy, while replacing conventional backpropagation-trained policy and value networks with EP-enabled local learning. To train stochastic continuous-control policies with EP, we derive an EP-compatible PPO output-nudging signal and introduce a two-sided ratio clipping mechanism that stabilizes policy updates during relaxation. Experiments on a 12-DoF A1 quadruped show that the proposed controller achieves stable policy convergence in a two-stage uneven terrain locomotion task. Its locomotion performance is comparable to a backpropagation-trained PPO baseline in success rate, velocity tracking, actuator power, and body stability, while improving GPU memory efficiency by 4.3\\(\\times\\) compared with backpropagation through time (BPTT). These results suggest that local equilibrium-based learning can support high-dimensional embodied locomotion and provide an algorithmic foundation for low-power on-robot adaptation and fine-tuning.",
+      "authors": [
+        "Zhuangyu Han",
+        "Abhronil Sengupta"
+      ],
+      "primary_category": "cs.NE",
+      "categories": [
+        "cs.NE",
+        "cs.RO"
+      ],
+      "published": "2026-05-10T15:16:07+00:00",
+      "link": "https://arxiv.org/pdf/2605.09595v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "quadruped locomotion control on uneven terrain using reinforcement learning",
+      "llm_evidence_cn": "使用强化学习在不平整地形上进行四足机器人运动控制",
+      "llm_evidence": "使用强化学习在不平整地形上进行四足机器人运动控制",
+      "canonical_evidence": "使用强化学习在不平整地形上进行四足机器人运动控制",
+      "llm_tldr_en": "Proposes a neuromorphic RL framework for energy-efficient, on-robot adaptation of quadruped locomotion.",
+      "llm_tldr_cn": "提出一种神经形态强化学习框架，用于四足机器人运动的节能板载自适应控制。",
+      "llm_tldr": "提出一种神经形态强化学习框架，用于四足机器人运动的节能板载自适应控制。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.09944v1",
+      "source": "arxiv",
+      "title": "Explicit Stair Geometry Conditioning for Robust Humanoid Locomotion",
+      "abstract": "Robust humanoid stair climbing remains challenging due to geometric discontinuities, sensitivity to step height variations, and perception uncertainty in real-world environments. Existing learning-based locomotion policies often rely on implicit terrain representations or blind proprioceptive feedback, limiting their ability to generalize across varying stair geometries and to anticipate required gait adjustments. This paper proposes an explicit stair geometry conditioning framework for robust humanoid stair climbing. Instead of encoding terrain as high-dimensional latent features, we extract a compact set of interpretable geometric parameters, including step height, step depth, and current yaw angle relative to the robot heading. These explicit stair parameters directly condition a Proximal Policy Optimization (PPO)-based locomotion policy, enabling proactive modulation of swing-foot clearance and stride characteristics according to stair structure. Simulation experiments demonstrate improved generalization across unseen stair heights beyond the training distribution. Real-world experiments on the Unitree G1 humanoid validate reliable indoor and outdoor stair traversal. In challenging outdoor scenarios, the robot successfully ascends 33 consecutive steps without failure, demonstrating robustness and practical deployability.",
+      "authors": [
+        "Jianguo Zhang",
+        "Wentai Xu",
+        "Shusheng Ye",
+        "Yuxiang He",
+        "Weimin Qi",
+        "Qinbo Sun",
+        "Ning Ding",
+        "Liguang Zhou"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-11T03:47:24+00:00",
+      "link": "https://arxiv.org/pdf/2605.09944v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Explicit geometry conditioning for robust humanoid locomotion",
+      "llm_evidence_cn": "用于鲁棒类人机器人运动的显式几何调节",
+      "llm_evidence": "用于鲁棒类人机器人运动的显式几何调节",
+      "canonical_evidence": "用于鲁棒类人机器人运动的显式几何调节",
+      "llm_tldr_en": "Proposes explicit stair geometry conditioning to improve humanoid locomotion over complex terrains.",
+      "llm_tldr_cn": "提出显式楼梯几何调节框架，提升类人机器人在复杂地形下的运动鲁棒性。",
+      "llm_tldr": "提出显式楼梯几何调节框架，提升类人机器人在复杂地形下的运动鲁棒性。",
+      "llm_tags": [
+        "query:profile-1:composite"
+      ],
+      "matched_query_tag": "query:profile-1:composite",
+      "matched_query_text": "Papers central to 检索世界模型在腿足机器人（如四足、双足机器人）运动控制与感知中的应用论文, especially work that connects or combines: World models for robot control and planning; Legged robot locomotion and navigation; Learning latent dynamics for legged robot control; Application of world models in legged robot locomotion and control; State of the art in world models for legged robotics research.",
+      "matched_requirement_id": "req-composite-profile-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.03821v1",
+      "source": "arxiv",
+      "title": "RoboAlign-R1: Distilled Multimodal Reward Alignment for Robot Video World Models",
+      "abstract": "Existing robot video world models are typically trained with low-level objectives such as reconstruction and perceptual similarity, which are poorly aligned with the capabilities that matter most for robot decision making, including instruction following, manipulation success, and physical plausibility. They also suffer from error accumulation in long-horizon autoregressive prediction. We present RoboAlign-R1, a framework that combines reward-aligned post-training with stabilized long-horizon inference for robot video world models. We construct RobotWorldBench, a benchmark of 10,000 annotated video-instruction pairs collected from four robot data sources, and train a multimodal teacher judge, RoboAlign-Judge, to provide fine-grained six-dimensional evaluation of generated videos. We then distill the teacher into a lightweight student reward model for efficient reinforcement-learning-based post-training. To reduce long-horizon rollout drift, we further introduce Sliding Window Re-encoding (SWR), a training-free inference strategy that periodically refreshes the generation context. Under our in-domain evaluation protocol, RoboAlign-R1 improves the aggregate six-dimension score by 10.1% over the strongest baseline, including gains of 7.5% on Manipulation Accuracy and 4.6% on Instruction Following; these ranking improvements are further supported by an external VLM-based cross-check and a blinded human study. Meanwhile, SWR improves long-horizon prediction quality with only about 1% additional latency, yielding a 2.8% gain in SSIM and a 9.8% reduction in LPIPS. Together, these results show that reward-aligned post-training and stabilized long-horizon decoding improve task consistency, physical realism, and long-horizon prediction quality in robot video world models.",
+      "authors": [
+        "Hao Wu",
+        "Yuqi Li",
+        "Yuan Gao",
+        "Fan Xu",
+        "Fan Zhang",
+        "Kun Wang",
+        "Penghao Zhao",
+        "Qiufeng Wang",
+        "Yizhou Zhao",
+        "Weiyan Wang",
+        "Yingli Tian",
+        "Xian Wu",
+        "Xiaomeng Huang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-05-05T14:49:00+00:00",
+      "link": "https://arxiv.org/pdf/2605.03821v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "reward alignment for robot video world models",
+      "llm_evidence_cn": "机器人视频世界模型的奖励对齐",
+      "llm_evidence": "机器人视频世界模型的奖励对齐",
+      "canonical_evidence": "机器人视频世界模型的奖励对齐",
+      "llm_tldr_en": "Improves robot video world models through reward-aligned post-training and stabilized inference.",
+      "llm_tldr_cn": "通过奖励对齐的后期训练和稳定的推理改进机器人视频世界模型。",
+      "llm_tldr": "通过奖励对齐的后期训练和稳定的推理改进机器人视频世界模型。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.06222v1",
+      "source": "arxiv",
+      "title": "When to Trust Imagination: Adaptive Action Execution for World Action Models",
+      "abstract": "World Action Models (WAMs) have recently emerged as a promising paradigm for robotic manipulation by jointly predicting future visual observations and future actions. However, current WAMs typically execute a fixed number of predicted actions after each model inference, leaving the robot blind to whether the imagined future remains consistent with the actual physical rollout. In this work, we formulate adaptive WAM execution as a future-reality verification problem: the robot should execute longer when the WAM-predicted future remains reliable, and replan earlier when reality deviates from imagination. To this end, we propose Future Forward Dynamics Causal Attention (FFDC), a lightweight verifier that jointly reasons over predicted future actions, predicted visual dynamics, real observations, and language instructions to estimate whether the remaining action rollout can still be trusted. FFDC enables adaptive action chunk sizes as an emergent consequence of prediction-observation consistency, preserving the efficiency of long-horizon execution while restoring responsiveness in contact-rich or difficult phases. We further introduce Mixture-of-Horizon Training to improve long-horizon trajectory coverage for adaptive execution. Experiments on the RoboTwin benchmark and in the real world demonstrate that our method achieves a strong robustness-efficiency trade-off: on RoboTwin, it reduces WAM forward passes by 69.10% and execution time by 34.02%, while improving success rate by 2.54% over the short-chunk baseline; in real-world experiments, it improves success rate by 35%.",
+      "authors": [
+        "Rui Wang",
+        "Yue Zhang",
+        "Jiehong Lin",
+        "Kuncheng Luo",
+        "Jianan Wang",
+        "Zhongrui Wang",
+        "Xiaojuan Qi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-05-07T13:18:28+00:00",
+      "link": "https://arxiv.org/pdf/2605.06222v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Adaptive action execution for World Action Models in robot control",
+      "llm_evidence_cn": "机器人控制中世界动作模型的自适应动作执行",
+      "llm_evidence": "机器人控制中世界动作模型的自适应动作执行",
+      "canonical_evidence": "机器人控制中世界动作模型的自适应动作执行",
+      "llm_tldr_en": "Introduces a verifier for World Action Models to decide when to trust imagined rollouts for robot control.",
+      "llm_tldr_cn": "为世界动作模型引入验证器，以决定何时信任机器人控制中的想象推演。",
+      "llm_tldr": "为世界动作模型引入验证器，以决定何时信任机器人控制中的想象推演。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.02759v1",
+      "source": "arxiv",
+      "title": "DynoSLAM: Dynamic SLAM with Generative Graph Neural Networks for Real-World Social Navigation",
+      "abstract": "Traditional Simultaneous Localization and Mapping (SLAM) algorithms rely heavily on the static environment assumption, which severely limits their applicability in real-world spaces populated by moving entities, such as pedestrians. In this work, we propose DynoSLAM, a tightly-coupled Dynamic GraphSLAM architecture that integrates socially-aware Graph Neural Networks (GNNs) directly into the factor graph optimization. Unlike conventional approaches that use rigid constant-velocity heuristics or deterministic single-agent neural priors, our framework formulates pedestrian motion forecasting as a stochastic World Model. By utilizing Monte Carlo rollouts from a trained GNN, we capture the multimodal epistemic uncertainty of human interactions and embed it into the SLAM graph via a dynamic Mahalanobis distance factor. We demonstrate through extensive simulated experiments that this stochastic formulation not only maintains highly accurate retrospective tracking but also prevents the optimization failures caused by the deterministic \"argmax problem\". Ultimately, extracting the empirical mean and covariance matrices of future pedestrian states provides a mathematically rigorous, probabilistic safety envelope for downstream local planners, enabling anticipatory and collision-free robot navigation in densely crowded environments.",
+      "authors": [
+        "Danil Tokhchukov",
+        "Veronika Morozova",
+        "Gonzalo Ferrer"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-05-04T15:58:08+00:00",
+      "link": "https://arxiv.org/pdf/2605.02759v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Stochastic world model for motion forecasting and navigation",
+      "llm_evidence_cn": "用于运动预测和导航的随机世界模型",
+      "llm_evidence": "用于运动预测和导航的随机世界模型",
+      "canonical_evidence": "用于运动预测和导航的随机世界模型",
+      "llm_tldr_en": "Integrates a GNN-based world model into SLAM for socially-aware dynamic navigation.",
+      "llm_tldr_cn": "将基于GNN的世界模型集成到SLAM中，用于社交感知的动态导航。",
+      "llm_tldr": "将基于GNN的世界模型集成到SLAM中，用于社交感知的动态导航。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.06192v1",
+      "source": "arxiv",
+      "title": "EA-WM: Event-Aware Generative World Model with Structured Kinematic-to-Visual Action Fields",
+      "abstract": "Pretrained video diffusion models provide powerful spatiotemporal generative priors, making them a natural foundation for robotic world models. While recent world-action models jointly optimize future videos and actions, they predominantly treat video generation as an auxiliary representation for policy learning. Consequently, they insufficiently explore the inverse problem: leveraging action signals to guide video synthesis, thereby often failing to preserve precise robot spatial geometry and fine-grained robot-object interaction dynamics in the generated rollouts. To bridge this gap, we present EA-WM, an Event-Aware Generative World Model that effectively closes the loop between kinematic control and visual perception. Rather than injecting joint or end-effector actions as abstract, low-dimensional tokens, EA-WM projects actions and kinematic states directly into the target camera view as Structured Kinematic-to-Visual Action Fields. To fully exploit this geometrically grounded representation, we introduce event-aware bidirectional fusion blocks that modulate cross-branch attention, capturing object state changes and interaction dynamics. Evaluated on the comprehensive WorldArena benchmark, EA-WM achieves state-of-the-art performance, outperforming existing baselines by a significant margin.",
+      "authors": [
+        "Zhaoyang Yang",
+        "Yurun Jin",
+        "Lizhe Qi",
+        "Cong Huang",
+        "Kai Chen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-05-07T13:06:19+00:00",
+      "link": "https://arxiv.org/pdf/2605.06192v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Generative world model closing the loop between control and perception",
+      "llm_evidence_cn": "闭合控制与感知回路的生成式世界模型",
+      "llm_evidence": "闭合控制与感知回路的生成式世界模型",
+      "canonical_evidence": "闭合控制与感知回路的生成式世界模型",
+      "llm_tldr_en": "EA-WM uses action signals to guide video synthesis for precise robot-object interaction modeling.",
+      "llm_tldr_cn": "EA-WM利用动作信号指导视频合成，实现精确的机器人-物体交互建模。",
+      "llm_tldr": "EA-WM利用动作信号指导视频合成，实现精确的机器人-物体交互建模。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.06222v2",
+      "source": "arxiv",
+      "title": "When to Trust Imagination: Adaptive Action Execution for World Action Models",
+      "abstract": "World Action Models (WAMs) have recently emerged as a promising paradigm for robotic manipulation by jointly predicting future visual observations and future actions. However, current WAMs typically execute a fixed number of predicted actions after each model inference, leaving the robot blind to whether the imagined future remains consistent with the actual physical rollout. In this work, we formulate adaptive WAM execution as a future-reality verification problem: the robot should execute longer when the WAM-predicted future remains reliable, and replan earlier when reality deviates from imagination. To this end, we propose Future Forward Dynamics Causal Attention (FFDC), a lightweight verifier that jointly reasons over predicted future actions, predicted visual dynamics, real observations, and language instructions to estimate whether the remaining action rollout can still be trusted. FFDC enables adaptive action chunk sizes as an emergent consequence of prediction-observation consistency, preserving the efficiency of long-horizon execution while restoring responsiveness in contact-rich or difficult phases. We further introduce Mixture-of-Horizon Training to improve long-horizon trajectory coverage for adaptive execution. Experiments on the RoboTwin benchmark and in the real world demonstrate that our method achieves a strong robustness-efficiency trade-off: on RoboTwin, it reduces WAM forward passes by 69.10% and execution time by 34.02%, while improving success rate by 2.54% over the short-chunk baseline; in real-world experiments, it improves success rate by 35%.",
+      "authors": [
+        "Rui Wang",
+        "Yue Zhang",
+        "Jiehong Lin",
+        "Kuncheng Luo",
+        "Jianan Wang",
+        "Zhongrui Wang",
+        "Xiaojuan Qi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-05-07T13:18:28+00:00",
+      "link": "https://arxiv.org/pdf/2605.06222v2",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Adaptive action execution for World Action Models in robot control",
+      "llm_evidence_cn": "机器人控制中世界动作模型的自适应动作执行",
+      "llm_evidence": "机器人控制中世界动作模型的自适应动作执行",
+      "canonical_evidence": "机器人控制中世界动作模型的自适应动作执行",
+      "llm_tldr_en": "Introduces a verifier for World Action Models to decide when to trust imagined rollouts for robot control.",
+      "llm_tldr_cn": "为世界动作模型引入验证器，以决定何时信任机器人控制中的想象推演。",
+      "llm_tldr": "为世界动作模型引入验证器，以决定何时信任机器人控制中的想象推演。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.06481v1",
+      "source": "arxiv",
+      "title": "OA-WAM: Object-Addressable World Action Model for Robust Robot Manipulation",
+      "abstract": "World Action Models (WAMs) enhance Vision-Language-Action policies by jointly predicting scene evolution and robot actions, but existing methods usually represent the predicted world as holistic images, video tokens, or global latents. These representations are difficult for an action decoder to address when an instruction refers to a particular object, especially under scene shifts where object identity is entangled with context. We propose OA-WAM, an Object-Addressable World Action Model for robust robot manipulation. OA-WAM decomposes each frame into N+1 slot states, with one robot slot and N object slots. Each slot contains a persistent address vector and a time-varying content vector, and is fused with text, image, proprioception, and past-action tokens in a block-causal sequence. A world head predicts next-frame slot states, while a flow-matching action head decodes a 16-step continuous action chunk in the same forward pass. Addressability is enforced by routing cross-slot attention through address-only keys and resetting the address slice at every transformer layer, separating which object to act on from what that object currently is without adding extra tokens. OA-WAM matches strong VLA and WAM baselines on LIBERO (97.8%) and SimplerEnv (79.3%), reaches state-of-the-art performance on the most relevant LIBERO-Plus geometric axes, and remains competitive on the seven-axis aggregate. A causal slot-intervention test yields a swap-binding cosine of 0.87, versus at most 0.09 for holistic baselines. These results suggest that addressable object states provide an effective interface for robust world-action modeling under scene perturbations.",
+      "authors": [
+        "Yushan Liu",
+        "Peibo Sun",
+        "Shoujie Li",
+        "Yifan Xie",
+        "Lingfeng Zhang",
+        "Xintao Chao",
+        "Shiyuan Dong",
+        "Fang Chen",
+        "Xiao-Ping Zhang",
+        "Wenbo Ding"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-07T16:06:08+00:00",
+      "link": "https://arxiv.org/pdf/2605.06481v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Object-addressable world action model for robot manipulation",
+      "llm_evidence_cn": "用于机器人操作的对象寻址世界动作模型",
+      "llm_evidence": "用于机器人操作的对象寻址世界动作模型",
+      "canonical_evidence": "用于机器人操作的对象寻址世界动作模型",
+      "llm_tldr_en": "Proposes OA-WAM to decompose world models into object slots for more robust robot manipulation.",
+      "llm_tldr_cn": "提出OA-WAM，将世界模型分解为对象槽位，以实现更鲁棒的机器人操作。",
+      "llm_tldr": "提出OA-WAM，将世界模型分解为对象槽位，以实现更鲁棒的机器人操作。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.07288v1",
+      "source": "arxiv",
+      "title": "Sword: Style-Robust World Models as Simulators via Dynamic Latent Bootstrapping for VLA Policy Post-Training",
+      "abstract": "The integration of Vision-Language-Action (VLA) models with World Models has gained increasing attention. One representative approach treats learned World Models as generative simulators, enabling policy optimization entirely within \"imagination.\" However, when deployed as simulators for specific environments such as the LIBERO benchmark, existing World Models often suffer from poor generalization and long-horizon error accumulation. During closed-loop rollouts, these models are highly sensitive to initial-state perturbations; minor changes in color, illumination, and other visual factors can trigger cascading hallucinations, leading to severe blurriness or overexposure. Moreover, long-horizon error accumulation further degrades the quality and fidelity of predicted future states. These issues limit the reliability of World Models as simulators. To mitigate these problems, we propose Sword, a robust World Model framework. Our method introduces Structure-Guided Style Augmentation to disentangle the visual textures of interactive environments from task-relevant dynamics, thereby improving generalization. We further propose Dynamic Latent Bootstrapping, which maintains consistency between training and inference while keeping memory consumption low. Extensive experiments on the LIBERO benchmark show that our method significantly outperforms the baseline WoVR in terms of generalization, generation quality, robustness, fidelity, and the success rate of reinforcement-learning post-training for VLA models.",
+      "authors": [
+        "Jiaxuan Gao",
+        "Yongjian Guo",
+        "Zhong Guan",
+        "Wen Huang",
+        "Wanlun Ma",
+        "Xi Xiao",
+        "Junwu Xiong",
+        "Sheng Wen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-05-08T05:54:33+00:00",
+      "link": "https://arxiv.org/pdf/2605.07288v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "World models as generative simulators for policy optimization",
+      "llm_evidence_cn": "世界模型作为生成式模拟器用于策略优化",
+      "llm_evidence": "世界模型作为生成式模拟器用于策略优化",
+      "canonical_evidence": "世界模型作为生成式模拟器用于策略优化",
+      "llm_tldr_en": "Sword improves world model robustness for VLA policy training by addressing long-horizon error accumulation.",
+      "llm_tldr_cn": "Sword通过解决长时程误差累积，提高了用于VLA策略训练的世界模型鲁棒性。",
+      "llm_tldr": "Sword通过解决长时程误差累积，提高了用于VLA策略训练的世界模型鲁棒性。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.06388v1",
+      "source": "arxiv",
+      "title": "Reconstruction or Semantics? What Makes a Latent Space Useful for Robotic World Models",
+      "abstract": "World model-based policy evaluation is a practical proxy for testing real-world robot control by rolling out candidate actions in action-conditioned video diffusion models. As these models increasingly adopt latent diffusion modeling (LDM), choosing the right latent space becomes critical. While the status quo uses autoencoding latent spaces like VAEs that are primarily trained for pixel reconstruction, recent work suggests benefits from pretrained encoders with representation-aligned semantic latent spaces. We systematically evaluate these latent spaces for action-conditioned LDM by comparing six reconstruction and semantic encoders to train world model variants under a fixed protocol on BridgeV2 dataset, and show effective world model training in high-dimensional representation spaces with and without dimension compression. We then propose three axes to assess robotic world model performance: visual fidelity, planning and downstream policy performance, and latent representation quality. Our results show visual fidelity alone is insufficient for world model selection. While reconstruction encoders like VAE and Cosmos achieve strong pixel-level scores, semantic encoders such as V-JEPA 2.1 (strongest overall on policy), Web-DINO, and SigLIP 2 generally excel across the other two axes at all model scales. Our study advocates semantic latent space as stronger foundation for policy-relevant robotics diffusion world models.",
+      "authors": [
+        "Nilaksh",
+        "Saurav Jha",
+        "Artem Zholus",
+        "Sarath Chandar"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "published": "2026-05-07T15:05:26+00:00",
+      "link": "https://arxiv.org/pdf/2605.06388v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Latent space analysis for robotic world models",
+      "llm_evidence_cn": "机器人世界模型的潜空间分析",
+      "llm_evidence": "机器人世界模型的潜空间分析",
+      "canonical_evidence": "机器人世界模型的潜空间分析",
+      "llm_tldr_en": "Evaluates reconstruction vs semantic latent spaces for action-conditioned video diffusion world models.",
+      "llm_tldr_cn": "评估了动作条件视频扩散世界模型中重建与语义潜空间的优劣。",
+      "llm_tldr": "评估了动作条件视频扩散世界模型中重建与语义潜空间的优劣。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.06980v1",
+      "source": "arxiv",
+      "title": "Accelerating the Simulation of Ordinary Differential Equations Through Physics-Preserving Neural Networks",
+      "abstract": "Numerical simulation of ordinary differential equations (ODEs) can be challenging when the system exhibits high accelerations and rapidly changing dynamics. Under these conditions the ODE solver often needs to take very small time steps in order to resolve the solution accurately, resulting in increased computational cost. In order to accelerate the simulation of these ODEs we present a novel methodology that uses a pseudo-invertible neural network to map system states into a high-dimensional latent-space. The network is then trained so that the dynamics in this learned latent space are slow, and can be simulated with relatively few function calls. Unlike existing neural methods, the latent dynamic equations are not learned from trajectory data, but derived from the original system equations and the chain rule. This allows the method to generalize better than existing approaches because the derived equations are correct by construction. In this work, we derive latent state equations of motion for any general ODE, and describe the loss function used to enforce slow time evolution of the latent states. We then apply this technique to multiple example ODEs and show that these problems can be solved with $3$x to $20$x fewer function calls for the same accuracy when simulating in the learned latent space. This reduction in cost could decrease computational demands for scientific simulations across engineering and physics applications.",
+      "authors": [
+        "Andrew Tagg",
+        "Andrew Frandsen",
+        "Andrew Ning"
+      ],
+      "primary_category": "math.NA",
+      "categories": [
+        "math.NA"
+      ],
+      "published": "2026-05-07T21:58:47+00:00",
+      "link": "https://arxiv.org/pdf/2605.06980v1",
+      "tags": [
+        "keyword:腿足世界模型"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "mapping system states into a high-dimensional latent-space for dynamics",
+      "llm_evidence_cn": "将系统状态映射到高维潜空间以进行动力学模拟",
+      "llm_evidence": "将系统状态映射到高维潜空间以进行动力学模拟",
+      "canonical_evidence": "将系统状态映射到高维潜空间以进行动力学模拟",
+      "llm_tldr_en": "Accelerates ODE simulation by mapping dynamics into a slow-moving latent space using neural networks.",
+      "llm_tldr_cn": "通过神经网络将动力学映射到慢速潜空间，加速常微分方程的仿真。",
+      "llm_tldr": "通过神经网络将动力学映射到慢速潜空间，加速常微分方程的仿真。",
+      "llm_tags": [
+        "query:q3"
+      ],
+      "matched_query_tag": "query:q3",
+      "matched_query_text": "Learning latent dynamics for legged robot control",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.07988v1",
+      "source": "arxiv",
+      "title": "Evaluation of an Actuated Spine in Agile Quadruped Locomotion",
+      "abstract": "The spine plays a crucial role in the dynamic locomotion of quadrupedal animals, improving the stability, speed, and efficiency of their gait, especially for fast-paced and highly agile movements. Therefore, the spine is also a promising and natural way to extend the capabilities of quadruped robots. This paper empirically investigates the benefits of an actuated spine for learning agile quadruped locomotion. We evaluate whether the use of the spine brings benefits in terms of high-speed running, climbing stairs, climbing high-angle slopes, hurdling, and crawling scenarios. We conducted an empirical study in MuJoCo simulation using the Silver Badger robot from MAB Robotics with an actuated 1-DOF spine in the sagittal plane. The obtained results show that the use of the spine provides the robot with increased agility and allows it to overcome higher stairs, steeper slopes, higher obstacles, and smaller passages.",
+      "authors": [
+        "Nico Bohlinger",
+        "Piotr Kicki",
+        "Davide Tateo",
+        "Krzysztof Walas",
+        "Jan Peters"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-08T16:45:28+00:00",
+      "link": "https://arxiv.org/pdf/2605.07988v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "learning agile quadruped locomotion with an actuated spine",
+      "llm_evidence_cn": "学习带有驱动脊柱的敏捷四足机器人运动",
+      "llm_evidence": "学习带有驱动脊柱的敏捷四足机器人运动",
+      "canonical_evidence": "学习带有驱动脊柱的敏捷四足机器人运动",
+      "llm_tldr_en": "Evaluates how an actuated spine improves speed and stability in agile quadrupedal locomotion tasks.",
+      "llm_tldr_cn": "评估驱动脊柱如何提高四足机器人在敏捷运动任务中的速度和稳定性。",
+      "llm_tldr": "评估驱动脊柱如何提高四足机器人在敏捷运动任务中的速度和稳定性。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.07079v1",
+      "source": "arxiv",
+      "title": "Learning Visual Feature-Based World Models via Residual Latent Action",
+      "abstract": "World models predict future transitions from observations and actions. Existing works predominantly focus on image generation only. Visual feature-based world models, on the other hand, predict future visual features instead of raw video pixels, offering a promising alternative that is more efficient and less prone to hallucination. However, current feature-based approaches rely on direct regression, which leads to blurry or collapsed predictions in complex interactions, while generative modeling in high-dimensional feature spaces still remains challenging. In this work, we discover that a new type of latent action representation, which we refer to as *Residual Latent Action* (RLA), can be easily learned from DINO residuals. We also show that RLA is predictive, generalizable, and encodes temporal progression. Building on RLA, we propose *RLA World Model* (RLA-WM), which predicts RLA values via flow matching. RLA-WM outperforms both state-of-the-art feature-based and video-diffusion world models on simulation and real-world datasets, while being orders of magnitude faster than video diffusion. Furthermore, we develop two robot learning techniques that use RLA-WM to improve policy learning. The first one is a minimalist world action model with RLA that learns from actionless demonstration videos. The second one is the first visual RL framework trained entirely inside a world model learned from offline videos only, using a video-aligned reward and no online interactions or handcrafted rewards. Project page: https://mlzxy.github.io/rla-wm",
+      "authors": [
+        "Xinyu Zhang",
+        "Zhengtong Xu",
+        "Yutian Tao",
+        "Yeping Wang",
+        "Yu She",
+        "Abdeslam Boularias"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "published": "2026-05-08T00:58:16+00:00",
+      "link": "https://arxiv.org/pdf/2605.07079v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Visual feature-based world models and latent action representation",
+      "llm_evidence_cn": "基于视觉特征的世界模型和潜动作表示",
+      "llm_evidence": "基于视觉特征的世界模型和潜动作表示",
+      "canonical_evidence": "基于视觉特征的世界模型和潜动作表示",
+      "llm_tldr_en": "Introduces Residual Latent Action for efficient feature-based world models that avoid pixel hallucination.",
+      "llm_tldr_cn": "引入残差潜动作，用于高效的基于特征的世界模型，避免像素幻觉。",
+      "llm_tldr": "引入残差潜动作，用于高效的基于特征的世界模型，避免像素幻觉。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
