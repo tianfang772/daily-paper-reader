@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.13058v1/fig-001.webp",
+      "caption": "Fig. 1: Real-world demonstrations of MUJICA on the wheeled-legged robot. Top row: automatic skill switching during continuous locomotion. Middle row: execution of three representative skills, including high platform climbing, stair ascent, and fall recovery. Bottom row: snapshots of the robot climbing onto a 1-m-high platform. The results highlight MUJICA’s ability to perform diverse skills and seamlessly transition between them without external perception.",
+      "page": 1,
+      "index": 1,
+      "width": 514,
+      "height": 422
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13058v1/fig-002.webp",
+      "caption": "Fig. 5: Torque–velocity distributions of thigh joints across diverse terrains. Green area indicates compliance with DC-motor constraints. Blue dots are motor states within the Green area, while red crosses are not. (a)–(d) show results without DC-motor constraints, while (e)–(h) show constrained results.",
+      "page": 7,
+      "index": 2,
+      "width": 1052,
+      "height": 468
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13058v1/fig-003.webp",
+      "caption": "Fig. 2: An overview of MUJICA framework. Each task is associated with a unique skill indicator. During Training S1, the state estimator learns to predict the latent state vector, base linear velocity, wheel-ground distances and robot segment collisions from proprioceptions. The actor then takes the estimation and current observation as input and generate actions. The reward critic and the constraint critic evaluate the state value and constraint violation through privileged observations. A skill selector is applied during Training S2 to learn skill transfer, endeavoring to adapt to different terrains and states.",
+      "page": 3,
+      "index": 3,
+      "width": 1052,
+      "height": 368
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13058v1/fig-004.webp",
+      "caption": "Fig. 7: Real-world evaluations of individual skills. Top row: Fall recovery on stairs. Middle row: Ascending 20-cm-high stairs. Bottom row: Climbing an 80-cm-high platform.",
+      "page": 8,
+      "index": 4,
+      "width": 1052,
+      "height": 452
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13058v1/fig-005.webp",
+      "caption": "Fig. 4: Success rate of different algorithms on all difficulty levels of representative tasks.",
+      "page": 5,
+      "index": 5,
+      "width": 1052,
+      "height": 181
+    }
+  ]
+}

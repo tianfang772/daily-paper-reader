@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.13665v1/fig-001.webp",
+      "caption": "Fig. 6: Success Rate comparison across different tunnel classes and difficulty levels. Each plot represents a specific tunnel geometry, showing the performance of various methods (V-RL, HP, and SQUID) as the difficulty increases. The SQUID policy consistently outperforms baselines, particularly in constrained environments like triangular and gap tunnels.",
+      "page": 6,
+      "index": 1,
+      "width": 911,
+      "height": 268
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13665v1/fig-002.webp",
+      "caption": "Fig. 3: Simulation training environment for tunnel analysis. The upper portion of the image displays a tunnel block with its measurements and axis orientations. The lower section presents four distinct cross-sectional views of the tunnel, illustrating different structural variations used in the simulation.",
+      "page": 3,
+      "index": 2,
+      "width": 512,
+      "height": 475
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13665v1/fig-003.webp",
+      "caption": "Fig. 4: Training pipeline for SQUID. Teacher policies are first trained using RL with privileged information for each tunnel class. Distillation transfers expert knowledge to a unified student policy, which is trained using onboard sensing.",
+      "page": 4,
+      "index": 3,
+      "width": 466,
+      "height": 342
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13665v1/fig-004.webp",
+      "caption": "TABLE I: Tunnel geometry specifications, detailing the cross-section geometry, difficulty parameters, and generation methods used for each tunnel class.",
+      "page": 4,
+      "index": 4,
+      "width": 1048,
+      "height": 225
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13665v1/fig-005.webp",
+      "caption": "TABLE II: Reward Terms for Privileged Teacher Policies",
+      "page": 5,
+      "index": 5,
+      "width": 521,
+      "height": 318
+    }
+  ]
+}

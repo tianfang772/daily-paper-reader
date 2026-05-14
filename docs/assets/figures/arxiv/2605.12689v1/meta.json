@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.12689v1/fig-001.webp",
+      "caption": "Fig. 1: Proposed framework for adaptive 3D local navigation. The autonomous controller, combining RL and DWA, operates in a closed-loop system, receiving observation o = [s, l] from the environment, which consists of the current task state s, and the laser scan data l. The RL agent dynamically adjusts the DWA parameters (α, β, γ, ζ) for adaptive control of linear velocity v while also outputting angular ωx and deformation velocities δ̇.",
+      "page": 1,
+      "index": 1,
+      "width": 529,
+      "height": 264
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12689v1/fig-002.webp",
+      "caption": "Fig. 6: Comparison of quantitative metrics. Median values and interquartile ranges of the control strategies are shown for (a) training scenarios and (b) test scenarios.",
+      "page": 6,
+      "index": 2,
+      "width": 474,
+      "height": 516
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12689v1/fig-003.webp",
+      "caption": "Fig. 4: Training and test scenario. Yellow spheres placed at junctions of the network represent sparse navigation waypoints. Final target locations used for training are shown as green spheres, while test locations are shown as red spheres.",
+      "page": 4,
+      "index": 3,
+      "width": 412,
+      "height": 314
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12689v1/fig-004.webp",
+      "caption": "Fig. 5: Learning curves of each control strategy, showing the mean episodic rewards. The solid lines indicate the mean results across 5 trials and the shaded areas are the standard deviations.",
+      "page": 5,
+      "index": 4,
+      "width": 516,
+      "height": 350
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+Title: Evaluation of an Actuated Spine in Agile Quadruped Locomotion
+
+URL Source: https://arxiv.org/pdf/2605.07988v1
+
+Published Time: Mon, 11 May 2026 01:32:16 GMT
+
+Number of Pages: 3
+
+Markdown Content:
+# Evaluation of an Actuated Spine in Agile Quadruped Locomotion 
+
+Nico Bohlinger 1*, Piotr Kicki 2*, Davide Tateo 1, Krzysztof Walas 2 and Jan Peters 1
+
+Abstract — The spine plays a crucial role in the dynamic locomotion of quadrupedal animals, improving the stability, speed, and efficiency of their gait, especially for fast-paced and highly agile movements [1], [2]. Therefore, the spine is also a promising and natural way to extend the capabilities of quadruped robots [3], [4], [5], [6], [7]. This paper empirically investigates the benefits of an actuated spine for learning agile quadruped locomotion. We evaluate whether the use of the spine brings benefits in terms of high-speed running, climbing stairs, climbing high-angle slopes, hurdling, and crawling scenarios. We conducted an empirical study in MuJoCo simulation using the Silver Badger robot from MAB Robotics with an actuated 1-DOF spine in the sagittal plane. The obtained results show that the use of the spine provides the robot with increased agility and allows it to overcome higher stairs, steeper slopes, higher obstacles, and smaller passages. 
+
+I. E MPIRICAL STUDY 
+
+To empirically test whether the use of an actuated spine provides some advantages over the robot without it, we conducted a set of experiments in the MuJoCo simulator [8] with the Silver Badger robot from MAB Robotics with an actuated 1-DOF spine in the sagittal plane. In particu-lar, motivated by the recent advancements in reinforcement learning-based agile quadruped locomotion [9], [10], [11], [12], we perform this comparison with policies trained using Proximal Policy Optimization [13] implemented with RL-X [14]. In all experiments, we use domain randomization and add observation noise to facilitate transferability to the real robot. 
+
+A. High-speed running 
+
+The evaluation of agile locomotion needs effective metrics for locomotion speed and energy efficiency, allowing for a fair comparison between robots of different types and sizes. The Froude number [15] measures the size-independent lo-comotion speed, and the cost of transport [16] quantifies the energy efficiency of the locomotion. The two dimensionless metrics are defined as follows: 
+
+Fr = v2
+
+gh , COT = Pmgv 
+
+where v is the forward velocity, g is the gravitational accel-eration, h is the height of the hips, P is the used power and 
+
+m is the mass.   
+
+> 1The authors are with the Department of Computer Science, Technical University of Darmstadt, 64289 Darmstadt, Germany.
+> 2The authors are with IDEAS Research Institute, 00-060 Warsaw, Poland, and the Institute of Robotics and Machine Intelligence, Poznan University of Technology, 60-965 Poznan, Poland * Denotes equal contribution Corresponding author:
+
+piotr.kicki@put.poznan.pl  
+
+> Fig. 1. Inverted pyramid stairs for the climbing experiments in simulation. The robot actively uses its spine to bend the front part of the trunk over the stairs and get leverage for the rest of its body.
+
+To investigate the robot’s energy efficiency and maximum running velocity, we designed an automatic learning curricu-lum that gradually increases the target velocity. Fig. 2 shows that, with a locked spine, the robot achieves a maximum of 5.0 m/s forward velocity at the end of training. Enabling the spine during learning improves the maximum velocity to 5.9 m/s. This increase in velocity is also reflected in the Froude number, and an improvement in stability can be seen in the average episode length. The active spine achieves a Fr ≈ 9.7while the locked spine only reaches a Fr ≈ 6.7 with a 3% shorter episode length. Visual inspection shows that the RL policy learns to contract the body with the spine to pull the legs forward and prepare the next step, which leads to a more natural-looking, faster, and stable gait. When utilizing the motor of the spine joint, the energy consumption increases by 6.2% (81 Wh) at the maximum running velocity, but through the higher increase in top speed, this leads to a more energy-efficient gait at the end with a COT ≈ 2.1 compared to the locked spine with a COT ≈ 2.3.          
+
+> Fig. 2. The maximum forward velocity achieved by the robot during learning. The thick line and shaded area show the mean and the standard error, respectively, over 20 seeds.
+> arXiv:2605.07988v1 [cs.RO] 8 May 2026 Fig. 3. The maximum stair height climbed by the robot during learning. The thick line and shaded area show the mean and the standard error, respectively, over 20 seeds. 0.0 0.2 0.4 0.6 0.8 1.0
+> Environment Steps 1e9
+> 0.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> Slope angle in rad
+> Slope climbing
+> Active spine
+> Locked spine
+> Fig. 4. The maximum slope angle climbed by the robot during learning. The thick line and shaded area show the mean and the standard error, respectively, over 15 seeds.
+
+B. Climbing 
+
+Besides fast running, another task that requires a high level of agility is climbing. To identify the climbing capabilities of the Silver Badger, we created an inverted pyramid environ-ment with evenly spaced stairs (Fig. 1). Again, an automatic curriculum guides the learning process by increasing the height of the stairs every time the robot successfully climbs seven consecutive stairs. At the end of training, the maximum stair height the robot can climb is 0.7 m, which is 2.2x its standing height. On average, the version with the active spine can climb 4 cm higher while consuming the same amount of energy as the robot with the locked spine. Another climbing scenario in which we evaluated the actuated spine is slope climbing. In this case, we created a 4 m by 4 m environment with a 1 m wide slope for the robot to climb. Also, here, an automatic curriculum guides the learning process by increasing the slope angle by 0.01 rad every time the robot reaches the top of the slope and decreasing the slope angle if the robot fails to reach the halfway point. The progress of the maximum slope angle during training is presented in Fig. 4. One can see that the robot with the locked spine learns faster in the first phase, but after reaching angles of about 0.7 rad, its performance stabilizes. Instead, a robot with an active spine needs more time to reach the same performance, but then steadily progresses towards slopes of 0.8 rad on average. 
+
+C. Overcoming obstacles 
+
+One of the key features of agile locomotion is the ability to overcome obstacles. To investigate the usefulness of the actuated spine in overcoming obstacles, we designed two environments that contain a single vertical obstacle. In the first scenario – hurdling, the obstacle is a 5 cm thick wall located on the ground (see Fig. 5), whereas in the second scenario – crawling, an analogous wall is placed at the ceiling (see Fig. 6). Similarly, like in the previous environments, we implemented an automatic curriculum that raises the height of the wall in the first scenario, and reduces the height of the passage by increasing the height of the ceiling wall in the second one. Every time the robot overcomes the currently highest obstacle, its height increases by 5 mm, whereas when it fails to do so, there is a slight chance that its height will decrease by 5 mm. The resulting evolutions of the obstacle and passage heights during training are presented in Fig. 7 and Fig. 8, for hurdling and crawling, respectively. One can see that in both cases, the use of the spine proves to be beneficial in overcoming obstacles, as it allows one to jump over 4 cm taller walls and crawl through 2 cm smaller passages, on average. II. C ONCLUSIONS 
+
+This empirical study shows the benefits of the actuated spine in increasing the agility of a quadruped robot, espe-cially in the tasks of high-speed locomotion, climbing stairs and slopes, and overcoming vertical obstacles. ACKNOWLEDGMENTS This project was funded by the National Science Centre, Poland, under the OPUS call in the Weave programme UMO-2021/43/I/ST6/02711, and by the German Science Foundation (DFG) under grant number PE 2315/17-1. The work of Piotr Kicki was supported by the Foundation for Pol-ish Science (FNP). The authors gratefully acknowledge the computing time provided to them on the high-performance computer Lichtenberg at the NHR Centers NHR4CES at TU Darmstadt and on the infrastructure of the Poznan Supercomputing and Networking Center.  
+
+> Fig. 5. Hurdling scenario, in which the robot is tasked to overcome the vertical obstacle located on the ground. The robot actively uses its spine to increase the clearance while jumping over the wall.
+
+Fig. 6. Crawling scenario, in which the robot is tasked to overcome the vertical obstacle located on the ceiling. The robot actively uses its spine to increase the distance to the obstacle while crawling beneath it. 0.0 0.2 0.4 0.6 0.8 1.0  
+
+> Environment Steps 1e9
+> 0
+> 10
+> 20
+> 30
+> Wall height in cm
+
+Hurdling 
+
+> Active spine
+> Locked spine
+
+Fig. 7. The maximum wall height overcome by the robot during learning. The thick line and shaded area show the mean and the standard error, respectively, over 15 seeds. 
+
+REFERENCES [1] M. Hildebrand, “Motions of the running cheetah and horse,” Journal of Mammalogy , vol. 40, no. 4, pp. 481–495, 1959. [2] N. Schilling and R. Hackert, “Sagittal spine movements of small therian mammals during asymmetrical gaits,” Journal of Experimental Biology , vol. 209, no. 19, pp. 3925–3939, 2006. [3] M. Khoramshahi, A. Spr¨ owitz, A. Tuleu, M. N. Ahmadabadi, and A. J. Ijspeert, “Benefits of an active spine supported bounding locomotion with a small compliant quadruped robot,” in 2013 IEEE international conference on robotics and automation . IEEE, 2013, pp. 3329–3334. [4] D. J. Hyun, S. Seok, J. Lee, and S. Kim, “High speed trot-running: Implementation of a hierarchical controller using propriocep-tive impedance control on the mit cheetah,” The International Journal of Robotics Research , vol. 33, no. 11, pp. 1417–1445, 2014. [5] O. Matsumoto, H. Tanaka, T. Kawasetsu, and K. Hosoda, “High-speed running quadruped robot with a multi-joint spine adopting a 1dof closed-loop linkage,” Frontiers in Robotics and AI , vol. 10, p. 1148816, 2023. [6] W. Li, Z. Zhou, and H. Cheng, “Dynamic locomotion of a quadruped robot with active spine via model predictive control,” in 2023 IEEE International Conference on Robotics and Automation (ICRA) . IEEE, 2023, pp. 1185–1191. [7] K. Yoneda, K. Kawaharazuka, T. Suzuki, T. Hattori, and K. Okada, “KLEIYN : A Quadruped Robot with an Active Waist for Both Loco-motion and Wall Climbing (in press),” in 2025 IEEE-RAS International Conference on Intelligent Robots and Systems (IROS) , 2025. [8] E. Todorov, T. Erez, and Y. Tassa, “Mujoco: A physics engine for model-based control,” in 2012 IEEE/RSJ international conference on intelligent robots and systems . IEEE, 2012, pp. 5026–5033. [9] J. Tan, T. Zhang, E. Coumans, A. Iscen, Y. Bai, D. Hafner, S. Bo-hez, and V. Vanhoucke, “Sim-to-real: Learning agile locomotion for quadruped robots,” in Proceedings of Robotics: Science and Systems ,Pittsburgh, Pennsylvania, June 2018. [10] D. Hoeller, N. Rudin, D. Sako, and M. Hutter, “Anymal parkour: Learning agile navigation for quadrupedal robots,” Science Robotics , vol. 9, no. 88, p. eadi7566, 2024. [Online]. Available: https://www.science.org/doi/abs/10.1126/scirobotics.adi7566 [11] N. Rudin, J. He, J. Aurand, and M. Hutter, “Parkour in the wild: Learning a general and extensible agile locomotion policy using 0.0 0.2 0.4 0.6 0.8 1.0  
+
+> Environment Steps 1e9
+> 20
+> 30
+> 40
+> 50
+> Passage height in cm
+
+Crawling 
+
+> Active spine
+> Locked spine
+
+Fig. 8. The minimum height of the passage overcome by the robot during learning. The thick line and shaded area show the mean and the standard error, respectively, over 15 seeds. multi-expert distillation and rl fine-tuning,” 2025. [Online]. Available: https://arxiv.org/abs/2505.11164 [12] N. Bohlinger, G. Czechmanowski, M. Krupka, P. Kicki, K. Walas, J. Peters, and D. Tateo, “One policy to run them all: an end-to-end learning approach to multi-embodiment locomotion,” in Conference on robot learning , 2024. [13] J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov, “Proximal policy optimization algorithms,” arXiv preprint arXiv:1707.06347 , 2017. [14] N. Bohlinger and K. Dorer, “Rl-x: A deep reinforcement learning library (not only) for robocup,” in Robot world cup . Springer, 2023, pp. 228–239. [15] R. M. Alexander, “The gaits of bipedal and quadrupedal animals,” The International Journal of Robotics Research , vol. 3, no. 2, pp. 49–59, 1984. [16] V. A. Tucker, “The energetic cost of moving about: walking and running are extremely inefficient forms of locomotion. much greater efficiency is achieved by birds, fish—and bicyclists,” American Scien-tist , vol. 63, no. 4, pp. 413–419, 1975.
