@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.14411v1/fig-001.webp",
+      "caption": "Figure 1: CAD model of a single leg module of the quadruped robot showing the actuator arrangement, link lengths, and the prismatic spring-loaded foot.",
+      "page": 6,
+      "index": 1,
+      "width": 610,
+      "height": 500
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14411v1/fig-002.webp",
+      "caption": "Table 1: Reward structure: task rewards and fixed auxiliary rewards (adapted for custom quadruped). Task rewards encode velocity tracking objectives, while fixed auxiliary rewards ensure stability, smoothness, and plausible gait dynamics.",
+      "page": 11,
+      "index": 2,
+      "width": 970,
+      "height": 704
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14411v1/fig-003.webp",
+      "caption": "Figure 3: ROS2-based hardware deployment pipeline.",
+      "page": 15,
+      "index": 3,
+      "width": 732,
+      "height": 333
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14411v1/fig-004.webp",
+      "caption": "Figure 7: Hardware deployment plots representing (a)Quadruped in standing position. (b)Grouped bar corresponds to one spring stiffness (S1S8), with individual bars representing the performance of policies π1 to π8 (c) Mean energy consumption aggregated across all policies for each spring (S1S8), with the error bars indicate the standard deviation (d) Comparison of energy utilization between policy groups π1−4 and π5−8",
+      "page": 21,
+      "index": 4,
+      "width": 790,
+      "height": 646
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14411v1/fig-005.webp",
+      "caption": "Figure 5: The plot shows the attitude angles of the system: roll (red), pitch (blue), and yaw (black) with respect to time in seconds under 14500 N/m spring stiffness.",
+      "page": 18,
+      "index": 5,
+      "width": 610,
+      "height": 466
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14411v1/fig-006.webp",
+      "caption": "Figure 6: Simulation plots representing (a)Quadruped in simulation environment. (b)Grouped bar corresponds to one spring stiffness (S1S8), with individual bars representing the performance of policies π1 to π8 (c) Mean energy consumption aggregated across all policies for each spring (S1S8), with the error bars indicate the standard deviation (d) Comparison of energy utilization between policy groups π1 → π4 and π5 → π8",
+      "page": 19,
+      "index": 6,
+      "width": 790,
+      "height": 628
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14411v1/fig-007.webp",
+      "caption": "Figure 4: The plots show the trajectories of all abduction, hip, knee, and slider joints over time. Each group of joints is presented in a separate subplot to highlight the coordinated motion during locomotion under 14500 N/m spring stiffness.",
+      "page": 17,
+      "index": 7,
+      "width": 610,
+      "height": 694
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14411v1/fig-008.webp",
+      "caption": "Table 3: Domain randomization parameters used during PPO training.",
+      "page": 12,
+      "index": 8,
+      "width": 762,
+      "height": 363
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14411v1/fig-009.webp",
+      "caption": "Figure 2: (a) CAD model of the quadruped platform. (b) Fully assembled quadruped hardware. (c) Single leg hardware module with compliant foot.",
+      "page": 9,
+      "index": 9,
+      "width": 570,
+      "height": 1260
+    },
+    {
+      "url": "assets/figures/arxiv/2605.14411v1/fig-010.webp",
+      "caption": "Table 4: Mapping between trained policies πi, corresponding springs Si, and stiffness values.",
+      "page": 16,
+      "index": 10,
+      "width": 468,
+      "height": 277
+    }
+  ]
+}
