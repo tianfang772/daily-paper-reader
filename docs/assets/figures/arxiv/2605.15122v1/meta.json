@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.15122v1/fig-001.webp",
+      "caption": "Fig. 1: CoCo-InEKF. Given a set of predefined contact candidates and the proprioceptive sensor data from the IMU and actuators of a robot, a learned contact module predicts contact velocity covariances for use in an Invariant EKF.",
+      "page": 1,
+      "index": 1,
+      "width": 522,
+      "height": 278
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15122v1/fig-002.webp",
+      "caption": "TABLE III: ATE comparison on simulated dancing motions.",
+      "page": 6,
+      "index": 2,
+      "width": 982,
+      "height": 204
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15122v1/fig-003.webp",
+      "caption": "TABLE IV: ATE comparison on simulated ground motions.",
+      "page": 6,
+      "index": 3,
+      "width": 998,
+      "height": 204
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15122v1/fig-004.webp",
+      "caption": "TABLE IX: The automated contact candidate selection compared to the handpicked baseline, for linear velocity ATE. Ranges indicate [worst, best] sample.",
+      "page": 7,
+      "index": 4,
+      "width": 524,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15122v1/fig-005.webp",
+      "caption": "Fig. 4: Foot contact candidate configurations. As used in the evaluation and ablation study for dancing motions. Configurations (a) and (b), with 4 and 8 candidates respectively, were handpicked. All others have 8 candidates and were automatically generated using our proposed sampling method.",
+      "page": 7,
+      "index": 5,
+      "width": 524,
+      "height": 269
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15122v1/fig-006.webp",
+      "caption": "Fig. 5: Full-body contact candidate configurations. As used in the evaluation and ablation study for ground motions. Configuration (a) and (b), with 18 and 10 candidates respectively, were handpicked. All others have 10 candidates and were automatically generated using our proposed sampling method.",
+      "page": 8,
+      "index": 6,
+      "width": 524,
+      "height": 633
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15122v1/fig-007.webp",
+      "caption": "Fig. 6: Consistency. Visualization of the normalized estimation error squared (NEES) of the combined core state of baseline InEKF approaches vs. our proposed CoCo-InEKF for 100 dance motion sequences. CoCo-InEKF’s NEES values are more consistent with the expected 95% confidence interval of a χ2 distribution. We omit the Hybrid Baseline, as it performs near identical to the Hybrid Baseline+.",
+      "page": 8,
+      "index": 7,
+      "width": 529,
+      "height": 537
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15122v1/fig-008.webp",
+      "caption": "Fig. 2: Training setup. Per learning iteration, we collect a training dataset of ground-truth states and sensor measurements by forwardsimulating a pretrained policy in E environments. The contact module predicts contact velocity covariances based on the sensor history (IMU + actuator data). These covariances are passed to the differentiable InEKF, rolling out the state estimate for L time steps. We compute a loss on the error between the estimated and ground-truth states, and backpropagate gradients (red arrows) from all time steps through the InEKF to the contact module parameters.",
+      "page": 4,
+      "index": 8,
+      "width": 523,
+      "height": 250
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15122v1/fig-009.webp",
+      "caption": "TABLE XI: ATE comparison on 20 real-world ground motion sequences.",
+      "page": 9,
+      "index": 9,
+      "width": 1064,
+      "height": 186
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15122v1/fig-010.webp",
+      "caption": "Fig. 3: Contact Covariance. Visualization of the contact covariance total standard deviation √ tr(BΣCi) and contact point velocity magnitude during a forward-walking gait of our robot, along with ground-truth contacts.",
+      "page": 5,
+      "index": 10,
+      "width": 513,
+      "height": 506
+    }
+  ]
+}
