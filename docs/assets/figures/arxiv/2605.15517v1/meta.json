@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.15517v1/fig-001.webp",
+      "caption": "Fig. 1. LIP-CLF RL trains a unstructured terrain locomotion policy using a single stage, MLP based training pipeline and a single depth camera. The policy is SE(2) controllable, enabling integration with standard navigation planning methods. In the pictured experiment, the Unitree G1 robot autonomously navigates into a building, climbing two flights of stairs. Video available at https://youtu.be/rTWgR_VxL5Y.",
+      "page": 1,
+      "index": 1,
+      "width": 514,
+      "height": 497
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15517v1/fig-002.webp",
+      "caption": "Fig. 2. System Architecture Diagram. References are generated in the CLF-RL training loop, and modified to be consistent with the environment. When deployed on hardware, lidar is used for odometry and localization in a map, and a ZED Mini mounted on the robot’s chest obtains depth images. MPC plans trajectories for the robot; a tracking controller sends velocity commands to the RL policy to realize the plan.",
+      "page": 2,
+      "index": 2,
+      "width": 1052,
+      "height": 435
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15517v1/fig-003.webp",
+      "caption": "Fig. 4. Outdoor autonomous navigation. The robot is localized within an existing map, while MPC plans trajectories through the environment over rough terrain and stairs. Depth images are rendered at a few frames, showing self-scans and terrain geometry. (Left) robot autonomously navigates 15 consecutive stairs. (Right) robot autonomously navigates over 70m, including two staircases.",
+      "page": 7,
+      "index": 3,
+      "width": 1052,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15517v1/fig-004.webp",
+      "caption": "TABLE I: Comparison of related works. “Method characterization” columns describe the policy and its training; “Deployment characterization” columns describe how the policy is used downstream. “Env. cond.” refers to environmental conditioning of the reference.",
+      "page": 3,
+      "index": 4,
+      "width": 1038,
+      "height": 607
+    },
+    {
+      "url": "assets/figures/arxiv/2605.15517v1/fig-005.webp",
+      "caption": "Fig. 3. Modification of the LIP reference for terrain consistency. (a) The nominal reference, composed of footstep ud, swing foot trajectory xsw(t), and pelvis reference xd(t). (b) Projected footstep ud ∗ and upper convex hull of terrain. (c) Modified swing trajectory s∗sw(t) and vertical step deviation line. (d) Modified pelvis trajectory xd ∗(t), terrain consistent references.",
+      "page": 5,
+      "index": 5,
+      "width": 512,
+      "height": 404
+    }
+  ]
+}

@@ -1,0 +1,660 @@
+Title: EFGCL: Learning Dynamic Motion through Spotting-Inspired External Force Guided Curriculum Learning
+
+URL Source: https://arxiv.org/pdf/2605.10063v1
+
+Published Time: Tue, 12 May 2026 02:12:18 GMT
+
+Number of Pages: 7
+
+Markdown Content:
+# EFGCL: Learning Dynamic Motion through Spotting-Inspired External Force Guided Curriculum Learning 
+
+Keita Yoneda 1, Kento Kawaharazuka 1,2, Kei Okada 1
+
+Abstract — Learning dynamic whole-body motions for legged robots through reinforcement learning (RL) remains challeng-ing due to the high risk of failure, which makes efficient exploration difficult and often leads to unstable learning. In this paper, we propose External Force Guided Curriculum Learning (EFGCL), a guided RL approach based on the principle of physical guidance , in which external assistive forces are introduced during training. Inspired by spotting in artistic gymnastics, EFGCL enables agents to physically experience successful motion executions without relying on task-specific reward shaping or reference trajectories. Experiments on a quadrupedal robot performing Jump, Backflip, and Lateral-Flip tasks demonstrate that EFGCL accelerates learning of the Jump task by approximately afactor of two and enables the acquisition of complex whole-body motions that conventional RL methods fail to learn. We further show that the learned policies can be deployed on a real robot, reproducing motions consistent with those observed in simulation. These results indicate that physically guided exploration, which allows agents to experience success early in training, is an effective and general strategy for improving learning efficiency in dynamic whole-body motion tasks. 
+
+I. I NTRODUCTION 
+
+To achieve high locomotion performance in unstructured environments, quadrupedal robots require learning methods that can stably acquire a wide range of diverse and complex motor skills. With recent advances in reinforcement learning (RL), numerous approaches have been proposed that enable robust learning of individual behaviors, such as locomotion over rough terrain [1]–[5]. For tasks such as rough-terrain locomotion and obstacle traversal, learning methods with high success rates have already been established. In contrast, learning dynamic motor skills involving high acceleration and high energy, as exem-plified by sports motions [6], still requires substantial task-specific tuning. This difficulty arises because motions with a high risk of failure are inherently difficult to explore, and learning rarely progresses without explicit guidance. To address the learning of such dynamic motions, Guided Reinforcement Learning (Guided-RL), which introduces as-sistance during the learning process, has been widely studied [7]. Representative approaches include imitation learning based on reference trajectories and reward shaping, which guides behavior through carefully designed reward functions.   
+
+> 1The authors are with the Department of Mechano-Informatics, Graduate School of Information Science and Technology, The University of Tokyo, 7-3-1 Hongo, Bunkyo-ku, Tokyo, 113-8656, Japan.
+
+[yoneda, kawaharazuka, k-okada]@jsk.imi.i.u-tokyo.ac.jp  
+
+> 2The author is with the AI Center, Graduate School of Information Science and Technology, The University of Tokyo, Japan.
+
+Efficient Learning 
+
+Agent  Action 
+
+State 
+
+“Simple” Reward 
+
+RL 
+
+𝑎 𝑡 
+
+𝑠 𝑡 
+
+𝑟 𝑡 
+
+> “Spotting
+> Inspired ”
+> External
+> Force
+
+Simulation 
+
+Environment         
+
+> Dynamic
+> Motion
+> Fig. 1. Conceptual overview of External Force Guided Curriculum Learning (EFGCL). By applying external assistive forces in the early stages of learning, the agent experiences motion sequences with a higher probability of success. As learning progresses, the assistance is gradually reduced in a curriculum manner, ultimately enabling the agent to acquire a policy that achieves the target motion without assistance.
+
+Imitation learning directly mimics reference trajectories that represent target motions and has been increasingly applied to dynamic tasks [8]–[10]. However, the performance of the learned motions strongly depends on the quality of the reference trajectories. Methods such as Opt-Mimic [11], which generate trajectories through optimization, can provide high-quality references, but they incur substantial costs in robot modeling and objective function design. Alternatively, approaches such as WASABI [12] utilize demonstrations obtained by physically guiding the robot, reducing data collection costs. However, the quality of such data depends heavily on the skill of the human operator, making it difficult to ensure stability. As a result, there exists an inherent trade-off between the quality of reference trajectories and the cost of generating them, and achieving high performance solely through imitation learning remains expensive. Reward shaping aims to facilitate exploration by designing intermediate rewards that capture key elements of the desired behavior [13]–[15]. However, determining which aspects of a motion should be defined as intermediate rewards is highly task-dependent and non-trivial. Moreover, intermedi-ate rewards may introduce designer bias, which can exclude potentially optimal motion sequences and degrade learning performance [16]. For these reasons, [16] recommends using sparse reward functions and promoting learning through 
+
+> arXiv:2605.10063v1 [cs.RO] 11 May 2026
+
+design choices outside the reward itself. Nevertheless, a general framework for efficiently exploring dynamic motions with a high risk of failure has yet to be established. Insightful inspiration can be drawn from artistic gym-nastics, where dynamic motions are the primary objective. In gymnastics training, a technique known as spotting is commonly used, in which a coach physically supports the athlete while practicing a skill [17]. This approach assists the exploration process through physical guidance and differs fundamentally from conventional methods that guide behav-ior solely through reward design. Motivated by this idea, we propose External Force Guided Curriculum Learning (EFGCL), which applies this principle to reinforcement learning for robots (Fig. 1). The main contributions of this work are summarized as follows:  
+
+> •
+
+We introduce a new learning paradigm for dynamic motor skill acquisition that employs physical guidance via external forces , rather than guidance through reward design.  
+
+> •
+
+We propose External Force Guided Curriculum Learn-ing (EFGCL), which gradually decays external assistive forces and demonstrate that physical guidance signifi-cantly improves exploration efficiency.  
+
+> •
+
+Through learning experiments on a real quadrupedal robot, we demonstrate that the proposed approach is effective and transferable to real-world environments. II. B ACKGROUND 
+
+A. Proximal Policy Optimization (PPO) 
+
+In reinforcement learning for legged robots, Proximal Policy Optimization (PPO) [18] is commonly used due to its training stability and ease of implementation. PPO constrains the magnitude of policy updates by optimizing a clipped surrogate objective function based on the likelihood ratio between the current and previous policies, 
+
+rt (θ ) = πθ (at | st )
+
+πθold (at | st ) , at ∼ πθold (· | st ),
+
+thereby enabling stable learning while limiting excessive policy updates. This update control is particularly effective for legged robots with high-dimensional action spaces and unstable dynamics, as it prevents training collapse caused by abrupt policy changes. PPO also employs Generalized Advantage Estimation (GAE) [19] to estimate the advantage At . GAE computes the advantage as a weighted sum of temporal-difference (TD) errors, δt = rt + γV (st+1) − V (st ), where γ ∈ [0, 1] is the discount factor. This formulation allows a trade-off between variance and bias. Based on the estimated At , PPO updates the policy in the following gradient direction: 
+
+∇θ J(θ ) ∝ Est ,at ∼πθ [∇θ log πθ (at | st )At ] .
+
+However, in environments with a high risk of failure, un-successful trajectories tend to dominate, resulting in small estimated state values V (st ) for many states. Consequently, both the TD error δt and the advantage At approach zero, pro-viding little useful information for gradient-based updates. 
+
+Algorithm 1 External Force Guided Curriculum Learning  
+
+> 1:
+
+Input: initial policy πinit , initial critic Vinit , assist force 
+
+Fassist , decay step size ε, success threshold ζ 
+
+> 2:
+
+Output: final policy πN 
+
+> 3:
+
+Initialize: 
+
+F0 ← Fassist , π0 ← πinit , V0 ← Vinit  
+
+> 4:
+
+Set decay rate: 
+
+α ← 1.0 
+
+> 5:
+
+for i = 0, . . . , N − 1 do  
+
+> 6:
+
+success rate ← 0 
+
+> 7:
+
+while success rate < ζ do  
+
+> 8:
+
+Train πi and Vi using PPO under assist force Fi 
+
+> 9:
+
+Update success rate  
+
+> 10:
+
+end while  
+
+> 11:
+
+Decay assist force: 
+
+α ← max (0, 1 − ε × i), Fi+1 ← α × Fassist  
+
+> 12:
+
+Carry over the learned policy and value function: 
+
+πi+1 ← πi, Vi+1 ← Vi 
+
+> 13:
+
+end for  
+
+> 14:
+
+return πN
+
+Thus, while PPO is a stable optimization method, learning can stagnate severely in environments where successful ex-periences are rarely obtained. 
+
+B. Curriculum Learning 
+
+Curriculum learning has been widely adopted as a repre-sentative approach to address the aforementioned issue. In curriculum learning, training begins in specialized en-vironments with low exploration risk, and the task difficulty or risk level is gradually increased. This framework can be interpreted as sequential learning over multiple Markov Decision Processes (MDPs) Mi with different risk levels. If the changes in dynamics and reward structures between successive stages are sufficiently small, the optimal policy π∗
+
+> i
+
+for stage Mi and the optimal policy π∗ 
+
+> i+1
+
+for the subsequent stage Mi+1 are expected to be similar. That is, 
+
+π∗
+
+> i+1
+
+(at | st )
+
+π∗ 
+
+> i
+
+(at | st ) ≈ 1, at ∼ π∗ 
+
+> i
+
+(· | st ),
+
+can be artificially constructed. This property is consistent with the assumption underlying PPO that smaller policy update steps are preferable. Therefore, curriculum learning provides a theoretically well-aligned framework that supports stable, incremental learning with PPO. 
+
+C. Stabilizing Learning via Accelerated Value Function Es-timation 
+
+In reinforcement learning with sparse rewards, learning efficiency strongly depends on how quickly the value func-tion can correctly evaluate action sequences that yield high rewards. This is particularly critical for methods such as Proprioceptive  
+
+> Observation
+> Privileged
+> Observation
+> Privileged
+> Encoder
+> Actor
+> MLP
+> Actor
+> MLP
+> Proprioceptive
+> Observation
+> Belief
+> Encoder
+> Belief
+> Decoder
+> Privileged
+> Observation
+> Student Policy
+> Teacher Policy
+> Teacher
+> Policy
+> Reconstruction Loss
+> Action
+> Matching
+> Loss
+> Simulation Env
+> with EFGCL
+> Simulation Env
+> Reward
+> 𝑟 𝑡
+> 𝑎 𝑡
+> 𝑎 𝑡
+> ෝ𝑎 𝑡
+> 𝑙 𝑡
+> priv
+> 𝑙 𝑡
+> priv
+> o𝑡
+> prop
+> o𝑡
+> prop
+> o𝑡
+> priv
+> o𝑡
+> priv
+> ෣
+> 𝑜 𝑡
+> 𝑝𝑟𝑖𝑣 ෣
+> 𝑜 𝑡
+> priv
+> (1) Teacher Learning (RL)
+> (2) Student Learning (SL)
+
+Fig. 2. Network architecture used for Teacher–Student learning. (a) The Teacher Policy takes the full state, including privileged observations, as input and is trained via reinforcement learning. (b) The Student Policy takes only onboard sensor information as input and is trained using the Teacher Policy as a supervisor. 
+
+PPO, which rely on value functions for advantage estimation, where the initial accuracy of value estimation significantly influences the direction of policy updates. In general, once a sufficient number of high-reward tra-jectories are observed, the state values V (s) corresponding to the associated state sequence ξ = {shigh  
+
+> t
+
+}Nt=0 are estimated to be large. When such high-value trajectories exist, actions that deviate from them yield large negative TD errors and ad-vantages. As a result, the policy is updated in a direction that discourages deviation from high-reward trajectories, making effective motion sequences more likely to be preserved once acquired. Therefore, whether the value function can assign high values to near-optimal behaviors from the early stages of learning is a crucial factor that determines the overall stability and efficiency of training. To achieve this, it is effective to expose the agent to a large number of high-reward trajectories during the early phase of learning. III. M ETHOD 
+
+A. Overview of External Force Guided Curriculum Learning (EFGCL) 
+
+The proposed External Force Guided Curriculum Learning (EFGCL) provides a framework for achieving stable learning in dynamic tasks while maintaining sparse reward functions. Instead of modifying rewards as in imitation learning or Reward Shaping, EFGCL stabilizes learning by curriculum-wise modifying the Markov Decision Process (MDP) itself in which learning is performed. The overall procedure of the algorithm is summarized in Alg. 1. EFGCL designs external assistive forces that facilitate task execution during the early stage of learning (line 1), and gradually decays this assistance as training progresses (lines 7–9). Through this curriculum process, the agent experiences trajectories with a high probability of success under assistance, while gradually transitioning toward autonomous motion generation. Eventually, the agent acquires a policy πN that achieves the target motion without assistance (line 14). Front -Body 
+
+> Calf
+> Back -Body
+> Waist -Joint
+
+(a) 
+
+> Scapula
+> Thigh
+> Foot
+> FL
+> FR
+> BL
+> BR
+> FL -Scapula
+> FL -Thigh
+
+(b)  FL -Calf 
+
+> FL -Foot
+
+Fig. 3. Overview and kinematic structure of the quadrupedal robot KLEIYN. (a) Overall robot structure, (b) link and joint definitions for each leg. 
+
+B. Design of External Assistance 
+
+EFGCL first designs external assistive forces that help reproduce the target motions. As discussed in Sec. II-C, exposing the agent to a large number of high-reward tra-jectories in the early stage of learning induces a tendency to preserve such trajectories. The external assistance in EFGCL is introduced to artificially increase the density of these successful trajectories. In EFGCL, external assistance is defined as a pattern consisting of three elements: the points of application P =
+
+{pi}, the corresponding force vectors F = {fi}, and the timing of application T = {(tstart  
+
+> i
+
+,tend  
+
+> i
+
+)}. Since the purpose of the assistance is not to teach an optimal trajectory but rather to guide the agent toward high-reward states, it is sufficient for the robot to approximately achieve the target motion and obtain high rewards. Therefore, in this study, the assistive force Fassist (P, F, T ) is heuristically designed for each task. The permissible range of such assistive forces is investigated in detail in Sec. V-B. 
+
+C. Success-Rate Based Adaptive Curriculum Scheduling 
+
+As discussed in Sec. II-B, curriculum learning benefits from small difficulty gaps between adjacent MDPs to ensure stable policy transitions. EFGCL adopts a success-rate-based adaptive curriculum to prevent excessive difficulty changes caused by curriculum updates. Specifically, as shown in lines 6–12 of Alg. 1, PPO training is repeated at each stage i until the success rate exceeds a threshold ζ . The assistive force is then updated as 
+
+Fi = αi × Fassist , αi = max (0, 1 − ε × i).
+
+where αi denotes the assistance scaling factor at stage i, and 
+
+ε is the decay step size controlling the rate of assistance reduction. This mechanism enables automatic adjustment of the assis-tance decay step based on training progress, while preserving the relationship πi+1(a | s)/πi(a | s) ≈ 1. 
+
+D. Time-Encoding for Observations 
+
+Since the assistive force Fassist (P, F, T ) in EFGCL is ap-plied in a time-dependent manner, it is important for the agent to infer the timing of assistance as an internal state. However, directly using the elapsed time t as an input leads to monotonically increasing values, which may cause scale mismatch in neural networks. To address this issue, we introduce an additional observa-tion that aligns with the activation interval of the assistive force Fi. Specifically, we define a monotonically increasing function bounded within [0, 1] as 
+
+τ(t, λ ) = ˜t3
+
+1 + ˜t3 , ˜t = t
+
+λ .
+
+Here, λ is a temporal scaling parameter, which is set to the force activation start time λ = tstart in this study. (a)  (b)  (c)    
+
+> Desired
+> Motion
+> 𝑭 assist
+> Jump Backflip Lateral -flip
+> Fig. 4. Designed assistive force patterns for each task. (a) Jump, (b) Backflip, (c) Lateral-flip. The assistive forces are applied vertically to the scapula links, guiding motions that facilitate successful task execution during the early stages of learning.
+
+IV. L EARNING SETUP 
+
+A. Robot Platform 
+
+The real-world experiments are conducted using the quadrupedal robot KLEIYN [6]. Its appearance and link definitions are shown in Fig. 3. KLEIYN has a total mass of 18 kg and a height of 600 mm, with three degrees of freedom (DoF) per leg and one DoF in the torso. The robot is equipped with an IMU and joint encoders. The leg motors are quasi-direct-drive actuators with a maximum torque of 24.8 Nm, while the torso motor has a maximum torque of 48 Nm. Isaac Gym [20] is used as the simulator for training. 
+
+B. Task Definition and Reward Function 
+
+To evaluate the effectiveness of EFGCL, we define three dynamic whole-body motion tasks: (1) Jump, (2) Backflip, and (3) Lateral-flip. To avoid arbitrary performance gains due to task-specific reward engineering, all tasks share exactly the same reward structure, weights, and functional forms. Only the target vari-ables differ between tasks: the maximum height for Jump, and the rotation angle for Backflip and Lateral-flip. These target variables are simply scaled according to their physical units, and no task-specific reward tuning or intermediate motion-guiding rewards are introduced. The reward for each task is defined by the following common structure: 
+
+rt = ρtask  
+
+> t
+
++ ρtask  
+
+> t
+
+· ρstand  
+
+> t
+
++ λω rang  
+
+> t
+
++ rcommon  
+
+> t
+
+, (1) where ρtask  
+
+> t
+
+∈ [0, 1] represents task progress, ρstand  
+
+> t
+
+encour-ages stable posture after landing, rang  
+
+> t
+
+is a regularization term that suppresses rotation about non-target axes, and rcommon 
+
+> t
+
+enforces physical constraints shared across all tasks. The only task-specific difference lies in the definition of the target quantity in ρtask  
+
+> t
+
+. For Jump, the target is the maximum achieved height, while for Backflip and Lateral-flip, the targets are the rotation angles around the pitch and roll axes, respectively. Detailed definitions are summarized in Appendix I. 
+
+C. Observations 
+
+The observation consists of two components, oprop  
+
+> t
+
+and 
+
+opriv  
+
+> t
+
+.
+
+oprop  
+
+> t
+
+represents proprioceptive observations and includes joint positions qt ∈ R13 , joint velocities ˙ qt ∈ R13 , the gravity vector in the root frame ˜gt ∈ R3, root angular velocity 
+
+ωt ∈ R3, the command input c ∈ R, and the time encoding 
+
+τ(t) ∈ R. The command input corresponds to the target jump height htarget for Jump, and the target rotation angle θ target 
+
+for Backflip and Lateral-flip. 
+
+opriv  
+
+> t
+
+denotes privileged observations used exclusively by the Teacher Policy and consists of the following task-specific information:  
+
+> •
+
+Jump: root height ht ∈ R and maximum height since episode start hmax  
+
+> t
+
+∈ R 
+
+> •
+
+Backflip: root height ht and root pitch angle θ pitch  
+
+> t
+
+∈ R 
+
+> •
+
+Lateral-flip: root height ht and root roll angle θ roll  
+
+> t
+
+∈ R
+
+D. Assist Force Design 
+
+Assistive force patterns are designed for each task. The application timing is shared across all tasks as T =
+
+{(1.0 s , 1.1 s )}, while the application points P and force vectors F are task-specific. The assistive force patterns are illustrated in Fig. 4. 
+
+a) Jump: Pjump = {pScapula FL , pScapula FR , pScapula BL , pScapula BR },
+
+Fjump = {(0, 0, fjump (htarget )/4)}
+
+Here, fjump (htarget ) is the assistive force magnitude deter-mined by the target height htarget . This value is derived by modeling the Jump motion as simple projectile motion and computing the average assistive force required to generate the initial velocity needed to reach the target height. 
+
+b) Backflip: Pbackflip = {pScapula FL , pScapula FR },
+
+Fbackflip = {(0, 0, 175 N )}
+
+c) Lateral-flip: Plateral = {pScapula FR , pScapula BR },
+
+Flateral = {(0, 0, 300 N )}
+
+E. Adaptive Curriculum Design 
+
+A success-rate-based curriculum scheduling strategy is employed to decay the assistive forces. The success rate in Alg. 1 is computed using the following criteria. 
+
+a) Jump: 
+
+|hmax  
+
+> t
+
+− htarget | < 0.1 ∧ | ht | < 0.1
+
+b) Backflip, Lateral-flip: 
+
+|θt − 2π| < 0.3 ∧ | ht | < 0.1The success rate threshold is set to ζ = 0.6, and the decay step size is set to ε = 0.01 for all tasks. w/o EFGCL (PPO only)  
+
+> w/ EFGCL
+> (Ours) w/ EFGCL
+> (Ours)
+> w/o EFGCL
+> (PPO only)
+> w/ EFGCL
+> (Ours)
+> w/o EFGCL
+> (PPO only)
+
+(a)  (b)  (c)  
+
+> 2×faster
+> Success
+> Fail
+> Success
+> Fail
+
+Fig. 5. Comparison of learning curves with and without EFGCL. (a) Jump, (b) Backflip, (c) Lateral-flip. With EFGCL, learning progresses stably and converges to high reward values in all tasks. Without EFGCL, Jump exhibits large reward variance, while learning hardly progresses for Backflip and Lateral-flip. 
+
+F. Teacher–Student Learning 
+
+Markovianity is a crucial property in reinforcement learn-ing environments. Following prior work [2], we adopt a Teacher–Student learning architecture. Teacher–Student learning consists of two stages: rein-forcement learning of the teacher policy and supervised learning of the student policy, where the teacher policy acts as a supervisor. During supervised learning, the student policy is trained to minimize an action-matching loss and a reconstruction loss on privileged observations. Since the proposed method is integrated with reinforcement learning, EFGCL is applied only during the training of the teacher policy. The overall learning structure is illustrated in Fig. 2. V. E XPERIMENT AND RESULT 
+
+A. Learning Performance and Real Robot Deployment 
+
+We compared the proposed EFGCL with a PPO baseline over 10 random seeds. As shown in Fig. 5, EFGCL achieved stable convergence and high rewards across all tasks (Jump, Backflip, and Lateral-flip). In contrast, the baseline failed to learn the flipping tasks and exhibited high variance in the Jump task. As visualized in Fig. 6, the baseline often resulted in unnatural postures, whereas EFGCL acquired natural dynamic motions. This stable learning process was facilitated by the adaptive curriculum, which automatically adjusted the assistive force decay based on the success rate (Fig. 7). Furthermore, the policies learned via EFGCL were distilled and deployed on the quadrupedal robot KLEIYN. As shown in Fig. 8, the dynamic motions observed in simulation were successfully reproduced on the real robot for all three tasks. 
+
+B. Ablation Study of EFGCL Force Design 
+
+To evaluate the sensitivity of EFGCL to heuristic design choices, we varied the application point, magnitude, and timing of the assistive force in the Backflip task. The results in Fig. 9 demonstrate that learning is robust over a wide range of parameters. Successful policies were acquired even when the force was applied to different links (thigh or calf) or when the magnitude varied within a reasonable range (140–210 N). Learning failed only in extreme cases where the assistance was physically insufficient (e.g., 100 N) or excessive (e.g., 250 N), or when the application timing was too short (1.0 s T = 0.0  T = 0.1  T = 0.13  T = 0.16  T = 0.2  T = 0.23  T = 0.26  T = 0.3  T = 0.33  T = 0.43                                                  
+
+> (c) Lateral -flip
+> T = 0.0 T = 0.2 T = 0.4 T = 0.6 T = 0.8 T = 1.0 T = 1.2 T = 1.4 T = 1.5 T = 1.6
+> (a) Jump
+> 700 mm 700 mm
+> T = 0.0 T = 0.1 T = 0.2 T = 0.4 T = 0.6 T = 0.8 T = 1.0 T = 1.2 T = 1.3 T = 1.4
+> (d) Jump (without EFGCL)
+> T = 0.0 T = 0.2 T = 0.4 T = 0.6 T = 0.7 T = 0.8 T = 0.9 T = 1.0 T = 1.1 T = 1.2
+> (e) Backflip (without EFGCL)
+> T = 0.0 T = 0.2 T = 0.4 T = 0.6 T = 0.8 T = 1.0 T = 1.2 T = 1.4 T = 1.6 T = 1.8
+> (f) Lateral -flip (without EFGCL)
+> T = 0.0 T = 0.2 T = 0.4 T = 0.6 T = 0.7 T = 0.8 T = 0.9 T = 1.0 T = 1.1 T = 1.2
+> (b) Backflip
+
+Fig. 6. Snapshots of learned motions with and without EFGCL. (a–c) With EFGCL, (d–f) without EFGCL. With EFGCL, natural and stable motions are acquired, whereas without EFGCL, unnatural postures and failure to achieve the target motions are observed. 0 1000 2000 3000 4000 5000 Iterations 
+
+> 0.5
+> 1.0Success-Rate
+
+Jump           
+
+> 01000 2000 3000 4000 5000 Iterations
+> 0.0
+> 0.5
+> 1.0Decay-Coefficient
+> 0500 1000 1500 2000 2500 Iterations
+> 0.5
+> 1.0Success-Rate
+
+Backflip/Lateral-flip      
+
+> 0500 1000 1500 2000 2500 Iterations
+> 0.0
+> 0.5
+> 1.0Decay-Coefficient
+
+Fig. 7. Transitions of the success rate and assistive force decay factor in EFGCL. (a) Jump task, (b) Backflip and Lateral-flip tasks. The decay speed of the assistive force is automatically adjusted according to the success rate. (a) Jump                                
+
+> T=0.0 T=0.2 T=0.3 T=0.4 T=0.5 T=0.6 T=0.7 T=0.8 T=0.9 T=1.0
+> (b) Backflip
+> T=0.0 T=0.2 T=0.3 T=0.4 T=0.5 T=0.6 T=0.6
+> T=0.65 T=0.7 T=0.8 T=0.9 T=1.0 T=1.1 T=1.2
+> (c) Lateral -flip
+> T=0.0 T=0.2 T=0.3 T=0.4 T=0.5 T=0.6 T=0.7 T=0.9 T=1.2 T=1.3
+> 500 mm 500 mm
+
+Fig. 8. Reproduction of learned motions on the real quadrupedal robot. (a) Jump, (b) Backflip, (c) Lateral-flip. (a) 
+
+(b) 
+
+(c) 
+
+> Failed
+> Failed
+
+Fig. 9. Ablation study on assistive force design. (a) Application points, (b) force magnitudes, (c) application timing. The asterisks (*) in the legends indicate the conditions used in the main experiments. 
+
+to 1.05 s). These results indicate that precise tuning is not required, as long as the assistance roughly facilitates the target motion. 
+
+C. Evaluation of Accelerated Critic Value Estimation 
+
+To validate the hypothesis that external guidance accel-erates critic learning, we analyzed value estimates during the Jump task. Fig. 10 compares the value function outputs for a successful reference motion at different training stages. With EFGCL, the value estimates converged to the final distribution as early as 200 iterations. In contrast, the baseline required more than 1,000 iterations to reach a comparable 
+
+Fig. 10. Comparison of value function estimation with and without EFGCL. With EFGCL, value estimates quickly converge to distributions close to the final value function, demonstrating accelerated and stabilized value estimation. 
+
+level of accuracy and exhibited larger variance. This result confirms that experiencing successful states early in training significantly accelerates value function estimation. VI. D ISCUSSION 
+
+A. Efficacy and Robustness of Guided Exploration 
+
+The experimental results demonstrate that EFGCL sig-nificantly stabilizes the learning of dynamic motion skills by accelerating value function estimation during the early training phase. Unlike reward shaping or imitation learning, which rely on complex reward design or expert datasets, EFGCL guides exploration through direct physical assistance in the form of external forces. Furthermore, the ablation study shows that the proposed method is highly robust to variations in assistive force design. As long as the assistance roughly facilitates the target motion, learning can succeed without precise parameter tuning. These results suggest that the principle of “physically experiencing success” provides a general and cost-effective strategy for overcoming exploration challenges in dynamic robotic rein-forcement learning. 
+
+B. Limitations and Future Work 
+
+This study focuses on validating the principle of arti-ficially enabling agents to experience successful motions. Accordingly, the assistive forces were designed based on task-specific physical intuition. While such heuristic designs are sufficient for the single-shot dynamic motion tasks con-sidered in this work, the design burden may increase for more complex and continuous motions. For continuous behaviors such as dancing, maintaining the overall motion structure often requires learning based on reference trajectories. In such cases, using the proposed framework of external forces with sparse rewards alone may be insufficient, and combining it with trajectory-tracking reward designs or imitation learning is likely to be more effective. Developing automatic optimization or generation methods for assistive forces that remain effective for complex target motions is an important direction for future work. VII. C ONCLUSION 
+
+Inspired by spotting in gymnastics, we proposed External Force Guided Curriculum Learning (EFGCL), a reinforce-ment learning framework that guides exploration through decaying external forces. Without relying on complex re-ward shaping or reference trajectories, EFGCL enables a quadrupedal robot to acquire dynamic whole-body motions, such as jumping and flipping, that are difficult for standard RL methods. Through both simulation and real-robot experiments, we demonstrated successful sim-to-real transfer and showed that physical assistance accelerates value function estimation by allowing the agent to experience successful states early in training. Although the current approach relies on heuristic force design, the results suggest that physical guidance 
+
+represents a promising and general paradigm for guided exploration, complementary to reward-based and imitation-based methods, in the learning of complex whole-body motions. APPENDIX IREWARD DEFINITIONS 
+
+Table I summarizes the reward terms shared across all tasks and their definitions. Here, Pcol denotes the set of link indices used to detect collisions with the ground. This set includes 14 links in total: the body, scapula, thigh, and calf, excluding the feet. The indicator function δ term  
+
+> t
+
+takes the value of 1 if the episode terminates due to the trunk contacting the ground at time t, and 0 otherwise. 
+
+A. Task-Specific Target Variables 
+
+Table II presents the task-specific definitions of the target variable xt , the target value xtarget , and the normalization coefficient sx used in the task progress reward ρtask  
+
+> t
+
+shown in Table I. 
+
+TABLE I SUMMARY OF REWARD TERMS SHARED ACROSS ALL TASKS .Reward term Definition Task progress ρtask  
+
+> t
+
+= exp  −∥ xt − xtarget ∥2/sx
+
+
+
+Standing ρstand  
+
+> t
+
+= exp 
+
+
+
+− ∥ht ∥2
+
+> 0.01
+
+
+
++ exp 
+
+
+
+− ∥qt −qstand ∥2
+
+> 0.25
+
+
+
+Angular regularization rang  
+
+> t
+
+= −∥ (ωnon-target  
+
+> t
+
+)2∥
+
+Collision penalty −1.0 × ∑i∈Pcol ( fi,z > 0.1)
+
+Termination penalty −100 × δ term 
+
+> t
+
+Joint velocity penalty −5 × 10 −4 ∥ ˙qt ∥2
+
+Joint acceleration penalty −1 × 10 −7 ∥ ¨qt ∥2
+
+REFERENCES [1] J. Hwangbo, J. Lee, A. Dosovitskiy, D. Bellicoso, V. Tsounis, V. Koltun, and M. Hutter, “Learning agile and dynamic motor skills for legged robots,” Science Robotics , vol. 4, no. 26, 2019. [2] T. Miki, J. Lee, J. Hwangbo, L. Wellhausen, V. Koltun, and M. Hutter, “Learning robust perceptive locomotion for quadrupedal robots in the wild,” Science Robotics , vol. 7, no. 62, 2022. TABLE II TASK -SPECIFIC INSTANTIATIONS OF THE TASK PROGRESS REWARD .Task Target variable xt xtarget sx
+
+Jump hmax  
+
+> t
+
+htarget 0.01 Backflip θ pitch  
+
+> t
+
+2π π2
+
+Lateral-Flip θ roll  
+
+> t
+
+2π π2
+
+[3] Z. Zhuang, Z. Fu, J. Wang, C. Atkeson, S. Schwertfeger, C. Finn, and H. Zhao, “Robot parkour learning,” in Conference on Robot Learning (CoRL) , 2023. [4] D. Vogel, R. Baines, J. Church, J. Lotzer, K. Werner, and M. Hutter, “Robust ladder climbing with a quadrupedal robot,” in 2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) ,2025, pp. 7239–7244. [5] H. Kim, H. Oh, J. Park, Y. Kim, D. Youm, M. Jung, M. Lee, and J. Hwangbo, “High-speed control and navigation for quadrupedal robots on complex and discrete terrain,” Science Robotics , vol. 10, no. 102, p. eads6192, 2025. [6] K. Yoneda, K. Kawaharazuka, T. Suzuki, T. Hattori, and K. Okada, “Kleiyn : A quadruped robot with an active waist for both locomotion and wall climbing,” in 2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) , 2025, pp. 8783–8789. [7] J. Eßer, N. Bach, C. Jestel, O. Urbann, and S. Kerner, “Guided reinforcement learning: A review and evaluation for efficient and effective real-world robotics [survey],” IEEE Robotics & Automation Magazine , vol. 30, no. 2, pp. 67–85, 2022. [8] X. B. Peng, P. Abbeel, S. Levine, and M. Van de Panne, “Deepmimic: Example-guided deep reinforcement learning of physics-based char-acter skills,” ACM Transactions On Graphics (TOG) , vol. 37, no. 4, pp. 1–14, 2018. [9] X. B. Peng, E. Coumans, T. Zhang, T.-W. E. Lee, J. Tan, and S. Levine, “Learning agile robotic locomotion skills by imitating animals,” in 
+
+Robotics: Science and Systems , 07 2020. [10] J. Wu, G. Xin, C. Qi, and Y. Xue, “Learning robust and agile legged locomotion using adversarial motion priors,” IEEE Robotics and Automation Letters , vol. 8, no. 8, pp. 4975–4982, 2023. [11] Y. Fuchioka, Z. Xie, and M. Van de Panne, “Opt-mimic: Imitation of optimized trajectories for dynamic quadruped behaviors,” in 2023 IEEE International Conference on Robotics and Automation (ICRA) ,2023, pp. 5092–5098. [12] C. Li, M. Vlastelica, S. Blaes, J. Frey, F. Grimminger, and G. Mar-tius, “Learning agile skills via adversarial imitation of rough partial demonstrations,” in Conference on Robot Learning . PMLR, 2023, pp. 342–352. [13] S. Devlin and D. Kudenko, “Theoretical considerations of potential-based reward shaping for multi-agent systems,” in Tenth international conference on autonomous agents and multi-agent systems . ACM, 2011, pp. 225–232. [14] V. Atanassov, J. Ding, J. Kober, I. Havoutis, and C. Della Santina, “Curriculum-based reinforcement learning for quadrupedal jumping: A reference-free design,” IEEE Robotics & Automation Magazine , 2024. [15] G. Bellegarda, C. Nguyen, and Q. Nguyen, “Robust quadruped jumping via deep reinforcement learning,” Robotics and Autonomous Systems , vol. 182, p. 104799, 2024. [16] G. Vasan, Y. Wang, F. Shahriar, J. Bergstra, M. J¨ agersand, and A. R. Mahmood, “Revisiting sparse rewards for goal-reaching reinforcement learning,” Reinforcement Learning Journal , vol. 4, pp. 1841–1854, 2024. [17] S. Sorzano, “How spotting with touch affects skill performance and self confidence in gymnasts,” Master’s thesis, Trent University (Canada), 2023. [18] J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov, “Proximal policy optimization algorithms,” 2017. [19] J. Schulman, P. Moritz, S. Levine, M. Jordan, and P. Abbeel, “High-dimensional continuous control using generalized advantage estimation,” in International Conference on Learning Representations (ICLR) , 2016. [20] J. Liang, V. Makoviychuk, A. Handa, N. Chentanez, M. Macklin, and D. Fox, “Gpu-accelerated robotic simulation for distributed reinforce-ment learning,” in Conference on Robot Learning (CoRL) , 2018.
