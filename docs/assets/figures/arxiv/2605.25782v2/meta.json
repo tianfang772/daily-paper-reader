@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.25782v2/fig-001.webp",
+      "caption": "Figure 2: Conditional Joint Strategy and Future Prediction Head. The future observation prediction head (obsf ) generates deterministic predictions of the next two proprioceptive states from the Transformer backbone features. These predicted future observations are concatenated with the historical features and directly fed into the current action head to produce action deltas, enabling the current action to be jointly conditioned on both past observations and predicted future states.",
+      "page": 2,
+      "index": 1,
+      "width": 826,
+      "height": 252
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25782v2/fig-002.webp",
+      "caption": "Figure 6: Snapshots of robots traversing six iconic terrain types. The robot maintained stable, continuous motion in all six of the aforementioned iconic terrain tasks.",
+      "page": 7,
+      "index": 2,
+      "width": 829,
+      "height": 374
+    },
+    {
+      "url": "assets/figures/arxiv/2605.25782v2/fig-003.webp",
+      "caption": "Figure 3: ParkourFormer Seq2Seq locomotion pipeline. ParkourFormer is a Transformer-based Seq2Seq framework for parkour locomotion. It processes historical observations via cross-attention, fuses terrain features using conditional SwiGLU FFN, and employs an asymmetric critic for value estimation. The actor generates actions as a sequence-to-sequence task, supported by future prediction and multi-discriminator regularization. Training is performed with a novel joint PPO[40] formulation that separately optimizes the future prediction and current action components.",
+      "page": 4,
+      "index": 3,
+      "width": 826,
+      "height": 311
+    }
+  ]
+}

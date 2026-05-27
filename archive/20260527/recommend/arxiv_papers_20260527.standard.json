@@ -1,0 +1,269 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-27T20:55:10.743233+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 3,
+    "deep_cap": 6,
+    "deep_selected": 3,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2605.25782v2",
+      "source": "arxiv",
+      "title": "ParkourFormer: Integrating Predictive Supervision and Sequence Modeling into Parkour Locomotion",
+      "abstract": "Humanoid parkour requires locomotion policies to coordinate whole-body dynamics across rapidly changing terrains such as stairs, gaps, slopes, and obstacles. Existing reinforcement learning policies are largely reactive, mapping observations directly to actions without explicitly modeling future body states. Such modeling becomes critical in agile locomotion tasks where successful motion execution depends strongly on anticipating upcoming contact transitions and body dynamics. We present ParkourFormer, a Transformer-based sequence modeling framework that reformulates humanoid locomotion as a future-conditioned decision-making problem. The current robot state queries historical sensorimotor trajectories through cross-attention, while a lightweight prediction head forecasts short-horizon future proprioceptive states. The predicted future states, trained with supervised signals, are fused with temporal features to generate actions, enabling the policy to jointly reason over motion history and anticipated future dynamics. We evaluate ParkourFormer on a diverse multi-terrain humanoid parkour benchmark including stairs, gaps, slopes, rough terrain, and obstacle traversal. Experiments in simulation and on a real humanoid robot show that ParkourFormer achieves a 93.85% average traversal success rate on highly challenging terrains, with improvements of up to 42.73% over strong MLP, MoE-based MLP, and vanilla Transformer baselines, while maintaining a single unified policy across all terrain types. These results demonstrate that explicit future-state modeling significantly improves robustness and generalization for agile whole-body locomotion.",
+      "authors": [
+        "Yanheng Mai",
+        "Wenhao Xu",
+        "Zirui Huang",
+        "Yifei Fu",
+        "Shengwei Dong",
+        "Xinjue Wang",
+        "Kailun Huang",
+        "Yanzhe Xie",
+        "Renjing Xu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-25T12:29:47+00:00",
+      "link": "https://arxiv.org/pdf/2605.25782v2",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "predictive sequence modeling for humanoid parkour",
+      "llm_evidence_cn": "人形机器人跑酷的预测序列建模",
+      "llm_evidence": "人形机器人跑酷的预测序列建模",
+      "canonical_evidence": "人形机器人跑酷的预测序列建模",
+      "llm_tldr_en": "ParkourFormer uses sequence modeling to predict future body states for agile humanoid locomotion.",
+      "llm_tldr_cn": "ParkourFormer利用序列建模预测未来身体状态，实现敏捷的人形机器人跑酷。",
+      "llm_tldr": "ParkourFormer利用序列建模预测未来身体状态，实现敏捷的人形机器人跑酷。",
+      "llm_tags": [
+        "query:profile-1:composite"
+      ],
+      "matched_query_tag": "query:profile-1:composite",
+      "matched_query_text": "Papers central to 检索世界模型在腿足机器人（如四足、双足机器人）运动控制与感知中的应用论文, especially work that connects or combines: World models for robot control and planning; Legged robot locomotion and navigation; Learning latent dynamics for legged robot control; Application of world models in legged robot locomotion and control; State of the art in world models for legged robotics research.",
+      "matched_requirement_id": "req-composite-profile-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.24892v1",
+      "source": "arxiv",
+      "title": "X-Foresight: A Joint Vision-Action Causal Forecasting Network via Predictive World Modeling",
+      "abstract": "Physical world knowledge resides mainly in videos. Equipping Vision-Language-Action (VLA) models with such knowledge is fundamental for safe and generalizable planning. Predictive world modeling enables VLA to internalize physical dynamics and long-term causality by predicting future video from past observations. However, naive next-frame prediction faces two challenges: 1) unlike semantically distinct text tokens, video tokens are low-entropy and redundant, causing prediction to degenerate into trivial extrapolation. 2) world modeling poses a temporal dilemma: dense prediction captures instantaneous dynamics, but cannot efficiently model long-horizon causality.   To learn world knowledge effectively, we introduce X-Foresight, a predictive world model integrated directly into the VLA architecture to jointly learn world modeling and real-time action control. At its core lies a long-horizon chunk-wise auto-regressive strategy that addresses both challenges: by predicting semantically distant chunks rather than adjacent frames, it escapes trivial extrapolation, while preserving dense intra-chunk frames for instantaneous dynamics and sparse inter-chunk transitions for long-term causality. A curriculum learning schedule progressively extends prediction horizons and stabilizes long-horizon training. To capture long-term causality effectively, we present temporal importance sampling, which concentrates supervision on safety-critical chunks identified by ego-motion and behavioral signals. We further delegate photorealistic synthesis to a diffusion-based multi-view renderer, improving photorealistic appearance.   Comprehensive experiments demonstrate that X-Foresight significantly outperforms VLA baselines in planning performance while maintaining strong generative fidelity, establishing a robust paradigm for world-knowledge-driven autonomous systems.",
+      "authors": [
+        "Baolu Li",
+        "Jingyu Qian",
+        "Rui Guo",
+        "Yilun Chen",
+        "Hanpeng Liu",
+        "Yuan Lin",
+        "Junhong Zhou",
+        "Ruixin Liu",
+        "Willow Yang",
+        "Yutong Zheng",
+        "Zhenli Zhang",
+        "Tenglong",
+        "Gu",
+        "Zhuangzhuang Ding",
+        "Pengkun Zheng",
+        "Yu Zhang",
+        "Xianming Liu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-24T06:37:04+00:00",
+      "link": "https://arxiv.org/pdf/2605.24892v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "predictive world modeling for planning",
+      "llm_evidence_cn": "用于规划的预测世界模型",
+      "llm_evidence": "用于规划的预测世界模型",
+      "canonical_evidence": "用于规划的预测世界模型",
+      "llm_tldr_en": "Proposes X-Foresight, a world model for VLA to internalize physical dynamics and long-term causality.",
+      "llm_tldr_cn": "提出了X-Foresight，一种让VLA模型内化物理动力学和长期因果关系的世界模型。",
+      "llm_tldr": "提出了X-Foresight，一种让VLA模型内化物理动力学和长期因果关系的世界模型。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.24643v1",
+      "source": "arxiv",
+      "title": "Towards Low-Gravity Planetary Exploration using Reinforcement Learning for Walking, Jumping, and In-flight Attitude Control",
+      "abstract": "This paper presents reinforcement learning (RL) policies for dynamic quadrupedal locomotion in planetary exploration scenarios. Building on a taskoptimized quadruped with a 5-bar leg design, we develop RL policies for walking, vertical jumping, forward jumping, and in-flight attitude control, explicitly tailored to the reduced gravity on Mars. These policies jointly enable such robots to overcome obstacles larger than themselves through coordinated jumping and precise in-flight reorientation for safe landings. We demonstrate Sim2Real transfer of the attitude control policy on the Olympus quadruped through single-axis reorientation tests, while all locomotion policies are validated in simulation. A complete Mars exploration mission scenario demonstrates coordinated policy deployment across challenging terrain. Experimental results show 90° attitude reorientation in 2.6 seconds, with simulations demonstrating 3.1 meter vertical jumps and 3.9 meter forward jumps under Martian gravity conditions. - Supplementary video: https://www.youtube.com/watch?v=qlSJ3P87A4A",
+      "authors": [
+        "Jørgen Anker Olsen",
+        "Kostas Alexis"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "published": "2026-05-23T16:20:23+00:00",
+      "link": "https://arxiv.org/pdf/2605.24643v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "quadrupedal locomotion using reinforcement learning",
+      "llm_evidence_cn": "基于强化学习的四足运动",
+      "llm_evidence": "基于强化学习的四足运动",
+      "canonical_evidence": "基于强化学习的四足运动",
+      "llm_tldr_en": "Applies RL for quadrupedal walking and jumping in low-gravity planetary exploration scenarios.",
+      "llm_tldr_cn": "将强化学习应用于低重力行星探测场景下的四足机器人行走与跳跃。",
+      "llm_tldr": "将强化学习应用于低重力行星探测场景下的四足机器人行走与跳跃。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.20932v1",
+      "source": "arxiv",
+      "title": "WiXus: A Wheeled-Legged Robot with Wire-Driven Environmental Utilizing to Integrate Mobility and Manipulation",
+      "abstract": "Wheeled-legged robots, which have wheels at their feet and achieve high mobility by coordinating wheel drive and leg drive, have been developed. These robots have been developed purely as platforms specialized for locomotion. Therefore, they do not have a means to repurpose their legs for roles other than locomotion, such as object manipulation or tool utilization. In this paper, we address the problem of how to draw out the potential task-execution capability of the legs by freeing them from the roles of locomotion through external body support. To this end, we propose and develop a new robot, WiXus, which fuses a wheeled-legged mechanism with a wire-driven mechanism that utilizes the external environment. The developed WiXus demonstrates not only planar locomotion with wheeled-legged drive, but also three-dimensional mobility such as cliff climbing by coordinating wire-driven and wheeled-legged actuation. Furthermore, by suspending the body with wire-driven actuation, WiXus successfully repurpose its legs as arms to perform object manipulation, (e.g., rescuing a dog (stuffed animal)), and tool utilization (e.g., harvesting an apple (mockup) with loppers). This study demonstrates that the approach of utilizing the environment with wire-driven actuation is a new design principle that extends the operational domain of wheeled-legged robots.",
+      "authors": [
+        "Shintaro Inoue",
+        "Kento Kawaharazuka",
+        "Temma Suzuki",
+        "Sota Yuzaki",
+        "Kei Okada"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-20T09:19:48+00:00",
+      "link": "https://arxiv.org/pdf/2605.20932v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "wheeled-legged robot locomotion and mechanism",
+      "llm_evidence_cn": "轮足机器人运动与机构",
+      "llm_evidence": "轮足机器人运动与机构",
+      "canonical_evidence": "轮足机器人运动与机构",
+      "llm_tldr_en": "Introduces WiXus, a wheeled-legged robot using wire-driven mechanisms to enhance mobility and manipulation.",
+      "llm_tldr_cn": "介绍了一种名为WiXus的轮足机器人，通过线驱动机制增强了移动与操作能力。",
+      "llm_tldr": "介绍了一种名为WiXus的轮足机器人，通过线驱动机制增强了移动与操作能力。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.23100v1",
+      "source": "arxiv",
+      "title": "Four Simple Proprioceptive Estimators for Legged Robots",
+      "abstract": "Legged robots carry an IMU, but the inertial solution drifts because consumer-grade IMUs are noisy. However, the feet create intermittent contacts with the environment that can be used to mitigate that drift. This report develops a sequence of increasingly expressive legged robot state estimators that leverage this. In all cases, the floating-base state comprises attitude, position, velocity, and IMU biases. To model foot contacts, we start from the contact-aided invariant EKF of Hartley et al., albeit at a reduced contact update rate. This is then augmented by replacing the measurement update by a small factor graph. Finally, we turn the same factors into a fixed-lag smoother with contact-episode footholds, with and without an evolving IMU bias. To facilitate reproducibility and further research in proprioceptive legged odometry, all four variants are available in GTSAM (Dellaert et. al), and we additionally provide a ROS2-compatible implementation.",
+      "authors": [
+        "Frank Dellaert",
+        "Chiyun Noh",
+        "Varun Agrawal",
+        "Ayoung Kim"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-21T23:17:48+00:00",
+      "link": "https://arxiv.org/pdf/2605.23100v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "state estimation for legged robots",
+      "llm_evidence_cn": "腿足机器人状态估计",
+      "llm_evidence": "腿足机器人状态估计",
+      "canonical_evidence": "腿足机器人状态估计",
+      "llm_tldr_en": "Develops proprioceptive estimators for legged robots using foot contacts to mitigate IMU drift.",
+      "llm_tldr_cn": "开发了利用足部接触来减轻IMU漂移的腿足机器人本体感受估计器。",
+      "llm_tldr": "开发了利用足部接触来减轻IMU漂移的腿足机器人本体感受估计器。",
+      "llm_tags": [
+        "query:q2"
+      ],
+      "matched_query_tag": "query:q2",
+      "matched_query_text": "Legged robot locomotion and navigation",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.25077v1",
+      "source": "arxiv",
+      "title": "WorldCraft: From Camera Navigation to Object Manipulation in Interactive Video World Models",
+      "abstract": "Recent video-based world models have made pixel-space environments interactive at the camera level: users can navigate viewpoints while the model generates coherent visual continuations. Yet their action spaces remain incomplete: users can move the camera, but cannot act on individual objects. Since real-world interaction is inherently object-centric, such models remain closer to passive scene observers than truly manipulable environments. We present WorldCraft, a framework that expands interactive video world models from camera navigation to object-level trajectory actions. Given a user click and a sketched path, WorldCraft generates future frames in which the selected object follows the prescribed trajectory while the camera continues to navigate the scene. WorldCraft achieves this through a trajectory-centric control pipeline: First, Normalized World Trajectory (NWT) represents user-drawn motion in a camera-invariant world coordinate system and dynamically re-projects it under the current camera pose, separating object motion from camera-induced screen-space displacement; Spatial-Pathway LoRA (SP-LoRA) then injects this world-space signal through the model's spatial-control pathway, adding object manipulation capability while preserving the pretrained camera controller; finally, Trajectory-Anchored State Persistence (TASP) treats the world trajectory as a persistent spatial state and refreshes autoregressive memory after trajectory-conditioned generation, allowing moved objects to reappear at their updated positions after leaving the camera view. Experiments show that WorldCraft enables accurate object control, preserves the video-based world model's camera fidelity under camera-only evaluation, and maintains object state across long autoregressive rollouts with off-camera excursions.",
+      "authors": [
+        "Bohai Gu",
+        "Taiyi Wu",
+        "Yueyang Yuan",
+        "Jian Liu",
+        "Xiaocheng Lu",
+        "Dazhao Du",
+        "Jie Zhang",
+        "Jinxiang Lai",
+        "Shuai Yang",
+        "Xiaotong Zhao",
+        "Alan Zhao",
+        "Song Guo"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-24T13:40:42+00:00",
+      "link": "https://arxiv.org/pdf/2605.25077v1",
+      "tags": [
+        "keyword:腿足世界模型",
+        "query:腿足世界模型"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Interactive video world models for robot control and trajectory planning",
+      "llm_evidence_cn": "用于机器人控制和轨迹规划的交互式视频世界模型",
+      "llm_evidence": "用于机器人控制和轨迹规划的交互式视频世界模型",
+      "canonical_evidence": "用于机器人控制和轨迹规划的交互式视频世界模型",
+      "llm_tldr_en": "WorldCraft enables interactive video world models to handle object-level trajectory actions for robot manipulation.",
+      "llm_tldr_cn": "WorldCraft 扩展了视频世界模型，使其能够处理机器人操作中的物体级轨迹动作。",
+      "llm_tldr": "WorldCraft 扩展了视频世界模型，使其能够处理机器人操作中的物体级轨迹动作。",
+      "llm_tags": [
+        "query:q1"
+      ],
+      "matched_query_tag": "query:q1",
+      "matched_query_text": "World models for robot control and planning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

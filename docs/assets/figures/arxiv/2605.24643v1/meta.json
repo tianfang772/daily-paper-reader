@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.24643v1/fig-001.webp",
+      "caption": "Fig. 5. Jump target vs achieved jumps without spring.",
+      "page": 11,
+      "index": 1,
+      "width": 547,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24643v1/fig-002.webp",
+      "caption": "Fig. 10. Sequential frames from integrated planetary exploration mission simulation in Isaac Lab in a single run. The color of the dots represents the task-specific policy used at that instance in the simulation. The robot successfully navigates rough terrain, jumping over a 2.1 m wide crater, executes a 3.5 m forward jump from a 1.1 m ledge, performs a 2.6 m vertical reconnaissance jump, and clears a 1.1 m ledge during a forward jump. The attitude control policy maintains the desired orientation during all flight phases to ensure safe landings. Model of Mars terrain from https://sketchfab.com/gaiastucky",
+      "page": 15,
+      "index": 2,
+      "width": 725,
+      "height": 292
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24643v1/fig-003.webp",
+      "caption": "Fig. 1. Olympus standing in a Mars analog environment.",
+      "page": 2,
+      "index": 3,
+      "width": 496,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24643v1/fig-004.webp",
+      "caption": "Fig. 9. Wall bounce experimental validation of attitude control policy during dynamic maneuvers. The robot demonstrates successful 180° reorientation capabilities for roll while transitioning between wall interactions.",
+      "page": 14,
+      "index": 4,
+      "width": 688,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24643v1/fig-005.webp",
+      "caption": "Fig. 8. Attitude control test setup with floating platform on flat floor, and robot mounted on rotating rod. Showing in roll, pitch, and yaw configuration.",
+      "page": 13,
+      "index": 5,
+      "width": 704,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24643v1/fig-006.webp",
+      "caption": "Table 2. Reward Formulations for All Policies. Notation: ϕσ(x) := exp(− x2 σ2 ), ψσ(x) := exp(− |x| σ ).",
+      "page": 8,
+      "index": 6,
+      "width": 708,
+      "height": 581
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24643v1/fig-007.webp",
+      "caption": "Fig. 6. Jump target vs achieved jumps with simulated springs.",
+      "page": 12,
+      "index": 7,
+      "width": 532,
+      "height": 292
+    },
+    {
+      "url": "assets/figures/arxiv/2605.24643v1/fig-008.webp",
+      "caption": "Fig. 3. Controller architecture on the robot and in simulation. With common and task-specific observations.",
+      "page": 5,
+      "index": 8,
+      "width": 845,
+      "height": 452
+    }
+  ]
+}

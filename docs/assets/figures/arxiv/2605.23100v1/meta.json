@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.23100v1/fig-001.webp",
+      "caption": "Figure 2: Fixed-lag smoother with a single persistent bias variable. Each X node is a contact-event base state, b is shared across the window, u factors are preintegrated inertial constraints, and c factors attach event states to contact-episode foothold landmarks ℓ.",
+      "page": 6,
+      "index": 1,
+      "width": 783,
+      "height": 475
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23100v1/fig-002.webp",
+      "caption": "Figure 5: Representative trajectory comparisons of the four GTSAM variants on (a) the CorriLoop sequence and (b) the Downstair sequence. The magenta dashed boxes indicate regions shown as zoomed-in views within each subplot. While FL-Combined shows the closest alignment to the ground truth in the xy plane, the corresponding z-time plots reveal that the best xy alignment does not necessarily imply the most accurate vertical estimate.",
+      "page": 11,
+      "index": 2,
+      "width": 719,
+      "height": 653
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23100v1/fig-003.webp",
+      "caption": "Table 3: Comparison among GTSAM variants on non-elevation-change (2D) sequences.",
+      "page": 11,
+      "index": 3,
+      "width": 700,
+      "height": 361
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23100v1/fig-004.webp",
+      "caption": "Figure 3: Evolving-bias inertial structure. The combined preintegrated factors connect neighboring base states and neighboring bias states, replacing the single shared-bias assumption in Figure 2.",
+      "page": 7,
+      "index": 4,
+      "width": 745,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23100v1/fig-005.webp",
+      "caption": "Figure 4: Experimental platform used in the GaRLILEO dataset.",
+      "page": 8,
+      "index": 5,
+      "width": 510,
+      "height": 594
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23100v1/fig-006.webp",
+      "caption": "Table 4: Comparison among GTSAM variants on elevation-change (3D) sequences.",
+      "page": 12,
+      "index": 6,
+      "width": 720,
+      "height": 525
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23100v1/fig-007.webp",
+      "caption": "Table 5: Summary of the four estimator variants.",
+      "page": 12,
+      "index": 7,
+      "width": 977,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23100v1/fig-008.webp",
+      "caption": "Table 1: Quantitative comparison on non-elevation-change (2D) sequences.",
+      "page": 9,
+      "index": 8,
+      "width": 964,
+      "height": 461
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23100v1/fig-009.webp",
+      "caption": "Table 2: Quantitative comparison on elevation-change (3D) sequences.",
+      "page": 9,
+      "index": 9,
+      "width": 942,
+      "height": 661
+    },
+    {
+      "url": "assets/figures/arxiv/2605.23100v1/fig-010.webp",
+      "caption": "Figure 1: Local graph update for the invariant filter. The predicted semidirect-product state Xk is constrained by a prior factor X̂− k , while the active contact factors ci connect the same state to the currently tracked footholds fi.",
+      "page": 5,
+      "index": 10,
+      "width": 574,
+      "height": 362
+    }
+  ]
+}
