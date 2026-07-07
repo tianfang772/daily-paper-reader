@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-001.webp",
+      "caption": "Figure 6. Future observation prediction on Calvin (Mees et al., 2021).",
+      "page": 15,
+      "index": 1,
+      "width": 889,
+      "height": 449
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-002.webp",
+      "caption": "Figure 7. Visualization of the real-world experiment setup.",
+      "page": 15,
+      "index": 2,
+      "width": 879,
+      "height": 635
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-003.webp",
+      "caption": "Figure 1. Policies trained with 2D and 3D motion latents. When encountering novel and cluttered scenes (left) that differ from the training distribution, the policy trained with 3D motion latents (top) demonstrates superior task performance with more robust control, e.g., enhanced reaching and grasping accuracy.",
+      "page": 2,
+      "index": 3,
+      "width": 1013,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-004.webp",
+      "caption": "Table 1. Task success rates on RLBench (single view). GeoMoLa achieves the highest average performance (84.7%) and ranks first on 8 out of 10 tasks. Results averaged over 5 seeds.",
+      "page": 7,
+      "index": 4,
+      "width": 1008,
+      "height": 213
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-005.webp",
+      "caption": "Figure 3. Cross-scenario motion latent consistency. Visualization of predicted future observations when conditioning the same latent code on different initial scenes. Left: Latent code [1, 1, 5, 7] consistently produces downward motion. Right: Latent code [0, 3, 2, 2] consistently generates rotational motion.",
+      "page": 7,
+      "index": 5,
+      "width": 927,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-006.webp",
+      "caption": "Figure 4. Qualitative comparison of future observation prediction. ManiGaussian requires 19 additional training views and produces blurred predictions with geometric inconsistencies (see distorted object boundaries).",
+      "page": 14,
+      "index": 6,
+      "width": 971,
+      "height": 200
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-007.webp",
+      "caption": "Figure 5. llustration of the four different environments in CALVIN (Mees et al., 2021).",
+      "page": 14,
+      "index": 7,
+      "width": 890,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-008.webp",
+      "caption": "Table 6. Dataset composition of 6 manipulation tasks in real robot experiments.",
+      "page": 14,
+      "index": 8,
+      "width": 808,
+      "height": 199
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-009.webp",
+      "caption": "Figure 9. Qualitative comparison in the real-world cluttered scene.",
+      "page": 18,
+      "index": 9,
+      "width": 950,
+      "height": 364
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-010.webp",
+      "caption": "Table 5. Dataset composition of 10 manipulation tasks in RLBench (James et al., 2019).",
+      "page": 13,
+      "index": 10,
+      "width": 1008,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-011.webp",
+      "caption": "Table 2. Long-horizon task chaining on CALVIN. Methods are evaluated on completing sequences of 1-5 tasks in the unseen environment D. GeoMoLa achieves the longest average task chain (3.60).",
+      "page": 8,
+      "index": 11,
+      "width": 1008,
+      "height": 244
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-012.webp",
+      "caption": "Figure 2. GeoMoLa framework. (a) Geometry-Aware Motion Latent Learning: RGB-D observations and language instructions are encoded into discrete motion latents via VQ-VAE, trained by predicting future pointmaps and RGB images. This self-supervised objective ensures latent codes capture 4D dynamics (3D geometry over time). (b) Latent-Conditioned Action Prediction: The previously trained motion latent encoder and the codebook are applied to guide a 3D denoising transformer to generate 6-DoF trajectories through iterative refinement, using 3D-aware attention mechanisms to accommodate geometric constraints.",
+      "page": 4,
+      "index": 12,
+      "width": 952,
+      "height": 662
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-013.webp",
+      "caption": "Figure 8. More qualitative results on real-world experiments.",
+      "page": 17,
+      "index": 13,
+      "width": 940,
+      "height": 1023
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04714v1/fig-014.webp",
+      "caption": "Table 7. Comparison of configurations between RLBench and CALVIN.",
+      "page": 16,
+      "index": 14,
+      "width": 487,
+      "height": 494
+    }
+  ]
+}

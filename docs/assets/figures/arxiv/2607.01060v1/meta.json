@@ -1,0 +1,150 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-001.webp",
+      "caption": "Figure 4: Long-horizon action-conditioned video generation on RoboArena. Quality (SSIM, LPIPS, FVD) vs. FPS. Baseline markers sweep denoising steps ∈ {50, 32, 16, 8, 4}. STEP FORCING achieves the best LPIPS at the highest FPS (15.3), and matches the baselines that run substantially slower on SSIM and FVD.",
+      "page": 6,
+      "index": 1,
+      "width": 813,
+      "height": 253
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-002.webp",
+      "caption": "Figure 11: World-model rollouts for each level of the task-progress-aware rubric. From top to bottom: success (5), near success (4), approach without contact (2), and irrelevant behavior (0), each shown with the VLM’s verbatim judgment.",
+      "page": 25,
+      "index": 2,
+      "width": 829,
+      "height": 1231
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-003.webp",
+      "caption": "Figure 12: Qualitative examples of world-model failures correctly detected by the VLM evaluator. After the robot makes contact, the manipulated object disintegrates or morphs into unrecognizable artifacts; the task-progress-aware rubric assigns its dedicated score (3) to these cases.",
+      "page": 26,
+      "index": 3,
+      "width": 829,
+      "height": 920
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-004.webp",
+      "caption": "Figure 9: Pearson correlation between RoboArena score and RoboWorld Score under two different VLM judges: GPT-4o (a) and Gemini-2.5-Flash (b). Both judges show a strong linear relationship with the RoboArena leaderboard.",
+      "page": 21,
+      "index": 4,
+      "width": 821,
+      "height": 345
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-005.webp",
+      "caption": "Figure 2: Left Upper: STEP FORCING shares the noise schedule between training and inference. (a) Diffusion Forcing conditions on noisy ground-truth (red). (b) Self Forcing conditions on selfgenerated context (green) via repeated forward rollouts. (c) STEP FORCING conditions on the onestep self-forwarded prior (green) or anchor step (red).",
+      "page": 2,
+      "index": 5,
+      "width": 826,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-006.webp",
+      "caption": "Figure 5: (a) Pearson and Spearman correlations between ROBOWORLD and the RoboArena leaderboard. (b) Pearson correlation under varying numbers of evaluation trials, showing that greater diversity in environments and tasks improves the correlation. (c) ROBOWORLD closed-loop rollouts compared with RoboArena rollouts using the same policies and tasks, sharing only the initial view. Rollouts proceed from top to bottom: PaliGemma Fast fails in both settings by selecting the wrong object, whereas π0.5 succeeds in both.",
+      "page": 7,
+      "index": 6,
+      "width": 780,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-007.webp",
+      "caption": "Table 8: Training details for Diffusion Forcing.",
+      "page": 22,
+      "index": 7,
+      "width": 456,
+      "height": 465
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-008.webp",
+      "caption": "Figure 10: Pearson correlation between RoboArena score and RoboWorld Success Rate under two different VLM judges: GPT-4o (a) and Gemini-2.5-Flash (b). The success-rate signal also tracks the RoboArena ranking consistently across judges.",
+      "page": 22,
+      "index": 8,
+      "width": 817,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-009.webp",
+      "caption": "Table 9: Training details for STEP FORCING.",
+      "page": 23,
+      "index": 9,
+      "width": 456,
+      "height": 485
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-010.webp",
+      "caption": "Table 10: Long-horizon video generation conditioned on multi-view frames and action sequences from RoboArena. Metrics are averaged over all views.",
+      "page": 23,
+      "index": 10,
+      "width": 888,
+      "height": 544
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-011.webp",
+      "caption": "Figure 7: Qualitative examples of ROBOWORLD in synthetic extreme environments. We transform real-world robot images into extreme environment scenes (e.g., spacecraft interiors, disaster sites), and conduct closed-loop policy evaluation.",
+      "page": 8,
+      "index": 11,
+      "width": 826,
+      "height": 206
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-012.webp",
+      "caption": "Figure 3: STEP FORCING shows strong action controllability while maintaining visual quality throughout the whole horizon.",
+      "page": 4,
+      "index": 12,
+      "width": 369,
+      "height": 382
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-013.webp",
+      "caption": "Table 4: Evaluation rubric used in the VLM prompt.",
+      "page": 19,
+      "index": 13,
+      "width": 822,
+      "height": 882
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-014.webp",
+      "caption": "Table 3: Full BAIR high-motion (top-64) evaluation. Causal students autoregressively roll out 29 frames from one conditioning frame at S=4, while teachers use in-painting at T=15 and S=16. Frame 0 is excluded from ID metrics.",
+      "page": 17,
+      "index": 14,
+      "width": 830,
+      "height": 500
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-015.webp",
+      "caption": "Figure 8: Design principles of the evaluation rubric. We design the rubric such that scores primarily reflect task progress. In addition, we assign different penalties depending on when world-model errors occur, so failures that arise earlier in the rollout receive lower scores than those that happen after substantial task progress.",
+      "page": 17,
+      "index": 15,
+      "width": 575,
+      "height": 230
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-016.webp",
+      "caption": "Figure 13: Qualitative examples of VLM evaluation failures. GPT-4o assigns success or nearsuccess scores (5, 5, 4) to rollouts in which the scene remains essentially unchanged, hallucinating task completion that the video contradicts.",
+      "page": 27,
+      "index": 16,
+      "width": 829,
+      "height": 920
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-017.webp",
+      "caption": "Table 5: Prompt template used when the wrist view is used only to identify world model errors, but not to determine task success.",
+      "page": 20,
+      "index": 17,
+      "width": 822,
+      "height": 425
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01060v1/fig-018.webp",
+      "caption": "Table 6: Prompt template used when the wrist view is used as a full evaluation signal.",
+      "page": 20,
+      "index": 18,
+      "width": 822,
+      "height": 376
+    }
+  ]
+}

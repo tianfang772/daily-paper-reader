@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.00442v1/fig-001.webp",
+      "caption": "Table 2: Mode-dependent gait-structure STL predicates.",
+      "page": 6,
+      "index": 1,
+      "width": 827,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00442v1/fig-002.webp",
+      "caption": "Table 6: Evaluation under mixed velocity commands. We compare the learned unified model with the heuristic-best baseline across commanded forward velocities while additionally sampling lateralvelocity and yaw-rate commands from (v⋆y ∈ [−0.4, 0.4],m, s−1) and (ω⋆z ∈ [−0.4, 0.4], rad, s−1), respectively. This setting evaluates robustness beyond straight-line forward locomotion. Lower CoT is better; higher survival and success rates are better.",
+      "page": 15,
+      "index": 2,
+      "width": 636,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00442v1/fig-003.webp",
+      "caption": "Figure 1: Overall Pipeline.",
+      "page": 2,
+      "index": 3,
+      "width": 826,
+      "height": 466
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00442v1/fig-004.webp",
+      "caption": "Table 3: Benchmark comparison across commanded forward velocities. Each entry reports mean ± standard deviation over 20 rollouts. Lower CoT is better; higher survival and success are better. Success means the average post-warmup forward speed stays within ±15% of the commanded speed.",
+      "page": 8,
+      "index": 4,
+      "width": 826,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00442v1/fig-005.webp",
+      "caption": "Table 7: Mode-dependent STL predicate thresholds and related configuration.",
+      "page": 16,
+      "index": 5,
+      "width": 552,
+      "height": 631
+    }
+  ]
+}

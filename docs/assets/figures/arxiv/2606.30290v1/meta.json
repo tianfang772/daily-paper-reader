@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-001.webp",
+      "caption": "Figure 2: Video-driven teleoperation across non-humanoid morphologies. X-Morph converts monocular human motion into executable robot references for multiple target platforms. (a) Forward walking is transferred to both a quadruped and a hexapod. (b) Human body rotation induces turning behaviors on both robots. (c) A squat motion is retargeted to a quadruped while preserving the high-level lowering intent. (d) Large arm motions are converted into expressive whole-body robot motions. (e.i–e.iii) Object-interaction motions are transferred to a hexapod, where different human arm poses produce corresponding whole-body reaching and box-interaction behaviors.",
+      "page": 6,
+      "index": 1,
+      "width": 746,
+      "height": 332
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-002.webp",
+      "caption": "Table 4: Offline retargeting network loss weights and key matching settings for the main experiments. L+M denotes loco-manipulation.",
+      "page": 15,
+      "index": 2,
+      "width": 664,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-003.webp",
+      "caption": "Figure 4: Downstream door-opening case study. Left: X-Morph retargets a Kimodo-generated human interaction into a hexapod loco-manipulation reference, producing coordinated body motion and front-leg reaching. Right: a downstream policy initialized from this structured prior executes a door-opening behavior in simulation. This result is intended as a qualitative demonstration of taskrelevant initialization, not as a controlled comparison against reinforcement learning from scratch.",
+      "page": 7,
+      "index": 3,
+      "width": 622,
+      "height": 196
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-004.webp",
+      "caption": "Figure 3: Text-conditioned skill execution. A language command is converted into a human motion through a text-conditioned human-motion model or retrieval system. X-Morph retargets the resulting G1 motion to the target morphology and executes it with the same deployed tracker.",
+      "page": 7,
+      "index": 4,
+      "width": 746,
+      "height": 195
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-005.webp",
+      "caption": "Figure 6: Offline retargeting teacher architecture. Solid arrows denote motion and latent flow, gray dashed arrows denote metadata or retargeting-specification conditioning, and red dashed arrows denote loss terms.",
+      "page": 14,
+      "index": 5,
+      "width": 731,
+      "height": 422
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-006.webp",
+      "caption": "Figure 1: X-Morph framework. Source human/G1 motions are converted into target robot references by a cross-morphology retargeting model and then refined by a physics-aware corrector to reduce contact and ground-interaction artifacts. The resulting clean retargeted motions provide reference data for learning the reference-conditioned tracker and for distilling a causal retargeting model from the offline retargeting model. At deployment, X-Morph supports two separate workflows. In the text-conditioned workflow, a text prompt is converted into a G1 motion through Kimodo; this motion is then retargeted as a whole into a robot reference. In the video-driven workflow, an RGB video stream is converted to SMPL using FastSAM3D Body [25], retargeted to G1 motion using GMR [26], and then mapped online to a robot reference by the causal retargeting model. Both workflows produce the same reference-motion interface, which is executed by the deployed RL student tracker across multiple non-humanoid morphologies.",
+      "page": 3,
+      "index": 6,
+      "width": 826,
+      "height": 499
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-007.webp",
+      "caption": "Table 15: Comparison with cross-morphology motion transfer methods.",
+      "page": 18,
+      "index": 7,
+      "width": 814,
+      "height": 188
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-008.webp",
+      "caption": "Table 3: Retargeting specifications per robot and task family. Source bodies refer to the G1 humanoid representation.",
+      "page": 13,
+      "index": 8,
+      "width": 694,
+      "height": 204
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-009.webp",
+      "caption": "Figure 5: Retargeting specifications for locomotion and loco-manipulation. Colored skeleton segments denote semantic body groups used for cross-morphology correspondence, green spheres denote contact points, and yellow/purple spheres denote task end-effectors.",
+      "page": 13,
+      "index": 9,
+      "width": 788,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-010.webp",
+      "caption": "Table 16: Per-stage latency for the live video-to-reference pipeline evaluated with sim2sim. Values are mean latencies after removing warmup and shutdown rows.",
+      "page": 19,
+      "index": 10,
+      "width": 536,
+      "height": 285
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-011.webp",
+      "caption": "Figure 7: Qualitative generalization to unseen manipulation motions. X-Morph transfers source motion intent beyond the exact target demonstrations used during retargeting training.",
+      "page": 19,
+      "index": 11,
+      "width": 827,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-012.webp",
+      "caption": "Table 11: Yuna tracker domain randomization.",
+      "page": 17,
+      "index": 12,
+      "width": 369,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30290v1/fig-013.webp",
+      "caption": "Table 14: Tracker reward weights across robot platforms.",
+      "page": 17,
+      "index": 13,
+      "width": 486,
+      "height": 613
+    }
+  ]
+}

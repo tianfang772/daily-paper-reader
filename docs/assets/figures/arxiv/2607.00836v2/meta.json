@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.00836v2/fig-001.webp",
+      "caption": "Figure 2. Embodied AI tasks: Humanoid locomotion and robotic table-cleaning.",
+      "page": 2,
+      "index": 1,
+      "width": 481,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00836v2/fig-002.webp",
+      "caption": "Figure 3. A language-conditioned closed-loop policy framework.",
+      "page": 2,
+      "index": 2,
+      "width": 481,
+      "height": 269
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00836v2/fig-003.webp",
+      "caption": "Figure 8. Taxonomy of world action models. Given the observation ot and language instruction l, world action models couple future observation prediction with robot action generation in different ways. Representative paradigms include imagine-then-execute, videofeature-conditioned action prediction, joint video-action modeling, and auxiliary video prediction for policy learning.",
+      "page": 7,
+      "index": 3,
+      "width": 967,
+      "height": 498
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00836v2/fig-004.webp",
+      "caption": "Figure 6. Design space of observation-space world models. The vertical axis denotes the spatial explicitness of the observation, ranging from RGB images to multi-view RGB, RGB-D, and point clouds. The horizontal axis denotes the abstraction level of the action conditioning, ranging from low-level robot actions to interface actions, latent actions, and language instructions. Different choices along these two axes lead to different trade-offs between spatial understanding, data availability, and downstream usability.",
+      "page": 3,
+      "index": 4,
+      "width": 980,
+      "height": 532
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00836v2/fig-005.webp",
+      "caption": "Figure 7. Design space of state-space world models. Instead of predicting future observations directly in the raw observation space, state-space world models abstract observations into structured state representations and model their future evolution under actions. Representative state choices include latent states, point tracks, neural-symbolic predicates, and physical states. Different state representations provide different trade-offs between compactness, semantic structure, physical interpretability, scalability, and downstream usability.",
+      "page": 5,
+      "index": 5,
+      "width": 984,
+      "height": 510
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.03198v1/fig-001.webp",
+      "caption": "Table 1: Component-by-component correspondence between the modern world-model anatomy and the measurement-based reduced-order framework for facility thermal control of §3.3 [28, 29].",
+      "page": 7,
+      "index": 1,
+      "width": 926,
+      "height": 300
+    }
+  ]
+}
