@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.03941v1/fig-001.webp",
+      "caption": "Figure 3: Overview of WSA1. It adopts a Mixture-of-Transformers structure with three complementary experts: a 2D Spatial Expert for 3D world-aware visual thinking, a 3D Spatial Expert for action-caused 3D world prediction, and a 3D Action Expert for 3D inverse dynamics modeling. A bidirectional causal attention mechanism enforces dependency rules to unify 3D-consistent visual thinking and world–action mutual constraints within a shared latent space.",
+      "page": 6,
+      "index": 1,
+      "width": 816,
+      "height": 566
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03941v1/fig-002.webp",
+      "caption": "Table 4: RoboTwin2.0 benchmark experimental results. WSA1 is evaluated against closed-source and open-source embodied foundation models under hard setting. Mean success rate SR over 50 manipulation tasks is reported. WSA1 achieves leading performance over open-sourced models.",
+      "page": 11,
+      "index": 2,
+      "width": 648,
+      "height": 359
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03941v1/fig-003.webp",
+      "caption": "Table 3: Real-world evaluation results on seven tabletop manipulation tasks. SR denotes the task success rate (%), and C denotes the task progress score (%).",
+      "page": 11,
+      "index": 3,
+      "width": 818,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03941v1/fig-004.webp",
+      "caption": "Table 2: Real-robot experimental setup and task details. Trajectory Num./Time denotes the number of collected demonstration trajectories and the total data collection time in minutes.",
+      "page": 10,
+      "index": 4,
+      "width": 816,
+      "height": 665
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03941v1/fig-005.webp",
+      "caption": "Figure 6: Visualization examples generated from WSA1. First row: robot’s observations with text instruction. Second row: generated subgoal images for visual planning. Third row: predicted 3D world that is rendered via Depth Anything model [21]. Fourth row: the real trajectory of executed actions.",
+      "page": 14,
+      "index": 5,
+      "width": 814,
+      "height": 887
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03941v1/fig-006.webp",
+      "caption": "Figure 4: Investigation of WSA modeling on RoboTwin2.0 Benchmark.",
+      "page": 13,
+      "index": 6,
+      "width": 822,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03941v1/fig-007.webp",
+      "caption": "Figure 2: Prevailing Modeling Paradigms: (a) 2D-centric VLA models unidirectional mappings from visual semantics to physical actions; (b) 2D-centric WAM jointly models 2D visual dynamics and physical actions; (c) 3D-centric WAM jointly models 3D scene geometry and physical actions; (d) Our 3D-centric WSA jointly models 3D world dynamics, physical actions, and their interdependencies.",
+      "page": 4,
+      "index": 7,
+      "width": 806,
+      "height": 409
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03941v1/fig-008.webp",
+      "caption": "Table 5: Comparison with state-of-the-art open-source models on RoboTwin2.0 under clean and randomized settings. Per-task success rate is reported.",
+      "page": 12,
+      "index": 8,
+      "width": 822,
+      "height": 524
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03941v1/fig-009.webp",
+      "caption": "Table 6: Performance comparison on the LIBERO benchmark. Results are reported as success rates (%).",
+      "page": 12,
+      "index": 9,
+      "width": 855,
+      "height": 324
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03941v1/fig-010.webp",
+      "caption": "Table 1: Data mixture and training objectives used for pretraining. A checkmark indicates that the corresponding loss is enabled, while “–” indicates that the loss is masked out.",
+      "page": 9,
+      "index": 10,
+      "width": 830,
+      "height": 181
+    }
+  ]
+}

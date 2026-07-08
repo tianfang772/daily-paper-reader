@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.31912v2/fig-001.webp",
+      "caption": "Fig. 1: In this work, we integrate low-cost proximity sensors into the feet of a quadruped robot, granting it the ability to screen underfoot terrain with fewer occlusion issues compared to conventional perception-based state estimation. We study how the minimal sensing arrangement informs learned control policies for locomotion over discrete terrain, finding that proximity sensing facilitates reliable, noiseresistant locomotion policies.",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 250
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31912v2/fig-002.webp",
+      "caption": "Fig. 8: Hardware deployment. A. Composite image of the robot traversing gaps and stepping stones of varying heights. B. Snapshots from rosbag playback during traversal of an elevated stone, with current foot proximity sensor rays and historical ray hit points visualized. C. Proximity sensor data for each foot, averaged over the 16 individual channels per foot. D. Raw data from the LF foot sensor. The 16 individual zones from the ToF sensor are plotted with different colors to emphasize their relative order at each timestep. A zoom-in view of the gap-traversal segment (0.6s-1.6s) is shown below the plot over whole episode. E. Z-coordinate of the LF foot with respect to the odometry frame plotted over time. The color denotes the index of the zone with the minimum reading at each timestep.",
+      "page": 6,
+      "index": 2,
+      "width": 1054,
+      "height": 337
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31912v2/fig-003.webp",
+      "caption": "Fig. 7: Deployment examples using only the foot proximity sensors on different stepping stone configurations: A. Sparse double-row; B. Regular double-row; C. Scattered; D. Balance beam.",
+      "page": 6,
+      "index": 3,
+      "width": 1044,
+      "height": 381
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31912v2/fig-004.webp",
+      "caption": "Fig. 2: The proximity sensor and electronics are integrated directly into the foot. The grid shows the sensor Field-ofView and resolution.",
+      "page": 2,
+      "index": 4,
+      "width": 462,
+      "height": 464
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31912v2/fig-005.webp",
+      "caption": "Fig. 3: Heatmaps of noise level and missing rate of the Timeof-Flight proximity sensor. The nominal distance denotes the distance from the sensor to the ground along an imaginary ray that is central in the sensor’s field of view, at the given incidence angle.",
+      "page": 2,
+      "index": 5,
+      "width": 514,
+      "height": 258
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31912v2/fig-006.webp",
+      "caption": "Fig. 4: Training terrain examples. Stage 1 training comprises five terrain types: dense grid stones, two-row stones, rough box fields, platform–gap crossings, and mixed-row stones. Stage 2 includes all terrain types present in Stage 1 at elevated difficulty levels and further introduces four additional terrain types: balance beams, stairs, and both upward and downward pyramid slopes.",
+      "page": 3,
+      "index": 6,
+      "width": 1044,
+      "height": 291
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31912v2/fig-007.webp",
+      "caption": "Fig. 6: Robustness assessment: success rate on an ensemble of discrete terrain traversal tasks as a function of different levels and kinds of noise injected into the robot simulation (out of training distribution of the policy). Across all the conditions A. static joint position offset, B. robot shank length, and C. odometry noise, the foot proximity sensor performs better than the robocentric baselines.",
+      "page": 5,
+      "index": 7,
+      "width": 1032,
+      "height": 283
+    }
+  ]
+}
