@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.04652v1/fig-001.webp",
+      "caption": "Table 2: RoboTwin 2.0 success rates. Baseline results are taken from the RoboTwin 2.0 leaderboard; KAM-WM and prior-type ablations are evaluated under the same 50-demonstration setting with 100 rollouts per task. We report representative task results together with the full 50-task average.",
+      "page": 6,
+      "index": 1,
+      "width": 806,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04652v1/fig-002.webp",
+      "caption": "Table 7: Extended prior-type comparison on RoboTwin 2.0. Success rates (%) are evaluated over 100 rollouts per task. DP, ACT, and π0 rows are included as contextual references; the controlled comparison is between Mask and KAM-WM, which use the same policy interface.",
+      "page": 15,
+      "index": 2,
+      "width": 794,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04652v1/fig-003.webp",
+      "caption": "Table 8: Complete RoboTwin 2.0 results over 50 tasks under Easy and Hard settings. Success rates (%) are computed over 100 rollouts per task. Baseline results are taken from the RoboTwin 2.0 leaderboard; KAM (short for KAM-WM) is evaluated under the same 50-demonstration setting.",
+      "page": 15,
+      "index": 3,
+      "width": 827,
+      "height": 243
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04652v1/fig-004.webp",
+      "caption": "Figure 1: KAM-WM provides where-and-how cues for low-data manipulation. (a) KAM highlights interaction-relevant regions and motion cues beyond object masks. (b) These tokens condition the diffusion policy together with RGB and proprioception. (c) KAM-WM improves performance on LIBERO and RoboTwin 2.0.",
+      "page": 2,
+      "index": 4,
+      "width": 777,
+      "height": 435
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04652v1/fig-005.webp",
+      "caption": "Figure 3: Qualitative comparison of mask and KAM priors. Mask priors localize target regions but remain zero-order spatial prior. KAM highlights more selective interaction regions and adds coarse orientation prior from the latent velocity field under the same policy interface.",
+      "page": 7,
+      "index": 5,
+      "width": 826,
+      "height": 332
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04652v1/fig-006.webp",
+      "caption": "Figure 4: Real-world setup and representative execution sequences. Key frames from four realworld tasks: (a) cup stacking, (b) bowl-to-plates, (c) place bottle, and (d) apple-to-basket.",
+      "page": 14,
+      "index": 6,
+      "width": 790,
+      "height": 616
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04652v1/fig-007.webp",
+      "caption": "Figure 2: KAM-WM framework. Given the initial observation and language instruction, KAM-WM queries a frozen Flow Matching image-to-video backbone once at t=1.0, with no future-frame generation, and reads the resulting single-step latent velocity field as a Kinematic Affordance Map. A Perceiver compresses this dense field into K dynamic tokens, which condition a 1D U-Net Diffusion Policy together with current RGB observations and proprioception to predict H-step action chunks.",
+      "page": 4,
+      "index": 7,
+      "width": 810,
+      "height": 454
+    }
+  ]
+}

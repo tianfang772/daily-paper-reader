@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.02977v1/fig-001.webp",
+      "caption": "Fig. 3: FSD-MP planning results in Dense2D with extra obstacles. The model is trained only at resolution N = 64 and evaluated at multiple resolutions without retraining.",
+      "page": 6,
+      "index": 1,
+      "width": 524,
+      "height": 566
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02977v1/fig-002.webp",
+      "caption": "TABLE I: Benchmarking in different resolutions and environments",
+      "page": 7,
+      "index": 2,
+      "width": 922,
+      "height": 509
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02977v1/fig-003.webp",
+      "caption": "Fig. 4: Planning results of FSD-MP in 3D Franka arm environments. Orange lines are end-effector trajectories.",
+      "page": 7,
+      "index": 3,
+      "width": 1010,
+      "height": 257
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02977v1/fig-004.webp",
+      "caption": "TABLE II: Ablation on Architecture and Diffusion Noise: Valid Rate (%) Across Resolution N",
+      "page": 7,
+      "index": 4,
+      "width": 960,
+      "height": 203
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02977v1/fig-005.webp",
+      "caption": "Fig. 2: Environments used in the motion planning experiments. Gray obstacles are present during training, while red obstacles are introduced only at inference time to evaluate generalization to unseen obstacles.",
+      "page": 5,
+      "index": 5,
+      "width": 1010,
+      "height": 286
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02977v1/fig-006.webp",
+      "caption": "Fig. 1: Overview of FSD-MP. (Top) The forward process performs zero-end projection, transforms trajectories into DST coefficients and applies mode-wise diffusion with variance scaled by eigenvalue λk. (Bottom) The reverse process denoises via FiLM-conditioned DST-FNO layers, together with guidance based on the predicted clean trajectory x̂0. The function-space formulation enables discretization-invariant trajectory generation across both coarse and fine discretizations.",
+      "page": 2,
+      "index": 6,
+      "width": 1022,
+      "height": 577
+    }
+  ]
+}
