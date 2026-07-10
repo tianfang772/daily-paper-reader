@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.07830v1/fig-001.webp",
+      "caption": "Figure 2: Overview of the proposed two-stage blind slope-locomotion framework. The actor uses only proprioceptive observations at deployment, while the privileged critic and reward gates use terrain descriptor during training. Stage I learns a slope-adaptive ZMP regularized locomotion prior, and Stage II adapts it with BSGA for slope-conditioned posture, gait, and swing-leg modulation.",
+      "page": 4,
+      "index": 1,
+      "width": 746,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07830v1/fig-002.webp",
+      "caption": "Table 2: Ablation metrics. SR, MXD, and Ttrav follow the definitions in Table 1. Additional columns report diagnostics: CoT and σ2 yaw for efficiency/stability, and h̄com and τpkknee for posture/load. Diagnostic metrics are interpreted jointly with task success. Stage I only is evaluated directly after Stage I, without Stage-II training, whereas w/o BSGA is still trained in Stage II after removing the BSGA adaptation components (both the BSGA critic cue and BSGA reward priors).",
+      "page": 8,
+      "index": 2,
+      "width": 746,
+      "height": 186
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07830v1/fig-003.webp",
+      "caption": "Figure 4: Held-out compound slope-track benchmark and representative policy behaviors. (a) Our policy exhibits different whole-body postures across terrain segments: forward torso lean during ascent, near-upright posture on flat terrain, and slight backward torso lean during descent. (b) The Unitree RL Lab (URL) baseline exhibits a crouched Groucho gait. (c) The benchmark combines compound slope segments with wavy, banked, rough, and striped terrain variants.",
+      "page": 6,
+      "index": 3,
+      "width": 744,
+      "height": 195
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.04409v1/fig-001.webp",
+      "caption": "Table A11. DMControl performance at 1M steps (mean ± std).",
+      "page": 25,
+      "index": 1,
+      "width": 1017,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04409v1/fig-002.webp",
+      "caption": "Figure 2. (a) Example DBNs that describe the generative process of two tasks. The grey and white nodes indicate observable and latent variables. The blue nodes are the newly expanded variables for Task 2. Red edges are the links from state variables to rewards. For simplicity, we omit the factorization of the state–observation mapping s → o. (b) Computational flow of our proposed framework compared with the Dreamer-based world model.",
+      "page": 3,
+      "index": 2,
+      "width": 913,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04409v1/fig-003.webp",
+      "caption": "Figure 3. Method overview. On the agent side, for each new environment, the agent selects skills from its library to perform active probing, collects informative data, under an adaptive curriculum. Conditioned on these informative data, the structured world model is learned to distill the MIST states.",
+      "page": 4,
+      "index": 3,
+      "width": 963,
+      "height": 404
+    }
+  ]
+}

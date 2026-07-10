@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.04265v1/fig-001.webp",
+      "caption": "Figure 3: Representative rollouts of the evaluated tasks. Blue panels show four real-world precision manipulation tasks: Block Assembly, Power Plug Insertion, Ethernet Insertion, and Stick Insertion. Green panels show two RoboTwin simulation tasks: Click Bell and Beat Block Hammer. The task prompts are shown at the top of each panel.",
+      "page": 7,
+      "index": 1,
+      "width": 826,
+      "height": 187
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04265v1/fig-002.webp",
+      "caption": "Table 1: Main real-world results on four precision manipulation tasks.",
+      "page": 8,
+      "index": 2,
+      "width": 827,
+      "height": 183
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04265v1/fig-003.webp",
+      "caption": "Figure 4: Intervention-rate curves during real-world online training. Lower intervention rates indicate reduced reliance on human correction. HALO-WA consistently decreases intervention across all four tasks and approaches zero in the later training stage.",
+      "page": 8,
+      "index": 3,
+      "width": 829,
+      "height": 215
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04265v1/fig-004.webp",
+      "caption": "Figure 2: Hybrid-attention actor-critic adapter in HALO-WA. The figure shows how WA reference actions, robot states, and visual latent features are organized into query-side tokens and latent memory for actor and critic learning.",
+      "page": 5,
+      "index": 4,
+      "width": 786,
+      "height": 499
+    }
+  ]
+}

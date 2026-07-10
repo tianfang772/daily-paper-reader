@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.08312v1/fig-001.webp",
+      "caption": "Table 3: v4: V-JEPA 300M encoder, grid world. 5 seeds, same 7×7 grid environment. V-JEPA ViT-L (300M) frozen; trainable spatial attention pooling. The grounding column shows the progression from 500 to 2000 interaction steps (1 seed extended).",
+      "page": 11,
+      "index": 1,
+      "width": 946,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08312v1/fig-002.webp",
+      "caption": "Figure 6: Teaching efficiency: one-shot semantic binding (Genesis demo, 36 objects). Recognition confidence as a function of teaching demonstrations. No teaching baseline = 0% (no hallucination). After 1 teaching: >90% confidence. After 2 teachings: >99% confidence. Mean time-to-convergence = 1.4 (36/36 objects converge). No gradient-based learning is involved—the curve reflects pure co-occurrence counting between stable symbols and language labels.",
+      "page": 15,
+      "index": 2,
+      "width": 670,
+      "height": 415
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08312v1/fig-003.webp",
+      "caption": "Figure 7: Evidence chain. Two experiments form a progressive argument. Experiment 1 proves architectural separation is necessary; Experiment 2 proves the architecture is general. Together they establish the Dual-Engine Architecture as necessary and general.",
+      "page": 15,
+      "index": 3,
+      "width": 877,
+      "height": 223
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08312v1/fig-004.webp",
+      "caption": "Figure 3: The Dual-Engine Architecture. Physical Engine (left) builds discrete symbols from interaction through a frozen orthogonal projection bottleneck. Language Engine (right) provides action suggestions and semantic labels. The engines communicate exclusively through a Gradient-Isolated Blackboard—a zero-parameter dictionary where co-occurrence counts achieve semantic binding. Write Protection (z.detach(), red wavy line) enforces the gradient barrier: ∂LL/∂θS = 0.",
+      "page": 7,
+      "index": 4,
+      "width": 878,
+      "height": 502
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08312v1/fig-005.webp",
+      "caption": "Figure 5: Experiment summary matrix. All values computed from actual .pt result files. Columns report experiment name, number of seeds/objects, key metric, and value with uncertainty. P0 establishes affordance structure + SGS boundary; P3–P5 demonstrate write-protection necessity; Genesis demo confirms one-shot teaching efficiency (TTC = 1.4, 36/36 objects).",
+      "page": 14,
+      "index": 5,
+      "width": 792,
+      "height": 239
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08312v1/fig-006.webp",
+      "caption": "Figure 4: Social grounding across all Helen Keller conditions. Seven experimental conditions spanning CNN, V-JEPA 300M, and CLIP ViT-L encoders; grid world and 3D MuJoCo environments; checkerboard, plain gray, and grid-marking textures; 6- and 12-object pools. All conditions show positive social main effect (range +0.278 to +0.797). Collapse rate: 0 across all seeds (0/6, 0/5, 0/3, 0/3, 0/6, 0/6, 0/3 from left to right). The architecture, not the encoder or environment, determines symbol stability.",
+      "page": 13,
+      "index": 6,
+      "width": 816,
+      "height": 475
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08312v1/fig-007.webp",
+      "caption": "Figure 1: Physical interaction > language pretraining for symbol grounding (P0). Four encoder conditions compared on 25-way position grounding through the same frozen bottleneck. V-JEPA (video prediction, physical) and Trained WM (environment-specific physics) outperform CLIP (language-aligned). Random baseline at 12.5%. Error bars: ±1 SEM over 3 seeds.",
+      "page": 4,
+      "index": 7,
+      "width": 593,
+      "height": 410
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08312v1/fig-008.webp",
+      "caption": "Table 1: P0: Physical interaction > language pretraining for symbol quality. Grounding accuracy on 25-way position classification through identical frozen bottleneck, 3 seeds per condition. Physical-interaction-aligned encoders outperform language-aligned CLIP despite CLIP having 100–400× more parameters.",
+      "page": 4,
+      "index": 8,
+      "width": 947,
+      "height": 341
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08312v1/fig-009.webp",
+      "caption": "Table 4: v5 3D MuJoCo results. Memory = Memory Table grounding accuracy. Social Main = guided social vs. random social difference. Collapse = seeds with diversity ≤ 2.",
+      "page": 12,
+      "index": 9,
+      "width": 898,
+      "height": 236
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08312v1/fig-010.webp",
+      "caption": "Figure 2: Gradient-induced collapse in GumbelBottleneck (P3). Left: Vanilla Gumbel-softmax collapses to 2.2/64 symbols (4/5 seeds). Four anti-collapse strategies maintain diversity (4–17/64) but fail to learn (≤ 9.2% accuracy). Frozen write-protected bottleneck (dashed) achieves both full diversity (64/64) and competitive accuracy. Right: Directional feedback in projection space improves grounding by +7.9 ± 6.2pp, but gradients must stop before the bottleneck.",
+      "page": 5,
+      "index": 10,
+      "width": 918,
+      "height": 316
+    }
+  ]
+}

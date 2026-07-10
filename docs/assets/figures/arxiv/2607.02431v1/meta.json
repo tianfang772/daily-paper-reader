@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.02431v1/fig-001.webp",
+      "caption": "Figure 7. World model generation quality comparison. Fine-tuning the world model with both demonstrations and online rollouts improves video generation quality compared with demonstration-only fine-tuning.",
+      "page": 15,
+      "index": 1,
+      "width": 950,
+      "height": 200
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02431v1/fig-002.webp",
+      "caption": "Figure 1. WorldSample overview. WorldSample expands real-robot rollout into multiple physically grounded synthetic trajectories with an action-conditioned world model, forming a real-synthetic training loop that improves success rate and reduces interaction cost.",
+      "page": 2,
+      "index": 2,
+      "width": 940,
+      "height": 319
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02431v1/fig-003.webp",
+      "caption": "Table 1. Real-world Experimental results.",
+      "page": 7,
+      "index": 3,
+      "width": 891,
+      "height": 315
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02431v1/fig-004.webp",
+      "caption": "Figure 3. Success Rate and Intervention Rate for each task.",
+      "page": 7,
+      "index": 4,
+      "width": 921,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02431v1/fig-005.webp",
+      "caption": "Figure 4. Comparison between real and generated video frames.",
+      "page": 8,
+      "index": 5,
+      "width": 950,
+      "height": 208
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02431v1/fig-006.webp",
+      "caption": "Table 2. World-model quality and ablation.",
+      "page": 8,
+      "index": 6,
+      "width": 937,
+      "height": 231
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02431v1/fig-007.webp",
+      "caption": "Figure 2. WorldSample pipeline. WorldSample closes a real-synthetic data loop between physical rollouts, world-model generation, and policy improvement, while Policy-Paced Learning (PPL) regulates the composition and usage of synthetic data during training.",
+      "page": 4,
+      "index": 7,
+      "width": 935,
+      "height": 489
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02431v1/fig-008.webp",
+      "caption": "Figure 5. Success Rate and Intervention Rate on each ablation setting.",
+      "page": 9,
+      "index": 8,
+      "width": 923,
+      "height": 241
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02431v1/fig-009.webp",
+      "caption": "Figure 8. Entropy-guided scheduling analysis. Actor entropy tracks the policy’s uncertainty during training and determines how strongly synthetic trajectories are introduced. This mechanism prevents early-stage synthetic bias while allowing generated data to improve sample efficiency after the policy becomes more stable.",
+      "page": 16,
+      "index": 9,
+      "width": 774,
+      "height": 385
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02431v1/fig-010.webp",
+      "caption": "Figure 9. Q-aware sample selection analysis. Balancing generated successes and failures stabilizes value learning and mitigates Q-value overestimation. Compared with naive synthetic data usage, PPL maintains more stable value estimates during online training.",
+      "page": 16,
+      "index": 10,
+      "width": 773,
+      "height": 401
+    }
+  ]
+}
