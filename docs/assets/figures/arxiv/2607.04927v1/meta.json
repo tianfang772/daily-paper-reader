@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.04927v1/fig-001.webp",
+      "caption": "Table 1 Evaluation on RoboTwin 2.0 Simulation Benchmark. Success rates are reported under clean and randomized settings across 50 bimanual manipulation tasks.",
+      "page": 9,
+      "index": 1,
+      "width": 916,
+      "height": 1206
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04927v1/fig-002.webp",
+      "caption": "Figure 1 Overview of DSWAM. Large-scale real-world data supports scalable training. System 2 is an optional vision-language planner that decomposes coarse instructions into executable subtasks, while System 1 is the default WAM executor that uses a pretrained video model and an action expert to predict action chunks from observations, language conditioning, and proprioception. Video co-training provides training-time world-modeling supervision, while inference avoids explicit future-video generation and uses TensorRT acceleration for efficient deployment.",
+      "page": 5,
+      "index": 2,
+      "width": 984,
+      "height": 499
+    }
+  ]
+}
