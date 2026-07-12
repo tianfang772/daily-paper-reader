@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-001.webp",
+      "caption": "Figure 10: Per-component action controllability (generated). For each of the 23 action dimensions, a sinusoid is applied to that dimension alone. Each clip is 50 frames generated autoregressively (5 frames per step); we show frames 0, 5, and 10. Rows are labelled by component. All dimensions are shown in the third-person view, except the thumb joints (dims 7–10) and the mcp/pip joints of the middle, ring, and pinky fingers, for which we show the wrist view to better showcase the finger motion. Joint nomenclature: each hand row is named <finger> <joint>, where wrist is rotation of the whole hand, abd is abduction/adduction (sideways spread of the finger), mcp is the metacarpophalangeal (knuckle) joint (base flexion), pip is the proximal interphalangeal (middle) joint, and dip is the distal interphalangeal (fingertip) joint (present only for the thumb).",
+      "page": 15,
+      "index": 1,
+      "width": 826,
+      "height": 771
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-002.webp",
+      "caption": "Figure 20: Real-world rig. Franka Panda arm with the ORCA hand in the arena, observed by a third-person and a wrist-mounted RGB camera.",
+      "page": 21,
+      "index": 2,
+      "width": 498,
+      "height": 485
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-003.webp",
+      "caption": "Figure 4: Action controllability. Left: model responses to sinusoidal perturbation of individual action components (EE Y-axis, wrist yaw, middle-finger ABD, thumb PIP). Right: mean controllability score for ID (top) and OOD (bottom). Our full model (WM1: sim→real, WM2: real; orange) reaches ≈0.95 ID and ≈0.87 OOD; the monolithic baseline [2] (gray) falls below 0.5 on OOD.",
+      "page": 7,
+      "index": 3,
+      "width": 812,
+      "height": 570
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-004.webp",
+      "caption": "Table 4: Training hyperparameters for WM1 and WM2.",
+      "page": 22,
+      "index": 4,
+      "width": 527,
+      "height": 344
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-005.webp",
+      "caption": "Figure 9: Long-horizon rollout (third-person, generated frames). Cube-manipulation rollout of 50 frames generated autoregressively (5 frames predicted per step); we show 4 frames sampled ∼16 apart to convey the motion. The baseline blurs and loses object identity over the horizon, while Mask2Real-WM stays sharp and coherent.",
+      "page": 14,
+      "index": 5,
+      "width": 829,
+      "height": 329
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-006.webp",
+      "caption": "Figure 2: Method overview. Left (WM1): an action-conditioned dynamics model that denoises future segmentation masks from past masks and the past/future action sequence; pretrained on simulation. Right (WM2): a rendering model that paints photorealistic RGB onto the predicted masks via a ControlNet branch on top of a LoRA-adapted SVD backbone; trained on a small real-world dataset. At inference, WM1 and WM2 are chained autoregressively.",
+      "page": 3,
+      "index": 6,
+      "width": 821,
+      "height": 341
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-007.webp",
+      "caption": "Figure 18: WM2 on ground-truth vs. predicted masks (ID split). PSNR, SSIM, and LPIPS for WM2 given oracle SAM 3 masks, given WM1’s predicted masks (our full pipeline), and the single-stage baseline. Bars show mean over sample-views with std error bars. The oracle dominates on every metric, so the gap to the full pipeline is attributable to WM1’s mask errors, not WM2’s rendering capacity. (The oracle is evaluated on the same ID set; metrics are reported over n=150.)",
+      "page": 18,
+      "index": 7,
+      "width": 813,
+      "height": 218
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-008.webp",
+      "caption": "Figure 8: Sharpness vs. pixel metrics. Top: variance of the image Laplacian (higher = sharper), averaged over each rollout, for the four variants on every split; black ticks mark the ground-truth level. The baseline is consistently the blurriest. Bottom: regime-averaged LPIPS vs. sharpness ratio—the baseline attains low (good) LPIPS yet the lowest sharpness, illustrating that good pixel scores can coincide with blurry output.",
+      "page": 13,
+      "index": 8,
+      "width": 767,
+      "height": 761
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-009.webp",
+      "caption": "Figure 5: Perceptual metrics across WM1 training configurations. PSNR, SSIM, and LPIPS on ID (top row) and LPIPS on three OOD splits (bottom row) for real-only WM1, sim-only WM1, and sim-then-real WM1 (ours), all paired with the same WM2 trained on real data. Sim pretraining substantially reduces OOD degradation; real fine-tuning further closes the gap while maintaining strong ID performance. A WM2 conditioning ablation (actions only, masks only, masks+actions) is provided in Figure 6.",
+      "page": 8,
+      "index": 9,
+      "width": 817,
+      "height": 338
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-010.webp",
+      "caption": "Figure 6: WM2 conditioning ablation (LPIPS). LPIPS ↓ on in-distribution (n=150, left) and combined OOD (n=150, right) for three WM2 conditioning variants: actions only, masks only, and masks+ actions (ours). Mask conditioning is the dominant driver of spatial quality; combining both signals achieves the best overall performance. Sharpness analysis and qualitative frame comparisons are in Appendix C.",
+      "page": 8,
+      "index": 10,
+      "width": 602,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-011.webp",
+      "caption": "Figure 3: Simulation data pipeline. (a) Structured pick-and-place demonstrations generated via MimicGen [23] in IsaacLab [24]. (b) Exploratory sinusoidal joint trajectories that sweep the full 17- DoF ORCA joint range independently of task success. (c) Per-dimension action coverage (1st–99th percentile) across all 23 DoF: simulation (>50 h) spans a far wider range than real demonstrations (<2.5 h), motivating large-scale synthetic pretraining of WM1.",
+      "page": 4,
+      "index": 11,
+      "width": 782,
+      "height": 370
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-012.webp",
+      "caption": "Table 2: Generalization to objects unseen in the real data. Appearance metrics for the baseline and Mask2Real-WM (ours), and WM1 segmentation-space quality for the predicted masks. No finetuning is performed on these objects.",
+      "page": 17,
+      "index": 12,
+      "width": 656,
+      "height": 273
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-013.webp",
+      "caption": "Figure 7: Baseline vs. the three two-stage variants, per split and metric. Per-sample-view distributions of PSNR, SSIM, and LPIPS (columns) on the ID and three OOD splits (rows), each split by camera view (third-person, wrist). From the W&B inference runs. The baseline is competitive on raw pixel metrics despite producing blurrier video (see sharpness analysis below).",
+      "page": 12,
+      "index": 13,
+      "width": 813,
+      "height": 808
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-014.webp",
+      "caption": "Figure 19: CNN adapter vs. VAE encoder for ControlNet conditioning. Top: per-frame boundary-response score (> 1 = features stronger at segmentation boundaries than in flat regions) and its mean ± std. Bottom: CNN features preserve sharp class boundaries; VAE features blur across them. The SVD VAE was trained to reconstruct natural RGB, not flat categorical masks, so it smears the sharp edges that carry the structural signal ControlNet relies on.",
+      "page": 20,
+      "index": 14,
+      "width": 829,
+      "height": 1164
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-015.webp",
+      "caption": "Figure 12: Error accumulation over the autoregressive rollout. Mean LPIPS per frame index on ID (left) and OOD No-Object (right). Error grows fastest over the first ∼10 steps and then plateaus.",
+      "page": 16,
+      "index": 15,
+      "width": 814,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04546v1/fig-016.webp",
+      "caption": "Figure 11: Frame sharpness across conditioning variants. Laplacian variance ↑ (higher = sharper) for every one of the 50 generated frames on ID (the model predicts 5 frames per autoregressive step), averaged over samples and computed on the predicted region of the rollout videos; the dashed line is the ground-truth sharpness. The actions-only variant collapses to blurry, low-variance outputs despite competitive PSNR/SSIM; mask conditioning restores high-frequency detail and combining masks with actions maintains sharpness throughout the rollout.",
+      "page": 16,
+      "index": 16,
+      "width": 522,
+      "height": 306
+    }
+  ]
+}

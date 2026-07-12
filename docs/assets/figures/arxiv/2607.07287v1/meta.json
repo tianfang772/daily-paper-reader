@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.07287v1/fig-001.webp",
+      "caption": "Figure 5 Stacked ablation results for TouchWorld. Each bar reports the six-task average success rate, with colored segments showing the contribution of each task to the average. Solid bars denote clean rollouts, while hatched bars denote human-perturbed rollouts that require corrective behavior.",
+      "page": 11,
+      "index": 1,
+      "width": 986,
+      "height": 437
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07287v1/fig-002.webp",
+      "caption": "Figure 1 Conceptual overview of TouchWorld. The High-Level Planning Layer contains a Subtask Planner that produces executable subtasks and a Tactile World Model that predicts visual-tactile subgoals. A visuo-tactile goal-conditioned policy generates nominal action chunks, and a tactile-conditioned refinement policy refines the final action online using high-frequency tactile feedback.",
+      "page": 2,
+      "index": 2,
+      "width": 982,
+      "height": 398
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07287v1/fig-003.webp",
+      "caption": "Figure 3 Hardware platform for TouchWorld. The human operator provides visual and hand-motion inputs through a Meta Quest headset, Meta Quest Touch Plus controllers, and a Wuji Glove. The robot platform uses Wuji dexterous hands and a JQ-Industries tactile glove for contact-rich manipulation with tactile feedback.",
+      "page": 7,
+      "index": 3,
+      "width": 982,
+      "height": 431
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07287v1/fig-004.webp",
+      "caption": "Table 2 Tactile World Model prediction accuracy on held-out subgoal segments. Ground truth is the tactile pressure observation collected when the robot reaches the corresponding annotated subgoal state. All numbers are percentages, and higher is better for all metrics.",
+      "page": 10,
+      "index": 4,
+      "width": 992,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07287v1/fig-005.webp",
+      "caption": "Figure 2 TouchWorld architecture. The High-Level Planning Layer runs at a slow semantic rate and contains the Subtask Planner, which produces executable subtasks, and the Tactile World Model, which predicts visual-tactile subgoals. The Visuo-Tactile Goal-Conditioned Policy generates nominal action chunks at an intermediate rate, and the Tactile-Conditioned Refinement Policy refines execution inside the high-frequency robot control loop using tactile and proprioceptive feedback.",
+      "page": 4,
+      "index": 5,
+      "width": 982,
+      "height": 529
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07287v1/fig-006.webp",
+      "caption": "Figure 6 Qualitative inference demonstration of TouchWorld. For each task, the model progresses from the initial scene through a sequence of executable subtasks and predicts tactile subgoals that support contact-aware manipulation.",
+      "page": 12,
+      "index": 6,
+      "width": 982,
+      "height": 671
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07287v1/fig-007.webp",
+      "caption": "Figure 4 Real-robot task suite for evaluating TouchWorld. The six tasks cover long-horizon planning, precision insertion, continuous contact regulation, soft-object handling, and recovery from human perturbations.",
+      "page": 9,
+      "index": 7,
+      "width": 982,
+      "height": 683
+    }
+  ]
+}

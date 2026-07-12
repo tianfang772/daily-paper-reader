@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-1101-2023-12-04-569887-v7/fig-001.webp",
+      "caption": "Figure 1. Scheme of IMMC, showing its hierarchy, from top to bottom: Control layer, Planner layer, Synergistic layer, and Motoneuron layer. MLR: mesencephalic locomotor region, IM: Internal Model, S1: first synergy, Sn: n-th synergy, MPExt/Flex: extensor/flexor motor pools, F: sensory feedback, MTUExt/Flex: extensor/flexor musculotendon unit.",
+      "page": 2,
+      "index": 1,
+      "width": 471,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-1101-2023-12-04-569887-v7/fig-002.webp",
+      "caption": "Figure 2. Instantaneous anterior/posterior speed of Head-Arms-Torso (HAT) for: (A) Stand-To-Walk (t = 5 s) and Walk-To-Stand (t = 10 s) transitions with a gait speed of 0.8 ms-1. (B) Stand-To-Backward Walk (t = 5 s) and Backward Walk-To-Stand (t = 10 s). (C) Speed transitions for forward gait at 0.8, 0.9, 1.2, 1.3, 1.5, 1.6, and 1.8 ms-1.",
+      "page": 2,
+      "index": 2,
+      "width": 450,
+      "height": 650
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-1101-2023-12-04-569887-v7/fig-003.webp",
+      "caption": "Figure 6. Principles of the legged mechanics. The figure presents the five principles of legged mechanics. The synergies implemented in the IMMC are based on these principles.",
+      "page": 6,
+      "index": 3,
+      "width": 468,
+      "height": 435
+    },
+    {
+      "url": "assets/figures/biorxiv/biorxiv-10-1101-2023-12-04-569887-v7/fig-004.webp",
+      "caption": "Figure 5. Comparison between simulated and experimental biomechanics and muscular activation for backward walking. (A) Experimental and simulated angular positions for hips, knees, and ankles at 1.3 ms-1. Green: simulated data, grey: experimental data. Upward direction: flexion, downward direction: extension. (B) GRF across the gait cycle at 1.3 ms-1. Experimental and simulated GRF. Yellow: simulated data, grey: experimental data. (C) Muscle activation patterns along the gait cycle at 1.3 ms-1. Orange: simulated data, grey: experimental data. Experimental data for HAM was not present in the referenced dataset. Experimental angular positions, GRF, and muscle trajectories taken from [28]. Blue vertical dotted line: experimental foot-off (76 %), black vertical dotted line: simulation foot-off (77 %).",
+      "page": 4,
+      "index": 4,
+      "width": 483,
+      "height": 710
+    }
+  ]
+}
