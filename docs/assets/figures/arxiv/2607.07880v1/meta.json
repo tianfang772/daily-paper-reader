@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.07880v1/fig-001.webp",
+      "caption": "Figure 4. Our model synthesizes realistic sequences of opening different doors of a closet, despite these configurations not being seen during training. The human adapts body motion, reach, and hand placement to each door’s geometry, demonstrating that our unified object-centric representation enables generalization beyond fixed placements.",
+      "page": 6,
+      "index": 1,
+      "width": 1036,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07880v1/fig-002.webp",
+      "caption": "Figure 3. Qualitative comparison with baselines. By comparing with the baselines, it can be shown that with our novel human-object interaction representation, our model is able to synthesize more realistic and physically plausible human-object interactions.",
+      "page": 6,
+      "index": 2,
+      "width": 1036,
+      "height": 551
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07880v1/fig-003.webp",
+      "caption": "Figure 2. Architecture overview. GIRAF leverages a transformer-based diffusion model. Given a current pose of the human and the object, a textual instruction and the human-object interaction representations, our method synthesizes realistic and physically plausible future human and object motion.",
+      "page": 5,
+      "index": 3,
+      "width": 932,
+      "height": 402
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07880v1/fig-004.webp",
+      "caption": "Figure 5. We show synthesized sequences of “open the drawer” at two different drawer heights. The model produces consistent reaching and pulling actions adapted to the drawer position, preserving both contact quality and whole-body coordination. This highlights the robustness of our approach to spatial variation within the same object category.",
+      "page": 7,
+      "index": 4,
+      "width": 1036,
+      "height": 387
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07880v1/fig-005.webp",
+      "caption": "Figure 6. For the same object and instruction, our model can synthesize interactions with different hand contact strategies, such as using the left hand, right hand, or both hands. This controllability stems from our text-conditioned design, which allows semantic variation in contact strategies while maintaining physically plausible interaction and consistent locomotion.",
+      "page": 7,
+      "index": 5,
+      "width": 1036,
+      "height": 394
+    }
+  ]
+}

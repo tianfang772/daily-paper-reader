@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.09185v1/fig-001.webp",
+      "caption": "Fig. 5. Representative rollouts after robot action adaptation at 2B and 14B scale. Rows: ground truth, DreamDojo, and CD-LAM at 2B and 14B; all model rows start from the same initial frame and receive the same robot action sequence. DreamDojo’s arm pose drifts from the ground-truth trajectory and scaling to 14B does not repair the drift, while CD-LAM tracks the commanded motion at both scales; scene appearance stays comparable, so the separation is in action following rather than visual quality. Colored overlays are row markers distinguishing the models, not model outputs.",
+      "page": 6,
+      "index": 1,
+      "width": 1072,
+      "height": 806
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09185v1/fig-002.webp",
+      "caption": "Fig. 2. Overview of CD-LAM. CD-LAM debiases the LAM’s latent action space in three stages while keeping the downstream action conditioning format unchanged. Stage 1 (LAM debiased fine-tuning) debiases the LAM with the three CD-LAM objectives; Stage 2 (ACWM debiased fine-tuning) trains the ACWM on the debiased latent actions; Stage 3 (robot action adaptation) aligns executable robot actions to the same space through a lightweight bridge.",
+      "page": 2,
+      "index": 2,
+      "width": 1061,
+      "height": 447
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09185v1/fig-003.webp",
+      "caption": "Fig. A.1. Additional target-action and per-action results. Top: Target-action transfer example: the source-context row provides the fixed visual context, the target-motion row provides the robot action sequence, and rollouts are generated under the same target action. CD-LAM transfers the target motion more reliably at both scales. Bottom: Per-action FDCE breakdown (median; error bars show the inter-quartile range). CD-LAM lowers FDCE across most categories.",
+      "page": 14,
+      "index": 3,
+      "width": 847,
+      "height": 1271
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09185v1/fig-004.webp",
+      "caption": "Fig. 7. Action-following behavior after robot action adaptation, beyond aggregate scores. (a) CD-LAM reduces FDCE across the eight action categories shown (full breakdown in Fig. A.1) at both 2B and 14B scales, showing that the gain is not concentrated in a single primitive. (b) On the 2B ACWM after robot action adaptation, CD-LAM shifts the rollout distribution toward lower FDCE and higher PSNR.",
+      "page": 8,
+      "index": 4,
+      "width": 1072,
+      "height": 550
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09185v1/fig-005.webp",
+      "caption": "Fig. 4. The rollout does not follow the transferred target action. The first row shows the source context, and the second row shows the target video that provides the robot action sequence. The third row is the ACWM rollout conditioned on that target action under the fixed source context. The rollout does not reproduce the target embodiment dynamics, indicating target-action misalignment after robot action adaptation.",
+      "page": 4,
+      "index": 5,
+      "width": 529,
+      "height": 398
+    }
+  ]
+}

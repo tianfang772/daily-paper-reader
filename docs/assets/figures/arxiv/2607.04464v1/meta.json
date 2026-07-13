@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.04464v1/fig-001.webp",
+      "caption": "Figure 2: Full-F operator-on-F vs. Bellman residual on the TD-MPC2 mt80 size sweep. Spearman across the five sizes is +0.30 for the full-F operator, contrasted with the near-identity (+1.00) between the unnormalized value-only error and the Bellman residual (Table 2). The 317M point is the clearest disagreement.",
+      "page": 8,
+      "index": 1,
+      "width": 468,
+      "height": 399
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04464v1/fig-002.webp",
+      "caption": "Figure 1: TD-MPC2 mt80 size sweep on cheetah-run. Left: full-F operator-on-F error and executed return as a function of model size. Right: reward-prediction error on the same axis. Rewardprediction error stays within [0.028, 0.091] across all five sizes (∼ 3× variation), while operator error tracks the return loss (Spearman −0.90, anchor-bootstrap 95% CI [−0.90,−0.70]; leave-oneout ∈ [−1.00,−0.80]). The 317M model has the highest operator error and a return collapse to 0.9; reward-prediction error at 317M (0.091) is the highest of the five sizes but stays within the same small range as the rest of the sweep.",
+      "page": 4,
+      "index": 2,
+      "width": 800,
+      "height": 363
+    }
+  ]
+}
