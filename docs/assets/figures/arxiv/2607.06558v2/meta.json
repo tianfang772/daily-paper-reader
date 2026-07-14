@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-001.webp",
+      "caption": "Table 4 Quantitative results of RynnWorld-Teleop. We report visual quality metrics and inference speeds. Text- and Action-conditioned World Models, as well as the Ablation Study, are evaluated on EgoDex-Test, while Robot-Specific evaluations are conducted on Robotic-Test.",
+      "page": 11,
+      "index": 1,
+      "width": 975,
+      "height": 563
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-002.webp",
+      "caption": "Figure 12 Qualitative comparison. Unlike baselines that rely on SAM-generated masks for conditioning, RynnWorldTeleop uses sparse skeletal poses, achieving superior fidelity and temporal coherence. Note that baselines are visualized at their native supported resolutions.",
+      "page": 21,
+      "index": 2,
+      "width": 979,
+      "height": 1435
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-003.webp",
+      "caption": "Figure 1 Physical vs. Digital Teleoperation. (Top) Physical teleoperation binds every demonstration to a real robot and a fixed workspace, capping throughput at operator-hours × hardware availability. (Bottom) Digital teleoperation replaces the real robot with RynnWorld-Teleop, a real-time action-conditioned world model that synthesizes the egocentric video the robot would have produced from a single reference image, and retargets the same gesture stream into embodiment-specific robot actions. Both pipelines emit synchronized (RGB observations, robotic actions) pairs, so digital teleoperation is drop-in compatible with downstream imitation learning, without ever moving a real robot.",
+      "page": 2,
+      "index": 3,
+      "width": 986,
+      "height": 627
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-004.webp",
+      "caption": "Table 2 Statistics of the real-world dataset used for RynnWorld-Teleop training.",
+      "page": 7,
+      "index": 4,
+      "width": 776,
+      "height": 206
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-005.webp",
+      "caption": "Figure 13 Qualitative results of RynnWorld-Teleop on roboticmanipulation tasks. Starting from a single reference image and a sequence of human hand-pose streams, RynnWorld-Teleop synthesizes high-fidelity, temporally coherent robotic execution videos. The results demonstrate the model’s ability to render complex dexterous interactions, such as bimanual coordination and high-precision object handling, while maintaining strict adherence to the input action signal.",
+      "page": 22,
+      "index": 5,
+      "width": 984,
+      "height": 1131
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-006.webp",
+      "caption": "Table 3 Real-world policy performance. Success rates (%) across four complex tasks.",
+      "page": 10,
+      "index": 6,
+      "width": 986,
+      "height": 232
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-007.webp",
+      "caption": "Figure 5 Feature Distribution Analysis via t-SNE. We visualize the high-dimensional feature embeddings of real-world trajectories and RynnWorld-Teleop-generated trajectories.",
+      "page": 10,
+      "index": 7,
+      "width": 925,
+      "height": 257
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-008.webp",
+      "caption": "Figure 2 Depth-Aware Representation. We bridge the gap between 2D projections and 3D dynamics by rendering hand skeletons with depth-modulated color and size.",
+      "page": 3,
+      "index": 8,
+      "width": 779,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-009.webp",
+      "caption": "Figure 7 Generalization to Out-of-Distribution (OOD) Visual States. RynnWorld-Teleop generalizes along two axes that are absent from training: (i) unseen objects (top two rows), where the manipulated item in the reference frame is replaced by a novel category or shape; and (ii) unseen backgrounds (bottom two rows), where the tabletop texture is swapped for an environment not seen during training. In all cases, the modified reference image is obtained via off-the-shelf image editing, without any real-world object or scene modification. RynnWorld-Teleop preserves high visual fidelity, temporal coherence, and physically plausible dynamics under both object-level and background-level shifts.",
+      "page": 13,
+      "index": 9,
+      "width": 984,
+      "height": 904
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-010.webp",
+      "caption": "Figure 10 Hardware Infrastructure. The evaluation utilizes our standard robotic setup: a bimanual TIANJI M6 system equipped with WUJI hands. Detailed specifications including degrees of freedom (DoF), payload, and fingertip force are summarized to ensure the reproducibility of our manipulation benchmark.",
+      "page": 19,
+      "index": 10,
+      "width": 986,
+      "height": 473
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-011.webp",
+      "caption": "Figure 4 Task illustration. We design four manipulation tasks for real-world evaluation.",
+      "page": 9,
+      "index": 11,
+      "width": 984,
+      "height": 241
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-012.webp",
+      "caption": "Figure 11 Operator setup for real-world data collection.",
+      "page": 20,
+      "index": 12,
+      "width": 398,
+      "height": 529
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06558v2/fig-013.webp",
+      "caption": "Figure 3 Overview of RynnWorld-Teleop. (a) Actions are rendered as depth-aware skeletal videos and encoded into the latent space via a VAE. (b) We expand a pretrained video DiT to incorporate hand-pose conditioning using a distribution-aligned patch embedding branch. (c) The model is distilled into a causal student for interactive, autoregressive generation using a streaming rollout schedule.",
+      "page": 5,
+      "index": 13,
+      "width": 982,
+      "height": 314
+    }
+  ]
+}

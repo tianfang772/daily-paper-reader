@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-001.webp",
+      "caption": "Figure 3: Grasping width changes during object-EE relative velocity and time-varying external force.",
+      "page": 6,
+      "index": 1,
+      "width": 451,
+      "height": 317
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-002.webp",
+      "caption": "Figure 9: Grasp regulation behavior of the trained policy. (a) The artificial strawberry is pulled from the center toward the edge of the elastomer surface. (b) The gripper width is adjusted online in response to in-hand slip and changes in the applied force, maintaining a stable grasp while preventing excessive gripping force.",
+      "page": 11,
+      "index": 2,
+      "width": 739,
+      "height": 303
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-003.webp",
+      "caption": "Figure 10: Real-world robustness to unmodeled object disturbances. During loco-manipulation, randomized perturbation forces up to 5.6 N are manually applied to the grasped artificial strawberry in directions independent of the nominal spring–damper force. The robot maintains stable locomotion and object retention while completing the task.",
+      "page": 11,
+      "index": 3,
+      "width": 658,
+      "height": 402
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-004.webp",
+      "caption": "Figure 8: Real-world evaluation tasks. (a) Manipulation under time-varying external forces, where magnets and springs generate controlled stiffness, external loading, and sudden force-release events. (b) Dynamic loco-manipulation, where the robot tracks base-velocity commands while transporting a grasped cylinder and recovering from sudden force release. (c) The trained policy generalizes to unseen objects during loco-manipulation.",
+      "page": 10,
+      "index": 4,
+      "width": 820,
+      "height": 377
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-005.webp",
+      "caption": "Table 1: Comparison of existing works and ours.",
+      "page": 3,
+      "index": 5,
+      "width": 846,
+      "height": 181
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-006.webp",
+      "caption": "Table 9: Reward terms used in training. The equations show the unweighted reward terms, and w denotes the configured reward weight.",
+      "page": 18,
+      "index": 6,
+      "width": 863,
+      "height": 967
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-007.webp",
+      "caption": "Figure 5: Simulation evaluation under time-varying external forces with a wider workspace. Each row shows a representative robot trajectory together with the tactile observation from one gripper finger. From T1 to T3, the external force pulling the object toward the equilibrium point gradually increases during loco-manipulation and is suddenly released at T4. The robot maintains balance and grasp stability while reaching the target position at T5.",
+      "page": 8,
+      "index": 7,
+      "width": 822,
+      "height": 677
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-008.webp",
+      "caption": "Figure 6: Distributions of the linear-velocity, angular-velocity, and end-effector position tracking errors over 8000 trajectories in simulation.",
+      "page": 8,
+      "index": 8,
+      "width": 775,
+      "height": 183
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-009.webp",
+      "caption": "Figure 2: Framework of TAC-LOCO. We encode high-dimensional tactile array information into a lower-dimensional latent representation, then include it in the observation of the unified locomanipulation policy. The policy is deployed zero-shot and achieves grasp stability under timevarying external forces during dynamic loco-manipulation.",
+      "page": 4,
+      "index": 9,
+      "width": 819,
+      "height": 312
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-010.webp",
+      "caption": "Table 5: Environment parameters for policy training.",
+      "page": 17,
+      "index": 10,
+      "width": 464,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-011.webp",
+      "caption": "Table 8: Notation used in the reward definitions.",
+      "page": 17,
+      "index": 11,
+      "width": 632,
+      "height": 359
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-012.webp",
+      "caption": "Figure 12: Tactile simulation settings and sim-to-real comparison. (a) Effects of the elastomer stiffness and PhysX penetration-offset parameters on the simulated tactile-array signals. (b) Comparison of tactile patterns obtained in Isaac Lab simulation (left) and real-world experiments (right) while grasping a 30-mm-diameter cylinder at the same gripper width.",
+      "page": 17,
+      "index": 12,
+      "width": 827,
+      "height": 235
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-013.webp",
+      "caption": "Table 7: Policy observations of the proposed framework.",
+      "page": 20,
+      "index": 13,
+      "width": 382,
+      "height": 623
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10132v1/fig-014.webp",
+      "caption": "Table 10: Training hyperparameters.",
+      "page": 20,
+      "index": 14,
+      "width": 586,
+      "height": 573
+    }
+  ]
+}
