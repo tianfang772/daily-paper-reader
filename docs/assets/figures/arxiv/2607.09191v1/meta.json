@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.09191v1/fig-001.webp",
+      "caption": "Fig. 3. Qualitative pouring comparison. GenVid2Robot completes stable pouring, while the compared variants fail because of insufficient tilt, graspalignment error, or trajectory drift.",
+      "page": 6,
+      "index": 1,
+      "width": 529,
+      "height": 377
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09191v1/fig-002.webp",
+      "caption": "Fig. 4. Real-world success rates over 20 trials per task. All variants use the same RM75 robot setup, AnyGrasp-based grasp policy, IK checking, and execution interface. GenVid2Robot achieves the highest success rate across all tasks, indicating the benefit of sparse rigid-geometric consistency and grasp-conditioned TCP induction.",
+      "page": 8,
+      "index": 2,
+      "width": 990,
+      "height": 311
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09191v1/fig-003.webp",
+      "caption": "Fig. 5. Ablation diagnostics. Rigid-geometric filtering suppresses unstable generated motion, semantic anchors improve PnP stability, layout perturbation is handled by reinitializing first-frame RGB-D anchors, and bounded depth compensation reduces depth-direction execution drift.",
+      "page": 8,
+      "index": 3,
+      "width": 529,
+      "height": 398
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09191v1/fig-004.webp",
+      "caption": "Fig. 6. Additional diagnostic results. (a) Success rates under fixed, mild, and moderate initial layout perturbations. (b) Recovered object motion and executed RM75 TCP trajectory in the pouring task. The object and TCP trajectories are not expected to overlap because the TCP is induced from the verified relative motion and the real grasp-time TCP pose.",
+      "page": 9,
+      "index": 4,
+      "width": 1076,
+      "height": 395
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09191v1/fig-005.webp",
+      "caption": "Fig. 1. Technical route of GenVid2Robot. The framework consists of three stages and five phases. Stage 1 samples semantic anchors from the first RGB-D observation and generates candidate video motion hypotheses. Stage 2 performs rigid-geometric consistency verification by combining tracked 2D anchors, first-frame 3D anchors, PnP/RANSAC, and reprojection checks. Stage 3 selects a mask-constrained grasp, induces a grasp-conditioned TCP trajectory, and applies bounded depth compensation before real-robot execution. Candidates that fail the rigid-geometric consistency check are rejected or regenerated.",
+      "page": 5,
+      "index": 5,
+      "width": 968,
+      "height": 546
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09191v1/fig-006.webp",
+      "caption": "Fig. 2. Part-prompt-guided semantic anchors. SAM-segmented part masks and depth-aware K-Means produce sparse task-relevant anchors for first-frame RGB-D reconstruction and rigid-geometric consistency verification.",
+      "page": 5,
+      "index": 6,
+      "width": 486,
+      "height": 247
+    }
+  ]
+}

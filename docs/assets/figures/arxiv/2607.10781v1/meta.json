@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.10781v1/fig-001.webp",
+      "caption": "Fig. 6. One clip, aligned on frames. Top: ego speed - the counterfactual brakes hard while the factual holds speed. Bottom: per-frame optical-flow difference (counterfactual − factual), at zero: the trajectory steers but the video does not. (Plan steps are mapped onto the video-frame axis for alignment.)",
+      "page": 11,
+      "index": 1,
+      "width": 886,
+      "height": 632
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10781v1/fig-002.webp",
+      "caption": "Fig. 5. Per-clip BEV trajectories (2/2). Continuation of Fig. 4.",
+      "page": 10,
+      "index": 2,
+      "width": 1041,
+      "height": 1276
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10781v1/fig-003.webp",
+      "caption": "Fig. 2. The MM-DiT backbone at sampling time without energy guidance. The observed past and the noised future frames are encoded by the frozen DCAE into image tokens; the noised ego trajectory (x, y, θ, v) enters the planning (text) stream. The two streams are denoised jointly across the 19 double-stream blocks over 50 steps, modulated by the timestep and the past-observation pooler, with RoPE positional ids, and then decoded into the predicted future frames and the predicted trajectory. The model is post-trained unguided as a driving world model: frozen modules are marked ; modules adapted with LoRA or trained from scratch are marked \\.",
+      "page": 3,
+      "index": 3,
+      "width": 465,
+      "height": 635
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10781v1/fig-004.webp",
+      "caption": "Fig. 3. The trajectory steers, the video does not. Across 35 sampled clips at λ=40 (mean ± std). For each clip, we sample the platform twice from identical noise - unguided (factual) and with a counterfactual brake energy (counterfactual) - and compare. Left: L2 distance of each ego plan to the brake target per step; the counterfactual is driven to the target while the factual diverges. Right: per-frame optical-flow difference (counterfactual − factual), which sits at zero within the across-clip spread (shaded). The steered plan does not move the pixels. Detailed results for single clips and per-frame trajectory-video comparison are evaluated and shown in Section C.",
+      "page": 4,
+      "index": 4,
+      "width": 1050,
+      "height": 366
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10781v1/fig-005.webp",
+      "caption": "Fig. 4. Per-clip BEV trajectories (1/2). All 35 usable sampled clips at λ=40. GT (black), unguided/factual (grey), counterfactual (orange), brake target (red dashed). The counterfactual plan tracks the braked target across clips.",
+      "page": 9,
+      "index": 5,
+      "width": 1042,
+      "height": 1275
+    }
+  ]
+}

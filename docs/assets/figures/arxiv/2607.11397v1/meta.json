@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.11397v1/fig-001.webp",
+      "caption": "TABLE II MAIN RESULTS ON ROBOCASA-GR1-TABLETOP [6]. BASELINE RESULTS ARE COLLECTED FROM PUBLICLY RELEASED REPORTS.",
+      "page": 6,
+      "index": 1,
+      "width": 450,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11397v1/fig-002.webp",
+      "caption": "Fig. 1. Overview of the semantic-geometric latent action model pretraining. Given the current observation and multiple sparsely sampled future observations, WALA extracts RGB features with a frozen DINOv3 [1] encoder and obtains dense depth maps from depth observations or a frozen depth estimator [2]. The encoder infers latent action targets from observed semantic and geometric deltas, while the decoder predicts future DINOv3 feature deltas and dense depth changes from the current state and latent actions. Pretraining can combine human and robot video sources such as EgoDex [3], RoboCOIN [4], RoboTwin [5], and RoboCasa [6].",
+      "page": 2,
+      "index": 2,
+      "width": 1052,
+      "height": 525
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11397v1/fig-003.webp",
+      "caption": "Fig. 4. Data scaling on RoboCasa-GR1-Tabletop. Left: WALA consistently improves over the Base Policy when both use the same amount of actionlabeled demonstrations. Right: with only 10% action-labeled demonstrations fixed, adding action-free videos further improves WALA, showing that videos without robot action labels can still provide useful dynamics supervision.",
+      "page": 7,
+      "index": 3,
+      "width": 1054,
+      "height": 375
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11397v1/fig-004.webp",
+      "caption": "TABLE III ABLATION STUDY ON ROBOCASA-GR1-TABLETOP.",
+      "page": 7,
+      "index": 4,
+      "width": 664,
+      "height": 252
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11397v1/fig-005.webp",
+      "caption": "TABLE VI PER-TASK RESULTS ON ROBOCASA-GR1-TABLETOP. EACH ENTRY REPORTS SUCCESSFUL TRIALS OVER 50 EVALUATION EPISODES.",
+      "page": 10,
+      "index": 5,
+      "width": 606,
+      "height": 346
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11397v1/fig-006.webp",
+      "caption": "TABLE V PER-TASK RESULTS ON ROBOTWIN 2.0. EACH ENTRY REPORTS SUCCESSFUL TRIALS OVER 100 EVALUATION EPISODES.",
+      "page": 10,
+      "index": 6,
+      "width": 577,
+      "height": 507
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11397v1/fig-007.webp",
+      "caption": "Fig. 5. Latent action retrieval. We encode each query transition into latent action tokens and retrieve nearest neighbors from the dataset using latent-action feature similarity. Retrieved examples share similar manipulation primitives, such as grasping, placing, and releasing, despite changes in object appearance, scene layout, and camera view. This suggests that the learned latent actions capture action-relevant transitions rather than only static visual similarity.",
+      "page": 8,
+      "index": 7,
+      "width": 1052,
+      "height": 437
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11397v1/fig-008.webp",
+      "caption": "Fig. 6. RGB attention visualization of the latent action encoder. The attention is concentrated around hands, manipulated objects, and contact regions, indicating that the encoder focuses on image regions that are informative for action-induced scene changes.",
+      "page": 8,
+      "index": 8,
+      "width": 512,
+      "height": 285
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11397v1/fig-009.webp",
+      "caption": "Fig. 2. Policy training with WALA. The pretrained latent action encoder is frozen and provides stable latent action targets from observed future changes. The decoder is integrated as a trainable latent world model. In our implementation, the vision-language backbone is instantiated with Qwen3-VL-4B [22] and generates unified latent actions from multi-view observations, language instructions, robot states, and action queries. These latent actions are supervised by robot action prediction, latent action target matching, and future dynamics prediction. Red arrows are used only during training, while black arrows indicate the inference path.",
+      "page": 4,
+      "index": 9,
+      "width": 1052,
+      "height": 645
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11397v1/fig-010.webp",
+      "caption": "Fig. 7. Real-world manipulation tasks used in our evaluation. We test a single multi-task policy on Basic Pick-Place, Stack Paper Cups, Insert Flowers, and Disassemble Blocks. Each row shows temporally sampled frames from one successful rollout.",
+      "page": 9,
+      "index": 10,
+      "width": 1052,
+      "height": 231
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11397v1/fig-011.webp",
+      "caption": "Fig. 3. Visualization of future semantic and geometric prediction. For each example, WALA observes the current DINOv3 feature visualization and current depth map, then predicts future DINOv3 feature and depth changes. We visualize the future states obtained by adding the predicted deltas to the current state and compare them with ground-truth future features and depth maps. The predicted future states preserve action-induced semantic changes and spatial geometry without reconstructing raw pixels.",
+      "page": 5,
+      "index": 11,
+      "width": 1052,
+      "height": 606
+    }
+  ]
+}

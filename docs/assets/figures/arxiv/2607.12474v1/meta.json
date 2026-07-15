@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.12474v1/fig-001.webp",
+      "caption": "Fig. 1 Mechanistic World Models (MWMs) shift AI from forecasting to discovery. Whereas conventional machine learning organises knowledge around predictive mappings, MWMs organise it around reusable mechanisms as the central computational abstraction linking prediction and experimentation. This enables capabilities including variable, mechanism and structure discovery, explanatory hypothesis generation and experimental design, extending machine learning beyond accurate forecasting towards scientific understanding.",
+      "page": 2,
+      "index": 1,
+      "width": 927,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2607.12474v1/fig-002.webp",
+      "caption": "Fig. 2 Conceptual anatomy of a Mechanistic World Model. Observations are encoded into latent variables representing the state of a particular system. Reusable mechanisms, each comprising variable roles and a transformation, are instantiated by binding these roles to the learned variables. Different systems are explained through different structures that instantiate and compose a shared library of reusable mechanisms. Parsimony favours compact variables, simple mechanisms and sparse explanatory structures, while compositionality encourages the reuse and recombination of mechanisms across different systems through different explanatory structures.",
+      "page": 11,
+      "index": 2,
+      "width": 927,
+      "height": 286
+    },
+    {
+      "url": "assets/figures/arxiv/2607.12474v1/fig-003.webp",
+      "caption": "Table 1 Comparison of representative approaches against the proposed design principles for Mechanistic World Models. While existing methods each address important aspects of scientific discovery, they typically focus on individual capabilities such as variable, mechanism, and structure discovery, compositionality, and parsimony. We further distinguish approaches by whether they are built on architectural building blocks with a credible path to scale: methods whose mechanistic structure is expressed through standard, scalable components rather than through bespoke architectures or search procedures. Mechanistic World Models aim to unify these complementary directions within a single framework organised around reusable mechanisms as the fundamental computational abstraction.",
+      "page": 12,
+      "index": 3,
+      "width": 629,
+      "height": 415
+    }
+  ]
+}
