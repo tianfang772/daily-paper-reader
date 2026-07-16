@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-001.webp",
+      "caption": "Fig. 1. Compactness of residual-action space in real driving data. Statistics from NAVSIM and nuPlan show that consecutive steering and longitudinal commands are strongly correlated, while their residual changes are concentrated in a much narrower range. The residual-action horizon occupies 9.1× fewer cells than the absolute-action chain, indicating a more compact geometric structure for smooth long-horizon driving control.",
+      "page": 1,
+      "index": 1,
+      "width": 538,
+      "height": 618
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-002.webp",
+      "caption": "Fig. 5. DLIR risk descriptor. The deterministic descriptor combines LiDAR proximity, navigation constraint, and ego-state control-boundary cues, and is used only inside the DLIR representation objective.",
+      "page": 6,
+      "index": 2,
+      "width": 458,
+      "height": 526
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-003.webp",
+      "caption": "Fig. 9. Training curves on the mixed MetaDrive scenario. LIDAR-AD reaches higher return and success levels with lower variance than the strongest worldmodel baselines, indicating improved learning stability under the same data budget.",
+      "page": 10,
+      "index": 3,
+      "width": 520,
+      "height": 360
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-004.webp",
+      "caption": "TABLE I COMPONENT-LEVEL COMPARISON WITH RELATED METHODS",
+      "page": 3,
+      "index": 4,
+      "width": 1036,
+      "height": 194
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-005.webp",
+      "caption": "Fig. 15. Policy saliency over bird’s-eye-view driving layouts. The BEV column shows the scene layout, while warmer regions indicate higher policy saliency for each world-model policy. Compared with R2-Dreamer and DreamerV3, LIDAR-AD produces more localized responses around egorelevant lane and interaction regions, suggesting stronger alignment between the learned latent dynamics and control-relevant cues.",
+      "page": 13,
+      "index": 5,
+      "width": 524,
+      "height": 253
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-006.webp",
+      "caption": "Fig. 14. Temporal control profiles. Compared with absolute-action modeling, residual-action modeling produces smoother control evolution, consistent with the smooth-control bias introduced by RAWM.",
+      "page": 13,
+      "index": 6,
+      "width": 519,
+      "height": 556
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-007.webp",
+      "caption": "Fig. 13. Latent representation structure. Cross-correlation matrices show that risk-guided decoder-free alignment reduces off-diagonal correlations, indicating a more compact latent representation for world-model learning.",
+      "page": 13,
+      "index": 7,
+      "width": 508,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-008.webp",
+      "caption": "Fig. 16. Representative closed-loop trajectories. LIDAR-AD follows the reference route more consistently through curved and roundabout segments, while the baselines show larger lateral deviations.",
+      "page": 13,
+      "index": 8,
+      "width": 529,
+      "height": 377
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-009.webp",
+      "caption": "Fig. 6. Residual-action chain contrast. Starting from the shared posterior state, the transition model is recursively applied with one joint action embedding at each step, and the final predicted latent state is aligned with the true future posterior by InfoNCE.",
+      "page": 8,
+      "index": 9,
+      "width": 454,
+      "height": 538
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-010.webp",
+      "caption": "Fig. 12. Traffic-density stress test. The grouped performance bars summarize mixed, T-intersection, and roundabout scenarios evaluated at traffic densities of 0.10, 0.20, and 0.30 after training at the nominal density of 0.20, where LIDAR-AD (Ours) maintains higher success rate and route completion than DreamerV3 and R2-Dreamer.",
+      "page": 12,
+      "index": 10,
+      "width": 1056,
+      "height": 267
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-011.webp",
+      "caption": "TABLE IV TRAFFIC-DENSITY GENERALIZATION ACROSS METADRIVE SCENARIOS",
+      "page": 12,
+      "index": 11,
+      "width": 1068,
+      "height": 366
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-012.webp",
+      "caption": "Fig. 7. Scenario generation in MetaDrive. Elementary road blocks are randomly composed into mixed driving routes, enabling evaluation across diverse intersections, roundabouts, curves, and multi-road layouts under a unified closed-loop simulator interface.",
+      "page": 9,
+      "index": 12,
+      "width": 526,
+      "height": 454
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-013.webp",
+      "caption": "Fig. 4. Decoder-free latent interaction representation. Grouped driving observations and the deterministic risk descriptor are encoded separately, fused through gated pairwise interactions, and aligned with the RSSM posterior state by a risk-weighted redundancy-reduction objective without observation reconstruction.",
+      "page": 5,
+      "index": 13,
+      "width": 529,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11964v1/fig-014.webp",
+      "caption": "Fig. 3. Overall architecture of LIDAR-AD. DLIR maps heterogeneous driving observations to the shared RSSM latent state, RAWM converts actor residuals into executable actions and per-step action-change embeddings, and ARC-CL aligns recursive multi-step prior rollouts with future posterior states.",
+      "page": 5,
+      "index": 14,
+      "width": 1076,
+      "height": 554
+    }
+  ]
+}

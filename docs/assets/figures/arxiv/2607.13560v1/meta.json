@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.13560v1/fig-001.webp",
+      "caption": "Figure 1. Whole-brain neural dynamics and a preconfigured behavioral manifold in C. elegans. A. Schematic of pan-neuronal calcium imaging in a physically immobilized nematode (top), and the corresponding raw activity matrix (bottom) showing normalized fluorescence (ΔF/F) simultaneously recorded from 109 neurons across the head ganglia and anterior ventral cord over the full recording session (data from Kato et al. 22). Because the animal was restrained within a microfluidic chamber throughout imaging, this activity is generated spontaneously, in the absence of actual movement or environmental feedback. B. Three-dimensional latent manifold obtained by encoding this neural activity with a model trained to (i) generate latent trajectories autonomously and (ii) decode the concurrent behavioral state. Colors denote the seven fictive locomotor states independently annotated by Kato et al. 22 from correlations with kinematics in freely moving animals (forward, slow, reverse 1, reverse 2, reverse sus, dorsal turn, ventral turn); each state occupies a distinct, largely non-overlapping region of the manifold, typically forming closed or near-closed loops. That such a low-dimensional dynamical structure can be recovered from spontaneous activity alone, without any concurrent movement or sensory input, illustrates how the worm's nervous system implements a compact, largely preconfigured model of its own locomotor repertoire.",
+      "page": 5,
+      "index": 1,
+      "width": 946,
+      "height": 461
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13560v1/fig-002.webp",
+      "caption": "Figure 2. Spatial and conceptual navigation. A. Place-cell and grid-cell firing fields recorded while a rat forages in a regular enclosure. Place cells in the hippocampus typically show localized firing fields, whereas grid cells in the entorhinal cortex fire at multiple locations arranged in a periodic hexagonal lattice. (Figure adapted with permission from 32.) B. Toroidal topology of population activity in grid cells. Top row: the periodic lattice of a grid cell defines a fundamental rhombus, whose opposite edges can be identified because they correspond to equivalent phases of the grid pattern. Identifying one pair of opposite edges transforms the rhombus into a cylinder; identifying the second pair transforms it into a torus. In this representation, the firing phase of each grid cell in a module corresponds to a position on the torus, and movement through physical space corresponds to a trajectory that wraps around the toroidal state space (Figure adapted from 33). Bottom row: examples of grid-cell activity tuned to toroidal coordinates and reconstruction of an animal’s trajectory on a torus-like manifold inferred from nonlinear dimensionality reduction of population activity within a grid-cell module (Figure adapted from 26). C. Navigation in a non-spatial sensory space. Rats learn to press a lever to initiate a sound whose pitch changes over time and to release the lever when a target frequency is reached. Hippocampal and entorhinal neurons that show placelike or grid-like firing during spatial navigation can also be preferentially activated at single or multiple locations along the sound-frequency axis (Figure adapted from 34). D. Navigation in an abstract value space. A macaque chooses between pairs of images associated with different reward magnitudes and reward probabilities. The task can be represented geometrically as movement through a two-dimensional value space, in which trajectories can be aligned or misaligned with the axes of a hexagonal grid. Neural activity shows a six-fold modulation as a function of trajectory angle, consistent with a grid-like code (Figure adapted from 35). E. Inference in social space. Human participants learn associations between fictional characters and different levels of competence and popularity, and later use this knowledge to make social inferences. The task can be represented as navigation through a two-dimensional social space. During inference, fMRI activity in the entorhinal cortex shows a six-fold modulation compatible with a grid-like code (Figure adapted from 36).",
+      "page": 7,
+      "index": 2,
+      "width": 1008,
+      "height": 573
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13560v1/fig-003.webp",
+      "caption": "Figure 3: Schematic of hierarchical affordance competition in the context of visually guided primate behavior. Figure adapted from 48,49,53. Blue lines indicate spatial visual information specifying multiple potential actions in different frontoparietal circuits 54 dedicated to different kinds of actions (locomotion, reaching, grasping, etc.). Red lines indicate information used for selecting an action from among all of these options. In this example, the red polygon indicates that the reaching system has been selectively invigorated, and that a competition between potential reaching actions unfolds to select one for overt execution (thick blue lines). This produces a motor command that results in visual feedback, as well as predicted feedback through the cerebellum, guiding the hand toward the target. At the same time, the hand shape is adjusted to the target object shape and the grasping movement selected once the target is reached. Other action possibilities may also be specified (e.g. locomotion in medial regions) but not released into execution.",
+      "page": 9,
+      "index": 3,
+      "width": 900,
+      "height": 750
+    }
+  ]
+}

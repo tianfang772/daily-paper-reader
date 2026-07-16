@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.13579v1/fig-001.webp",
+      "caption": "Fig. 3. Agile perceptive locomotion with adaptive skills in various scenarios. (A) Urban scenario, (B) Wild scenario, and (C) Indoor scenario. Cmd vx is the commanded forward velocity, which was visualized through color changes along the trajectory. Shaded blue regions indicate periods when the trotting gait was selected, whereas red indicates bounding. Gait Select. denotes the gait selection output, where values less than 0.5 correspond to trotting, and values greater than or equal to 0.5 correspond to bounding. To estimate the speed in the stair jump experiment, we computed the average velocity of the body center relative to the contact feet, followed by low-pass filtering at 60 Hz.",
+      "page": 6,
+      "index": 1,
+      "width": 1036,
+      "height": 1252
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13579v1/fig-002.webp",
+      "caption": "Fig. 6. Autonomous gaits and motor skills selection. (A) Our robot uses different gaits and motor skills to traverse obstacles, depending on its state and command. (B) Gait fractions over continuous command velocities for various terrains and difficulty levels. (C) Task-performance metrics for automatic and fixed gait strategies. (i) Success rate, velocity tracking, and 1/COT across three command-speed groups (Low: 0–3 m/s, High: 3–6 m/s, Mix: 0–6 m/s) and seven terrains. (ii) Aggregate comparison across all evaluation cases, showing for each controller the best-performance rate, the average relative performance regret, and the worstcase normalized score.",
+      "page": 10,
+      "index": 2,
+      "width": 1069,
+      "height": 683
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13579v1/fig-003.webp",
+      "caption": "Fig. 8. Sensor Ablation Study. Success rate comparison of depth and LiDAR, LiDAR-only, and depth-only policies across diverse terrains. For each experiment, 100 agents were evaluated per trial over 10 trials, and the error bars represent the standard deviation.",
+      "page": 14,
+      "index": 3,
+      "width": 1055,
+      "height": 399
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13579v1/fig-004.webp",
+      "caption": "Fig. 1. Traversing challenging terrains. (A) Our controller enables fast perceptive gait and skill selection to enable high-speed obstacle traversal. (B) The same controller was used to deploy over various outdoor terrains.",
+      "page": 3,
+      "index": 4,
+      "width": 1094,
+      "height": 590
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13579v1/fig-005.webp",
+      "caption": "Fig. 4. Effectiveness of gaits under different terrains. Performance comparison of five gait decoders, trot, bound, pace, gallop, and pronk, across multiple terrain types. For the stair terrain, we used a lower command velocity range (train: -1 to 2m/s, test: 1 to 2m/s), whereas the other terrains were tested under a higher command velocity range (train: -1 to 7m/s, test: 1 to 7m/s). Each policy was trained with three random seeds and evaluated three times per seed, resulting in a total of nine trials with 300 agents per experiment, each receiving randomized velocity commands with randomized terrain difficulties. The average line in each sector represents the mean performance of each gait. The thick line segment on each bar denotes the standard deviation across repeated evaluations. The bold label marks the gait with the highest average score, and the underlined label marks the gait with the secondhighest average score.",
+      "page": 8,
+      "index": 5,
+      "width": 805,
+      "height": 870
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13579v1/fig-006.webp",
+      "caption": "Fig. 7. Evaluation across training strategies and baselines. (A) Training terrains used across all experiments. (B) Comparison between our method, AMP, and Vanilla RL. (C) Comparison of training curves on full obstacle terrain between our method and HRL with a residual. (D) Comparison of sample consumption between our method and HRL with a residual baseline in full obstacle terrain. (E) Evaluation of dynamic gait transitions through random gait switching experiments. (i) Experimental setup for random gait transitions. (ii) Transition success rate with respect to terrain difficulty and command velocity. (iii) Base pitch angle trajectory and gait pattern with transitions on rough terrain.",
+      "page": 12,
+      "index": 6,
+      "width": 929,
+      "height": 1204
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13579v1/fig-007.webp",
+      "caption": "Fig. 5. Latent action embeddings and auxiliary torque analysis. (A) PCA embeddings of latent actions for trotting and bounding across pretraining, RL, and real-world deployment. (B) t-SNE embeddings of real-world latent actions on flat, stepping stones, stairs, high-step, and log terrains. (C–E) Representative real-world behaviors (log jump, leg fracture during walking, in-place rotation) together with their corresponding joint torque decompositions (C(i)–E(ii)), showing latent-action torque, auxiliary torque, and total torque. Blue and red shading indicate trotting and bounding selections; JI and LF denote the jump initiation and leg-fracture moments.",
+      "page": 9,
+      "index": 7,
+      "width": 1089,
+      "height": 1222
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13579v1/fig-008.webp",
+      "caption": "Fig. 2. Training pipeline for APT-RL. (A) Our approach consists of motion dataset generation, representation learning, and reinforcement learning. Using trajectory optimization with simplified dynamics, we generate large-scale motion data to train diverse locomotion skills. These serve as action priors for efficient downstream learning and enable autonomous locomotion in complex terrains. (B) (i) Learning a shared latent state representation and gait-specific torque mappings using a TVAE. (ii) Training policy by reusing the learned decoder via latent actions and adapting with auxiliary actions. (ii-a) Calculation of joint torque using the APT Module. (iii) Distilling exteroceptive latent space using CNN-GRU encoder. (iv) Simulation environment.",
+      "page": 5,
+      "index": 8,
+      "width": 1094,
+      "height": 1224
+    }
+  ]
+}

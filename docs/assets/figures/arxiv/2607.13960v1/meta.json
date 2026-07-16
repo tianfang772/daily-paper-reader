@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.13960v1/fig-001.webp",
+      "caption": "Figure 1: Comparison of GigaWorld-Policy-0.5 with baselines on inference frequency and success rate across hardware platforms in real-world settings.",
+      "page": 1,
+      "index": 1,
+      "width": 460,
+      "height": 438
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13960v1/fig-002.webp",
+      "caption": "Table 4: Comparison of inference efficiency and real-robot performance.",
+      "page": 11,
+      "index": 2,
+      "width": 954,
+      "height": 200
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13960v1/fig-003.webp",
+      "caption": "Figure 7: AutoResearch hyperparameter search and training progression on the pick the fruit task. Left: 1K-step pilot sweep over learning rate and batch-size configurations, where green bars indicate retained candidates and red bars indicate discarded configurations. Right: extended training progression under the selected configuration, showing that the model achieves the best validation action MSE at 30K steps.",
+      "page": 11,
+      "index": 3,
+      "width": 983,
+      "height": 383
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13960v1/fig-004.webp",
+      "caption": "Figure 3: Real-world demonstration of GigaWorld-Policy-0.5 on the Tableware Arrangement task.",
+      "page": 7,
+      "index": 4,
+      "width": 962,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13960v1/fig-005.webp",
+      "caption": "Figure 6: Success rates at different training steps in the AC-WM ablation study.",
+      "page": 10,
+      "index": 5,
+      "width": 475,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13960v1/fig-006.webp",
+      "caption": "Figure 4: Real-world demonstration of GigaWorld-Policy-0.5 on the Food Heating task.",
+      "page": 8,
+      "index": 6,
+      "width": 962,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13960v1/fig-007.webp",
+      "caption": "Figure 2: Overview of GigaWorld-Policy-0.5, an MoT-based action-centered World Action Model. The model consists of a visual expert and an action expert: the visual expert specializes in processing video tokens, while the action expert focuses on action-token modeling. The two experts are connected through multi-modal selfattention, which follows the same causal masking strategy as GigaWorld-Policy [55] to preserve action-centered dependency modeling.",
+      "page": 4,
+      "index": 7,
+      "width": 983,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13960v1/fig-008.webp",
+      "caption": "Figure 5: Real-world demonstration of GigaWorld-Policy-0.5 on the Solid Weighing task.",
+      "page": 9,
+      "index": 8,
+      "width": 962,
+      "height": 360
+    }
+  ]
+}
