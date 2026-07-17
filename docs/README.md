@@ -6,76 +6,82 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-16
-- 运行时间：2026-07-16 19:54:12 UTC
+- 最新运行日期：2026-07-17
+- 运行时间：2026-07-17 20:36:06 UTC
 - 运行状态：成功
-- 本次总论文数：18
-- 精读区：7
+- 本次总论文数：20
+- 精读区：9
 - 速读区：11
 
 ### 今日简报（AI）
-今日深度研读以SKooP为核心的18篇前沿论文，聚焦足式机器人如何在复杂地形中实现更快速、更具泛化性的运动。
-满分佳作SKooP利用对称库普曼预测显著提升了强化学习效率，而触觉感知操作与类人轮滑技术则拓宽了机器人的运动边界。
-建议优先攻读SKooP的对称性建模思路，并关注足式平台从“稳健行走”向“灵巧操作”与极限地形适应的演进趋势。
-- 详情：[/202607/16/README](/202607/16/README)
+今日深挖 20 篇机器人顶尖论文，聚焦足式机器人运动控制与具身智能世界模型的最新突破。
+满分力作 SKooP 通过对称库普曼预测重塑了强化学习的泛化效率，原生视频预训练则展现了通用控制的巨大潜力。
+推荐优先研读物理对称性在运动控制中的应用，这是提升机器人复杂地形适应力的核心前沿。
+- 详情：[/202607/17/README](/202607/17/README)
 
 ### 精读区论文标签
-1. [SKooP: Symmetric Koopman Predictions for Faster and More Generalizable Legged Robot Locomotion with Reinforcement Learning](/202607/16/2607.11624v1-skoop-symmetric-koopman-predictions-for-faster-and-more-generalizable-legged-robot-locomotion-with-reinforcement-learning)  
+1. [SKooP: Symmetric Koopman Predictions for Faster and More Generalizable Legged Robot Locomotion with Reinforcement Learning](/202607/17/2607.11624v1-skoop-symmetric-koopman-predictions-for-faster-and-more-generalizable-legged-robot-locomotion-with-reinforcement-learning)  
    标签：评分：10.0/10、query:q3
-   evidence：通过自编码器学习 Koopman 模型用于足式机器人运动
-2. [SKooP: Symmetric Koopman Predictions for Faster and More Generalizable Legged Robot Locomotion with Reinforcement Learning](/202607/16/2607.11624v2-skoop-symmetric-koopman-predictions-for-faster-and-more-generalizable-legged-robot-locomotion-with-reinforcement-learning)  
+   evidence：学习用于腿足机器人运动的 Koopman 动力学
+2. [SKooP: Symmetric Koopman Predictions for Faster and More Generalizable Legged Robot Locomotion with Reinforcement Learning](/202607/17/2607.11624v3-skoop-symmetric-koopman-predictions-for-faster-and-more-generalizable-legged-robot-locomotion-with-reinforcement-learning)  
    标签：评分：10.0/10、query:q3
-   evidence：通过自动编码器学习的 Koopman 模型用于足式机器人运动
-3. [Behavior Foundations for Quadruped Robots: ABot-C0 Technical Report](/202607/16/2607.07370v1-behavior-foundations-for-quadruped-robots-abot-c0-technical-report)  
-   标签：评分：9.0/10、query:q2
-   evidence：四足机器人的通用运动控制系统
-4. [Behavior Foundations for Quadruped Robots: ABot-C0 Technical Report](/202607/16/2607.07370v2-behavior-foundations-for-quadruped-robots-abot-c0-technical-report)  
-   标签：评分：9.0/10、query:q2
-   evidence：针对四足机器人的通用运动控制系统，侧重于运动和场景交互
-5. [Causally Debiased Latent Action Model for Embodied Action Conditioned World Models](/202607/16/2607.09185v1-causally-debiased-latent-action-model-for-embodied-action-conditioned-world-models)  
+   evidence：学习用于腿足机器人运动的潜空间动力学
+3. [Agile perceptive multi-skill locomotion for quadrupedal robots in the wild](/202607/17/2607.13579v1-agile-perceptive-multi-skill-locomotion-for-quadrupedal-robots-in-the-wild)  
+   标签：评分：10.0/10、query:profile-1
+   evidence：基于动作预训练的四足机器人多技能运动
+4. [A Control Theory of Predictability in Latent World Models](/202607/17/2607.10362v1-a-control-theory-of-predictability-in-latent-world-models)  
    标签：评分：9.0/10、query:q1
-   evidence：用于机器人规划的动作条件世界模型
-6. [Agile perceptive multi-skill locomotion for quadrupedal robots in the wild](/202607/16/2607.13579v1-agile-perceptive-multi-skill-locomotion-for-quadrupedal-robots-in-the-wild)  
-   标签：评分：9.0/10、query:q2
-   evidence：四足机器人的敏捷感知多技能运动
-7. [GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch](/202607/16/2607.13960v1-gigaworld-policy-05-a-faster-and-stronger-wam-empowered-by-autoresearch)  
+   evidence：重新构建潜空间世界模型目标以优化控制与规划
+5. [Towards Predictive, Aligned, and Scalable Robot Learning](/202607/17/2607.11270v1-towards-predictive-aligned-and-scalable-robot-learning)  
    标签：评分：9.0/10、query:q1
-   evidence：用于机器人策略学习和物理接地动作生成的动作世界模型 (WAM)
+   evidence：用于动力学推理的潜空间世界动作模型
+6. [SKooP: Symmetric Koopman Predictions for Faster and More Generalizable Legged Robot Locomotion with Reinforcement Learning](/202607/17/2607.11624v2-skoop-symmetric-koopman-predictions-for-faster-and-more-generalizable-legged-robot-locomotion-with-reinforcement-learning)  
+   标签：评分：9.0/10、query:q3
+   evidence：通过自编码器学习腿足机器人动力学的Koopman模型
+7. [GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch](/202607/17/2607.13960v1-gigaworld-policy-05-a-faster-and-stronger-wam-empowered-by-autoresearch)  
+   标签：评分：9.0/10、query:q1
+   evidence：用于高效机器人控制与规划的世界动作模型
+8. [DriftWorld: Fast World Modeling through Drifting](/202607/17/2607.15065v1-driftworld-fast-world-modeling-through-drifting)  
+   标签：评分：9.0/10、query:q1
+   evidence：用于机器人规划的快速动作条件世界模型
+9. [Scaling Behavior Foundation Model for Humanoid Robots](/202607/17/2607.15163v1-scaling-behavior-foundation-model-for-humanoid-robots)  
+   标签：评分：9.0/10、query:profile-1
+   evidence：扩展用于人形机器人全身协调与控制的行为基座模型
 
 ### 速读区论文标签
-1. [Physics-Guided Biomechanical Gait Adaptation for Humanoid Locomotion on Extreme Sloped Terrains](/202607/16/2607.07830v1-physics-guided-biomechanical-gait-adaptation-for-humanoid-locomotion-on-extreme-sloped-terrains)  
+1. [Native Video-Action Pretraining for Generalizable Robot Control](/202607/17/2607.08639v2-native-video-action-pretraining-for-generalizable-robot-control)  
+   标签：评分：8.0/10、query:q1
+   evidence：用于通用机器人控制的视频-动作基础模型
+2. [Causally Debiased Latent Action Model for Embodied Action Conditioned World Models](/202607/17/2607.09185v1-causally-debiased-latent-action-model-for-embodied-action-conditioned-world-models)  
+   标签：评分：8.0/10、query:q1
+   evidence：用于机器人规划的动作条件世界模型
+3. [Chalito: An Extensible Library for Filtering-Based State Estimation in Quadruped Robots](/202607/17/2607.09968v1-chalito-an-extensible-library-for-filtering-based-state-estimation-in-quadruped-robots)  
    标签：评分：8.0/10、query:q2
-   evidence：用于类人机器人在多样坡地地形上稳健运动的物理引导框架
-2. [TAC-LOCO: Unified Whole-Body Control for Quadrupedal TACtile-Informed LOCO-Manipulation](/202607/16/2607.10132v1-tac-loco-unified-whole-body-control-for-quadrupedal-tactile-informed-loco-manipulation)  
-   标签：评分：8.0/10、query:q3
-   evidence：将触觉观测编码为紧凑的潜空间表示，用于腿部和手臂的统一控制
-3. [Learning Roller-Skating Motions of Humanoid Robots Based on Adversarial Motion Priors](/202607/16/2607.10815v1-learning-roller-skating-motions-of-humanoid-robots-based-on-adversarial-motion-priors)  
+   evidence：四足机器人运动的状态估计
+4. [TAC-LOCO: Unified Whole-Body Control for Quadrupedal TACtile-Informed LOCO-Manipulation](/202607/17/2607.10132v1-tac-loco-unified-whole-body-control-for-quadrupedal-tactile-informed-loco-manipulation)  
    标签：评分：8.0/10、query:q2
-   evidence：双足机器人轮滑运动与平衡控制
-4. [PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings](/202607/16/2607.11041v1-pake-learning-whole-body-loco-manipulation-with-partial-kinematic-embeddings)  
-   标签：评分：8.0/10、query:profile-1
-   evidence：具有部分运动学嵌入的全身运动操作
-5. [Robust bipedal locomotion on flowable slopes via foot-driven terrain manipulation](/202607/16/2607.11855v1-robust-bipedal-locomotion-on-flowable-slopes-via-foot-driven-terrain-manipulation)  
-   标签：评分：8.0/10、query:q2
-   evidence：双足机器人在可流动坡面上的运动与地形动力学
-6. [Chalito: An Extensible Library for Filtering-Based State Estimation in Quadruped Robots](/202607/16/2607.09968v1-chalito-an-extensible-library-for-filtering-based-state-estimation-in-quadruped-robots)  
-   标签：评分：7.0/10、query:q2
-   evidence：四足机器人运动与控制的状态估计
-7. [Grounded world models in biological organisms and future embodied AI](/202607/16/2607.13560v1-grounded-world-models-in-biological-organisms-and-future-embodied-ai)  
+   evidence：四足机器人触觉感知的全身控制
+5. [Native Video-Action Pretraining for Generalizable Robot Control](/202607/17/2607.08639v1-native-video-action-pretraining-for-generalizable-robot-control)  
    标签：评分：7.0/10、query:q1
-   evidence：用于导航和交互的落地世界模型
-8. [Is Energy Guidance All You Need? Training-Free Norm Injection for Driving World Models](/202607/16/2607.10781v1-is-energy-guidance-all-you-need-training-free-norm-injection-for-driving-world-models)  
+   evidence：用于机器人控制的视频动作基础模型
+6. [World Models as Adversaries: Multi-Agent Self-Play Fine-Tuning for Robust Motion Planning](/202607/17/2607.10630v1-world-models-as-adversaries-multi-agent-self-play-fine-tuning-for-robust-motion-planning)  
+   标签：评分：7.0/10、query:q1
+   evidence：用于鲁棒运动规划的对抗性世界建模
+7. [Is Energy Guidance All You Need? Training-Free Norm Injection for Driving World Models](/202607/17/2607.10781v1-is-energy-guidance-all-you-need-training-free-norm-injection-for-driving-world-models)  
+   标签：评分：7.0/10、query:q1
+   evidence：用于规划和轨迹引导的驾驶世界模型
+8. [WALA Learning Executable Latent Actions from Action-Labeled Demonstrations and Action-Free Videos](/202607/17/2607.11397v1-wala-learning-executable-latent-actions-from-action-labeled-demonstrations-and-action-free-videos)  
+   标签：评分：7.0/10、query:q1
+   evidence：从视频中学习潜在动作和动力学
+9. [FlowDAgger: Human-in-the-Loop Adaptation of Generative Robot Policies in Latent Space](/202607/17/2607.08877v1-flowdagger-human-in-the-loop-adaptation-of-generative-robot-policies-in-latent-space)  
+   标签：评分：6.0/10、query:q3
+   evidence：在潜空间中利用动作反演调整生成式机器人策略
+10. [GenVid2Robot: From Video Generation to Robot Manipulation via Rigid-Geometric Consistency](/202607/17/2607.09191v1-genvid2robot-from-video-generation-to-robot-manipulation-via-rigid-geometric-consistency)  
    标签：评分：6.0/10、query:q1
-   evidence：用于生成未来视频和规划自我轨迹的驾驶世界模型
-9. [WALA Learning Executable Latent Actions from Action-Labeled Demonstrations and Action-Free Videos](/202607/16/2607.11397v1-wala-learning-executable-latent-actions-from-action-labeled-demonstrations-and-action-free-videos)  
+   evidence：视频生成作为机器人控制的视觉运动先验
+11. [SUREFlow: State-space Uncertainty-aware REsidual Flow Matching for Robust Robot Manipulation](/202607/17/2607.10504v1-sureflow-state-space-uncertainty-aware-residual-flow-matching-for-robust-robot-manipulation)  
    标签：评分：6.0/10、query:q1
-   evidence：从视频中学习可执行的潜空间动作用于机器人策略
-10. [LIDAR-AD: A Decoder-Free Latent-Interaction Dreamer with Action-Residual Chains for Autonomous Driving](/202607/16/2607.11964v1-lidar-ad-a-decoder-free-latent-interaction-dreamer-with-action-residual-chains-for-autonomous-driving)  
-   标签：评分：6.0/10、query:q1
-   evidence：用于动态环境决策的潜空间世界模型
-11. [Model-Based Diffusion Optimal Control for Multi-Robot Motion Planning](/202607/16/2607.12423v1-model-based-diffusion-optimal-control-for-multi-robot-motion-planning)  
-   标签：评分：6.0/10、query:q1
-   evidence：基于模型的扩散方法用于多机器人运动规划
+   evidence：用于机器人控制的状态空间不确定性感知流匹配
 
 
 <div class="dpr-home-promo-card">

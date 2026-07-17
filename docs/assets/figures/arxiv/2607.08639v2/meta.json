@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.08639v2/fig-001.webp",
+      "caption": "Figure 3. Dual-system hierarchical policy. A high-level VLM planner consumes the task goal and sparse recent observations to produce structured subtask context, which conditions the low-level video-action policy together with robot state to produce closed-loop actions.",
+      "page": 6,
+      "index": 1,
+      "width": 837,
+      "height": 390
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08639v2/fig-002.webp",
+      "caption": "Figure 1. Overview of LingBot-VA 2.0. The Planner (Sec. 2.3.1) decomposes long-horizon goals into structured subtask context. The semantic visual-action tokenizer (Sec. 2.2) encodes image observations and human video prompts (Sec. 2.3.4) as visual latents. The video model with the MoE (Sec. 2.3.2) and the action model autoregressively predict future visual latents and robot actions. MCP (Sec. 2.3.3) adds future-chunk supervision, and the autoregressive rollout connects to asynchronous execution for real-time robot control. (Sec. 2.3.7).",
+      "page": 3,
+      "index": 2,
+      "width": 972,
+      "height": 443
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08639v2/fig-003.webp",
+      "caption": "Figure 8. Real-world deployment results. Success rate and task progress rate across real-world tasks, comparing LingBot-VA 2.0 against representative baselines.",
+      "page": 18,
+      "index": 3,
+      "width": 982,
+      "height": 489
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08639v2/fig-004.webp",
+      "caption": "Figure 6. Foresight Reasoning as an asynchronous inference/execution flow. A cold start initializes the KV cache and precomputes the first action chunk. During the loop, the executor runs the current chunk while real observations enter OBSQUEUE; the inference branch re-grounds the KV cache with those observations, appends the currently executing action, imagines its visual outcome with FDM grounding, and predicts the next action chunk before execution stalls.",
+      "page": 13,
+      "index": 4,
+      "width": 965,
+      "height": 482
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08639v2/fig-005.webp",
+      "caption": "Figure 4. Training loss comparison between the MoE-13B-A1.9B video-stream model and the Dense-5B baseline. Left: loss aligned by optimization steps, where both models remain close and the dense baseline is slightly lower. Right: loss aligned by wall-clock training time, where the final losses nearly coincide.",
+      "page": 8,
+      "index": 5,
+      "width": 973,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08639v2/fig-006.webp",
+      "caption": "Figure 9. In-context learning demo. We demonstrate ICL rollouts on four unseen tasks. For each rollout, given a reference video demonstration as the task instruction and the robot observation, LingBot-VA 2.0 transfers the same action procedure to robot manipulation without parameter updates.",
+      "page": 19,
+      "index": 6,
+      "width": 977,
+      "height": 434
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08639v2/fig-007.webp",
+      "caption": "Figure 5. Multi-Chunk Prediction (MCP). Lightweight auxiliary modules predict several future latent chunks at increasing horizons from the main model’s representation, providing dense temporal supervision during training. Adapted from Next Forcing [112].",
+      "page": 9,
+      "index": 7,
+      "width": 969,
+      "height": 552
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08639v2/fig-008.webp",
+      "caption": "Figure 10. Multi-chunk prediction ablation. Task success rate (%) on RoboTwin across training steps. MCP converges faster and reaches higher final accuracy than the baseline at both 12 and 50 fps.",
+      "page": 20,
+      "index": 8,
+      "width": 972,
+      "height": 193
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08639v2/fig-009.webp",
+      "caption": "Figure 2. Semantic visual-action tokenizer. The visual tokenizer aligns reconstruction-oriented latents with visual foundationmodel features, while the latent action tokenizer learns compact transition variables through inverse and forward dynamics. Adapted from RepWAM [99].",
+      "page": 5,
+      "index": 9,
+      "width": 984,
+      "height": 341
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08639v2/fig-010.webp",
+      "caption": "Figure 7. In-context human-robot data curation pipeline. Robot videos are sampled by task semantics, converted into human demonstration prompts with a VLM, synthesized as human videos, and filtered before pairing with the original robot trajectories as ICL samples.",
+      "page": 16,
+      "index": 10,
+      "width": 982,
+      "height": 375
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-001.webp",
+      "caption": "Figure 4: Results of scaling on-policy data collection on the BONES Test Set under whole-body control mode. Best outcomes with the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 11,
+      "index": 1,
+      "width": 966,
+      "height": 587
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-002.webp",
+      "caption": "Table 4: Curated control modes featuring different activated target links. Instead of constructing arbitrary link-wise masks by independently activating each link according to a Bernoulli distribution with probability 0.5 [6], we curate a set of eight representative control modes spanning different levels of specification granularity. By randomly sampling a control mode at each environment reset, the same underlying behavior can be represented by diverse forms of behavioral specifications. Such design enables versatile humanoid control across multiple control modes while naturally supporting behavior inpainting under sparse control signals.",
+      "page": 25,
+      "index": 2,
+      "width": 898,
+      "height": 458
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-003.webp",
+      "caption": "Table 5: Reward components and weights. Variables annotated with the superscript ref are derived from the reference motion, whereas those without this annotation correspond to the humanoid’s current state. Reward weights are automatically scaled by the environment according to the simulation timestep d t.",
+      "page": 25,
+      "index": 3,
+      "width": 864,
+      "height": 380
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-004.webp",
+      "caption": "Table 6: Domain randomization parameters. Randomization of physical parameters is applied at the start of training. Root velocity perturbations are introduced periodically during training. U[·]: uniform distribution.",
+      "page": 26,
+      "index": 4,
+      "width": 856,
+      "height": 280
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-005.webp",
+      "caption": "Figure 12: Results of scaling on-policy data collection on the BONES Test Set under root-and-hand control mode. Best results with the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 30,
+      "index": 5,
+      "width": 923,
+      "height": 561
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-006.webp",
+      "caption": "Figure 13: Results of scaling on-policy data collection on the Ours Test Set under root-and-hand control mode. Best results with the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 30,
+      "index": 6,
+      "width": 920,
+      "height": 558
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-007.webp",
+      "caption": "Figure 2: Reference Motion Dataset Composition. We construct a large-scale human motion dataset by aggregating over 102 million frames at 50 FPS from multiple sources, which are subsequently retargeted to the target humanoid. Random samples are visualized to demonstrate its broad coverage of diverse behavior patterns.",
+      "page": 7,
+      "index": 7,
+      "width": 979,
+      "height": 570
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-008.webp",
+      "caption": "Table 7: Hyperparameter Details. These terms remain fixed across experiments to ensure a fair comparison.",
+      "page": 29,
+      "index": 8,
+      "width": 527,
+      "height": 558
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-009.webp",
+      "caption": "Figure 19: Results of scaling reference motions on Ours Test Set under root-and-hand mode. Best results corresponding to the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 34,
+      "index": 9,
+      "width": 890,
+      "height": 558
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-010.webp",
+      "caption": "Figure 18: Results of scaling reference motions on BONES Test Set under root-and-hand mode. Best results corresponding to the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 34,
+      "index": 10,
+      "width": 896,
+      "height": 561
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-011.webp",
+      "caption": "Figure 7: Results of scaling reference motions on the Ours Test Set under whole-body mode. Best outcomes corresponding to the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 14,
+      "index": 11,
+      "width": 942,
+      "height": 587
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-012.webp",
+      "caption": "Figure 20: Results of scaling reference motions on BONES Test Set under root-and-end-effector mode. Best results corresponding to the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 35,
+      "index": 12,
+      "width": 885,
+      "height": 561
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-013.webp",
+      "caption": "Figure 21: Results of scaling reference motions on Ours Test Set under root-and-end-effector mode. Best results corresponding to the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 35,
+      "index": 13,
+      "width": 877,
+      "height": 558
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-014.webp",
+      "caption": "Figure 6: Results of scaling reference motions on the BONES Test Set under whole-body mode. Best outcomes corresponding to the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 13,
+      "index": 14,
+      "width": 937,
+      "height": 587
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-015.webp",
+      "caption": "Figure 22: Results of scaling reference motions on BONES Test Set under root-and-upper-body mode. Best results corresponding to the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 36,
+      "index": 15,
+      "width": 883,
+      "height": 561
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-016.webp",
+      "caption": "Figure 23: Results of scaling reference motions on Ours Test Set under root-and-upper-body mode. Best results corresponding to the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 36,
+      "index": 16,
+      "width": 876,
+      "height": 558
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-017.webp",
+      "caption": "Table 3: Performance Benchmark on Whole-body Control. We compare the 3M-parameter variant of the proposed BFM with off-the-shelf whole-body controllers and a self-curated ablation baseline (BFM-Bym), trained using the reward design of BeyondMimic and evaluated under the global control mode. The best result for each metric is highlighted in bold. †: The randomly sampled BONES Test Set may overlap with SONIC’s training set.",
+      "page": 19,
+      "index": 17,
+      "width": 960,
+      "height": 367
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-018.webp",
+      "caption": "Table 2: Evaluation of Latent Space Robustness. Latent representations on the hypersphere are perturbed by rotating each latent vector along a randomly sampled direction through an angle specified by the noise level.",
+      "page": 17,
+      "index": 18,
+      "width": 964,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-019.webp",
+      "caption": "Figure 10: Visualization of the Latent Space.",
+      "page": 17,
+      "index": 19,
+      "width": 425,
+      "height": 400
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-020.webp",
+      "caption": "Figure 16: Results of scaling on-policy data collection on the BONES Test Set under root-and-upper-body mode. Best results with the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 32,
+      "index": 20,
+      "width": 918,
+      "height": 561
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-021.webp",
+      "caption": "Figure 17: Results of scaling on-policy data collection on the Ours Test Set under root-and-upper-body mode. Best results with the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 32,
+      "index": 21,
+      "width": 920,
+      "height": 558
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-022.webp",
+      "caption": "Figure 5: Results of scaling on-policy data collection on the Ours Test Set under whole-body control mode. Best outcomes with the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 12,
+      "index": 22,
+      "width": 971,
+      "height": 587
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-023.webp",
+      "caption": "Figure 3: Overview of Model Architecture. We introduce an expressive and scalable architecture termed the Humanoid Transformer, which facilitates the natural emergence of structured behavioral representations.",
+      "page": 9,
+      "index": 23,
+      "width": 930,
+      "height": 744
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-024.webp",
+      "caption": "Figure 15: Results of scaling on-policy data collection on the Ours Test Set under root-and-end-effector mode. Best results with the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 31,
+      "index": 24,
+      "width": 920,
+      "height": 558
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-025.webp",
+      "caption": "Figure 14: Results of scaling on-policy data collection on the BONES Test Set under root-and-end-effector mode. Best results with the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 31,
+      "index": 25,
+      "width": 919,
+      "height": 561
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15163v1/fig-026.webp",
+      "caption": "Figure 9: Results of scaling model architectures on the Ours Test Set under whole-body control mode. Best outcomes with the highest success rate and lowest tracking errors are highlighted with red circles.",
+      "page": 16,
+      "index": 26,
+      "width": 966,
+      "height": 587
+    }
+  ]
+}

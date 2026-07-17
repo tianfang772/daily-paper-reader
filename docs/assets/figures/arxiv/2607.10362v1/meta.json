@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.10362v1/fig-001.webp",
+      "caption": "Figure 1: Linear state readout (SR) versus the base objective on four control tasks. Left: control success against training epoch (mean over seeds; shaded band spans the seed range); the annotation gives the convergence gain, averaged over the last three epochs. Right: the convergence gain against the base success at convergence, with a least-squares fit. The readout does not lower the asymptotic ceiling, and its gain increases as the base objective moves away from saturation (Pearson r = −0.91), consistent with an intervention acting on the on-manifold metric tax δ0.",
+      "page": 8,
+      "index": 1,
+      "width": 960,
+      "height": 443
+    }
+  ]
+}
