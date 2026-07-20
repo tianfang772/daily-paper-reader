@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.15898v1/fig-001.webp",
+      "caption": "Figure 1: Orbis 2: a hierarchical driving world model. The abstract predictor operates over a long temporal context to forecast a future state in latent space, capturing abstract scene dynamics over long horizons, and enabling steering control. The detail predictor is conditioned on this abstract prediction and generates fine-grained short-horizon frames, enabling high-fidelity local prediction grounded in long-range temporal context.",
+      "page": 2,
+      "index": 1,
+      "width": 772,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15898v1/fig-002.webp",
+      "caption": "Table 3: Complete steering evaluation on original and counterfactual trajectories.",
+      "page": 7,
+      "index": 2,
+      "width": 732,
+      "height": 181
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15898v1/fig-003.webp",
+      "caption": "Table 2: FVD over 6s rollouts on nuPlan, Waymo and nuPlan-turns datasets. FVD-slope is shown for 4 chunks of 4 seconds each. Linear probing results are shown for semantic segmentation on Cityscapes and depth estimation on KITTI. *Epona is trained only on the nuPlan and nuScenes datasets. The training mix of Cosmos is not public.",
+      "page": 7,
+      "index": 3,
+      "width": 814,
+      "height": 219
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15898v1/fig-004.webp",
+      "caption": "Figure 6: Prediction in full 768-dimensional DINO space results in poor generation quality. Compression enables stable, long-horizon generation even with small models. Rollouts shown at 2fps for our compressed (16-dim) and full DINO latents. More qualitative examples in Appendix.",
+      "page": 10,
+      "index": 4,
+      "width": 816,
+      "height": 417
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15898v1/fig-005.webp",
+      "caption": "Figure 8: Example of counterfactual steering. Top row: the original steering trajectory, the model performs the turn as intended. Second row: the yaw rate was scaled by 0.5 (understeering), the model follows the command and executes a more gentle turn. Third row: the yaw rate was scaled by 0.5 (oversteering), the model follows the command and executes a sharper turn.",
+      "page": 18,
+      "index": 5,
+      "width": 781,
+      "height": 251
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15898v1/fig-006.webp",
+      "caption": "Table 4: Hierarchy design study across different abstractions and temporal resolutions. All experiments have comparable number of model parameters. Exp. 3 corresponds to our final hierarchical setting. Top/Bottom refers position of predictors in fig. 1. FVD and FVD-slope are reported on the nuPlan-turns benchmark.",
+      "page": 8,
+      "index": 6,
+      "width": 814,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15898v1/fig-007.webp",
+      "caption": "Figure 7: Comparison of raw DINO features versus our compressed DINO latent as the tokenizer for the abstract predictor. (Rollouts at 2hz)",
+      "page": 17,
+      "index": 7,
+      "width": 800,
+      "height": 767
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15898v1/fig-008.webp",
+      "caption": "Figure 4: Qualitative examples showing behavior of different hierarchy variants discussed in Table 4. We observe that Exp-2 rollouts are stable but lacks details, Exp-4 drifts out-of-distribution and Exp-5 suffers from loss in motion.",
+      "page": 9,
+      "index": 8,
+      "width": 780,
+      "height": 507
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15898v1/fig-009.webp",
+      "caption": "Figure 5: Representation quality per predictor block via linear probing for the predictor trained on detail latents. Diffusion forcing consistently improves intermediate representations on both semantic segmentation and depth estimation.",
+      "page": 9,
+      "index": 9,
+      "width": 798,
+      "height": 250
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15898v1/fig-010.webp",
+      "caption": "Table 7: Comparison of our tokenizer and abstract predictor model with DINOv2-base. Per-class IoU for semantic segmentation reported on Cityscapes.",
+      "page": 16,
+      "index": 10,
+      "width": 702,
+      "height": 537
+    }
+  ]
+}
